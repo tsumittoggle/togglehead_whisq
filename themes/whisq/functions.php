@@ -632,6 +632,18 @@ function create_post_type() {
       'supports' => array( 'title', 'thumbnail'), 
     )
   );
+  register_post_type( 'address',
+    array(
+      'labels' => array(
+        'name' => __( 'Locate Us Address' ),
+        'singular_name' => __( 'Locate Us Address' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+      'taxonomies'  => array( 'category', 'post_tag' ),
+      'supports' => array( 'title', 'editor', 'thumbnail'), 
+    )
+  );
 }
 
 /**
