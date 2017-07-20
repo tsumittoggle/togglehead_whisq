@@ -538,6 +538,7 @@ Feature product styling strat from here
 
 .feature-item ins .woocommerce-Price-currencySymbol {margin-right: 6px;}
 
+
 .feature-btn,
 .added_to_cart {
   display: none;
@@ -1114,7 +1115,6 @@ Mobile view Home Page styling start from here
 
 .store-img {
   display: block;
-  margin: 10px auto 0;
   float: none;
   left: 0;
 }
@@ -1357,7 +1357,6 @@ header li .sub-menu:after {display: none;}
 
   .store-img {
     display: block;
-    margin: 10px auto 0;
     float: none;
     left: 0;
    }
