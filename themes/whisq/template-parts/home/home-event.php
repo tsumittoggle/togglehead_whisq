@@ -11,7 +11,7 @@
 ?>
 
 <p class="event-date"><span>May</span><span>24</span></p>
-<div class="event">
+<div class="event" style="background: url('<?php the_field('event_image'); ?>'); background-size: 100% 100%;">
 	<div class="event-content">
 		<h3>Masterclass with <span>Pooja Dhingra</span></h3>
 		<div class="time-address">

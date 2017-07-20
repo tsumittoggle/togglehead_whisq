@@ -324,11 +324,11 @@ header .menu-item-has-children:hover:after {color: #be5f84;}
 .search button i {font-size: 18px;}
 
 .yith-ajaxsearchform-container {
-  display: none;
+  visibility: hidden;
   box-shadow: 0px 1px 2px 2px rgba(128, 128, 128, 0.38);
   position: absolute;
   right: 40px;
-  bottom: -25px;
+  bottom: 12px;
 }
 
 .yith-ajaxsearchform-container label {display: none;}
@@ -342,7 +342,11 @@ header .menu-item-has-children:hover:after {color: #be5f84;}
 
 #yith-searchsubmit {display: none;}
 
-.search-open {display: inline-block;}
+.search-open {
+  bottom: -25px;
+  visibility: visible;
+  transition: all 0.6s;
+}
 
 nav li a {
   color: #000;
@@ -375,7 +379,10 @@ nav li:hover a {
 }
 
 .user-btn i {
+  padding: 1px 3px 0px 3px;
   margin-right: 20px;
+  border: 1px solid;
+  border-radius: 50%;
   color: #000;
   font-size: 18px;
 }
@@ -687,7 +694,8 @@ body .btn {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url('../../uploads/next.png') no-repeat;
+  background-image: url('../../uploads/next.png');
+  background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 
@@ -708,7 +716,8 @@ body .btn {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url('../../uploads/prev.png') no-repeat;
+  background-image: url('../../uploads/prev.png');
+  background-repeat: no-repeat;
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
