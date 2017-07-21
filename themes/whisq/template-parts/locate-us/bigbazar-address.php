@@ -10,12 +10,18 @@
 
 ?>
   <h2>Bigbazar</h2>
-   <?php
+    <?php
+  global $wpdb;
+
+$tags = get_terms('post_tag');
+echo '<ul>';
+foreach ($tags as $tag){
+	  echo $tag->name;
 			$store = array( 
 				'post_type' => 'address',
 				'category_name' => 'bigbazar', 
 				'posts_per_page' => -1,
-				'tag' => 'mumbai, delhi' 
+				'tag' => $tag->name
 				);
 			$store_list = new WP_Query( $store );
 			while ( $store_list->have_posts() ) : $store_list->the_post();
@@ -25,22 +31,5 @@
 			<?php
 			endwhile;
 			wp_reset_query(); 
+		}
 	 ?>
-
-<?php
-
-// $the_query = new WP_Query( 'tag='.$post_tag );
-
-// if ( $the_query->have_posts() ) {
-//     echo '<ul>';
-//     while ( $the_query->have_posts() ) {
-//         $the_query->the_post();
-//         echo '<li>' . get_the_title() . '</li>';
-//     }
-//     echo '</ul>';
-// } else {
-//     // no posts found
-// }
-// /* Restore original Post Data */
-// wp_reset_postdata();
-// ?>
