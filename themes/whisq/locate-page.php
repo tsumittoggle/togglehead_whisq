@@ -6,7 +6,7 @@ get_header();
 //feature product section start here
 ?>
    <?php
-			$store = array( 'post_type' => 'store', 'posts_per_page' => 3 );
+			$store = array( 'post_type' => 'store', 'posts_per_page' => 3, 'order' => 'ASC' );
 			$store_list = new WP_Query( $store );
 			while ( $store_list->have_posts() ) : $store_list->the_post();
 			?>
