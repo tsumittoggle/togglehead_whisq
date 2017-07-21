@@ -725,7 +725,8 @@ body .btn {
 
 .feature .owl-carousel .owl-item img {
   display: inline-block;
-  width: auto;
+  width: 100%;
+  height:auto;
 }
 /*==================================================================
 Recipes styling start from here
@@ -1129,6 +1130,8 @@ Mobile view Home Page styling start from here
 }
 
 .store-title {display: inline-block;}
+
+.feature-item {min-height: 630px;}
 
 }
 
