@@ -44,7 +44,7 @@
 			foreach ($tags as $tag){
 				?>
 				 <div class="city-name"><?php echo $tag->name; ?></div>
-					<div class="cities-wrapper">				 
+				 <div class="cities-wrapper"> 
 				  <?php
 						$store = array( 
 							'post_type' => 'address',
@@ -62,9 +62,10 @@
 						<?php
 						endwhile;
 						wp_reset_query(); 
+					
 					?></div>
 					<?php
-				}	}
+				}}
 				else {
 				?>
 				 <div class="city-name"><?php echo $selected_val; ?></div> 
