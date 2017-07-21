@@ -37,11 +37,11 @@
 				?>
     <?php
       if($selected_val == "city" || $selected_val == " ") { ?>
-      	<div class="cities-wrapper">
       <?php	
 			foreach ($tags as $tag){
 				?>
-				 <div class="city-name"><?php echo $tag->name; ?></div> 
+				 <div class="city-name"><?php echo $tag->name; ?></div>
+				<div class="cities-wrapper">				 
 				  <?php
 						$store = array( 
 							'post_type' => 'address',
@@ -59,14 +59,14 @@
 						<?php
 						endwhile;
 						wp_reset_query(); 
-					}
+					
 					?></div>
 					<?php
-				}
+				}}
 				else {
 				?>
-				<div class="cities-wrapper">
 				 <div class="city-name"><?php echo $selected_val; ?></div> 
+				<div class="cities-wrapper">
 				  <?php
 						$store = array( 
 							'post_type' => 'address',
