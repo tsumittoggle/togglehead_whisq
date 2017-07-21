@@ -105,10 +105,10 @@ $('.search-btn').click(function(){
 	  var id = $(this).attr("id");
 	  
 	  if(id == 'all'){
-		  $(".wrapper").fadeIn();
+		  $(".site-content-contain .wrapper").fadeIn();
 	  }
 	  else{
-		  $(".wrapper").fadeOut();
+		  $(".site-content-contain .wrapper").fadeOut();
 		  $("."+id+'-address').fadeIn();
 	  }
 	  
