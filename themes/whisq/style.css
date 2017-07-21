@@ -1035,6 +1035,7 @@ body .banner-btn {
 .tips .carousel-indicators li {
   border: 0;
   background: #a1a1a1;
+  cursor: initial;
 }
 
 .tips .carousel-indicators .active {
@@ -1461,4 +1462,6 @@ header li .sub-menu:after {display: none;}
   .slider-content {top: 38%;}
 
 }
+
+.select-section option:first-child {display: none;}
 

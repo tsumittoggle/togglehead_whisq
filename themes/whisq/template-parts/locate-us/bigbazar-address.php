@@ -9,18 +9,7 @@
  */
 
 ?>
-  <h2>Bigbazar</h2>
-<?php
-/**
- * Displays header media
- *
- * @package WordPress
- * @subpackage Whisq
- * @since 1.0
- * @version 1.0
- */
 
-?>
 	<h2>bigbazar</h2>
       <?php
     	global $wpdb;
@@ -29,7 +18,8 @@
 			  <div class="select-section">
 			  <form action="#" name="cityselect" method="post">
     	    <select name="select-city" id="cities" class="cities" onchange="this.form.submit()">
-    	    		<option name"city" value="city">city</option>
+    	        <option name"city" value="city">select city</option>
+    	    		<option name"city" value="city">all city</option>
 							<?php
 							foreach ($tags as $tag){
 							?>
@@ -49,11 +39,11 @@
 				?>
     <?php
       if($selected_val == "city" || $selected_val == " ") { ?>
-      	<div class="cities-wrapper">
       <?php	
 			foreach ($tags as $tag){
 				?>
-				 <div class="city-name"><?php echo $tag->name; ?></div> 
+				 <div class="city-name"><?php echo $tag->name; ?></div>
+				 <div class="cities-wrapper"> 
 				  <?php
 						$store = array( 
 							'post_type' => 'address',
@@ -71,10 +61,9 @@
 						<?php
 						endwhile;
 						wp_reset_query(); 
-					}
 					?></div>
 					<?php
-				}
+				}	}
 				else {
 				?>
 				<div class="cities-wrapper">
