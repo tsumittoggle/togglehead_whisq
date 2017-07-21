@@ -61,13 +61,14 @@
 						<?php
 						endwhile;
 						wp_reset_query(); 
+					
 					?></div>
 					<?php
-				}	}
+				}}}
 				else {
 				?>
-				<div class="cities-wrapper">
 				 <div class="city-name"><?php echo $selected_val; ?></div> 
+				<div class="cities-wrapper">
 				  <?php
 						$store = array( 
 							'post_type' => 'address',

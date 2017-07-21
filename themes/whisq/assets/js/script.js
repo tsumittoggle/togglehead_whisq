@@ -99,6 +99,21 @@ $('.search-btn').click(function(){
   }
 });
 
+  //js for foodhall locate
+  
+  $(".locate-list").on("click", function(){
+	  var id = $(this).attr("id");
+	  
+	  if(id == 'all'){
+		  $(".site-content-contain .wrapper").fadeIn();
+	  }
+	  else{
+		  $(".site-content-contain .wrapper").fadeOut();
+		  $("."+id+'-address').fadeIn();
+	  }
+	  
+  });
+
 });
 })(jQuery);
 

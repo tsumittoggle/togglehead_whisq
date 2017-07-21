@@ -38,6 +38,7 @@
 				?>
     <?php
       if($selected_val == "city" || $selected_val == " ") { ?>
+
       <?php	
 			foreach ($tags as $tag){
 				?>
@@ -62,7 +63,7 @@
 						wp_reset_query(); 
 					?></div>
 					<?php
-				}}
+				}}}
 				else {
 				?>
 				 <div class="city-name"><?php echo $selected_val; ?></div> 

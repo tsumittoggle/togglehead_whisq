@@ -24,15 +24,15 @@ get_header();
 			endwhile;
 			wp_reset_query(); 
 			?>
-    <div class="foodhal-address">
+    <div class="FoodHall-address wrapper">
 			<?php get_template_part( 'template-parts/locate-us/foodhall', 'address' ); ?>
 		</div>
 
-		<div class="bigbazar-address">
+		<div class="Bigbazar-address wrapper">
 			<?php get_template_part( 'template-parts/locate-us/bigbazar', 'address' ); ?>
 		</div>
 
-		<div class="hometown-address">
+		<div class="Hometown-address wrapper">
 			<?php get_template_part( 'template-parts/locate-us/hometown', 'address' ); ?>
 		</div>
 <?php
