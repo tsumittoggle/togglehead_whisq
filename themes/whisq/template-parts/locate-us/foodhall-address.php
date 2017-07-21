@@ -36,7 +36,9 @@
 				  }
 				?>
     <?php
-      if($selected_val == "city" || $selected_val == " ") {
+      if($selected_val == "city" || $selected_val == " ") { ?>
+      	<div class="cities-wrapper">
+      <?php	
 			foreach ($tags as $tag){
 				?>
 				 <div class="city-name"><?php echo $tag->name; ?></div> 
@@ -50,15 +52,20 @@
 						$store_list = new WP_Query( $store );
 						while ( $store_list->have_posts() ) : $store_list->the_post();
 						?>
+							<div class="city-address">
 			          <h4 class="store-title"><?php the_title(); ?></h4>
 			          <?php the_content(); ?>
+			         </div>
 						<?php
 						endwhile;
 						wp_reset_query(); 
 					}
+					?></div>
+					<?php
 				}
 				else {
 				?>
+				<div class="cities-wrapper">
 				 <div class="city-name"><?php echo $selected_val; ?></div> 
 				  <?php
 						$store = array( 
@@ -69,11 +76,13 @@
 							);
 						$store_list = new WP_Query( $store );
 						while ( $store_list->have_posts() ) : $store_list->the_post();
-						?>
+						?><div class="city-address">
 			          <h4 class="store-title"><?php the_title(); ?></h4>
 			          <?php the_content(); ?>
+			          </div>
 						<?php
 						endwhile;
 						wp_reset_query(); 					
 				}
-	 ?>
+	 ?>    
+	    </div>

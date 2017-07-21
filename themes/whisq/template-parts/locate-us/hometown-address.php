@@ -9,8 +9,8 @@
  */
 
 ?>
-   <h2>Hometown</h2>
-          <?php
+	<h2>Foodhall</h2>
+      <?php
     	global $wpdb;
 			$tags = get_terms('post_tag');
 			?>
@@ -36,7 +36,9 @@
 				  }
 				?>
     <?php
-      if($selected_val == "city" || $selected_val == " ") {
+      if($selected_val == "city" || $selected_val == " ") { ?>
+      	<div class="cities-wrapper">
+      <?php	
 			foreach ($tags as $tag){
 				?>
 				 <div class="city-name"><?php echo $tag->name; ?></div> 
@@ -50,30 +52,37 @@
 						$store_list = new WP_Query( $store );
 						while ( $store_list->have_posts() ) : $store_list->the_post();
 						?>
+							<div class="city-address">
 			          <h4 class="store-title"><?php the_title(); ?></h4>
 			          <?php the_content(); ?>
+			         </div>
 						<?php
 						endwhile;
 						wp_reset_query(); 
 					}
+					?></div>
+					<?php
 				}
 				else {
 				?>
+				<div class="cities-wrapper">
 				 <div class="city-name"><?php echo $selected_val; ?></div> 
 				  <?php
 						$store = array( 
 							'post_type' => 'address',
-							'category_name' => 'hometown', 
+							'category_name' => 'foodhall', 
 							'posts_per_page' => -1,
 							'tag' => $selected_val
 							);
 						$store_list = new WP_Query( $store );
 						while ( $store_list->have_posts() ) : $store_list->the_post();
-						?>
+						?><div class="city-address">
 			          <h4 class="store-title"><?php the_title(); ?></h4>
 			          <?php the_content(); ?>
+			          </div>
 						<?php
 						endwhile;
 						wp_reset_query(); 					
 				}
-	 ?>
+	 ?>    
+	    </div>
