@@ -514,7 +514,7 @@ Feature product styling strat from here
 ===================================================================*/
 
 .feature-item {
-  min-height: 485px;
+  min-height: auto;
   padding: 20px 20px 5px;
   margin: 8px;
   border-radius: 3px;
@@ -544,6 +544,7 @@ Feature product styling strat from here
 }
 
 .feature-item ins .woocommerce-Price-currencySymbol {margin-right: 6px;}
+
 
 .feature-btn,
 .added_to_cart {
@@ -665,7 +666,7 @@ body .btn {
 }
 
 .img-box {
-  min-height: 310px;
+  min-height: auto;
   margin-top: 15px;
 }
 
@@ -724,7 +725,8 @@ body .btn {
 
 .feature .owl-carousel .owl-item img {
   display: inline-block;
-  width: auto;
+  width: 100%;
+  height:auto;
 }
 /*==================================================================
 Recipes styling start from here
@@ -967,10 +969,8 @@ Store styling start from here
 }
 
 .store-title {
-  color: #030303;
   font: 600 14px/30px 'Open Sans', sans-serif;
   text-align: center;
-  text-transform: uppercase;
 }
 
 .store-list:last-child {margin-right: 0;}
@@ -1123,12 +1123,13 @@ Mobile view Home Page styling start from here
 
 .store-img {
   display: block;
-  margin: 10px auto 0;
   float: none;
   left: 0;
 }
 
 .store-title {display: inline-block;}
+
+.feature-item {min-height: 630px;}
 
 }
 
@@ -1366,7 +1367,6 @@ header li .sub-menu:after {display: none;}
 
   .store-img {
     display: block;
-    margin: 10px auto 0;
     float: none;
     left: 0;
    }
@@ -1461,6 +1461,5 @@ header li .sub-menu:after {display: none;}
 
 }
 
-/*==================================================================
-Locate Us styling start from here
-===================================================================*/
+
+
