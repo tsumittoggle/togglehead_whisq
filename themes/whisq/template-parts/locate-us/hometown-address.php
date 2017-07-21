@@ -63,7 +63,7 @@
 						wp_reset_query(); 
 					?></div>
 					<?php
-				}}}
+				}}
 				else {
 				?>
 				 <div class="city-name"><?php echo $selected_val; ?></div> 
