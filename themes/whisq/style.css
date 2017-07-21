@@ -1034,6 +1034,7 @@ body .banner-btn {
 .tips .carousel-indicators li {
   border: 0;
   background: #a1a1a1;
+  cursor: initial;
 }
 
 .tips .carousel-indicators .active {
@@ -1461,6 +1462,7 @@ header li .sub-menu:after {display: none;}
 
 }
 
+.select-section option:first-child {display: none;}
 /*==================================================================
 Locate Us styling start from here
 ===================================================================*/
@@ -1546,12 +1548,7 @@ margin: 25px 0;
 
 form:after {
     content: '\f107';
-    /* display: block; */
-    /* width: 25%; */
-    /* height: 100%; */
     position: relative;
-    /* top: -13px; */
-    /* right: -31px; */
     right: 35px;
 	color:#5b5b5c;
     font-size: 23px;

@@ -17,7 +17,8 @@
 			  <div class="select-section">
 			  <form action="#" name="cityselect" method="post">
     	    <select name="select-city" id="cities" class="cities" onchange="this.form.submit()">
-    	    		<option name"city" value="city">city</option>
+    	        <option name"city" value="city">select city</option>
+    	    		<option name"city" value="city">all city</option>
 							<?php
 							foreach ($tags as $tag){
 							?>
@@ -39,6 +40,7 @@
       if($selected_val == "city" || $selected_val == " ") { ?>
       <?php	
 			foreach ($tags as $tag){
+				if($tags){
 				?>
 				 <div class="city-name"><?php echo $tag->name; ?></div>
 				<div class="cities-wrapper">				 
@@ -62,7 +64,7 @@
 					
 					?></div>
 					<?php
-				}}
+	  }}}
 				else {
 				?>
 				 <div class="city-name"><?php echo $selected_val; ?></div> 
