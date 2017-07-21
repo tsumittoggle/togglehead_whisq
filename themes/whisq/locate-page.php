@@ -24,7 +24,6 @@ get_header();
 			endwhile;
 			wp_reset_query(); 
 			?>
-    
     <div class="foodhal-address">
 			<?php get_template_part( 'template-parts/locate-us/foodhall', 'address' ); ?>
 		</div>
