@@ -9,6 +9,7 @@
  */
 
 ?>
+<!--<h2>bigbazar</h2>-->
       <?php
     	global $wpdb;
 			$tags = get_terms('post_tag');
@@ -34,31 +35,33 @@
 							);
 						$store_list = new WP_Query( $store );
 						if ( $store_list->have_posts() ) {?>
-						<div class="wrapper <?php echo $tag->name; ?>">
+						<div class="wrapper citywrap <?php echo $tag->name; ?>">
 											 <div class="city-name"><?php echo $tag->name; ?></div>
-				 <div class="cities-wrapper">
+				 
 				 <?php
 						while ( $store_list->have_posts() ) : $store_list->the_post();
-						?>
+						?><div class="cities-wrapper">
+						
 							<div class="city-address">
 			          <h4 class="store-title"><?php the_title(); ?></h4>
 			          <?php the_content(); ?>
 			         </div>
+					 </div>
 						<?php
 						endwhile;
 					}
 						wp_reset_query(); 
 					
 					?>
-					</div>
+					
 					</div>
 					<?php
 				}}
 				else {
 				?>
-				<div class="wrapper <?php echo $tag->name; ?>">
+				<div class="wrapper citywrap <?php echo $tag->name; ?>">
 				 <div class="city-name"><?php echo $selected_val; ?></div> 
-				<div class="cities-wrapper">
+				
 				  <?php
 						$store = array( 
 							'post_type' => 'address',
@@ -68,14 +71,16 @@
 							);
 						$store_list = new WP_Query( $store );
 						while ( $store_list->have_posts() ) : $store_list->the_post();
-						?><div class="city-address">
+						?><div class="cities-wrapper">
+						<div class="city-address">
 			          <h4 class="store-title"><?php the_title(); ?></h4>
 			          <?php the_content(); ?>
 			          </div>
+					  </div>
 						<?php
 						endwhile;
 						wp_reset_query(); 					
 				}
 	 ?>    
-	    </div>
+	    
 	    </div>

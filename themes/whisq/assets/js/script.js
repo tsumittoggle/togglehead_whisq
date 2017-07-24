@@ -112,15 +112,24 @@ $('.search-btn').click(function(){
 		  $(".addwrap").fadeOut();
 		  $(".addwrap").fadeIn();
 	  }
-	  else{
-		  
+	  else{		  
 		  $(".addwrap").fadeOut();
 		  $("."+id+'-address').fadeIn();
 	  }
-	  console.log($('#cities :selected').val());
   });
   
-  
+  $( ".cities" ).change(function() {
+	  
+  var changecity = $('#cities :selected').val();
+	if(changecity=="city"){
+	$(".citywrap").hide();
+	$(".citywrap").fadeIn();	
+	}
+	else {
+   $(".citywrap").hide();
+   $("."+changecity).fadeIn();
+   }
+});
 
 });
 })(jQuery);

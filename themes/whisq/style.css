@@ -1496,20 +1496,23 @@ Locate Us styling start from here
 color:  rgb(186, 92, 130);
 font-size: 23px;
 font-weight: 400;
-line-height: 26px;
+min-height: 61px;
 }
 
 .addwrap p {
 color:  #030303;
 font-size: 16px;
-font-weight: 600;
+font-weight: 600 ! important;
 line-height: 22px;
 text-align: center;
 }
 
-.cities-wrapper {
-	border: 1px solid #ebebeb;
-	width: 33%;
+.city-address p {
+color:  #030303;
+font-size: 16px;
+font-weight: 600 ! important;
+line-height: 22px;
+text-align: center;
 }
 
 .city-name {
@@ -1568,13 +1571,34 @@ margin-bottom: 25px;
 	text-align:center;
 }
 
-.city-address {
-	    padding: 25px;
+
+
+@media screen and (max-width: 480px) 
+{
+	.cities-wrapper {
+	width: 100% ! important;
+}
 }
 
-.city-address h4 {
-	    margin-bottom: 25px;
+@media screen and (min-width: 481px) and (max-width: 767px) 
+{
+	.cities-wrapper {
+	width: 50% ! important;
 }
+}
+
+
+.cities-wrapper {
+	width: 33.33%;
+    float: left;
+    padding: 25px;
+}
+.city-address {
+	padding: 25px;
+	border: 1px solid #ebebeb;
+}
+
+
 
 .or {
 color:  #030303;
@@ -1603,4 +1627,12 @@ padding:20px;
 	cursor:pointer;
 	color:  #ffffff ! important;
 	text-decoration:none ! important;
+}
+
+.citywrap:after {
+	content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
 }
