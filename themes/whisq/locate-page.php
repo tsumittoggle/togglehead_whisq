@@ -1,10 +1,13 @@
 <?php
-/* Template Name:  Page*/
+/* Template Name:  Loacte Page*/
 
 get_header();
 
 //feature product section start here
 ?>
+			<div class="page-content">
+				<?php the_content(); ?>
+			</div>
    		<div class="locate-list" id="all">
         <div class="lcate-store-img">
           All
@@ -24,17 +27,42 @@ get_header();
 			endwhile;
 			wp_reset_query(); 
 			?>
-        <div class="FoodHall-address wrapper">
+
+		  <?php
+    	global $wpdb;
+			$tags = get_terms('post_tag');
+			?>
+			  <div class="select-section">
+			  <form action="#" name="cityselect" class="cityform" method="post">
+    	    <select name="select-city" id="cities" class="cities" >
+    	        <option name"city" value="city">city</option>
+    	    		<option name"city" value="city">all</option>
+							<?php
+							foreach ($tags as $tag){
+							?>
+								<option name="<?php echo $tag->name; ?>" value="<?php echo $tag->name; ?>"><?php echo $tag->name; ?></option>
+							<?php
+							}
+              ?>
+          </select>
+          </form>
+        </div> 
+    <div class="FoodHall-address addwrap">
 			<?php get_template_part( 'template-parts/locate-us/foodhall', 'address' ); ?>
 		</div>
 
-		<div class="Bigbazar-address wrapper">
+		<div class="Bigbazar-address addwrap">
 			<?php get_template_part( 'template-parts/locate-us/bigbazar', 'address' ); ?>
 		</div>
 
-		<div class="Hometown-address wrapper">
+		<div class="Hometown-address addwrap">
 			<?php get_template_part( 'template-parts/locate-us/hometown', 'address' ); ?>
 		</div>
+		<div class="or">or</div>
+		<div class="button-link">
+			<a href="#" title="buy our products online">buy our product online</a>
+		</div>
+
 <?php
 get_footer();
 ?>

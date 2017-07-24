@@ -1492,18 +1492,18 @@ Locate Us styling start from here
     top: 40%;
 }
 
-.store-title {
+.city-address .store-title {
 color:  rgb(186, 92, 130);
-font-size: 23px;/* Approximation due to font substitution */
+font-size: 23px;
 font-weight: 400;
-line-height: 26px;/* Approximation due to font substitution */
+line-height: 26px;
 }
 
-.FoodHall-address p {
+.addwrap p {
 color:  #030303;
-font-size: 16px;/* Approximation due to font substitution */
+font-size: 16px;
 font-weight: 600;
-line-height: 22px;/* Approximation due to font substitution */
+line-height: 22px;
 text-align: center;
 }
 
@@ -1515,11 +1515,12 @@ text-align: center;
 .city-name {
 	color:  #030303;
 	text-transform: uppercase;
-font-size: 25px;/* Approximation due to font substitution */
+font-size: 25px;
 font-weight: 600;
-line-height: 26px;/* Approximation due to font substitution */
+line-height: 26px;
 text-align: left;
-margin: 25px 0;
+margin-top: 25px;
+margin-bottom: 25px;
 }
 
 
@@ -1539,6 +1540,7 @@ margin: 25px 0;
 
 .select-section form {
 	display:inline-block;
+	text-align:center;
 }
 
 .select-section select {
@@ -1546,7 +1548,7 @@ margin: 25px 0;
 	-moz-appearance:none;
 }
 
-form:after {
+.cityform:after {
     content: '\f107';
     position: relative;
     right: 35px;
@@ -1554,4 +1556,51 @@ form:after {
     font-size: 23px;
     z-index: -1;
     font-family: FontAwesome;
+}
+
+.cityform {
+	text-align:center;
+	margin-top:50px;
+	margin-bottom:25px;
+}
+
+.select-section {
+	text-align:center;
+}
+
+.city-address {
+	    padding: 25px;
+}
+
+.city-address h4 {
+	    margin-bottom: 25px;
+}
+
+.or {
+color:  #030303;
+font-size: 25px;
+font-weight: 400;
+text-align: center;
+text-transform:uppercase;
+padding:20px;
+}
+
+.button-link {
+	font-size: 25px;
+	font-weight: 400;
+	text-align: center;
+	text-transform:uppercase;
+	background-color:#ba5c82;
+	padding: 20px;
+}
+
+.button-link a {
+	cursor:pointer;
+	color:  #ffffff;
+	text-decoration:none ! important;
+}
+.button-link a:hover {
+	cursor:pointer;
+	color:  #ffffff ! important;
+	text-decoration:none ! important;
 }

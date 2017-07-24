@@ -38,6 +38,10 @@ $(document).ready(function(){
   //adding class for add to card
   $('.product_type_simple').addClass('feature-btn');
 
+  var $feture_height = $('.feature-item').height();
+  var f = $feture_height + 80;
+  $('.feature-item').css('min-height', f + 'px');
+
   //setting height for carousal
   if(window.innerWidth < 768 ){
     jQuery('#myCarousel').css('height','auto');
@@ -105,15 +109,18 @@ $('.search-btn').click(function(){
 	  var id = $(this).attr("id");
 	  
 	  if(id == 'all'){
-		  $(".site-content-contain .wrapper").fadeIn();
+		  $(".addwrap").fadeOut();
+		  $(".addwrap").fadeIn();
 	  }
 	  else{
-		  $(".site-content-contain .wrapper").fadeOut();
+		  
+		  $(".addwrap").fadeOut();
 		  $("."+id+'-address').fadeIn();
 	  }
-	  
+	  console.log($('#cities :selected').val());
   });
+  
+  
 
 });
 })(jQuery);
-
