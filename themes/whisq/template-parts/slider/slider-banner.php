@@ -42,7 +42,7 @@
         <?php the_field('content'); ?>
       <?php endif; ?>
       <?php if( get_field('button_text') && get_field('button_url') ): ?>
-        <a class="banner-btn btn" href="<?php the_field('button_url'); ?>" title="<?php the_field('button_text'); ?>"><?php the_field('button_text'); ?></a>
+        <a class="btn bannerbtn" href="<?php the_field('button_url'); ?>" title="<?php the_field('button_text'); ?>"><?php the_field('button_text'); ?></a>
       <?php endif; ?>
     </div>
     </div>

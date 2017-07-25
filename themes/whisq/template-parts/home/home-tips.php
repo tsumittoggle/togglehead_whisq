@@ -10,14 +10,14 @@
 
 ?>
 
-<h4>ginius tips</h4>
+<h4>genius tips</h4>
 <div class="container tip-content">
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div id="myCarousel1" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel1" data-slide-to="1"></li>
+      <li data-target="#myCarousel1" data-slide-to="2"></li>
     </ol>
     <!-- Wrapper for slides -->
 
@@ -37,3 +37,5 @@
   </div>
   </div>
   </div>
+
+

@@ -19,5 +19,5 @@
 //copyright info
 ?>
 <div class="site-info">
-	<p>&copy; 2017 WhisQIndia. All Rights Resewrved. Crafted by <a href="https://www.togglehead.in/" title="Togglehead" target="_blank">Togglehead</a></p>
+	<p>&copy; 2017 WhisQIndia. All Rights Reserved. Crafted by <a href="https://www.togglehead.in/" title="Togglehead" target="_blank">Togglehead</a></p>
 </div><!-- .site-info -->
