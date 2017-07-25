@@ -1,10 +1,13 @@
 <?php
-/* Template Name:  Page*/
+/* Template Name:  Loacte Page*/
 
 get_header();
 
 //feature product section start here
 ?>
+			<div class="page-content">
+				<?php the_content(); ?>
+			</div>
    		<div class="locate-list" id="all">
         <div class="lcate-store-img">
           All
@@ -24,6 +27,26 @@ get_header();
 			endwhile;
 			wp_reset_query(); 
 			?>
+
+		  <?php
+    	global $wpdb;
+			$tags = get_terms('post_tag');
+			?>
+			  <div class="select-section">
+			  <form action="#" name="cityselect" method="post">
+    	    <select name="select-city" id="cities" class="cities" onchange="this.form.submit()">
+    	        <option name"city" value="city">select city</option>
+    	    		<option name"city" value="city">all city</option>
+							<?php
+							foreach ($tags as $tag){
+							?>
+								<option name="<?php echo $tag->name; ?>" value="<?php echo $tag->name; ?>"><?php echo $tag->name; ?></option>
+							<?php
+							}
+              ?>
+          </select>
+          </form>
+        </div> 
     <div class="FoodHall-address wrapper">
 			<?php get_template_part( 'template-parts/locate-us/foodhall', 'address' ); ?>
 		</div>
@@ -35,6 +58,11 @@ get_header();
 		<div class="Hometown-address wrapper">
 			<?php get_template_part( 'template-parts/locate-us/hometown', 'address' ); ?>
 		</div>
+		<span class="or">or</span>
+		<div class="button-link">
+			<a href="#" title="buy our product online">buy our product online</a>
+		</div>
+
 <?php
 get_footer();
 ?>
