@@ -35,7 +35,7 @@ get_header();
 			  <div class="select-section">
 			  <form action="#" name="cityselect" class="cityform" method="post">
     	    <select name="select-city" id="cities" class="cities" >
-    	        <option name"city" value="city">city</option>
+    	        <option name"city" value="city">State</option>
     	    		<option name"city" value="city">all</option>
 							<?php
 							foreach ($tags as $tag){
