@@ -136,15 +136,17 @@ $('.search-btn').click(function(){
 });
 
   //js for foodhall locate
+  $(".addwrap").fadeOut();
   
   $(".locate-list").on("click", function(){
 	  var id = $(this).attr("id");
 	  
 	  if(id == 'all'){
+		  $(".all").fadeIn();
 		  $(".addwrap").fadeOut();
-		  $(".addwrap").fadeIn();
 	  }
 	  else{		  
+		  $(".all").hide();
 		  $(".addwrap").fadeOut();
 		  $("."+id+'-address').fadeIn();
 	  }
