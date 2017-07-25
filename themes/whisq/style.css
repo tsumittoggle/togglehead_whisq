@@ -1499,20 +1499,19 @@ font-weight: 400;
 min-height: 61px;
 }
 
-.addwrap p {
+
+.city-address, p {
 color:  #030303;
-font-size: 16px;
-font-weight: 600 ! important;
-line-height: 22px;
+font-size: 15px;
 text-align: center;
+padding: 0px 25px;
 }
 
-.city-address p {
-color:  #030303;
-font-size: 16px;
-font-weight: 600 ! important;
-line-height: 22px;
+.cityphone {
+	color:  #030303;
+font-size: 15px;
 text-align: center;
+padding: 25px;
 }
 
 .city-name {
@@ -1573,14 +1572,14 @@ margin-bottom: 25px;
 
 
 
-@media screen and (max-width: 480px) 
+@media screen and (max-width: 767px) 
 {
 	.cities-wrapper {
 	width: 100% ! important;
 }
 }
 
-@media screen and (min-width: 481px) and (max-width: 767px) 
+@media screen and (min-width: 768px) and (max-width: 900px) 
 {
 	.cities-wrapper {
 	width: 50% ! important;
@@ -1594,8 +1593,11 @@ margin-bottom: 25px;
     padding: 25px;
 }
 .city-address {
-	padding: 25px;
+	padding-top:25px;
 	border: 1px solid #ebebeb;
+	min-height: 400px;
+	position:relative;
+	overflow:hidden;
 }
 
 
@@ -1635,4 +1637,39 @@ padding:20px;
     width: 0;
     height: 0;
     clear: both;
+}
+
+.citymap {
+	border-top: 1px solid #ebebeb;
+	width: 100%;
+    padding: 20px 0;
+	font-weight: 600;
+    font-size: 12px;
+}
+
+.city-address:hover .cityhoverwrap {
+	bottom:0px;
+}
+
+@media screen and (max-width: 767px) 
+{
+	.city-address .cityhoverwrap {
+	bottom:0% ! important;
+}
+}
+
+.cityphone {
+	bottom:0% ! important;
+}
+
+.cityhoverwrap {
+	position: absolute;
+    bottom: -58px;	
+    left: 0;
+	width:100%;	
+	transition:all 0.5s ease;
+}
+
+.select-section select:focus, select:active, select:hover option {
+ outline :none;
 }
