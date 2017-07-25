@@ -47,6 +47,49 @@ get_header();
           </select>
           </form>
         </div> 
+		<div class="all">
+		<?php	
+			foreach ($tags as $tag){
+				?> 
+				  <?php
+						$store = array( 
+							'post_type' => 'address', 
+							'posts_per_page' => -1,
+							'tag' => $tag->name
+							);
+						$store_list = new WP_Query( $store );
+						if ( $store_list->have_posts() ) {?>
+						<div class="wrapper citywrap <?php echo $tag->name; ?>">
+						<div class="city-name"><?php echo $tag->name; ?></div>
+				 
+				 <?php
+						while ( $store_list->have_posts() ) : $store_list->the_post();
+						?><div class="cities-wrapper">
+						
+							<div class="city-address">
+			          <h4 class="store-title"><?php the_title(); ?></h4>
+			          <?php the_content(); ?>
+					  <div class="cityhoverwrap">
+					  <div class="cityphone">
+						+91 9768208409
+						</div>
+						<div class="citymap">
+						Google Map
+						</div>
+					</div>
+			         </div>
+					 </div>
+						<?php
+						endwhile; 
+						?>
+						</div>
+						<?php 
+					}
+						wp_reset_query(); 
+					
+				}
+	 ?>    
+		</div>
     <div class="FoodHall-address addwrap">
 			<?php get_template_part( 'template-parts/locate-us/foodhall', 'address' ); ?>
 		</div>

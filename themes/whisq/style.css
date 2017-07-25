@@ -1517,12 +1517,12 @@ padding: 25px;
 .city-name {
 	color:  #030303;
 	text-transform: uppercase;
-font-size: 25px;
-font-weight: 600;
-line-height: 26px;
-text-align: left;
-margin-top: 25px;
-margin-bottom: 25px;
+	font-size: 25px;
+	font-weight: 600;
+	line-height: 26px;
+	text-align: left;
+	margin-top: 25px;
+	padding: 0px 25px;
 }
 
 
