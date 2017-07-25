@@ -1690,7 +1690,7 @@ header li .sub-menu:after {display: none;}
 Locate Us styling start from here
 ===================================================================*/
 
-/*.locate-list {
+.locate-list {
 	width:25%;
 	height: 110px;
 	float:left;
@@ -1715,24 +1715,35 @@ Locate Us styling start from here
     top: 40%;
 }
 
-.store-title {
+.city-address .store-title {
 color:  rgb(186, 92, 130);
 font-size: 23px;
 font-weight: 400;
 line-height: 26px;
 }
 
-/*.FoodHall-address p {
+.FoodHall-address p {
 color:  #030303;
 font-size: 16px;/* Approximation due to font substitution */
-/*font-weight: 600;
-line-height: 22px; Approximation due to font substitution 
+font-weight: 600;
+line-height: 22px; 
+min-height: 61px;
+}
+
+.addwrap p {
+color:  #030303;
+font-size: 16px;
+font-weight: 600 ! important;
+line-height: 22px;
 text-align: center;
 }
 
-.cities-wrapper {
-	border: 1px solid #ebebeb;
-	width: 33%;
+.city-address p {
+color:  #030303;
+font-size: 16px;
+font-weight: 600 ! important;
+line-height: 22px;
+text-align: center;
 }
 
 .city-name {
@@ -1742,7 +1753,8 @@ font-size: 25px;
 font-weight: 600;
 line-height: 26px;
 text-align: left;
-margin: 25px 0;
+margin-top: 25px;
+margin-bottom: 25px;
 }
 
 
@@ -1762,6 +1774,7 @@ margin: 25px 0;
 
 .select-section form {
 	display:inline-block;
+	text-align:center;
 }
 
 .select-section select {
@@ -1769,5 +1782,89 @@ margin: 25px 0;
 	-moz-appearance:none;
 }
 
+.cityform:after {
+    content: '\f107';
+    position: relative;
+    right: 35px;
+	color:#5b5b5c;
+    font-size: 23px;
+    z-index: -1;
+    font-family: FontAwesome;
+}
 
-*/
+.cityform {
+	text-align:center;
+	margin-top:50px;
+	margin-bottom:25px;
+}
+
+.select-section {
+	text-align:center;
+}
+
+
+
+@media screen and (max-width: 480px) 
+{
+	.cities-wrapper {
+	width: 100% ! important;
+}
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) 
+{
+	.cities-wrapper {
+	width: 50% ! important;
+}
+}
+
+
+.cities-wrapper {
+	width: 33.33%;
+    float: left;
+    padding: 25px;
+}
+.city-address {
+	padding: 25px;
+	border: 1px solid #ebebeb;
+}
+
+
+
+.or {
+color:  #030303;
+font-size: 25px;
+font-weight: 400;
+text-align: center;
+text-transform:uppercase;
+padding:20px;
+}
+
+.button-link {
+	font-size: 25px;
+	font-weight: 400;
+	text-align: center;
+	text-transform:uppercase;
+	background-color:#ba5c82;
+	padding: 20px;
+}
+
+.button-link a {
+	cursor:pointer;
+	color:  #ffffff;
+	text-decoration:none ! important;
+}
+.button-link a:hover {
+	cursor:pointer;
+	color:  #ffffff ! important;
+	text-decoration:none ! important;
+}
+
+.citywrap:after {
+	content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
+}
+
