@@ -122,6 +122,10 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
     vertical-align: baseline;
   }
 
+  h1 img {
+    height: 110px;
+  }
+
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure,
   footer, header, hgroup, menu, nav, section {
@@ -200,10 +204,22 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
   font-style: normal;
   font-weight: bold;
 }
-a { display: inline-block; }
+
+body a { 
+  display: inline-block;
+  color: #000;
+   }
 
 .woocommerce-MyAccount-content,
 .sfsi_footerLnk { display: none; }
+
+.count {
+  display: inline-block;
+  position: relative;
+  top: 2px;
+}
+
+body {font: 400 14px/24px 'Open Sans', sans-serif;}
 
 /*==================================================================
 Header styling strat from here
@@ -220,13 +236,16 @@ Header styling strat from here
   text-align: center;
 }
 
+.desktop-banner {height: 100%;}
+
  header {
-  box-shadow: 0px 7px 8px 0px rgba(0, 0, 0, 0.36);
+  padding-bottom: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
   position: relative;
   z-index: 100;
 }
 
-header .sub-menu {box-shadow: 0px 7px 14px 0px rgba(0, 0, 0, 0.54);}
+header .sub-menu {box-shadow: 0 0 20px rgba(0,0,0,0.15);}
 
 nav li {
   display: inline-block;
@@ -236,7 +255,7 @@ nav li {
 header nav ul {position: relative;}
 
 header h1 {
-  margin: 0 30px 0 0;
+  margin: -11px 30px 0 0;
   float: left;
 }
 
@@ -247,13 +266,14 @@ header li .sub-menu {
   position: absolute;
   z-index: 1000;
   background: #fff;
-  top: 78px;
+  top: 67px;
   text-align: left;
 }
 
 header li .sub-menu li {
   display: block;
-  margin: 10px auto;
+  padding: 0 0 20px;
+  margin: 0 auto;
   padding-left: 30px;
 }
 
@@ -261,15 +281,19 @@ header li .menu-open {
   display: inline-block;
   left: -50px;
 }
+header li .menu-open li:first-child {
+  margin-top: 30px;
+}
 
 header li .sub-menu li a {
   color: #000;
   font-weight: 400;
+  text-transform: capitalize;
 }
 
 .sub-menu li:hover a {color: #be5f84;}
 
-header li .sub-menu:after {
+header li .sub-menu li:after {
   content: '';
   display: block;
   width: 50%;
@@ -283,9 +307,6 @@ header li .sub-menu:after {
 
 .header li .menu-open {display: inline-block;}
 
-header li:nth-child(2) .sub-menu:after {background-image: url(../../uploads/whisq-product.jpg);}
-
-header li:nth-child(1) .sub-menu:after {background-image: url(../../uploads/menu-second.jpg);}
 
 .menu-item-has-children {position: relative;}
 
@@ -302,15 +323,19 @@ header .menu-item-has-children:after {
     font-weight: normal;
 }
 
+header .menu-item-has-children:focus:after {color: #be5f84;}
+
+.header-bottom {margin-top: -15px;}
+
 header .menu-item-has-children:hover:after {color: #be5f84;}
 
 .header-section {
-  margin: 50px 0 0 40px;
+  margin: 40px 0 0 40px;
   float: left;
 }
 
 .search {
-  margin: 50px 12px 0 0;
+  margin: 40px 12px 0 0;
   float: right;
 }
 
@@ -353,6 +378,8 @@ nav li a {
   font: 600 16px/20px 'Open Sans', sans-serif;
   text-decoration: none;
   text-transform: uppercase; 
+  outline: none !important;
+  text-decoration: none !important;
 }
 
 nav li:hover a {
@@ -360,6 +387,8 @@ nav li:hover a {
   font-weight: 600;
   text-decoration: none;
 }
+
+nav li a:focus {color: #be5f84;}
 
 .header-top {
   width: 90%;
@@ -369,13 +398,16 @@ nav li:hover a {
   text-align: right;
 }
 
-.shop-cart i,
 .shop-cart,
 .shop-cart:hover {
-  margin-right: 8px;
   color: #000;
-  font-size: 18px;
+  font-size: 13px;
   text-decoration: none;
+}
+
+.shop-cart i {
+  margin-right: 12px;
+  font-size: 15px;
 }
 
 .user-btn i {
@@ -384,11 +416,11 @@ nav li:hover a {
   border: 1px solid;
   border-radius: 50%;
   color: #000;
-  font-size: 18px;
+  font-size: 15px;
 }
  
 .user-btn {
-  margin-right: 15px;
+  margin-right: 25px;
   position: relative;
 }
 
@@ -398,12 +430,111 @@ nav li:hover a {
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 2px;
-  left: -5px;
+  top: 4px;
+  left: 14px;
   color: #000;
   font-family: FontAwesome;
 }
 
+.ffa-shopping-cart {
+  margin-right: 6px;
+  margin-bottom: 1px;
+}
+
+.sticky {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+  background: #fff;
+}
+.sticky h1 img {height: 80px;}
+
+.sticky .header-section {margin: 20px 0 0 40px;}
+
+.sticky .shop-cart {    
+  position: relative;
+  top: 23px;
+  right: 65px;
+}
+
+.sticky .user-btn {display: none;}
+
+.sticky .search {margin: 22px 12px 0 0;}
+
+/*==================================================================
+Hover image mrnu styling strat from here
+===================================================================*/
+
+header li .sub-menu:after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 75%;
+  position: absolute;
+  top: 27px;
+  right: 28px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: -1;
+}
+
+.sub-menu .menu-item:after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 75%;
+  position: absolute;
+  top: 27px;
+  right: 28px;
+  z-index: 1000;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.sub-menu .menu-item {
+   z-index: 1000;
+}
+
+.beggning-menu:hover:after {background-image: url(../../uploads/The-beginning.jpg);}
+
+.creators-menu:hover:after {background-image: url(../../uploads/the-creators.jpg);}
+
+.pnas-menu:hover:after {background-image: url(../../uploads/pans.jpg);}
+
+.spatulas-menu:hover:after {background-image: url(../../uploads/spatulas.jpg);}
+
+.bowls-menu:hover:after {background-image: url(../../uploads/bowls.jpg);}
+
+.bakery-menu:hover:after {
+  background-image: url(../../uploads/bakery-accessories.jpg);
+}
+
+header li:nth-child(2) .sub-menu:after {background-image: url(../../uploads/products-default.jpg);}
+
+header li:nth-child(1) .sub-menu:after {background-image: url(../../uploads/who-we-are-default.jpg);}
+
+
+.back-top {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    position: fixed;
+    right: 35px;
+    bottom: 35px;
+    z-index: 1000;
+    background: #be5f84;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.back-top i {
+    color: #fff;
+    padding: 12px;
+    font-size: 26px;
+}
+
+.remove-top {display: none;}
 /*==================================================================
 User profile styling strat from here
 ===================================================================*/
@@ -424,7 +555,10 @@ User profile styling strat from here
   margin-bottom: 15px;
 }
 
-.user-profile li a {font-weight: normal;}
+.user-profile li a {
+  font-weight: normal;
+  font-size: 13px;
+}
 
 .user-profile li:hover a {font-weight: normal;}
 
@@ -466,9 +600,10 @@ Banner slider styling strat from here
 }
 
 .para {
-  margin-bottom: 25px;
+  width: 60%;
+  margin: 0 auto 25px;
   color: #3c3c3c;
-  font: 400 16px/32px 'Open Sans', sans-serif;
+  font: 400 14px/24px 'Open Sans', sans-serif;
 }
 
 .owl-item {width: 30%;}
@@ -497,18 +632,34 @@ Banner slider styling strat from here
   font: 400 16px/24px 'Open Sans', sans-serif;
 }
 
-.banner-btn {
+body #myCarousel .bannerbtn {
   margin-top: 25px;
-  box-shadow: 0px 4px 3px 0px #b7b7b7;
+  color: #000;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0px 5px 0px 0px #b7b7b7;
 }
 
-.banner-btn:hover {
-  box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0);
-  -webkit-transition: all 0.6;
-  -moz-transition: all 0.6;
-  transition: all 0.6;
+body #myCarousel .btn:after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 100%;
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background-color: rgba(128, 128, 128, 0.21);
 }
 
+body #myCarousel .btn:hover:after {
+  text-decoration: none;
+    width: 100%;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  transition: all 0.8s;
+}
 /*==================================================================
 Feature product styling strat from here
 ===================================================================*/
@@ -522,13 +673,15 @@ Feature product styling strat from here
 }
 
 .feature-item:hover {
-    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.12);
     -webkit-transition: all 1s;
     -moz-transition: all 1s;
     transition: all 1s;
+    overflow: hidden;
 }
 
 .feature-item h3 {
+  margin-top: 45px;
   margin-bottom: 0;
   color: #b95b81;
   font: 900 16px/30px 'Open Sans', sans-serif;
@@ -559,7 +712,7 @@ Feature product styling strat from here
   box-shadow: 0px 5px 0px 0px #9a506e;
 } 
 
-.added_to_cart {display: inline-block;}
+/*.added_to_cart {display: inline-block;}*/
 
 .feature-btn:after,
 .added_to_cart:after {
@@ -584,7 +737,8 @@ Feature product styling strat from here
   text-decoration: none;
 }
 
-.feature-item:hover .feature-btn {
+.feature-item:hover .feature-btn,
+.feature-item:hover .added_to_cart  {
   display: inline-block;
   text-decoration: none
 }
@@ -626,6 +780,7 @@ body .btn {
 }
 
 .wrapper .btn:hover:after,
+#myCarousel .btn:hover:after,
 .feature .feature-btn:hover:after {
   text-decoration: none;
     width: 100%;
@@ -640,6 +795,19 @@ body .btn {
 .sbi_follow_btn {
   position: relative;
   z-index: 1000;
+}
+
+#sbi_load {position: relative;}
+
+#sbi_load:before {
+  content: '#BakeWithLove #WhisQIt ';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  color: #000;
+  font: 500 26px/26px 'Open Sans', sans-serif;
 }
 
 .sbi_follow_btn a:hover {opacity: 1;}
@@ -689,7 +857,7 @@ body .btn {
 }
 
 .owl-next:after {
-  content: ' ';
+  content: '';
   width: 100%;
   height: 100%;
   position: absolute;
@@ -727,6 +895,15 @@ body .btn {
   display: inline-block;
   width: 100%;
   height:auto;
+}
+
+.feature .owl-theme .owl-nav .disabled {opacity: 1;}
+
+.feature .owl-theme .owl-nav [class*=owl-]:hover {
+ background: #b95b81;
+ transition: all 0.8s;
+ -webkit-transition: all 0.8s;
+ -moz-transition: all 0.8s;
 }
 /*==================================================================
 Recipes styling start from here
@@ -773,22 +950,22 @@ Recipes styling start from here
 }
 
 .recipe-more {
-  width: 60px;
-  height: 58px;
+  width: 52px;
+  height: 50px;
   position: absolute;
-  top: -32px;
-  right: 90px;
+  top: -28px;
+  right: 16px;
   background: #be5f84;
-  padding: 20px;
+  padding: 16px 0 0 2px;
   border-radius: 50%;
   opacity: 0;
 }
 
 .recipe-more:hover {
-  opacity: 0.6;
-  -webkit-transition: all 0.6s;
-  -moz-transition: all 0.6s;
-  transition: all 0.6s;
+  opacity: 0.5;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .recipe-more:after {
@@ -846,7 +1023,7 @@ Event And Tips styling start from here
   width: 5%;
   height: 10%;
   position: absolute;
-  top: 4px;
+  top: 1px;
   left: 8px;
   font-family: FontAwesome; 
   font-size: 24px;
@@ -877,18 +1054,18 @@ Event And Tips styling start from here
 }
 
 .event-date {
-  padding: 8px;
+  padding: 2px 2px 7px 2px;
   background: #be5f84;
   position: absolute;
-  top: 0;
-  left: 12%;
+  top: 23px;
+  left: 5%;
   z-index: 100;
 }
 
 .time-address {margin-bottom: 18px;}
 
 .event-content {
-  width: 76%;
+  width: 90%;
   margin: 88px auto 60px;
   text-align: left;
 }
@@ -903,9 +1080,10 @@ Event And Tips styling start from here
 
 .event-date span {
   display: block;
+  padding: 6px 8px 0px 8px;
   text-transform: uppercase;
   color: #fff;
-  font: 600 25px/28px 'Open Sans', sans-serif;
+  font: 600 15px/16px 'Open Sans', sans-serif;
 }
 
 .event-link a {margin-right: 16px;}
@@ -917,7 +1095,7 @@ About us styling start from here
   width: 80%;
   margin: 15px auto 40px;
   color: #3c3c3c;
-  font: 400 16px/25px 'Open Sans', sans-serif;
+  font: 400 14px/24px 'Open Sans', sans-serif;
 }
 
 /*==================================================================
@@ -941,7 +1119,7 @@ Store styling start from here
   border-radius: 50%;
   position: relative;
   left: 0;
-  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.12);
   list-style: none;
   text-align: center;
 }
@@ -955,7 +1133,7 @@ Store styling start from here
 }
 
 .img-outer:hover {
-  box-shadow:0 0 20px rgba(0,0,0,0.15);
+  box-shadow:0 0 15px rgba(0, 0, 0, 0.12);
   -webkit-transition: all 1s;
   -moz-transition: all 1s;
   transition: all 1s;
@@ -982,7 +1160,7 @@ Store styling start from here
   text-align: center;
 }
 
-.sbi_follow_btn {margin: 30px 0 50px;}
+.sbi_follow_btn {margin: 80px 0 50px;}
 
 .sbi_follow_btn a {box-shadow: 0px 5px 0px 0px #9a506e;}
 
@@ -1012,7 +1190,7 @@ body .banner-btn {
 
 .tips h4 {
   width: 80%;
-  padding: 20px 0 16px;
+  padding: 15px 0 16px;
   margin: 0 auto;
   position: relative;
   z-index: 100;
@@ -1024,7 +1202,7 @@ body .banner-btn {
 
 .wrapper .tip-content {
   min-height: 374px;
-  margin-top: -30px;
+  margin-top: -23px;
   padding: 95px 35px 60px;
   border: 1.5px solid #ebebeb;
 }
@@ -1034,7 +1212,8 @@ body .banner-btn {
 .tips .carousel-indicators li {
   border: 0;
   background: #a1a1a1;
-  cursor: initial;
+  height: 10px;
+  width: 10px;
 }
 
 .tips .carousel-indicators .active {
@@ -1058,9 +1237,14 @@ footer {
 
 .footer-section:last-child {margin-right: 0;}
 
-.footer-section li li a {font: 400 14px/20px 'Open Sans', sans-serif;}
+.footer-section li li a {
+  font: 400 15px/20px 'Open Sans', sans-serif;
+  text-transform: capitalize;
+}
 
-.footer-section li a {font: 600 14px/20px 'Open Sans', sans-serif;}
+.footer-section li a {
+  font: 600 15px/20px 'Open Sans', sans-serif;
+}
 
 .footer-section ul li li {margin: 0 0 12px;}
 
@@ -1088,10 +1272,12 @@ footer {
 }
 
 .site-info {
-  padding: 20px 50px 18px;
-  background: rgba(128, 128, 128, 0.37);
+  padding: 17px 50px 13px;
+  background: #f7f7f7;
   text-align: center;
 }
+
+.site-info p {font-size: 12px;}
 
 .site-info a {color: #be5f84;}
 
@@ -1110,6 +1296,20 @@ footer {
  transition: all 0.6;
 }
 
+.inerCnt {
+  margin: 0 -8px;
+}
+
+.close-serach {display: none;}
+
+.inerCnt:first-child {
+  margin-left: -10px;
+}
+
+.sfsi_wicons {width: 52px !important;}
+
+.sfsi_wicons {padding: 6px !important;}
+
 /*==================================================================
 Mobile view Home Page styling start from here
 ===================================================================*/
@@ -1127,6 +1327,8 @@ Mobile view Home Page styling start from here
   float: none;
   left: 0;
 }
+
+.desktop-banner {height: 100%;}
 
 .store-title {display: inline-block;}
 
@@ -1158,7 +1360,9 @@ header nav li {margin: 0px 40px;}
 
   header nav li {margin: 0px 20px;}
 
-  header h1 {margin-right: 5px;}
+  header h1 {
+        margin: -6px 5px 0 0;
+  }
 
   .wrapper {width: 96%;}
 
@@ -1177,7 +1381,24 @@ header nav li {margin: 0px 40px;}
   header h1 img {
     width: 80px;    
     height: 75px;
-  }  
+  } 
+
+.beggning-menu:hover:after,
+.creators-menu:hover:after,
+.pnas-menu:hover:after,
+.spatulas-menu:hover:after,
+.bakery-menu:hover:after,
+.bowls-menu:hover:after {display: none;}
+
+header li:nth-child(2) .sub-menu:after {background-image: url(../../uploads/products-default.jpg);}
+
+header li:nth-child(1) .sub-menu:after {background-image: url(../../uploads/who-we-are-default.jpg);}
+
+  .event-link {margin-top: 30px;14} 
+
+  .event {
+    background-size: auto 100% !important;
+  }
 
   .recipes-list h3 {width: 90%;}
 
@@ -1193,13 +1414,15 @@ header nav li {margin: 0px 40px;}
 
   .store-img {box-shadow: 0px 0px 13px 3px rgba(158, 158, 158, 0.48);}
   
-  .header-section {margin: 25px 0 0 40px;}
+  .header-section {margin: 34px 0 0 40px;}
 
   .hamburger {
     display: inline-block;
     position: relative;
     z-index: 100000;
   }
+
+  body .para {width: 90%;}
     
   .hamburger span {
     display: block;
@@ -1336,7 +1559,7 @@ header li .sub-menu:after {display: none;}
 
    .slider-content {
     width: 100%;
-    top: 50%;
+    top: 60%;
     right: 0;
     transform: none;
    }
@@ -1387,7 +1610,7 @@ header li .sub-menu:after {display: none;}
     margin-top: 6px;
 }
 
- .slider-content {top: 44%;}
+ .slider-content {top: 60%;}
 
  .carousel-indicators {bottom: 0;}
 
@@ -1414,7 +1637,7 @@ header li .sub-menu:after {display: none;}
     line-height: 16px;
   }
 
-  .slider-content {top: 42%;}
+  .slider-content {top: 54%;}
 
   body .banner-btn {
     padding: 6px 11px;
@@ -1422,7 +1645,7 @@ header li .sub-menu:after {display: none;}
     font-size: 12px;
   }
 
-  .carousel-indicators {display: none;}
+ /* .carousel-indicators {display: none;}*/
 
   .event-link a {margin-bottom: 15px;}
 
@@ -1458,7 +1681,7 @@ header li .sub-menu:after {display: none;}
     margin-top: 7px;
   }
 
-  .slider-content {top: 38%;}
+  .slider-content {top: 45%;}
 
 }
 
@@ -1467,7 +1690,7 @@ header li .sub-menu:after {display: none;}
 Locate Us styling start from here
 ===================================================================*/
 
-.locate-list {
+/*.locate-list {
 	width:25%;
 	height: 110px;
 	float:left;
@@ -1494,16 +1717,16 @@ Locate Us styling start from here
 
 .store-title {
 color:  rgb(186, 92, 130);
-font-size: 23px;/* Approximation due to font substitution */
+font-size: 23px;
 font-weight: 400;
-line-height: 26px;/* Approximation due to font substitution */
+line-height: 26px;
 }
 
-.FoodHall-address p {
+/*.FoodHall-address p {
 color:  #030303;
 font-size: 16px;/* Approximation due to font substitution */
-font-weight: 600;
-line-height: 22px;/* Approximation due to font substitution */
+/*font-weight: 600;
+line-height: 22px; Approximation due to font substitution 
 text-align: center;
 }
 
@@ -1515,9 +1738,9 @@ text-align: center;
 .city-name {
 	color:  #030303;
 	text-transform: uppercase;
-font-size: 25px;/* Approximation due to font substitution */
+font-size: 25px;
 font-weight: 600;
-line-height: 26px;/* Approximation due to font substitution */
+line-height: 26px;
 text-align: left;
 margin: 25px 0;
 }
@@ -1546,18 +1769,5 @@ margin: 25px 0;
 	-moz-appearance:none;
 }
 
-form:after {
-    content: '\f107';
-    /* display: block; */
-    /* width: 25%; */
-    /* height: 100%; */
-    position: relative;
-    /* top: -13px; */
-    /* right: -31px; */
-    right: 35px;
-	color:#5b5b5c;
-    font-size: 23px;
-    z-index: -1;
-    font-family: FontAwesome;
-}
 
+*/

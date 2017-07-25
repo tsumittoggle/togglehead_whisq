@@ -12,7 +12,7 @@
 
 <div class="wrapper">
 	<div class="feature">
-		<h2 class="heading">featured product</h2>
+		<h2 class="heading">featured products</h2>
 		<p class="para">Beautiful, innovative products, designed in-house just for you.</p>
 		<div class="owl-carousel owl-theme">
 			<?php

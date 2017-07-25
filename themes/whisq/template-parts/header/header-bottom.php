@@ -16,7 +16,7 @@
 			  $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 			  ?>
 			  <h1>
-			  	<a href=""><img src="<?php echo $image[0]; ?>"/></a>
+			  	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="WhisQ"><img src="<?php echo $image[0]; ?>"/></a>
 			  </h1>
 	    <?php
 				if ( has_nav_menu( 'header-menu' ) ) : ?>
@@ -38,7 +38,7 @@
 				<?php endif;
     ?>
     <div class="search">
-    	<button class="search-btn" title="Secrh"><i class="fa fa-search" aria-hidden="true"></i></button>
+    	<button class="search-btn" title="Secrh"><i class="fa fa-search" aria-hidden="true"></i><i class="fa fa-times close-serach" aria-hidden="true"></i></button>
     	<?php echo do_shortcode('[yith_woocommerce_ajax_search]');?>
     </div>
 	</div><!-- .wrap -->
