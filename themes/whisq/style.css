@@ -1722,14 +1722,6 @@ font-weight: 400;
 line-height: 26px;
 }
 
-.FoodHall-address p {
-color:  #030303;
-font-size: 16px;/* Approximation due to font substitution */
-font-weight: 600;
-line-height: 22px; 
-min-height: 61px;
-}
-
 
 .city-address, p {
 color:  #030303;
