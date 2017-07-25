@@ -4,10 +4,20 @@
 get_header();
 
 //feature product section start here
-?>
-			<div class="page-content">
+?>	
+		<div class="whisqtitle">
+			<h2><?php the_title(); ?></h2>
+			<p class="wrapper breadcrumb-url"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Home</a> > <span><?php the_title(); ?></span></p>
+		</div>
+		
+       <?php
+		  $store_list = new WP_Query( $store );
+		  wp_reset_query(); 
+	    ?>
+			<div class="wrapper locatecontent page-content">
 				<?php the_content(); ?>
 			</div>
+		<div>	
    		<div class="locate-list" id="all">
         <div class="lcate-store-img">
           All
@@ -27,7 +37,7 @@ get_header();
 			endwhile;
 			wp_reset_query(); 
 			?>
-
+			</div>
 		  <?php
     	global $wpdb;
 			$tags = get_terms('post_tag');
@@ -70,12 +80,16 @@ get_header();
 			          <h4 class="store-title"><?php the_title(); ?></h4>
 			          <?php the_content(); ?>
 					  <div class="cityhoverwrap">
+					  <?php if(get_field('contact_number')): ?>
 					  <div class="cityphone">
-						+91 9768208409
+						<a href="tel:<?php the_field('contact_number'); ?>"><i class="fa fa-phone phoneico" aria-hidden="true"></i> <?php the_field('contact_number'); ?></a>
 						</div>
+						<?php endif; ?>
+						<?php if(get_field('city_map')): ?>
 						<div class="citymap">
-						Google Map
+						<a href="<?php the_field('city_map_url'); ?>" title="<?php the_field('city_map'); ?>" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php the_field('city_map'); ?></a>
 						</div>
+						<?php endif; ?>
 					</div>
 			         </div>
 					 </div>

@@ -1643,8 +1643,27 @@ padding:20px;
 	border-top: 1px solid #ebebeb;
 	width: 100%;
     padding: 20px 0;
+}
+
+.citymap a {	
 	font-weight: 600;
     font-size: 12px;
+	text-decoration:none ! important;
+	color:#030303;
+}
+
+.citymap a:hover {	
+	color:#030303;
+}
+
+.cityphone a {	
+    font-size: 15px;
+	text-decoration:none ! important;
+	color:#030303;
+}
+
+.cityphone a:hover {	
+	color:#030303;
 }
 
 .city-address:hover .cityhoverwrap {
@@ -1664,7 +1683,7 @@ padding:20px;
 
 .cityhoverwrap {
 	position: absolute;
-    bottom: -58px;	
+    bottom: -62px;	
     left: 0;
 	width:100%;	
 	transition:all 0.5s ease;
@@ -1672,4 +1691,52 @@ padding:20px;
 
 .select-section select:focus, select:active, select:hover option {
  outline :none;
+}
+
+.whisqtitle {
+	font-size:30px;
+	background-color: #ba5c82;
+	text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    padding-top: 10px;
+}
+
+.breadcrumb-url {
+	color: #fff;
+    text-transform: none;
+    text-align: right;
+	padding-bottom: 10px;
+}
+
+.breadcrumb-url a {
+	color: #fff;
+	text-decoration:none ! important;
+}
+
+.breadcrumb-url a:hover {
+	color: #fff;
+}
+
+.whisqtitle h2 {
+	margin-bottom:0px ! important;
+}
+
+.locatecontent {
+	    padding: 50px 0px;
+}
+
+.locatecontent p {
+    font-size: 14px ! important;
+    margin: 0 auto 20px auto;
+}
+
+.locatecontent p:last-child {
+    font-size: 14px ! important;
+    margin: 0 auto 0px auto;
+}
+
+.phoneico {
+	color: #ba5c82;
+    font-size: 15px;
 }
