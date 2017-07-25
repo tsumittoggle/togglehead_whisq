@@ -9,6 +9,7 @@
  */
 
 ?>
+<div>
 <!--<h2>bigbazar</h2>-->
       <?php
     	global $wpdb;
@@ -83,4 +84,5 @@
 				}
 	 ?>    
 	    
+	    </div>
 	    </div>

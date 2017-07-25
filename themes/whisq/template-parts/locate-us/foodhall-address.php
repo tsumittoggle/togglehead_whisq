@@ -9,6 +9,7 @@
  */
 
 ?>
+<div>
 	<!--<h2>foodhall</h2>-->
       <?php
     	global $wpdb;
@@ -80,4 +81,5 @@
 						wp_reset_query(); 					
 				}
 	 ?>    
+	    </div>
 	    </div>
