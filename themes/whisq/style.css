@@ -1720,33 +1720,32 @@ color:  rgb(186, 92, 130);
 font-size: 23px;
 font-weight: 400;
 line-height: 26px;
+padding-bottom: 20px;
 }
 
 .addwrap p {
 color:  #030303;
-font-size: 16px;
-font-weight: 600 ! important;
-line-height: 22px;
+font-size: 15px;
 text-align: center;
+padding: 0px 25px;
 }
 
-.city-address p {
-color:  #030303;
-font-size: 16px;
-font-weight: 600 ! important;
-line-height: 22px;
+.cityphone {
+	color:  #030303;
+font-size: 15px;
 text-align: center;
+padding: 25px;
 }
 
 .city-name {
 	color:  #030303;
 	text-transform: uppercase;
-font-size: 25px;
-font-weight: 600;
-line-height: 26px;
-text-align: left;
-margin-top: 25px;
-margin-bottom: 25px;
+	font-size: 25px;
+	font-weight: 600;
+	line-height: 26px;
+	text-align: left;
+	margin-top: 25px;
+	padding: 0px 25px;
 }
 
 
@@ -1796,14 +1795,14 @@ margin-bottom: 25px;
 
 
 
-@media screen and (max-width: 480px) 
+@media screen and (max-width: 767px) 
 {
 	.cities-wrapper {
 	width: 100% ! important;
 }
 }
 
-@media screen and (min-width: 481px) and (max-width: 767px) 
+@media screen and (min-width: 768px) and (max-width: 991px) 
 {
 	.cities-wrapper {
 	width: 50% ! important;
@@ -1817,8 +1816,11 @@ margin-bottom: 25px;
     padding: 25px;
 }
 .city-address {
-	padding: 25px;
+	padding-top:25px;
 	border: 1px solid #ebebeb;
+	min-height: 400px;
+	position:relative;
+	overflow:hidden;
 }
 
 
@@ -1860,3 +1862,112 @@ padding:20px;
     clear: both;
 }
 
+.citymap {
+	border-top: 1px solid #ebebeb;
+	width: 100%;
+    padding: 20px 0;
+}
+
+.citymap a {	
+	font-weight: 600;
+    font-size: 12px;
+	text-decoration:none ! important;
+	color:#030303;
+}
+
+.citymap a:hover {	
+	color:#030303;
+}
+
+.cityphone a {	
+    font-size: 15px;
+	text-decoration:none ! important;
+	color:#030303;
+}
+
+.cityphone a:hover {	
+	color:#030303;
+}
+
+.city-address:hover .cityhoverwrap {
+	bottom:0px;
+}
+
+@media screen and (max-width: 767px) 
+{
+	.city-address .cityhoverwrap {
+	bottom:0% ! important;
+}
+}
+
+.cityphone {
+	bottom:0% ! important;
+}
+
+.cityhoverwrap {
+	position: absolute;
+    bottom: -62px;	
+    left: 0;
+	width:100%;	
+	transition:all 0.5s ease;
+}
+
+.select-section select:focus, select:active, select:hover option {
+ outline :none;
+}
+
+.whisqtitle {
+	font-size:30px;
+	background-color: #ba5c82;
+	text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    padding-top: 10px;
+}
+
+.breadcrumb-url {
+	color: #fff;
+    text-transform: none;
+    text-align: right;
+	padding-bottom: 10px;
+}
+
+@media screen and (max-width: 767px) 
+{
+	.breadcrumb-url {
+	text-align: center ! important;
+	padding-top: 5px;
+}
+}
+
+.breadcrumb-url a {
+	color: #fff;
+	text-decoration:none ! important;
+}
+
+.breadcrumb-url a:hover {
+	color: #fff;
+}
+
+.whisqtitle h2 {
+	margin-bottom:0px ! important;
+}
+
+.locatecontent {
+	    padding: 50px 0px;
+}
+
+.locatecontent p {
+    font-size: 14px ! important;
+    margin: 0 auto 20px auto;
+}
+
+.locatecontent p:last-child {
+    font-size: 14px ! important;
+    margin: 0 auto 0px auto;
+}
+
+.phoneico {
+	color: #ba5c82;
+    font-size: 15px;
+}
