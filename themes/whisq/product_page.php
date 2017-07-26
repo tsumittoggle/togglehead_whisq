@@ -16,8 +16,8 @@ get_header();
 			<?php the_content(); ?>
 		</div>
 		<div class="filter short-by">
-		<form class="woocommerce-ordering" method="get">
-	<select name="orderby" class="orderby">
+		<form action="#" method="post" name="form">
+	<select name="orderby" class="orderby" onchange="this.form.submit()">
 					<option value="menu_order" selected="selected">Default sorting</option>
 					<option value="popularity">Sort by popularity</option>
 					<option value="rating">Sort by average rating</option>
@@ -25,7 +25,13 @@ get_header();
 					<option value="price">Sort by price: low to high</option>
 					<option value="price-desc">Sort by price: high to low</option>
 			</select>
-	</form>
+			</form>
+		<?php
+ 				  if(isset($_POST['orderby'])){
+ 						$selected_val = $_POST['orderby'];  
+ 						echo "You have selected city:" .$selected_val;  
+ 				  }
+ 				?>
 	</div>
         <div class="left-side-bar">
 		<?php
@@ -53,7 +59,6 @@ get_header();
 			</div>
 			<div class="main-content">
 			<?php
-      		
 		    $category = $_COOKIE['cat_name'];
 		    if($category == 'all') {
 		    	$category = str_replace($category ,'','');
@@ -65,8 +70,8 @@ get_header();
 				'product_cat'         =>  $category,
 				'post_status'         => 'publish',
 				'posts_per_page'      => '10',
-				'orderby'             => 'modified',
-				'order'               => 'DESC',
+				'orderby'             => 'price',
+				'order'               => 'ASC',
 			);
 			$loop = new WP_Query( $bandproduct_args );
 			    while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
