@@ -1720,6 +1720,7 @@ color:  rgb(186, 92, 130);
 font-size: 23px;
 font-weight: 400;
 line-height: 26px;
+padding-bottom: 20px;
 }
 
 
@@ -1802,7 +1803,7 @@ padding: 25px;
 }
 }
 
-@media screen and (min-width: 768px) and (max-width: 900px) 
+@media screen and (min-width: 768px) and (max-width: 991px) 
 {
 	.cities-wrapper {
 	width: 50% ! important;
@@ -1930,6 +1931,14 @@ padding:20px;
     text-transform: none;
     text-align: right;
 	padding-bottom: 10px;
+}
+
+@media screen and (max-width: 767px) 
+{
+	.breadcrumb-url {
+	text-align: center ! important;
+	padding-top: 5px;
+}
 }
 
 .breadcrumb-url a {
