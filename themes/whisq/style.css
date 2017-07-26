@@ -2020,6 +2020,7 @@ padding:20px;
     font-size: 15px;
 }
 
+
 .citymap p {position: relative; margin-bottom:0px ! important;padding: 0px 0px 0px 25px ! important;font-weight: 400;
     font-size: 12px;}
 
@@ -2044,3 +2045,4 @@ padding:20px;
 .locate-list:hover .lcate-store-img img {
 	filter:grayscale(0%);
 }
+
