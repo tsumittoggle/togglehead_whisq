@@ -52,7 +52,7 @@
 						<?php endif; ?>
 						<?php if(get_field('city_map')): ?>
 						<div class="citymap">
-						<a href="<?php the_field('city_map_url'); ?>" title="<?php the_field('city_map'); ?>" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php the_field('city_map'); ?></a>
+						<a href="<?php the_field('city_map_url'); ?>" title="<?php the_field('city_map'); ?>" target="_blank"><p> <?php the_field('city_map'); ?></p></a>
 						</div>
 						<?php endif; ?>
 					</div>
@@ -67,5 +67,5 @@
 						wp_reset_query(); 
 					
 				}
-	 ?>     
+	 ?>        
 	    
