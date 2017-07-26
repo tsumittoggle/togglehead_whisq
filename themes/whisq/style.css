@@ -1143,7 +1143,9 @@ Store styling start from here
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);  
+  transform: translate(-50%,-50%);
+  width: 88px;
+  height: auto;  
 }
 
 .store-title {
@@ -1728,7 +1730,7 @@ padding-bottom: 20px;
 }
 
 
-.city-address, p {
+.city-address p {
 color:  #333;
 font-size: 14px;
 text-align: center;
@@ -1791,6 +1793,7 @@ padding: 35px;
     content: '\f107';
     position: relative;
     right: 35px;
+	top: 3px;
 	color:#333;
     font-size: 23px;
     z-index: -1;
@@ -1908,6 +1911,10 @@ padding:20px;
     font-size: 14px;
 	text-decoration:none ! important;
 	color:#333;
+	display: block;
+}
+
+.cityphone a:first-child {	
 	padding-top:5px;
 }
 
@@ -1931,6 +1938,10 @@ padding:20px;
 {
 	.city-address .cityhoverwrap {
 	bottom:0% ! important;
+}
+.lcate-store-img img {
+    width: 80% ! important;
+    height: auto;
 }
 }
 
@@ -2022,6 +2033,8 @@ padding:20px;
 
 .lcate-store-img img{
 	filter: grayscale(100%);
+	width:150px;
+	height:auto;
 }
 
 .locate-list:hover .lcate-store-img img {
