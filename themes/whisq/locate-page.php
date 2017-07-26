@@ -117,7 +117,7 @@ get_header();
 		</div>
 		<div class="or">or</div>
 		<div class="button-link">
-			<a href="#" title="buy our products online">buy our product online</a>
+			<a href="#" title="buy our products online">buy our products online</a>
 		</div>
 
 <?php

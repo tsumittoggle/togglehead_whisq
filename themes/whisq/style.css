@@ -1698,6 +1698,7 @@ Locate Us styling start from here
 	border-top: 1px solid #ebebeb;
 	border-left: 1px solid #ebebeb;
 	border-bottom: 1px solid #ebebeb;
+	background-color:rgba(223, 223, 223, 0.05);;
 }
 
 .locate-list:first-child {
@@ -1708,39 +1709,42 @@ Locate Us styling start from here
 
 .locate-list:hover {
 	box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.16);
+	background-color:#ffffff;
+	cursor:pointer;
 }
 
 .lcate-store-img {
-	    position: relative;
-    top: 40%;
+	top: 50%;
+    position: relative;
+    transform: translateY(-50%);
 }
 
 .city-address .store-title {
 color:  rgb(186, 92, 130);
-font-size: 23px;
+font-size: 20px;
 font-weight: 400;
 line-height: 26px;
 padding-bottom: 20px;
 }
 
-.addwrap p {
-color:  #030303;
+.city-address p {
+color:  #333;
 font-size: 14px;
 text-align: center;
 padding: 0px 25px;
 }
 
 .cityphone {
-	color:  #030303;
+	color:  #333;
 font-size: 15px;
 text-align: center;
 padding: 35px;
 }
 
 .city-name {
-	color:  #030303;
+	color:  #333;
 	text-transform: uppercase;
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: 600;
 	line-height: 26px;
 	text-align: left;
@@ -1755,11 +1759,11 @@ padding: 35px;
     height: 40px;
     text-transform: uppercase;
 	background: transparent;
-    color: #c0aeab;
-    font-size: 18px;
+    color: #333;
+    font-size: 12px;
     font-weight: 400;
     line-height: 40px;
-    text-align: center;
+    text-align: left;
     padding-left: 8px;
 }
 
@@ -1773,11 +1777,20 @@ padding: 35px;
 	-moz-appearance:none;
 }
 
+.select-section option {
+	padding-left: 8px;
+}
+
+.select-section select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+
 .cityform:after {
     content: '\f107';
     position: relative;
     right: 35px;
-	color:#5b5b5c;
+	color:#333;
     font-size: 23px;
     z-index: -1;
     font-family: FontAwesome;
@@ -1837,7 +1850,7 @@ padding: 35px;
 
 
 .or {
-color:  #030303;
+color:  #333;
 font-size: 25px;
 font-weight: 400;
 text-align: center;
@@ -1883,29 +1896,37 @@ padding:20px;
 	font-weight: 600;
     font-size: 12px;
 	text-decoration:none ! important;
-	color:#030303;
+	color:#333;
 }
 
 .citymap a:hover {	
-	color:#030303;
+	color:#333;
 }
 
 .cityphone a {	
     font-size: 14px;
 	text-decoration:none ! important;
-	color:#030303;
+	color:#333;
 	padding-top:5px;
 }
 
 .cityphone a:hover {	
-	color:#030303;
+	color:#333;
 }
+
+.city-address:hover {
+	    box-shadow: 0 0 15px rgba(0, 0, 0, 0.12);
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    transition: all 1s;
+}
+
 
 .city-address:hover .cityhoverwrap {
 	bottom:0px;
 }
 
-@media screen and (max-width: 767px) 
+@media screen and (max-width: 1024px) 
 {
 	.city-address .cityhoverwrap {
 	bottom:0% ! important;
@@ -1983,18 +2004,25 @@ padding:20px;
     font-size: 15px;
 }
 
-.citymap p {position: relative; margin-bottom:0px ! important;padding: 0px 0px 0px 25px ! important;}
+.citymap p {position: relative; margin-bottom:0px ! important;padding: 0px 0px 0px 25px ! important;font-weight: 400;
+    font-size: 12px;}
 
 .citymap p:after {
 	content: '';
-	width: 100%;
-	height: 100%;
+	width: 24px;
+	height: 24px;
 	position: absolute;
 	padding-right:5px;
-	top: 0;
+	top: -6px;
 	left: -5px;
 	background: url(../../uploads/google.png);
 	background-repeat: no-repeat;
 }
 
+.lcate-store-img img{
+	filter: grayscale(100%);
+}
 
+.locate-list:hover .lcate-store-img img {
+	filter:grayscale(0%);
+}
