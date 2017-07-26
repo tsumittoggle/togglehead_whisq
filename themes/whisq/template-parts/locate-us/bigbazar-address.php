@@ -37,7 +37,7 @@
 						<div class="wrapper citywrap <?php echo $tag->name; ?>">
 						<div class="city-name"><?php echo $tag->name; ?></div>
 				 
-				 <?php
+				<?php
 						while ( $store_list->have_posts() ) : $store_list->the_post();
 						?><div class="cities-wrapper">
 						
@@ -45,11 +45,14 @@
 			          <h4 class="store-title"><?php the_title(); ?></h4>
 			          <?php the_content(); ?>
 					  <div class="cityhoverwrap">
-					  <?php if(get_field('contact_number')): ?>
 					  <div class="cityphone">
+					  <?php if(get_field('contact_number')): ?>
 						<a href="tel:<?php the_field('contact_number'); ?>"><i class="fa fa-phone phoneico" aria-hidden="true"></i> <?php the_field('contact_number'); ?></a>
-						</div>
 						<?php endif; ?>
+					<?php if(get_field('contact_number1')): ?>	
+						<a href="tel:<?php the_field('contact_number1'); ?>"><i class="fa fa-phone phoneico" aria-hidden="true"></i> <?php the_field('contact_number1'); ?></a>
+					<?php endif; ?>
+						</div>
 						<?php if(get_field('city_map')): ?>
 						<div class="citymap">
 						<a href="<?php the_field('city_map_url'); ?>" title="<?php the_field('city_map'); ?>" target="_blank"><p> <?php the_field('city_map'); ?></p></a>
@@ -67,5 +70,5 @@
 						wp_reset_query(); 
 					
 				}
-	 ?>        
+	 ?>  
 	    
