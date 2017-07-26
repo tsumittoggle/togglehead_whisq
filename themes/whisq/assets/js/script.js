@@ -167,14 +167,13 @@ $('.search-btn').click(function(){
    }
 });
 
+  //product listing
+  $('#product_cats li').click(function(){
+    $value = $(this).text();
+    document.cookie = "cat name="+$value;
+    location.reload();
+  });
+  
 });
 
-$(document).ready(function(){
-   $("#myCarousel").swiperight(function() {
-         $(this).carousel('prev');
-     });
-     $("#myCarousel").swipeleft(function() {
-         $(this).carousel('next');
-     });
-});
 })(jQuery);
