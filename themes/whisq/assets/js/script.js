@@ -139,8 +139,12 @@ $('.search-btn').click(function(){
   $(".addwrap").fadeOut();
   
   $(".locate-list").on("click", function(){
+	  $(".lcate-store-img img").css("filter", "grayscale(100%)");
 	  $(".locate-list").css("box-shadow", "none");
+	  $(".locate-list").css("background-color", "rgba(223, 223, 223, 0.05)");
 	  $(this).css("box-shadow", "0px 0px 5px 2px rgba(0, 0, 0, 0.16)");
+	  $(this).css("background-color", "#ffffff");
+	  $(this).find(".lcate-store-img img").css("filter", "grayscale(0%)");
 	  var id = $(this).attr("id");
 	  
 	  if(id == 'all'){
@@ -174,6 +178,12 @@ $('.search-btn').click(function(){
     location.reload();
   });
   
+});
+
+
+$(document).ready(function(){
+	
+	$("#all").trigger("click");
 });
 
 })(jQuery);
