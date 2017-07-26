@@ -139,6 +139,8 @@ $('.search-btn').click(function(){
   $(".addwrap").fadeOut();
   
   $(".locate-list").on("click", function(){
+	  $(".locate-list").css("box-shadow", "none");
+	  $(this).css("box-shadow", "0px 0px 5px 2px rgba(0, 0, 0, 0.16)");
 	  var id = $(this).attr("id");
 	  
 	  if(id == 'all'){
