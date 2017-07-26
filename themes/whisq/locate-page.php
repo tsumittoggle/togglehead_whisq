@@ -80,11 +80,14 @@ get_header();
 			          <h4 class="store-title"><?php the_title(); ?></h4>
 			          <?php the_content(); ?>
 					  <div class="cityhoverwrap">
-					  <?php if(get_field('contact_number')): ?>
 					  <div class="cityphone">
+					  <?php if(get_field('contact_number')): ?>
 						<a href="tel:<?php the_field('contact_number'); ?>"><i class="fa fa-phone phoneico" aria-hidden="true"></i> <?php the_field('contact_number'); ?></a>
-						</div>
 						<?php endif; ?>
+					<?php if(get_field('contact_number1')): ?>	
+						<a href="tel:<?php the_field('contact_number1'); ?>"><i class="fa fa-phone phoneico" aria-hidden="true"></i> <?php the_field('contact_number1'); ?></a>
+					<?php endif; ?>
+						</div>
 						<?php if(get_field('city_map')): ?>
 						<div class="citymap">
 						<a href="<?php the_field('city_map_url'); ?>" title="<?php the_field('city_map'); ?>" target="_blank"><p> <?php the_field('city_map'); ?></p></a>
@@ -102,7 +105,7 @@ get_header();
 						wp_reset_query(); 
 					
 				}
-	 ?>    
+	 ?>  
 		</div>
     <div class="FoodHall-address addwrap">
 			<?php get_template_part( 'template-parts/locate-us/foodhall', 'address' ); ?>
