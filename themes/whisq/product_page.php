@@ -18,8 +18,9 @@ get_header();
 		<div class="filter short-by">
 		<form action="#" method="post" name="form">
 	<select name="orderby" class="orderby" onchange="this.form.submit()">
-					<option value="menu_order" selected="selected">Default sorting</option>
+					<option value="menu_order">Default sorting</option>
 					<option value="popularity">Sort by popularity</option>
+					<option value="title" selected="selected">Sort by title</option>
 					<option value="rating">Sort by average rating</option>
 					<option value="date">Sort by newness</option>
 					<option value="price">Sort by price: low to high</option>
@@ -70,7 +71,7 @@ get_header();
 				'product_cat'         =>  $category,
 				'post_status'         => 'publish',
 				'posts_per_page'      => '10',
-				'orderby'             => 'price',
+				'orderby'             =>  $selected_val,
 				'order'               => 'ASC',
 			);
 			$loop = new WP_Query( $bandproduct_args );
