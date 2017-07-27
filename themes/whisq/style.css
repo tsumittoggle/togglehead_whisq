@@ -1870,7 +1870,7 @@ padding: 35px;
 
 .or {
 color:  #333;
-font-size: 25px;
+font-size: 20px;
 font-weight: 400;
 text-align: center;
 text-transform:uppercase;
@@ -1878,7 +1878,7 @@ padding:20px;
 }
 
 .button-link {
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: 400;
 	text-align: center;
 	text-transform:uppercase;
@@ -1891,6 +1891,15 @@ padding:20px;
 	color:  #ffffff;
 	text-decoration:none ! important;
 }
+
+.button-link a:focus {
+	color:  #ffffff;
+}
+
+.cityphone a:focus {
+	color:  #333;
+}
+
 .button-link a:hover {
 	cursor:pointer;
 	color:  #ffffff ! important;
@@ -1918,7 +1927,7 @@ padding:20px;
 	color:#333;
 }
 
-.citymap a:hover {	
+.citymap, a:hover {	
 	color:#333;
 }
 
@@ -1929,8 +1938,8 @@ padding:20px;
 	display: block;
 }
 
-.cityphone a:first-child {	
-	padding-top:5px;
+.cityphone a {	
+	padding-top:10px;
 }
 
 .cityphone a:hover {	
