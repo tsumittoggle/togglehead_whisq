@@ -9,9 +9,6 @@ get_header();
 
 <?php get_template_part( 'template-parts/home/home', 'feature' ); ?>
 
-<?php
-//Recipes section start from here
-?>
 <div class="wrapper cf">
 	<div class="recipe cf">
 	<h2 class="heading">recipes</h2>
