@@ -2054,3 +2054,14 @@ padding:20px;
 	filter:grayscale(0%);
 }
 
+/*==================================================================
+Locate Us styling start from here
+===================================================================*/
+
+.product-list del {
+	display:none;
+}
+
+.product-list ins {
+	text-decoration: none;
+}
