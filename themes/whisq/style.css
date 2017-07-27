@@ -2119,14 +2119,18 @@ Locate Us styling start from here
 
 .product-list {
 	min-height: auto;
-	width:25%;
+	clear:both;
+	padding:25px;
+}
+
+.product-list .img-box {
     padding: 20px 20px 5px;
     border-radius: 3px;
     border: 1.5px solid #ebebeb;
 	clear:both;
 }
 
-.product-list:hover {
+.product-list .img-box:hover  {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.12);
     -webkit-transition: all 1s;
     -moz-transition: all 1s;
