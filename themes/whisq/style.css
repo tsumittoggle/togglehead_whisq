@@ -1710,15 +1710,18 @@ Locate Us styling start from here
 	
 
 .locate-list:hover {
-	box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.16);
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.12);
 	background-color:#ffffff;
 	cursor:pointer;
 }
 
 .lcate-store-img {
-	top: 50%;
-    position: relative;
-    transform: translateY(-50%);
+top: 50%;
+position: relative;
+transform: translateY(-50%);
+font-size: 20px;
+font-weight: bold;
+letter-spacing: 1px;
 }
 
 .city-address .store-title {
@@ -2003,6 +2006,7 @@ padding:20px;
 .locatecontent p {
     font-size: 14px ! important;
     margin: 0 auto 20px auto;
+	max-width: 900px;
 }
 
 .locatecontent p:last-child {
