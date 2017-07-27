@@ -239,7 +239,6 @@ Header styling strat from here
 .desktop-banner {height: 100%;}
 
  header {
-  padding-bottom: 8px;
   box-shadow: 0 0 20px rgba(0,0,0,0.15);
   position: relative;
   z-index: 100;
@@ -252,7 +251,14 @@ nav li {
   margin: 0 60px;
 }
 
-header nav ul {position: relative;}
+header nav ul {
+  margin-bottom: 0;
+  position: relative;
+}
+
+header li a{
+ padding-bottom: 50px;
+}
 
 header h1 {
   margin: -11px 30px 0 0;
@@ -263,10 +269,12 @@ header li .sub-menu {
   display: none;
   width: 550px;
   height: 220px;
+  padding-top: 25px;
   position: absolute;
   z-index: 1000;
   background: #fff;
   top: 67px;
+  left: -10px;
   text-align: left;
 }
 
@@ -286,6 +294,7 @@ header li .menu-open li:first-child {
 }
 
 header li .sub-menu li a {
+  padding-bottom: 0;
   color: #000;
   font-weight: 400;
   text-transform: capitalize;
@@ -309,6 +318,10 @@ header li .sub-menu li:after {
 
 
 .menu-item-has-children {position: relative;}
+
+.menu-item-has-children:hover .sub-menu {
+  display: inline-block;
+}
 
 header .menu-item-has-children:after {
     content: '\f107';
