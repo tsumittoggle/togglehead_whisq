@@ -1725,7 +1725,7 @@ letter-spacing: 1px;
 }
 
 .city-address .store-title {
-color:  rgb(186, 92, 130);
+color: #ba5c82;
 font-size: 20px;
 font-weight: 400;
 line-height: 26px;
@@ -2058,10 +2058,83 @@ padding:20px;
 Locate Us styling start from here
 ===================================================================*/
 
-.product-list del {
+/*.product-list del {
 	display:none;
 }
 
 .product-list ins {
 	text-decoration: none;
+}
+
+.woocommerce-Price-currencySymbol {
+	padding-right:5px;
+}
+
+.product-list .product-title {
+    color: #ba5c82;
+    font-size: 20px;
+    font-weight: 400;
+}
+*/
+.products-page .left-side-bar {
+    border: 1px solid #ebebeb;
+	width: 200px;
+	float:left;
+	clear:both;
+}
+
+.products-page .left-side-bar h4 {
+	text-transform:capitalize;
+	padding: 15px 25px;
+	font-weight: 600;
+	margin-top: 0px;
+    margin-bottom: 0px;
+	min-height: 52px;
+}
+
+.products-page .left-side-bar ul li {
+	border-bottom: 1px solid #ebebeb;
+	padding: 15px 25px;
+	text-transform:capitalize;
+	list-style-type: none;
+	cursor:pointer;
+}
+
+.products-page .left-side-bar ul li:first-child {
+	border-top: 1px solid #ebebeb;
+}
+
+.products-page .left-side-bar ul li:last-child {
+	border-bottom: none;
+}
+
+.products-page .left-side-bar ul {
+	margin-bottom:0px;
+}
+
+
+.products-page .left-side-bar ul li:hover {
+	color:#ba5c82;
+}
+
+.product-list {
+	min-height: auto;
+	width:25%;
+    padding: 20px 20px 5px;
+    border-radius: 3px;
+    border: 1.5px solid #ebebeb;
+	clear:both;
+}
+
+.product-list:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.12);
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    transition: all 1s;
+    overflow: hidden;
+}
+
+.products-page {
+	width: 92%;
+    margin: 0 auto;
 }
