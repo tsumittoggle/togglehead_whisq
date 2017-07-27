@@ -90,9 +90,9 @@
 			        </div>
 
 			<?php 
-			    // $number_product;
-			    // $number_product = $number_product + 1;
-			    // echo $number_product;
+			    $number_product;
+			    $number_product = $number_product + 1;
+
 			    endwhile;
 			    wp_reset_query(); 
 			?>
@@ -100,7 +100,6 @@
 			<div class="pagination">
 				<ul>
 				<?php
-				$number_product = 31;
 	        for($i = 0; $i < $number_product; $i = $i + 10 ) { 
 	        	$pagination;
 	        	?>
