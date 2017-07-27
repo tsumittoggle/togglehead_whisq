@@ -12,7 +12,7 @@
 <div class="filter short-by">
 		<form action="#" method="post" name="form">
 	<select name="orderby" class="orderby" onchange="this.form.submit()">
-					<option value="menu_order" selected="selected">Default sorting</option>
+					<option value="menu_order"  selected="selected">Default sorting</option>
 					<option value="popularity">Sort by popularity</option>
 					<option value="title">Sort by title</option>
 					<option value="rating">Sort by average rating</option>
@@ -23,8 +23,7 @@
 			</form>
 		<?php
  				  if(isset($_POST['orderby'])){
- 						$selected_val = $_POST['orderby'];  
- 						echo "You have selected city:" .$selected_val;  
+ 						$selected_val = $_POST['orderby'];    
  				  }
  				?>
 	</div>
@@ -54,14 +53,12 @@
 			</div>
 			<div class="main-content">
 			<?php
-			 //fetching category value from cookies for category filter
 		    $category = $_COOKIE['cat_name'];
 		    if($category == 'all') {
 		    	$category = str_replace($category ,'','');
-		    	echo $category;
 		    }
-      //fetching offset value from cookies for offset pagination
-		  $offset = $_COOKIE['whisq_offset'];
+
+		    $offset = $_COOKIE['whisq_offset'];
 		  
 			$bandproduct_args = array(
 				'post_type'           => 'product',
