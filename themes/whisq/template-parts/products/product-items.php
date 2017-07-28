@@ -10,9 +10,9 @@
 
 ?>
 <div class="filter short-by">
-		<form action="#" method="post" name="form">
+		<form action="#" method="post" name="form" class="sortingby">
 	<select name="orderby" class="orderby" onchange="this.form.submit()">
-					<option value="menu_order" selected="selected">Default sorting</option>
+					<option value="menu_order" selected="selected">Sort by</option>
 					<option value="popularity">Sort by popularity</option>
 					<option value="title">Sort by title</option>
 					<option value="rating">Sort by average rating</option>

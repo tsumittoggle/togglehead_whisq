@@ -2071,27 +2071,23 @@ padding:20px;
 Locate Us styling start from here
 ===================================================================*/
 
-/*.product-list del {
+.product-list del {
 	display:none;
 }
 
 .product-list ins {
-	text-decoration: none;
+	margin-bottom: 16px;
+    display: block;
+    text-decoration: none;
 }
 
 .woocommerce-Price-currencySymbol {
 	padding-right:5px;
 }
 
-.product-list .product-title {
-    color: #ba5c82;
-    font-size: 20px;
-    font-weight: 400;
-}
-*/
 .products-page .left-side-bar {
     border: 1px solid #ebebeb;
-	width: 200px;
+	width: 20%;
 	float:left;
 	clear:both;
 }
@@ -2108,6 +2104,7 @@ Locate Us styling start from here
 .products-page .left-side-bar ul li {
 	border-bottom: 1px solid #ebebeb;
 	padding: 15px 25px;
+	font-size: 16px;
 	text-transform:capitalize;
 	list-style-type: none;
 	cursor:pointer;
@@ -2132,18 +2129,20 @@ Locate Us styling start from here
 
 .product-list {
 	min-height: auto;
-	clear:both;
 	padding:25px;
 }
 
-.product-list .img-box {
-    padding: 20px 20px 5px;
+.product-list {
     border-radius: 3px;
     border: 1.5px solid #ebebeb;
-	clear:both;
+	width: calc(33.33% - 25px);
+    float: left;
+	text-align: center;
+    margin-left: 25px;
+	margin-bottom: 25px;
 }
 
-.product-list .img-box:hover  {
+.product-list:hover  {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.12);
     -webkit-transition: all 1s;
     -moz-transition: all 1s;
@@ -2154,4 +2153,156 @@ Locate Us styling start from here
 .products-page {
 	width: 92%;
     margin: 0 auto;
+}
+
+.products-page .main-content {
+	width:80%;
+	float: left;
+}
+
+.product-list .img-box img {
+	width:100%;
+	height:auto;
+}
+
+.product-list h3 {
+	color: #ba5c82;
+	font: 16px 'Open Sans', sans-serif;
+	min-height: 45px;
+	text-transform: uppercase;
+    font-weight: 600;
+	margin-bottom:0px;
+}
+
+/*==================================================================
+product-page styling strat from here
+===================================================================*/
+
+
+.product-list:hover .feature-btn,
+.product-list:hover .added_to_cart  {
+  display: inline-block;
+  text-decoration: none
+}
+
+.product-list:hover .product-title { 
+  margin-top: 0; 
+  -webkit-transition: margin 0.8s;
+  -moz-transition: margin 0.8s;
+  transition: margin 0.8s;
+}
+
+.prodcontent {
+	min-height:500px;
+	width:auto;
+	background-size:cover;
+	background-position:bottom center;
+	position: relative;
+}
+
+@media screen and (max-width: 480px) 
+{
+	.product-list {
+	width: calc(100% - 25px);
+}
+.prodcontent {
+	min-height:300px;
+}
+}
+
+@media screen and (max-width: 767px) 
+{
+.prodbancont p {
+	display:none;
+}
+}
+
+@media screen and (min-width: 481px) and (max-width: 1024px) 
+{
+.prodcontent {
+	min-height:350px;
+}
+}
+
+@media screen and (min-width: 481px) and (max-width: 1199px) 
+{
+	.product-list {
+	width: calc(50% - 25px);
+}
+
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1224px) 
+{
+.prodcontent {
+	min-height:400px;
+}
+}
+
+.prodbancont {
+	position: absolute;
+    bottom: 0;
+	margin: 0px 25px;
+	margin: 0 4%;
+	margin-bottom:20px;
+	color:#ffffff;
+}
+
+.prodbancont h4 {
+	    font-size: 3em;
+}
+
+.footer-section a {
+	display:block;
+}
+
+.footer-section .sub-menu {
+	display:block ! important;
+}
+
+.products-page .short-by {
+	text-align:right;
+}
+
+.orderby {
+	border: 1px solid #ebebeb;
+    width: 242px;
+    height: 40px;
+    text-transform: uppercase;
+    background: transparent;
+    color: #333;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: left;
+    padding-left: 8px;
+}
+
+.orderby {
+	
+}
+
+.sortingby:after {
+	content: '\f107';
+    position: relative;
+    right: 35px;
+    top: 3px;
+    color: #333;
+    font-size: 23px;
+    z-index: -1;
+    font-family: FontAwesome;
+}
+
+.orderby select {
+	-webkit-appearance:none;
+	-moz-appearance:none;
+}
+
+.orderby option {
+	padding-left: 8px;
+}
+
+.orderby select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
 }
