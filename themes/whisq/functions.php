@@ -727,6 +727,7 @@ function woocommerce_breadcrumb_custom() {
         $single_cat = array_shift( $product_cats ); 
         
         $cat = $single_cat->name;
+		
         ?>
 
         <h2 itemprop="name" class="product_category_title"><span><?php echo $single_cat->name; ?></span></h2>
@@ -734,7 +735,6 @@ function woocommerce_breadcrumb_custom() {
 ?>
 
 <p> <a title="Whisq" href="<?php echo esc_url( home_url( '/product-shop/') ); ?>" >Home</a> > <a href="<?php echo esc_url( home_url( '/product-shop/'.$cat.'/') ); ?>"><?php echo $cat;?></a> > <?php the_title();?> </p>
-
 <?php
 }
 

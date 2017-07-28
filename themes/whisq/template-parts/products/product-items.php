@@ -23,8 +23,7 @@
 			</form>
 		<?php
  				  if(isset($_POST['orderby'])){
- 						$selected_val = $_POST['orderby'];  
- 						echo "You have selected city:" .$selected_val;  
+ 						$selected_val = $_POST['orderby'];   
  				  }
  				?>
 	</div>
