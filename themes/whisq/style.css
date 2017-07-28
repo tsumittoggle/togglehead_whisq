@@ -219,6 +219,8 @@ body a {
   top: 2px;
 }
 
+.product-template-default .single-featured-image-header {display: none;}
+
 body {font: 400 14px/24px 'Open Sans', sans-serif;}
 
 /*==================================================================

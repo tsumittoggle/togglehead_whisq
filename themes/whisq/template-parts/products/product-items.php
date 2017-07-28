@@ -60,6 +60,7 @@
 		    	$category = str_replace($category ,'','');
 		    	echo $category;
 		    }
+
       //fetching offset value from cookies for offset pagination
 		  $offset = $_COOKIE['whisq_offset'];
 		  

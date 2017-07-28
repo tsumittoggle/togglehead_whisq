@@ -702,7 +702,7 @@ function custom_pre_get_posts_query( $q ) {
     $tax_query[] = array(
            'taxonomy' => 'product_cat',
            'field' => 'slug',
-           'terms' => array( 'pans' ), // Don't display products in the clothing category on the shop page.
+           'terms' => array( 'pans' ), 
            'operator' => 'NOT IN'
     );
 
@@ -711,6 +711,122 @@ function custom_pre_get_posts_query( $q ) {
 
 }
 add_action( 'woocommerce_product_query', 'custom_pre_get_posts_query' );
+
+//removing default breadcumb
+remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
+
+//adding custom breadcumb and page title
+add_action('woocommerce_before_main_content', 'woocommerce_breadcrumb_custom');
+
+function woocommerce_breadcrumb_custom() {
+  
+    $product_cats = wp_get_post_terms( get_the_ID(), 'product_cat' );
+
+    if ( $product_cats && ! is_wp_error ( $product_cats ) ){
+
+        $single_cat = array_shift( $product_cats ); 
+        
+        $cat = $single_cat->name;
+        ?>
+
+        <h2 itemprop="name" class="product_category_title"><span><?php echo $single_cat->name; ?></span></h2>
+<?php }
+?>
+
+<p> <a title="Whisq" href="<?php echo esc_url( home_url( '/product-shop/') ); ?>" >Home</a> > <a href="<?php echo esc_url( home_url( '/product-shop/'.$cat.'/') ); ?>"><?php echo $cat;?></a> > <?php the_title();?> </p>
+
+<?php
+}
+
+//removing meta tag
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+
+//adding social share link
+add_action( 'woocommerce_share', 'social_share' );
+
+function social_share(){
+	?>
+	<span class="share">share</span>
+	<?php echo do_shortcode('[DISPLAY_ULTIMATE_SOCIAL_ICONS]'); ?>
+	<?php
+}
+
+//removing sell otion
+remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
+
+// Remove Sidebar on all the Single Product Pages
+ add_action( 'wp', 'bbloomer_remove_sidebar_product_pages' );
+ 
+function bbloomer_remove_sidebar_product_pages() {
+if (is_product()) {
+remove_action('woocommerce_sidebar','woocommerce_get_sidebar',10);
+}
+}
+
+//customizing tab for product detail page
+add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
+function woo_rename_tabs( $tabs ) {
+	$tabs['description']['title'] = __( 'Uee & feature' );		
+	$tabs['additional_information']['title'] = __( 'product detail' );
+
+	$tabs['description']['priority'] = 15;			
+	$tabs['additional_information']['priority'] = 10;	
+
+	unset( $tabs['reviews'] ); 
+
+	return $tabs;
+
+}
+
+//removing related product
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+
+
+//adding content at last of page
+add_action( 'woocommerce_after_single_product', 'add_content_after_product', 15 );
+
+function add_content_after_product() {?>
+
+	<div class="wrapper cf">
+	<div class="recipe cf">
+	<h2 class="heading">featured recipes</h2>
+  <?php
+		$recipe = array( 'post_type' => 'recipes', 'posts_per_page' => 3, 'orderby' => 'rand' );
+		$recipe_list = new WP_Query( $recipe );
+		while ( $recipe_list->have_posts() ) : $recipe_list->the_post();
+		?>
+			<div class="feature-recipes-list">
+			  <div class="feature-recipes-img">
+			    <a href="<?php the_permalink(); ?>">
+			  	<?php the_post_thumbnail(); ?>
+			  	</a>
+			  </div>
+			  <div class="feature-recipe-content">
+				  <h3><?php the_title(); ?></h3>
+				  <p><?php the_excerpt(); ?></p>
+				  <div class="social-share">
+				    <span class="share">share</span>
+				    <?php echo do_shortcode('[DISPLAY_ULTIMATE_SOCIAL_ICONS]'); ?>
+				  </div>
+				</div>
+			</div>
+		<?php
+		endwhile;
+		wp_reset_query(); 
+  ?>
+	</div>
+</div>
+
+<?php	
+}
+
+
+add_action( 'woocommerce_after_single_product', 'woocommerce_output_related_products', 20 );
+
+remove_action( 'woocommerce_after_single_product', 'woocommerce_show_product_sale_flash', 20
+ );
+?>
+
 
 
 
