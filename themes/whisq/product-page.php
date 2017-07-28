@@ -23,9 +23,11 @@ get_header();
 			</div>
 			<div class="bottom-wrapper" style="background: url(<?php the_field('bottom_banner'); ?>)">
 			 <div class="bottom-content">
+					<div class="bottombancont">
 					<?php if(get_field('bottom_text')): ?>
 						<?php the_field('bottom_text'); ?>
 					<?php endif; ?>
+					</div>
 			 </div>
 <?php
 get_footer();

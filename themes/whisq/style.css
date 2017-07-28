@@ -1788,7 +1788,8 @@ padding: 35px;
 }
 
 .select-section form {
-	display:inline-block;
+	display: inline-block;
+    position: relative;
 	text-align:center;
 }
 
@@ -1808,9 +1809,9 @@ padding: 35px;
 
 .cityform:after {
     content: '\f107';
-    position: relative;
-    right: 35px;
-	top: 3px;
+    position: absolute;
+    right: 15px;
+    top: 4px;
 	color:#333;
     font-size: 23px;
     z-index: -1;
@@ -2268,7 +2269,7 @@ product-page styling strat from here
 
 .orderby {
 	border: 1px solid #ebebeb;
-    width: 242px;
+    width: 200px;
     height: 40px;
     text-transform: uppercase;
     background: transparent;
@@ -2284,18 +2285,23 @@ product-page styling strat from here
 	
 }
 
+.sortingby {
+	display: inline-block;
+    position: relative;
+}
+
 .sortingby:after {
 	content: '\f107';
-    position: relative;
-    right: 35px;
-    top: 3px;
+    position: absolute;
+    right: 15px;
+    top: 4px;
     color: #333;
     font-size: 23px;
     z-index: -1;
     font-family: FontAwesome;
 }
 
-.orderby select {
+.sortingby select {
 	-webkit-appearance:none;
 	-moz-appearance:none;
 }
@@ -2307,4 +2313,51 @@ product-page styling strat from here
 .orderby select:-moz-focusring {
     color: transparent;
     text-shadow: 0 0 0 #000;
+}
+
+.sortingby select:focus, select:active, select:hover option {
+    outline: none;
+}
+
+.bottom-content {
+	min-height:400px;
+	width:auto;
+	background-size:cover;
+	background-position:bottom center;
+	position: relative;
+}
+
+@media screen and (max-width: 480px) 
+{
+	.bottom-content {
+	min-height:250px;
+}
+}
+
+@media screen and (max-width: 767px) 
+{
+.bottom-content p {
+	display:none;
+}
+}
+
+@media screen and (min-width: 481px) and (max-width: 1024px) 
+{
+.bottom-content {
+	min-height:300px;
+}
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1224px) 
+{
+.bottom-content {
+	min-height:350px;
+}
+}
+
+.bottombancont {
+	background-color:#fff;
+	width:90%;
+	height:90%;
+	margin:0 auto;
 }
