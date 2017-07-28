@@ -40,13 +40,16 @@
 			?>
 			<h4>category</h4>
 			<ul id="product_cats">
-			<li>all</li>
+			<li><a href="<?php echo esc_url( home_url( '/product-shop/') ); ?>">all</a></li>
 			<?php
 			$count = count($product_categories);
 			if ( $count > 0 ){
-			    foreach ( $product_categories as $product_category ) {
-			        echo '<li>' . $product_category->name . '</li>';
-			    }
+			    foreach ( $product_categories as $product_category ) { 
+           $cat = $product_category->name;
+           $cat_url = str_replace( ' ','-',$cat);
+			    	?>
+			        <li><a href="<?php echo esc_url( home_url( '/product-shop/'.$cat_url.'/') ); ?>" rel="home">  <?php echo  $cat ?></a></li>
+			 <?php   }
 			}
 			?> 
 			</ul>
@@ -73,13 +76,15 @@
 			    while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
 			    
 			       <div class="product-list">  
-			          <div class="img-box">  
+			          <div class="img-box"> 
+			          <a href="<?php the_permalink(); ?>"> 
 			            <?php 
 			                if ( has_post_thumbnail( $loop->post->ID ) )
 			                    echo get_the_post_thumbnail( $loop->post->ID, 'shop_catalog' ); 
 			                else 
 			                    echo '<img src="' . woocommerce_placeholder_img_src() . '" alt="Placeholder" />'; 
 			            ?>
+			            </a>
 			            </div>
 			            <h3 class="product-title"><?php the_title(); ?></h3>
 
