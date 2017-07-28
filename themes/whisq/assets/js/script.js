@@ -178,14 +178,13 @@ $('.search-btn').click(function(){
     location.reload();
   });
 
-  // $('.product').click(function(e){
-  //   document.cookie = "cat name = all";
-  // });
+  $('.product a').click(function(e){
+    document.cookie = "cat name = all";
+  });
 
-  $('.sub-menu li a').click(function(e){
+  $('.sub-menu li').click(function(e){
     $value = $(this).text();
-    e.stopPropagation();
-    document.cookie = "cat name="+$value;
+    document.cookie = "cat name="+$value; 
   });
 
   //product listing pagination
