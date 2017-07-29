@@ -12,8 +12,10 @@ get_header();
 		  $store_list = new WP_Query( $store );
 		  wp_reset_query(); 
 	    ?>
-		<div class="wrapper locatecontent page-content" style="background-image: url(<?php the_field('product_banner'); ?>);">
+		<div class="prodcontent page-content" style="background-image: url(<?php the_field('product_banner'); ?>);">
+			<div class="prodbancont">
 			<?php the_content(); ?>
+			</div>
 		</div>
 
 		<div class="products-page">
@@ -21,7 +23,7 @@ get_header();
 		</div>
 
 			<div class="bottom-wrapper" style="background: url(<?php the_field('bottom_banner'); ?>)">
-			 <div class="bottom-content">
+			 <div class="bottombancont">
 					<?php if(get_field('bottom_text')): ?>
 						<?php the_field('bottom_text'); ?>
 					<?php endif; ?>
