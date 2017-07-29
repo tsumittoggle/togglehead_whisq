@@ -40,7 +40,7 @@
 			?>
 			<h4>category</h4>
 			<ul id="product_cats">
-			<li><a href="<?php echo esc_url( home_url( '/product-shop/') ); ?>">all</a></li>
+			<li class="all-product"><a href="<?php echo esc_url( home_url( '/product-shop/') ); ?>">all</a></li>
 			<?php
 			$count = count($product_categories);
 			if ( $count > 0 ){
@@ -48,7 +48,7 @@
            $cat = $product_category->name;
            $cat_url = str_replace( ' ','-',$cat);
 			    	?>
-			        <li><a href="<?php echo esc_url( home_url( '/product-shop/'.$cat_url.'/') ); ?>" rel="home">  <?php echo  $cat ?></a></li>
+			        <li class="<?php echo $cat_url ?>"><a href="<?php echo esc_url( home_url( '/product-shop/'.$cat_url.'/') ); ?>" rel="home">  <?php echo  $cat ?></a></li>
 			 <?php   }
 			}
 			?> 
@@ -101,7 +101,7 @@
 			    wp_reset_query(); 
 			?>
 			</div>
-			<div id="pagination" class="pagination">
+<!-- 			<div id="pagination" class="pagination">
 				<ul>
 				<?php
 	        for($i = 0; $i < $number_product; $i = $i + 10 ) { 
@@ -111,5 +111,5 @@
 	      <?php  }
 				?>
 				</ul>
-			</div>
+			</div> -->
 	    

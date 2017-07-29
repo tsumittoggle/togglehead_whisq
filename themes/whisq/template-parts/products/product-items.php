@@ -10,7 +10,7 @@
 
 ?>
 <div class="filter short-by">
-		<form action="#" method="post" name="form">
+	<form action="#" method="post" name="form">
 	<select name="orderby" class="orderby" onchange="this.form.submit()">
 					<option value="menu_order" selected="selected">Default sorting</option>
 					<option value="popularity">Sort by popularity</option>
@@ -40,12 +40,16 @@
 			?>
 			<h4>category</h4>
 			<ul id="product_cats">
-			<li>all</li>
+			<li class="all-product">all</li>
 			<?php
 			$count = count($product_categories);
 			if ( $count > 0 ){
 			    foreach ( $product_categories as $product_category ) {
-			        echo '<li>' . $product_category->name . '</li>';
+			    	$cat = $product_category->name;
+            $cat_name = str_replace( ' ','',$cat);
+			    	?>
+			        <li class="<?php echo $cat_name ?>"> <?php echo $product_category->name ?> </li>
+			      <?php
 			    }
 			}
 			?> 
@@ -102,11 +106,13 @@
 			<div id="pagination" class="pagination">
 				<ul>
 				<?php
+				if($number_product > 10) {
 	        for($i = 0; $i < $number_product; $i = $i + 10 ) { 
 	        	$pagination;
 	        	?>
 	        	<li value="<?php echo $i; ?>"><?php echo $pagination = $pagination + 1; ?></li>
-	      <?php  }
+	        	<?php
+				}}
 				?>
 				</ul>
 			</div>
