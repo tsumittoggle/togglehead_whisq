@@ -719,7 +719,9 @@ remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
 add_action('woocommerce_before_main_content', 'woocommerce_breadcrumb_custom');
 
 function woocommerce_breadcrumb_custom() {
-  
+     ?>
+     <div class="whisqtitle">
+     <?php
     $product_cats = wp_get_post_terms( get_the_ID(), 'product_cat' );
 
     if ( $product_cats && ! is_wp_error ( $product_cats ) ){
@@ -729,15 +731,40 @@ function woocommerce_breadcrumb_custom() {
         $cat = $single_cat->name;
 		
         ?>
-
+        
         <h2 itemprop="name" class="product_category_title"><span><?php echo $single_cat->name; ?></span></h2>
 <?php }
 ?>
 
 <p> <a title="Whisq" href="<?php echo esc_url( home_url( '/product-shop/') ); ?>" >Home</a> > <a href="<?php echo esc_url( home_url( '/product-shop/'.$cat.'/') ); ?>"><?php echo $cat;?></a> > <?php the_title();?> </p>
+</div>
 <?php
 }
 
+//adding next and previous
+add_action('woocommerce_before_main_content', 'next_previous_product');
+
+function next_previous_product() {
+  
+    $product_cats = wp_get_post_terms( get_the_ID(), 'product_cat' );
+
+    if ( $product_cats && ! is_wp_error ( $product_cats ) ){
+
+        $single_cat = array_shift( $product_cats ); 
+		
+        ?>
+        <div class="poduct-select">
+        <div class="prev">
+        	<?php previous_post_link('&laquo; %link'); ?>
+        </div>
+        <div class="next">
+        	<?php next_post_link('%link &raquo;'); ?>
+        </div>
+        </div>
+
+<?php }
+}
+	
 //removing meta tag
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
