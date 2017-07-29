@@ -40,7 +40,7 @@
 			?>
 			<h4>category</h4>
 			<ul id="product_cats">
-			<li><a href="<?php echo esc_url( home_url( '/product-shop/') ); ?>">all</a></li>
+			<li class="all-product"><a href="<?php echo esc_url( home_url( '/product-shop/') ); ?>">all</a></li>
 			<?php
 			$count = count($product_categories);
 			if ( $count > 0 ){
@@ -48,7 +48,7 @@
            $cat = $product_category->name;
            $cat_url = str_replace( ' ','-',$cat);
 			    	?>
-			        <li><a href="<?php echo esc_url( home_url( '/product-shop/'.$cat_url.'/') ); ?>" rel="home">  <?php echo  $cat ?></a></li>
+			        <li class="<?php echo $cat_url ?>"><a href="<?php echo esc_url( home_url( '/product-shop/'.$cat_url.'/') ); ?>" rel="home">  <?php echo  $cat ?></a></li>
 			 <?php   }
 			}
 			?> 
@@ -77,7 +77,7 @@
 			    
 			       <div class="product-list">  
 			          <div class="img-box"> 
-			          <a href="<?php the_permalink(); ?>"> 
+			          <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"> 
 			            <?php 
 			                if ( has_post_thumbnail( $loop->post->ID ) )
 			                    echo get_the_post_thumbnail( $loop->post->ID, 'shop_catalog' ); 
@@ -86,7 +86,9 @@
 			            ?>
 			            </a>
 			            </div>
-			            <h3 class="product-title"><?php the_title(); ?></h3>
+			            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+			            	<h3 class="product-title"><?php the_title(); ?></h3>
+			            </a>
 
 			            <?php 
 			                echo $product->get_price_html(); 
@@ -101,7 +103,7 @@
 			    wp_reset_query(); 
 			?>
 			</div>
-			<div id="pagination" class="pagination">
+<!-- 			<div id="pagination" class="pagination">
 				<ul>
 				<?php
 	        for($i = 0; $i < $number_product; $i = $i + 10 ) { 
@@ -111,5 +113,5 @@
 	      <?php  }
 				?>
 				</ul>
-			</div>
+			</div> -->
 	    

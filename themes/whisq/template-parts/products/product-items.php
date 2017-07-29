@@ -40,12 +40,16 @@
 			?>
 			<h4>category</h4>
 			<ul id="product_cats">
-			<li>all</li>
+			<li class="all-product">all</li>
 			<?php
 			$count = count($product_categories);
 			if ( $count > 0 ){
 			    foreach ( $product_categories as $product_category ) {
-			        echo '<li>' . $product_category->name . '</li>';
+			    	$cat = $product_category->name;
+            $cat_name = str_replace( ' ','',$cat);
+			    	?>
+			        <li class="<?php echo $cat_name ?>"> <?php echo $product_category->name ?> </li>
+			      <?php
 			    }
 			}
 			?> 
@@ -77,14 +81,18 @@
 			    
 			       <div class="product-list">  
 			          <div class="img-box">  
+			          	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 			            <?php 
 			                if ( has_post_thumbnail( $loop->post->ID ) )
 			                    echo get_the_post_thumbnail( $loop->post->ID, 'shop_catalog' ); 
 			                else 
 			                    echo '<img src="' . woocommerce_placeholder_img_src() . '" alt="Placeholder" />'; 
 			            ?>
+			            </a>
 			            </div>
-			            <h3 class="product-title"><?php the_title(); ?></h3>
+			            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+			            	<h3 class="product-title"><?php the_title(); ?></h3>
+			            </a>
 
 			            <?php 
 			                echo $product->get_price_html(); 
@@ -102,11 +110,13 @@
 			<div id="pagination" class="pagination">
 				<ul>
 				<?php
+				if($number_product > 10) {
 	        for($i = 0; $i < $number_product; $i = $i + 10 ) { 
 	        	$pagination;
 	        	?>
 	        	<li value="<?php echo $i; ?>"><?php echo $pagination = $pagination + 1; ?></li>
-	      <?php  }
+	        	<?php
+				}}
 				?>
 				</ul>
 			</div>
