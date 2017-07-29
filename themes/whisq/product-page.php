@@ -12,7 +12,7 @@ get_header();
 		  $store_list = new WP_Query( $store );
 		  wp_reset_query(); 
 	    ?>
-		<div class="prodcontent page-content" style="background-image: url(<?php the_field('product_banner'); ?>);">
+		<div class="prodcontent page-content fgdfgdfg" style="background-image: url(<?php the_field('product_banner'); ?>);">
 			<div class="prodbancont">
 			<?php the_content(); ?>
 			</div>

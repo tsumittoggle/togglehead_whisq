@@ -753,12 +753,12 @@ function next_previous_product() {
         $single_cat = array_shift( $product_cats ); 
 		
         ?>
-        <div class="poduct-select">
+        <div class="poduct-select cf">
         <div class="prev">
-        	<?php previous_post_link('&laquo; %link'); ?>
+        	<?php previous_post_link('%link','Previous'); ?>
         </div>
         <div class="next">
-        	<?php next_post_link('%link &raquo;'); ?>
+        	<?php next_post_link('%link','Next'); ?>
         </div>
         </div>
 

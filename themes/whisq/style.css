@@ -208,6 +208,7 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 body a { 
   display: inline-block;
   color: #000;
+  text-decoration:none;
    }
 
 .woocommerce-MyAccount-content,
@@ -463,7 +464,7 @@ nav li a:focus {color: #be5f84;}
   z-index: 10000;
   background: #fff;
 }
-.sticky h1 img {height: 80px;}
+.sticky h1 img {height: 80px ! important;}
 
 .sticky .header-section {margin: 20px 0 0 40px;}
 
@@ -2185,6 +2186,11 @@ Locate Us styling start from here
 	text-transform: uppercase;
     font-weight: 600;
 	margin-bottom:0px;
+	text-decoration:none;
+}
+
+.product-list a:hover, .product-list a:focus {
+	color:#fff ! important;
 }
 
 /*==================================================================
@@ -2384,4 +2390,129 @@ product-page styling strat from here
 	width:46% ! important;
 	margin-right:4%;
 	padding-left: 25px;
+}
+
+.header-bottom h1 img {
+	height:110px;
+}
+
+.whisqtitle p {
+	    margin: 0 4%;
+	    color: #fff;
+    text-transform: none;
+    text-align: right;
+    padding-bottom: 10px;
+}
+
+.whisqtitle a,.whisqtitle a:hover,.whisqtitle a:focus {
+	    color: #fff;
+    text-transform: capitalize;
+	text-decoration:none;
+}
+
+.poduct-select {
+	width: 92%;
+    margin: 25px auto;
+}
+
+.poduct-select .prev {
+	float:left;
+}
+
+.poduct-select .next {
+	float:right;
+}
+
+.poduct-select .prev a , .poduct-select .next a {
+	vertical-align:middle;
+	font-size:16px;
+	font-weight:600;
+}
+
+.poduct-select .prev a:hover , .poduct-select .next a:hover , .poduct-select .prev a:focus , .poduct-select .next a:focus {
+	color:#333;
+	text-decoration:none;
+}
+
+.poduct-select .next a:after {
+	    content: "\f105";
+		font-family: FontAwesome;
+		font-size: 40px;
+		font-weight:normal;
+		vertical-align: middle;
+		padding-left: 15px;
+}
+
+.poduct-select .prev a:before {
+	    content: "\f104";
+		font-family: FontAwesome;
+		font-size: 40px;
+		font-weight:normal;
+		vertical-align: middle;
+		padding-right: 15px;
+}
+
+.page-container .type-product .product_title {
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #ba5c82;
+}
+
+.page-container .type-product del {
+	display:none;
+}
+
+.page-container .type-product ins {
+	margin-bottom: 16px;
+    display: block;
+    text-decoration: none;
+}
+
+.page-container .type-product ins span {
+	color:#333;
+}
+
+.page-container .type-product .product_title:after {
+	content:' ';
+    width:80px;
+    display:block;
+	margin:25px 0px;
+    border:1px solid #ba5c82;
+    border-radius:2px;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;	
+}
+
+.page-container .type-product form .quantity {
+	float:none ! important;
+	margin: 25px 0px ! important;
+}
+
+.page-container .type-product form .quantity:before {
+	content:'Quantity';	
+}
+
+.page-container .type-product .woocommerce-product-details__short-description p {
+	font-weight:600;
+}
+
+.page-container .type-product .share {
+	display:inline-block;
+	vertical-align: middle;
+	text-transform:capitalize;
+	padding-right: 25px;
+	font-weight:600;
+	margin-top: -30px ! important;
+}
+
+.page-container .type-product .sfsi_widget {
+	display:inline-block;	
+}
+
+.page-container .type-product .woocommerce-product-gallery__wrapper img {
+	max-width: 500px ! important;
+}
+
+.page-container .type-product .woocommerce-product-gallery__wrapper {
+	text-align:center;
 }
