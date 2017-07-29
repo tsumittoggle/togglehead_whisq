@@ -2375,5 +2375,13 @@ product-page styling strat from here
 	text-align:center;
 }
 
-.bottombancont p {
+.page-container .woocommerce-product-gallery {
+	width:46% ! important;
+	margin-left:4%;
+}
+
+.page-container .entry-summary {
+	width:46% ! important;
+	margin-right:4%;
+	padding-left: 25px;
 }
