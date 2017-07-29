@@ -1788,7 +1788,8 @@ padding: 35px;
 }
 
 .select-section form {
-	display:inline-block;
+	display: inline-block;
+    position: relative;
 	text-align:center;
 }
 
@@ -1808,9 +1809,9 @@ padding: 35px;
 
 .cityform:after {
     content: '\f107';
-    position: relative;
-    right: 35px;
-	top: 3px;
+    position: absolute;
+    right: 15px;
+    top: 4px;
 	color:#333;
     font-size: 23px;
     z-index: -1;
@@ -2129,6 +2130,16 @@ Locate Us styling start from here
 	color:#ba5c82;
 }
 
+.products-page .left-side-bar ul li:hover a {
+	color:#ba5c82;
+	text-decoration:none;
+}
+
+.products-page .left-side-bar ul li a:focus {
+	color:#ba5c82;
+	text-decoration:none;
+}
+
 .product-list {
 	min-height: auto;
 	padding:25px;
@@ -2197,8 +2208,9 @@ product-page styling strat from here
 .prodcontent {
 	min-height:500px;
 	width:auto;
-	background-size:cover;
-	background-position:bottom center;
+	background-size:cover ! important;
+	background-position:bottom center ! important;
+	background-repeat:no-repeat;
 	position: relative;
 }
 
@@ -2268,7 +2280,7 @@ product-page styling strat from here
 
 .orderby {
 	border: 1px solid #ebebeb;
-    width: 242px;
+    width: 200px;
     height: 40px;
     text-transform: uppercase;
     background: transparent;
@@ -2284,18 +2296,23 @@ product-page styling strat from here
 	
 }
 
+.sortingby {
+	display: inline-block;
+    position: relative;
+}
+
 .sortingby:after {
 	content: '\f107';
-    position: relative;
-    right: 35px;
-    top: 3px;
+    position: absolute;
+    right: 15px;
+    top: 4px;
     color: #333;
     font-size: 23px;
     z-index: -1;
     font-family: FontAwesome;
 }
 
-.orderby select {
+.sortingby select {
 	-webkit-appearance:none;
 	-moz-appearance:none;
 }
@@ -2307,4 +2324,56 @@ product-page styling strat from here
 .orderby select:-moz-focusring {
     color: transparent;
     text-shadow: 0 0 0 #000;
+}
+
+.sortingby select:focus, select:active, select:hover option {
+    outline: none;
+}
+
+.bottom-wrapper {
+	min-height:400px;
+	width:100%;
+	background-size:cover ! important;
+	background-position:bottom center ! important;
+	background-repeat:no-repeat;
+    display: flex;               /* establish flex container */
+    align-items: center;
+}
+
+@media screen and (max-width: 480px) 
+{
+	.bottom-wrapper {
+	min-height:250px;
+}
+
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 1024px) 
+{
+.bottom-wrapper {
+	min-height:300px;
+}
+
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1224px) 
+{
+.bottom-wrapper {
+	min-height:350px;
+}
+
+
+}
+
+.bottombancont {
+	background-color:#fff;
+	    width: 90%;
+	height:auto;
+	    padding: 5%;
+	    margin: 5%;
+	text-align:center;
+}
+
+.bottombancont p {
 }

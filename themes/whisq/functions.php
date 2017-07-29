@@ -766,11 +766,16 @@ remove_action('woocommerce_sidebar','woocommerce_get_sidebar',10);
 //customizing tab for product detail page
 add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
 function woo_rename_tabs( $tabs ) {
-	$tabs['description']['title'] = __( 'Uee & feature' );		
-	$tabs['additional_information']['title'] = __( 'product detail' );
 
-	$tabs['description']['priority'] = 15;			
+	if($tabs['description']['title']) {
+	$tabs['description']['title'] = __( 'Uee & feature' );	
+	$tabs['description']['priority'] = 15;	
+	}	
+
+	if($tabs['additional_information']['title']) {
+	$tabs['additional_information']['title'] = __( 'product detail' );	
 	$tabs['additional_information']['priority'] = 10;	
+}
 
 	unset( $tabs['reviews'] ); 
 
