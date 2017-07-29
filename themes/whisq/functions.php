@@ -727,6 +727,7 @@ function woocommerce_breadcrumb_custom() {
         $single_cat = array_shift( $product_cats ); 
         
         $cat = $single_cat->name;
+		
         ?>
 
         <h2 itemprop="name" class="product_category_title"><span><?php echo $single_cat->name; ?></span></h2>
@@ -734,7 +735,6 @@ function woocommerce_breadcrumb_custom() {
 ?>
 
 <p> <a title="Whisq" href="<?php echo esc_url( home_url( '/product-shop/') ); ?>" >Home</a> > <a href="<?php echo esc_url( home_url( '/product-shop/'.$cat.'/') ); ?>"><?php echo $cat;?></a> > <?php the_title();?> </p>
-
 <?php
 }
 
@@ -821,8 +821,7 @@ function add_content_after_product() {?>
   ?>
 	</div>
 </div>
-
-<?php	
+<?php
 }
 
 
@@ -830,7 +829,24 @@ add_action( 'woocommerce_after_single_product', 'woocommerce_output_related_prod
 
 remove_action( 'woocommerce_after_single_product', 'woocommerce_show_product_sale_flash', 20
  );
-?>
+
+//adding description last of product detail page
+add_action('woocommerce_after_single_product', 'product_detail_last_description', 25);
+
+function product_detail_last_description() {
+  
+    $terms_cat = get_the_terms( $post->ID, 'product_cat' );
+    foreach ( $terms_cat as $term ){
+        $category_name = $term->name;
+        $category_thumbnail = get_woocommerce_term_meta($term->term_id, 'thumbnail_id', true);
+        $image = wp_get_attachment_url($category_thumbnail);
+        ?>
+        <div class="cat-description" style="background-image: url(<?php echo $image ?>);">
+					<p> <?php echo $term->description; ?></p>
+        </div>
+        <?php
+    }
+}
 
 
 
