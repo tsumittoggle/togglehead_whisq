@@ -81,14 +81,18 @@
 			    
 			       <div class="product-list">  
 			          <div class="img-box">  
+			          	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 			            <?php 
 			                if ( has_post_thumbnail( $loop->post->ID ) )
 			                    echo get_the_post_thumbnail( $loop->post->ID, 'shop_catalog' ); 
 			                else 
 			                    echo '<img src="' . woocommerce_placeholder_img_src() . '" alt="Placeholder" />'; 
 			            ?>
+			            </a>
 			            </div>
-			            <h3 class="product-title"><?php the_title(); ?></h3>
+			            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+			            	<h3 class="product-title"><?php the_title(); ?></h3>
+			            </a>
 
 			            <?php 
 			                echo $product->get_price_html(); 
