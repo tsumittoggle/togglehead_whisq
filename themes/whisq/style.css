@@ -2505,17 +2505,22 @@ product-page styling strat from here
 }
 
 .products-page .btn-group.open .dropdown-menu {
-	left: -128px ! important;
+	left: -96px ! important;
 	padding: 10px 20px;
 	margin:0px;
 	border-radius:0px;
-	width: 200px;
+	width: 165px;
     background-color: #ba5c82;
 	color: #fff;
 }
 
 .products-page .btn-group.open .dropdown-menu li {
 	padding:5px 0;
+	text-align: right;
+}
+
+.products-page .btn-group.open .dropdown-menu li:hover {
+    font-weight:600;
 }
 
 .products-page .btn-group.open .dropdown-toggle {
