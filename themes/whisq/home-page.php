@@ -96,16 +96,7 @@ get_header();
 	   <?php endif; ?>	
 </div>
 
-<?php
-//Instagram Feed section start from here
-?>
-<div class="insta-wrapper">
-  <div class="insta-content">
-    <h2 class="heading">instagram</h2>
-    <p class="para">Desserts need not be shared, but we hope you will share your pictures with us!</p>
-  </div>
-  <?php echo do_shortcode('[instagram-feed showheader=false showbutton=false showfollow=true followtext="Follow Us On Instagaram"]'); ?>
-</div>
+
 <?php
 get_footer();
 ?>
