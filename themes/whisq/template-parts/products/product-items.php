@@ -10,20 +10,23 @@
 
 ?>
 <div class="filter short-by">
-	<form action="#" method="post" name="form">
-	<select name="orderby" class="orderby" onchange="this.form.submit()">
-					<option value="menu_order" selected="selected">Default sorting</option>
-					<option value="popularity">Sort by popularity</option>
-					<option value="title">Sort by title</option>
-					<option value="rating">Sort by average rating</option>
-					<option value="date">Sort by newness</option>
-					<option value="price">Sort by price: low to high</option>
-					<option value="price-desc">Sort by price: high to low</option>
-			</select>
+		<form action="#" method="post" name="form" class="" >
+		<div class="btn-group">
+		   <a class="dropdown-toggle btn-select" data-toggle="dropdown" href="#">Sort by</a>
+	<ul name="orderby" class="dropdown-menu" onchange="this.form.submit()">
+					<li value="menu_order" selected="selected">Sort by</li>
+					<li value="popularity">Sort by popularity</li>
+					<li value="title">Sort by title</li>
+					<li value="rating">Sort by average rating</li>
+					<li value="date">Sort by newness</li>
+					<li value="price">Sort by price: low to high</li>
+					<li value="price-desc">Sort by price: high to low</li>
+			</ul>
+    </div>
 			</form>
 		<?php
  				  if(isset($_POST['orderby'])){
- 						$selected_val = $_POST['orderby'];   
+ 						$selected_val = $_POST['orderby'];  
  				  }
  				?>
 	</div>

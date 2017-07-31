@@ -208,6 +208,7 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 body a { 
   display: inline-block;
   color: #000;
+  text-decoration:none;
    }
 
 .woocommerce-MyAccount-content,
@@ -260,6 +261,12 @@ header nav ul {
 
 header li a{
  padding-bottom: 50px;
+}
+
+@media screen and (max-width: 768px) {
+	header li a{
+ padding-bottom: 0px;
+}
 }
 
 header h1 {
@@ -463,7 +470,7 @@ nav li a:focus {color: #be5f84;}
   z-index: 10000;
   background: #fff;
 }
-.sticky h1 img {height: 80px;}
+.sticky h1 img {height: 80px ! important;}
 
 .sticky .header-section {margin: 20px 0 0 40px;}
 
@@ -1302,8 +1309,16 @@ footer {
 
 .site-info a:hover {color: #be5f84;}
 
-.site-info p {margin: 0}
+.site-info p {margin: 0; display:inline-block;}
 
+
+@media screen and (max-width: 480px) 
+{
+	.site-info p {
+	display:block;
+}
+
+}
 .social {margin: 15px; }  
 
 .scial img:hover {
@@ -1397,7 +1412,7 @@ header nav li {margin: 0px 40px;}
 
   header h1 img {
     width: 80px;    
-    height: 75px;
+    height: 75px ! important;
   } 
 
 .beggning-menu:hover:after,
@@ -1788,7 +1803,8 @@ padding: 35px;
 }
 
 .select-section form {
-	display:inline-block;
+	display: inline-block;
+    position: relative;
 	text-align:center;
 }
 
@@ -1808,9 +1824,9 @@ padding: 35px;
 
 .cityform:after {
     content: '\f107';
-    position: relative;
-    right: 35px;
-	top: 3px;
+    position: absolute;
+    right: 15px;
+    top: 4px;
 	color:#333;
     font-size: 23px;
     z-index: -1;
@@ -2073,27 +2089,23 @@ padding:20px;
 Locate Us styling start from here
 ===================================================================*/
 
-/*.product-list del {
+.product-list del {
 	display:none;
 }
 
 .product-list ins {
-	text-decoration: none;
+	margin-bottom: 16px;
+    display: block;
+    text-decoration: none;
 }
 
 .woocommerce-Price-currencySymbol {
 	padding-right:5px;
 }
 
-.product-list .product-title {
-    color: #ba5c82;
-    font-size: 20px;
-    font-weight: 400;
-}
-*/
 .products-page .left-side-bar {
     border: 1px solid #ebebeb;
-	width: 200px;
+	width: 20%;
 	float:left;
 	clear:both;
 }
@@ -2110,6 +2122,7 @@ Locate Us styling start from here
 .products-page .left-side-bar ul li {
 	border-bottom: 1px solid #ebebeb;
 	padding: 15px 25px;
+	font-size: 16px;
 	text-transform:capitalize;
 	list-style-type: none;
 	cursor:pointer;
@@ -2132,16 +2145,32 @@ Locate Us styling start from here
 	color:#ba5c82;
 }
 
-.product-list {
-	min-height: auto;
-	width:25%;
-    padding: 20px 20px 5px;
-    border-radius: 3px;
-    border: 1.5px solid #ebebeb;
-	clear:both;
+.products-page .left-side-bar ul li:hover a {
+	color:#ba5c82;
+	text-decoration:none;
 }
 
-.product-list:hover {
+.products-page .left-side-bar ul li a:focus {
+	color:#ba5c82;
+	text-decoration:none;
+}
+
+.product-list {
+	min-height: auto;
+	padding:25px;
+}
+
+.product-list {
+    border-radius: 3px;
+    border: 1.5px solid #ebebeb;
+	width: calc(33.33% - 25px);
+    float: left;
+	text-align: center;
+    margin-left: 25px;
+	margin-bottom: 25px;
+}
+
+.product-list:hover  {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.12);
     -webkit-transition: all 1s;
     -moz-transition: all 1s;
@@ -2152,4 +2181,361 @@ Locate Us styling start from here
 .products-page {
 	width: 92%;
     margin: 0 auto;
+}
+
+.products-page .main-content {
+	width:80%;
+	float: left;
+}
+
+.product-list .img-box img {
+	width:100%;
+	height:auto;
+}
+
+.product-list h3 {
+	color: #ba5c82;
+	font: 16px 'Open Sans', sans-serif;
+	min-height: 45px;
+	text-transform: uppercase;
+    font-weight: 600;
+	margin-bottom:0px;
+	text-decoration:none;
+}
+
+.product-list a:hover, .product-list a:focus {
+	color:#fff ! important;
+}
+
+/*==================================================================
+product-page styling strat from here
+===================================================================*/
+
+
+.product-list:hover .feature-btn,
+.product-list:hover .added_to_cart  {
+  display: inline-block;
+  text-decoration: none
+}
+
+.product-list:hover .product-title { 
+  margin-top: 0; 
+  -webkit-transition: margin 0.8s;
+  -moz-transition: margin 0.8s;
+  transition: margin 0.8s;
+}
+
+.prodcontent {
+	min-height:500px;
+	width:auto;
+	background-size:cover ! important;
+	background-position:bottom center ! important;
+	background-repeat:no-repeat;
+	position: relative;
+}
+
+@media screen and (max-width: 480px) 
+{
+	.product-list {
+	width: calc(100% - 25px);
+}
+.prodcontent {
+	min-height:300px;
+}
+}
+
+@media screen and (max-width: 767px) 
+{
+.prodbancont p {
+	display:none;
+}
+}
+
+@media screen and (min-width: 481px) and (max-width: 1024px) 
+{
+.prodcontent {
+	min-height:350px;
+}
+}
+
+@media screen and (min-width: 481px) and (max-width: 1199px) 
+{
+	.product-list {
+	width: calc(50% - 25px);
+}
+
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1224px) 
+{
+.prodcontent {
+	min-height:400px;
+}
+}
+
+.prodbancont {
+	position: absolute;
+    bottom: 0;
+	margin: 0px 25px;
+	margin: 0 4%;
+	margin-bottom:20px;
+	color:#ffffff;
+}
+
+.prodbancont h4 {
+	    font-size: 3em;
+}
+
+.footer-section a {
+	display:block;
+}
+
+.footer-section .sub-menu {
+	display:block ! important;
+}
+
+.products-page .short-by {
+	text-align:right;
+}
+
+
+
+
+.bottom-wrapper {
+	min-height:400px;
+	width:100%;
+	background-size:cover ! important;
+	background-position:bottom center ! important;
+	background-repeat:no-repeat;
+    display: flex;               /* establish flex container */
+    align-items: center;
+}
+
+@media screen and (max-width: 480px) 
+{
+	.bottom-wrapper {
+	min-height:250px;
+}
+
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 1024px) 
+{
+.bottom-wrapper {
+	min-height:300px;
+}
+
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1224px) 
+{
+.bottom-wrapper {
+	min-height:350px;
+}
+
+
+}
+
+.bottombancont {
+	background-color:#fff;
+	    width: 90%;
+	height:auto;
+	    padding: 5%;
+	    margin: 5%;
+	text-align:center;
+}
+
+.page-container .woocommerce-product-gallery {
+	width:46% ! important;
+	margin-left:4%;
+}
+
+.page-container .entry-summary {
+	width:46% ! important;
+	margin-right:4%;
+	padding-left: 25px;
+}
+
+.header-bottom h1 img {
+	height:110px;
+}
+
+.whisqtitle p {
+	    margin: 0 4%;
+	    color: #fff;
+    text-transform: none;
+    text-align: right;
+    padding-bottom: 10px;
+}
+
+.whisqtitle a,.whisqtitle a:hover,.whisqtitle a:focus {
+	    color: #fff;
+    text-transform: capitalize;
+	text-decoration:none;
+}
+
+.poduct-select {
+	width: 92%;
+    margin: 25px auto;
+}
+
+.poduct-select .prev {
+	float:left;
+}
+
+.poduct-select .next {
+	float:right;
+}
+
+.poduct-select .prev a , .poduct-select .next a {
+	vertical-align:middle;
+	font-size:16px;
+	font-weight:600;
+}
+
+.poduct-select .prev a:hover , .poduct-select .next a:hover , .poduct-select .prev a:focus , .poduct-select .next a:focus {
+	color:#333;
+	text-decoration:none;
+}
+
+.poduct-select .next a:after {
+	    content: "\f105";
+		font-family: FontAwesome;
+		font-size: 40px;
+		font-weight:normal;
+		vertical-align: middle;
+		padding-left: 15px;
+}
+
+.poduct-select .prev a:before {
+	    content: "\f104";
+		font-family: FontAwesome;
+		font-size: 40px;
+		font-weight:normal;
+		vertical-align: middle;
+		padding-right: 15px;
+}
+
+.page-container .type-product .product_title {
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #ba5c82;
+}
+
+.page-container .type-product del {
+	display:none;
+}
+
+.page-container .type-product ins {
+	margin-bottom: 16px;
+    display: block;
+    text-decoration: none;
+}
+
+.page-container .type-product ins span {
+	color:#333;
+}
+
+.page-container .type-product .product_title:after {
+	content:' ';
+    width:80px;
+    display:block;
+	margin:25px 0px;
+    border:1px solid #ba5c82;
+    border-radius:2px;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;	
+}
+
+.page-container .type-product form .quantity {
+	float:none ! important;
+	margin: 25px 0px ! important;
+}
+
+.page-container .type-product form .quantity:before {
+	content:'Quantity';	
+}
+
+.page-container .type-product .woocommerce-product-details__short-description p {
+	font-weight:600;
+}
+
+.page-container .type-product .share {
+	display:inline-block;
+	vertical-align: middle;
+	text-transform:capitalize;
+	padding-right: 25px;
+	font-weight:600;
+	margin-top: -30px ! important;
+}
+
+.page-container .type-product .sfsi_widget {
+	display:inline-block;	
+}
+
+.page-container .type-product .woocommerce-product-gallery__wrapper img {
+	max-width: 500px ! important;
+}
+
+.page-container .type-product .woocommerce-product-gallery__wrapper {
+	text-align:center;
+}
+
+.page-container .type-product .woocommerce-tabs ul {
+    padding: 0px ! important;
+    margin: 0px ! important;
+	width:100% ! important;
+}
+
+.page-container .type-product .woocommerce-tabs ul li {
+        position: initial ! important;
+    border-radius: 0px ! important;
+	padding:50px ! important;
+	margin:0px ! important;
+	width:50% ! important;
+	float:left ! important;
+	text-align:center ! important;
+}
+
+
+.products-page .dropdown-toggle {
+	background-color:transparent ! important;
+	text-decoration:none;
+}
+
+.products-page .btn-group.open .dropdown-menu {
+	left: -96px ! important;
+	padding: 10px 20px;
+	margin:0px;
+	border-radius:0px;
+	width: 165px;
+    background-color: #ba5c82;
+	color: #fff;
+}
+
+.products-page .btn-group.open .dropdown-menu li {
+	padding:5px 0;
+	text-align: right;
+}
+
+.products-page .btn-group.open .dropdown-menu li:hover {
+    font-weight:600;
+}
+
+.products-page .btn-group.open .dropdown-toggle {
+    box-shadow: none;
+	
+}
+
+
+.products-page .dropdown-toggle:after {
+          content: '\f107';
+        position: relative;
+    padding-left:10px;
+    top: 2px;
+    color: #333;
+    font-size: 23px;
+    z-index: -1;
+    font-family: FontAwesome;
 }

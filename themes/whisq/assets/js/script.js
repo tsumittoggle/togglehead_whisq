@@ -193,6 +193,12 @@ $('.search-btn').click(function(){
     document.cookie = "whisq_offset ="+$offset_value;
     location.reload();
   });
+
+    var $prod_height = $('.product-list').height();
+  var fp = $prod_height + 65;
+  $('.product-list').css('height', fp + 'px');
+
+  
 });
 
 $(document).ready(function(){
