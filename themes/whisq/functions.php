@@ -858,7 +858,7 @@ function product_detail_last_description() {
         $image = wp_get_attachment_url($category_thumbnail);
         ?>
         <div class="cat-description" style="background-image: url(<?php echo $image ?>);">
-					<p> <?php echo $term->description; ?></p>
+			     <p> <?php echo $term->description; ?></p>
         </div>
         <?php
     }
@@ -888,7 +888,7 @@ function recipes_register() {
         'capability_type' => 'post',
         'hierarchical' => false,
         'menu_position' => 8,
-        'supports' => array('title','editor','thumbnail')
+        'supports' => array('title','editor','thumbnail', 'excerpt')
     ); 
     register_post_type( 'recipes' , $args );
 }

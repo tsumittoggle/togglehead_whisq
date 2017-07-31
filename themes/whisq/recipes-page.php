@@ -21,10 +21,16 @@ get_header();
 		?>
 			<div class="recipes-page-list">
 			  <div class="recipe-page-img">
-			  	<?php the_post_thumbnail(); ?>
+			  	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+			  		<?php the_post_thumbnail(); ?>
+			  	</a>
 			  </div>
-			  <div class="recipe-page-content">
-				  <h3><?php the_title(); ?></h3>
+			  <div class="recipe-page-content">			  
+				  <h3>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+				      <?php the_title(); ?>
+				    </a>
+				  </h3>
 				  <p><?php the_excerpt(); ?></p>
 				  <a class="recipe-more" href="<?php get_post_permalink(); ?>" title="<?php the_title(); ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 			  </div>
@@ -55,6 +61,10 @@ get_header();
 	</div>	
 	</div>
 <div class="recipe-sidebar">
+<div class="recipe-tip">
+<h3>tips</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae congue risus, id consequat erat. Nam sollicitudin nibh sit amet quam pretium, in mattis orci vestibulum. Donec blandit dolor in urna ultricies, id hendrerit dui mattis. Suspendisse eget cursus massa. Integer ut enim nibh.</p>
+</div>
 <div class="category">
 <?php
 $taxonomy = 'recipes_categories';
@@ -82,7 +92,9 @@ $terms = get_terms($taxonomy); // Get all terms of a taxonomy
 			  </div>
 			  <div class="recipe-page-content">
 				  <h3><?php the_title(); ?></h3>
-
+      <?php foreach ( $terms as $term ) { ?>
+        <li class="<?php echo $term->name; ?>"><?php echo $term->name; ?></li>
+      <?php } ?>
 			  </div>
 			</div>
 		<?php
