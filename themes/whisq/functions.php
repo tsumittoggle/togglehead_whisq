@@ -464,7 +464,7 @@ function whisq_scripts() {
 
     wp_enqueue_script( 'jquery-js', get_theme_file_uri( '/assets/js/jquery.min.js' ), array( 'jquery' ) );
 
-    wp_enqueue_script( 'mobile-js', get_theme_file_uri( '/assets/js/mobile.jquery.min.js' ), array( 'jquery' ) );
+    wp_enqueue_script( 'mobile-js', get_theme_file_uri( '/assets/js/swipe.js' ), array( 'jquery' ) );
 
     wp_enqueue_script( 'script', get_theme_file_uri( '/assets/js/script.js' ), array( 'jquery' ), true );
 

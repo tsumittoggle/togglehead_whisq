@@ -2,6 +2,14 @@
 
 $(document).ready(function(){
 
+   // $("#myCarousel").swiperight(function() {
+   //    $(this).carousel('prev');
+   //  });
+   // $("#myCarousel").swipeleft(function() {
+   //    $(this).carousel('next');
+   // });
+
+
   //Banner slider window height javascript
    $('.item:first-child').addClass('active');	
    var header_height = $('header').height();
@@ -15,9 +23,8 @@ $(document).ready(function(){
   if(window.innerWidth < 1120 ){
     jQuery('#myCarousel').css('height','auto');
   }
- 
-  //owl carousal for feature javascript
-   $('.owl-carousel').owlCarousel({
+
+    $('#carousel01').owlCarousel({
     loop:false,
     margin:30,
     nav:true,
@@ -34,6 +41,41 @@ $(document).ready(function(){
         }
     }
 });
+
+$('#carousel02').owlCarousel({
+    loop: true,
+    margin:10,
+    nav:false,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+});
+
+$('#carousel03').owlCarousel({
+    loop: true,
+    margin:10,
+    nav:false,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+});
+
 
   //adding class for add to card
   $('.product_type_simple').addClass('feature-btn');
@@ -206,5 +248,10 @@ $(document).ready(function(){
 	$("#all").trigger("click");
 });
 
-
+ 
+  //Set some options later
+  $("#myCarousel").swipe( {fingers:2} );
 })(jQuery);
+
+
+
