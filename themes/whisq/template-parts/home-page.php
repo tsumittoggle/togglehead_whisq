@@ -107,7 +107,7 @@ get_header();
     <h2 class="heading">instagram</h2>
     <p class="para">Desserts need not be shared, but we hope you will share your pictures with us!</p>
   </div>
-  <?php echo do_shortcode('[instagram-feed showheader=false showbutton=false showfollow=true followtext="Follow Us On Instagaram"]'); ?>
+  <?php echo do_shortcode('[instagram-feed showheader=false showbutton=false showfollow=true followtext="Follow Us On Instagram"]'); ?>
 </div>
 <?php
 get_footer();

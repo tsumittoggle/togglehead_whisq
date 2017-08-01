@@ -14,7 +14,7 @@
 	<div class="feature">
 		<h2 class="heading">featured products</h2>
 		<p class="para">Beautiful, innovative products, designed in-house just for you.</p>
-		<div class="owl-carousel owl-theme">
+		<div class="owl-carousel owl-theme" id="carousel01">
 			<?php
 			$meta_query  = WC()->query->get_meta_query();
 			$tax_query   = WC()->query->get_tax_query();
