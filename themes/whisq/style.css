@@ -727,7 +727,7 @@ Feature product styling strat from here
   padding: 8px 20px;
   border-radius: 5px;
   position: relative;
-  z-index: 1000;
+  z-index: 99;
   background-color: #b95b81;
   color: #fff;
   text-decoration: none;
@@ -1493,7 +1493,10 @@ header li .sub-menu {
   background: rgba(0, 0, 0, 0);
 }
 
-header .menu-item-has-children:after {color: #fff;}
+header .menu-item-has-children:after {
+	right: 0;
+	color: #fff;
+}
 
 header li .sub-menu li a {color: #fff;}
 
@@ -1525,6 +1528,8 @@ header li .sub-menu:after {display: none;}
     display: table-cell;
     vertical-align: middle;
   }
+  
+  .sub-menu .menu-item:after {display: none;}
 
   header nav li {
     display: block;
@@ -2116,7 +2121,6 @@ Locate Us styling start from here
 	font-weight: 600;
 	margin-top: 0px;
     margin-bottom: 0px;
-	min-height: 52px;
 }
 
 .products-page .left-side-bar ul li {
@@ -2126,6 +2130,28 @@ Locate Us styling start from here
 	text-transform:capitalize;
 	list-style-type: none;
 	cursor:pointer;
+	position:relative;
+}
+
+.catactive {
+	color:#ba5c82;
+}
+
+li.catactive a {
+    color: #ba5c82;
+}
+
+.catactive:after {
+content: '';
+display: block;
+position: absolute;
+top: 15px;
+left: 0;
+width: 0;
+height: 0;
+border-color: transparent transparent transparent #ba5c82;
+border-style: solid;
+border-width: 10px;
 }
 
 .products-page .left-side-bar ul li:first-child {
@@ -2230,19 +2256,162 @@ product-page styling strat from here
 	width:auto;
 	background-size:cover ! important;
 	background-position:bottom center ! important;
+	background-attachment: fixed;
 	background-repeat:no-repeat;
 	position: relative;
 }
 
-@media screen and (max-width: 480px) 
+.products-page .left-side-bar ul {
+	display:block;
+	
+}
+
+@media screen and (max-width: 768px) 
 {
 	.product-list {
-	width: calc(100% - 25px);
+	width: 100%;
+	margin-left:0px;
 }
+
+.left-side-bar h4 {
+	    font-weight: 400 ! important;
+		background-color: #fff;
+		    bottom: 0;
+			    font-size: 14px;
+    width: 50%;
+    text-align: center;
+    position: fixed;
+	border-top: 1px solid #ebebeb;
+	    line-height: 16px;
+		z-index: 102;
+		border-right: 1px solid #ebebeb;
+}
+
+.left-side-bar h4:after {
+    content: '\f107';
+    position: relative;
+    padding-left: 10px;
+    color: #333;
+    font-size: 20px;
+    z-index: 101;
+    font-family: FontAwesome;
+}
+
+
+.stickyfilters {
+	width:100%;
+	margin-left: -4%;
+	z-index: 101;
+}
+
+
+.products-page .left-side-bar ul {
+	position: fixed;
+	bottom: 49px;
+    background-color: #fff;
+    width: 50%;
+    text-align: center;
+	border-right: 1px solid #ebebeb;
+	z-index: 101;
+	display:none;
+	
+}
+
+.products-page .short-by .btn-group {
+	    width: 100%;
+}
+.products-page .short-by {
+	width: 50%;
+	margin-top: -6px;
+	font-size:18px;
+    float: right;
+	    max-height: 46px;
+    margin-top: 0px;
+    text-align: center ! important;
+    border-right: 0;
+    border-left: 0;
+	z-index:101;
+	position: fixed;
+    right: 0;
+}
+.products-page .short-by a {
+	 padding: 10px ! important;
+	     font-size: 14px;
+	    position: fixed;
+    bottom: 0;
+    background-color: #fff ! important;
+	border-top: 1px solid #ebebeb;
+	    text-align: center;
+    left: 50%;
+	    width: 50%;
+}
+
+.products-page .left-side-bar {
+	clear:none;	
+    text-align: center;
+	width: 50%;
+    border: 1px solid #ebebeb;
+    border-left: 0px;
+	background-color:#fff;
+}
+
+.products-page .left-side-bar ul li {
+    font-size: 12px;
+}
+
+.products-page .main-content {
+	width:100%;
+}
+
 .prodcontent {
 	min-height:300px;
 }
+
+.products-page .btn-group.open .dropdown-menu {
+    padding: 0px ! important;
+    border-radius: 0px;
+    width: 100% ! important;
+    background-color: #fff ! important;
+    color: #333 ! important;
+	box-shadow: none ! important;
+	border: 1px solid #ebebeb ! important;
+	border-left: 1px solid #ebebeb ! important;
+	left: 0 ! important;
+	   bottom: 83px;
+    position: relative;
 }
+
+.products-page .btn-group.open .dropdown-menu li:last-child {
+    border-bottom: none ! important;
+	
+}
+
+.products-page .btn-group.open .dropdown-menu li {
+    border-bottom: 1px solid #ebebeb ! important;
+    padding: 15px 25px ! important;
+    font-size: 12px ! important;
+    text-transform: capitalize ! important;
+    list-style-type: none ! important;
+    cursor: pointer ! important;
+    position: relative ! important;
+	text-align:center ! important;
+}
+
+.products-page .btn-group.open .dropdown-menu li:hover {
+    font-weight: 400 ! important;
+}
+
+}
+
+@media screen and (max-width: 768px) 
+{
+    .site-content-contain {position: relative;
+    top: 95px;
+	}
+	
+	
+	
+	}
 
 @media screen and (max-width: 767px) 
 {
@@ -2302,6 +2471,7 @@ product-page styling strat from here
 
 
 .bottom-wrapper {
+	background-attachment: fixed ! important;
 	min-height:400px;
 	width:100%;
 	background-size:cover ! important;
@@ -2362,7 +2532,6 @@ product-page styling strat from here
 }
 
 .whisqtitle p {
-	    margin: 0 4%;
 	    color: #fff;
     text-transform: none;
     text-align: right;
@@ -2505,7 +2674,7 @@ product-page styling strat from here
 }
 
 .products-page .btn-group.open .dropdown-menu {
-	left: -96px ! important;
+	left: -96px;
 	padding: 10px 20px;
 	margin:0px;
 	border-radius:0px;
@@ -2525,7 +2694,19 @@ product-page styling strat from here
 
 .products-page .btn-group.open .dropdown-toggle {
     box-shadow: none;
-	
+}
+
+
+.products-page .btn-group a.dropdown-toggle {
+	color:#333;
+}
+
+.products-page .btn-group .dropdown-toggle:hover {
+	color:#333;
+}
+
+.products-page .btn-group .dropdown-toggle:focus {
+	color:#333;
 }
 
 
@@ -2535,7 +2716,11 @@ product-page styling strat from here
     padding-left:10px;
     top: 2px;
     color: #333;
-    font-size: 23px;
-    z-index: -1;
+    font-size: 20px;
+    z-index: 102;
     font-family: FontAwesome;
+}
+
+.short-by {
+	margin-top:25px;
 }

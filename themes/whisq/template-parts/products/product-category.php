@@ -10,16 +10,18 @@
 
 ?>
 <div class="filter short-by">
-		<form action="#" method="post" name="form" class="sortingby">
-	<select name="orderby" class="orderby" onchange="this.form.submit()">
-					<option value="menu_order"  selected="selected">Sort by</option>
-					<option value="popularity">Sort by popularity</option>
-					<option value="title">Sort by title</option>
-					<option value="rating">Sort by average rating</option>
-					<option value="date">Sort by newness</option>
-					<option value="price">Sort by price: low to high</option>
-					<option value="price-desc">Sort by price: high to low</option>
-			</select>
+		<form action="#" method="post" name="form" class="" >
+		<div class="btn-group">
+		   <a class="dropdown-toggle btn-select" data-toggle="dropdown" href="#">Sort by</a>
+	<ul name="orderby" class="dropdown-menu" onchange="this.form.submit()">
+					<li value="popularity">popularity</li>
+					<li value="title">title</li>
+					<li value="rating">average rating</li>
+					<li value="date">newness</li>
+					<li value="price">price low to high</li>
+					<li value="price-desc">price high to low</li>
+			</ul>
+    </div>
 			</form>
 		<?php
  				  if(isset($_POST['orderby'])){
@@ -37,6 +39,9 @@
 			    'include'    => $ids
 			);
 			$product_categories = get_terms( 'product_cat', $args );
+			$category1 = $_COOKIE['cat_name'];
+			 $cat_name1 = str_replace( ' ','',$category1);
+			  $active = $cat_name1.'-active';
 			?>
 			<h4>category</h4>
 			<ul id="product_cats">
@@ -48,7 +53,7 @@
            $cat = $product_category->name;
            $cat_url = str_replace( ' ','-',$cat);
 			    	?>
-			        <li class="<?php echo $cat_url ?>"><a href="<?php echo esc_url( home_url( '/product-shop/'.$cat_url.'/') ); ?>" rel="home">  <?php echo  $cat ?></a></li>
+			        <li class="<?php echo $cat_url.' '.$active ?>"><a href="<?php echo esc_url( home_url( '/product-shop/'.$cat_url.'/') ); ?>" rel="home">  <?php echo  $cat ?></a></li>
 			 <?php   }
 			}
 			?> 

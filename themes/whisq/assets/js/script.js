@@ -52,6 +52,7 @@ $(document).ready(function(){
      return false;
   });
 
+  if(window.innerWidth > 768 ) {
   $(window).scroll(function() {    
     var scroll = $(window).scrollTop();    
     if (scroll <= 400) {
@@ -68,6 +69,11 @@ $(document).ready(function(){
       $("header").removeClass("sticky");
     }
 });
+  }
+
+if(window.innerWidth < 768 ){
+	$("header").addClass("sticky");
+}
 
   $()
 
@@ -178,12 +184,13 @@ $('.search-btn').click(function(){
     location.reload();
   });
 
-  $('.product a').click(function(e){
+  $('.product').click(function(){
     document.cookie = "cat name = all";
   });
 
   $('.sub-menu li').click(function(e){
     $value = $(this).text();
+	e.stopPropagation();
     document.cookie = "cat name="+$value; 
   });
 
@@ -199,11 +206,39 @@ $('.search-btn').click(function(){
   $('.product-list').css('height', fp + 'px');
 
   
-});
 
-$(document).ready(function(){
 	
 	$("#all").trigger("click");
+	
+		
+	
+	if($('.spatulas').hasClass('spatulas'+'-active')){
+	$('.spatulas').addClass('catactive');
+	}
+	
+	else if($('.all-product').hasClass('all'+'-active')){
+	$('.all-product').addClass('catactive');
+	}
+	
+	else if($('.pans').hasClass('pans'+'-active')){
+	$('.pans').addClass('catactive');
+	}
+	
+	else if($('.bakeryaccessories').hasClass('bakeryaccessories'+'-active')){
+	$('.bakeryaccessories').addClass('catactive');
+	}
+	
+	if(window.innerWidth <= 768 ){
+	
+	$(".left-side-bar h4").click(function(){
+        $("#product_cats").slideToggle();
+    });
+	
+	$(".dropdown-toggle").click(function(){
+        $(".btn-group .open").slideToggle();
+    });
+	}
+	
 });
 
 

@@ -9,20 +9,21 @@
  */
 
 ?>
+<div class="stickyfilters">
 <div class="filter short-by">
 		<form action="#" method="post" name="form" class="" >
 		<div class="btn-group">
 		   <a class="dropdown-toggle btn-select" data-toggle="dropdown" href="#">Sort by</a>
 	<ul name="orderby" class="dropdown-menu" onchange="this.form.submit()">
-					<li value="menu_order" selected="selected">Sort by</li>
-					<li value="popularity">Sort by popularity</li>
-					<li value="title">Sort by title</li>
-					<li value="rating">Sort by average rating</li>
-					<li value="date">Sort by newness</li>
-					<li value="price">Sort by price: low to high</li>
-					<li value="price-desc">Sort by price: high to low</li>
+					<li value="popularity">popularity</li>
+					<li value="title">title</li>
+					<li value="rating">average rating</li>
+					<li value="date">newness</li>
+					<li value="price">price low to high</li>
+					<li value="price-desc">price high to low</li>
 			</ul>
     </div>
+	
 			</form>
 		<?php
  				  if(isset($_POST['orderby'])){
@@ -40,10 +41,14 @@
 			    'include'    => $ids
 			);
 			$product_categories = get_terms( 'product_cat', $args );
+			
+			$category1 = $_COOKIE['cat_name'];
+			 $cat_name1 = str_replace( ' ','',$category1);
+			  $active = $cat_name1.'-active';
 			?>
 			<h4>category</h4>
 			<ul id="product_cats">
-			<li class="all-product">all</li>
+			<li class="all-product <?php echo $active ?>">all</li>
 			<?php
 			$count = count($product_categories);
 			if ( $count > 0 ){
@@ -51,13 +56,15 @@
 			    	$cat = $product_category->name;
             $cat_name = str_replace( ' ','',$cat);
 			    	?>
-			        <li class="<?php echo $cat_name ?>"> <?php echo $product_category->name ?> </li>
+
+			        <li class="<?php echo $cat_name.' '.$active ?>"> <?php echo $product_category->name ?> </li>
 			      <?php
 			    }
 			}
 			?> 
 			</ul>
 			</div>
+		</div>
 			<div class="main-content">
 			<?php
 			 //fetching category value from cookies for category filter
