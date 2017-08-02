@@ -718,7 +718,7 @@ Feature product styling strat from here
   text-decoration: none;
 }
 
-.feature-item ins .woocommerce-Price-currencySymbol {margin-right: 6px;}
+.feature-item ins .woocommerce-Price-currencySymbol {    padding-right: 5px;}
 
 
 .feature-btn:focus {
@@ -2300,8 +2300,17 @@ product-page styling strat from here
 @media screen and (max-width: 768px) 
 {
 	
+	.page-template-product-page .site-info {
+		margin-bottom:48px;
+	}
 	
+	.catactive {
+	color:#333;
+}
 	
+	.products-page .left-side-bar ul li:hover {
+	color:#333;
+}
 	
 	
 	.product-list {
@@ -2723,6 +2732,18 @@ product-page styling strat from here
 
 @media screen and (max-width: 768px)
 {
+	
+.catactive:after {
+content: '';
+display: block;
+position: absolute;
+top: 0px;
+left: 0;
+width: 0;
+height: 0;
+border:none;
+}	
+	
 .products-page .short-by {
     font-weight: 400 ! important;
     background-color: #fff;
@@ -2785,6 +2806,10 @@ product-page styling strat from here
     list-style-type: none;
     cursor: pointer;
     position: relative;
+}
+
+.products-page .short-by ul li:hover {
+    color:#333;
 }
 
 .short-by {

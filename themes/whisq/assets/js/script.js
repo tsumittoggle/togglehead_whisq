@@ -3,6 +3,14 @@
 $(document).ready(function(){
 
   //Banner slider window height javascript
+  
+   
+if(window.innerWidth > 1300 ) {
+	jQuery('#myCarousel').css('height','auto'); 
+}
+
+if(window.innerWidth < 1300 ) {
+  //Banner slider window height javascript
    $('.item:first-child').addClass('active');	
    var header_height = $('header').height();
    var padding_space = 0;
@@ -10,11 +18,8 @@ $(document).ready(function(){
    var height = $(window).height();
    jQuery('#myCarousel').css('height',height - total+'px'); 
    console.log("LoL" + total);
-
-  //Banner slider auto height javascript
-  if(window.innerWidth < 1120 ){
-    jQuery('#myCarousel').css('height','auto');
-  }
+}
+	 
 
     $('#carousel01').owlCarousel({
     loop:false,
