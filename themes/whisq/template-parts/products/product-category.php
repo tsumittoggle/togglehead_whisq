@@ -9,7 +9,7 @@
  */
 
 ?>
-<div class="filter short-by">
+  <div class="filter short-by">
 		<form action="#" method="post" name="form" class="sortingby">
 	<select name="orderby" class="orderby" onchange="this.form.submit()">
 					<option value="menu_order"  selected="selected">Sort by</option>
@@ -61,7 +61,7 @@
 		    	$category = str_replace($category ,'','');
 		    }
 
-		    $offset = $_COOKIE['whisq_offset'];
+		  $offset = $_COOKIE['whisq_offset'];
 		  
 			$bandproduct_args = array(
 				'post_type'           => 'product',

@@ -104,7 +104,7 @@
 			        </div>
 
 			<?php 
-			    $number_product;
+			    $number_product = 35;
 			    $number_product = $number_product + 1;
 			    endwhile;
 			    wp_reset_query(); 
@@ -112,12 +112,13 @@
 			</div>
 			<div id="pagination" class="pagination">
 				<ul>
+				<li class="next">></li>
 				<?php
 				if($number_product > 10) {
 	        for($i = 0; $i < $number_product; $i = $i + 10 ) { 
 	        	$pagination;
 	        	?>
-	        	<li value="<?php echo $i; ?>"><?php echo $pagination = $pagination + 1; ?></li>
+	        	<li id="<?php if($i == $offset) {echo "active";} ?>" value="<?php echo $i; ?>"><?php echo $pagination = $pagination + 1; ?></li>
 	        	<?php
 				}}
 				?>

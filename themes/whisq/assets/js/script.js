@@ -2,14 +2,6 @@
 
 $(document).ready(function(){
 
-   // $("#myCarousel").swiperight(function() {
-   //    $(this).carousel('prev');
-   //  });
-   // $("#myCarousel").swipeleft(function() {
-   //    $(this).carousel('next');
-   // });
-
-
   //Banner slider window height javascript
    $('.item:first-child').addClass('active');	
    var header_height = $('header').height();
@@ -234,6 +226,24 @@ $('.search-btn').click(function(){
     $offset_value = $(this).val();
     document.cookie = "whisq_offset ="+$offset_value;
     location.reload();
+  });
+
+    //product listing pagination
+  $('#pagination .next').click(function(){
+    $offset_value = $('#pagination #active').val();
+    $final = $offset_value + 10;
+    document.cookie = "whisq_offset ="+$final;
+    location.reload();
+  });  
+
+    //product listing pagination
+  $('#pagination .prev').click(function(){
+    $offset_value = $('#pagination #active').val();
+    if($offset_value > 0) {
+    $final = $offset_value - 10;
+    document.cookie = "whisq_offset ="+$final;
+    location.reload();
+    }
   });
 
     var $prod_height = $('.product-list').height();
