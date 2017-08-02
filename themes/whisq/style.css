@@ -247,7 +247,7 @@ Header styling strat from here
   z-index: 100;
 }
 
-header .sub-menu {box-shadow: 0 0 20px rgba(0,0,0,0.15);}
+header .sub-menu {box-shadow: 0 0 5px rgba(0,0,0,0.15);}
 
 nav li {
   display: inline-block;
@@ -721,6 +721,10 @@ Feature product styling strat from here
 .feature-item ins .woocommerce-Price-currencySymbol {margin-right: 6px;}
 
 
+.feature-btn:focus {
+	color:#fff;
+}
+
 .feature-btn,
 .added_to_cart {
   display: none;
@@ -762,7 +766,8 @@ Feature product styling strat from here
 .feature-item:hover .feature-btn,
 .feature-item:hover .added_to_cart  {
   display: inline-block;
-  text-decoration: none
+  text-decoration: none;
+  color: #fff;
 }
 
 .feature-item:hover .feature-title { 
@@ -949,9 +954,9 @@ Recipes styling start from here
 
 .recipe-content {
   width: 100%;
-  min-height: 205px;
-  padding: 35px 0 45px;
+  padding: 35px 0 35px;
   border: 1.5px solid #ebebeb;
+  border-top: none;
   position: relative;
 }
 
@@ -1141,7 +1146,7 @@ Store styling start from here
   border-radius: 50%;
   position: relative;
   left: 0;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
   list-style: none;
   text-align: center;
 }
@@ -1818,6 +1823,10 @@ padding: 35px;
 	-moz-appearance:none;
 }
 
+.select-section select::-ms-expand {
+    display: none;
+}
+
 .select-section option {
 	padding-left: 8px;
 }
@@ -1859,7 +1868,7 @@ padding: 35px;
 
 	.city-address {
 		min-height:auto ! important;
-		padding-bottom: 136px;
+		padding-bottom: 150px;
 	}
 	
 }
@@ -2268,6 +2277,11 @@ product-page styling strat from here
 
 @media screen and (max-width: 768px) 
 {
+	
+	
+	
+	
+	
 	.product-list {
 	width: 100%;
 	margin-left:0px;
@@ -2283,8 +2297,8 @@ product-page styling strat from here
     position: fixed;
 	border-top: 1px solid #ebebeb;
 	    line-height: 16px;
-		z-index: 102;
-		border-right: 1px solid #ebebeb;
+		z-index: 101;
+		    border-right: 1px solid #ebebeb;
 }
 
 .left-side-bar h4:after {
@@ -2310,6 +2324,7 @@ product-page styling strat from here
 	bottom: 49px;
     background-color: #fff;
     width: 50%;
+	left:0;
     text-align: center;
 	border-right: 1px solid #ebebeb;
 	z-index: 101;
@@ -2317,50 +2332,26 @@ product-page styling strat from here
 	
 }
 
-.products-page .short-by .btn-group {
-	    width: 100%;
-}
-.products-page .short-by {
-	width: 50%;
-	margin-top: -6px;
-	font-size:18px;
-    float: right;
-	    max-height: 46px;
-    margin-top: 0px;
-    text-align: center ! important;
-    border-right: 0;
-    border-left: 0;
-	z-index:101;
-	position: fixed;
-    right: 0;
-}
-.products-page .short-by a {
-	 padding: 10px ! important;
-	     font-size: 14px;
-	    position: fixed;
-    bottom: 0;
-    background-color: #fff ! important;
-	border-top: 1px solid #ebebeb;
-	    text-align: center;
-    left: 50%;
-	    width: 50%;
-}
+
 
 .products-page .left-side-bar {
 	clear:none;	
     text-align: center;
 	width: 50%;
-    border: 1px solid #ebebeb;
+    border: none;
     border-left: 0px;
 	background-color:#fff;
 }
 
 .products-page .left-side-bar ul li {
     font-size: 12px;
+	min-height:47px;
+	max-height:47px;
 }
 
 .products-page .main-content {
 	width:100%;
+	    margin-top: 25px;
 }
 
 .prodcontent {
@@ -2408,9 +2399,7 @@ product-page styling strat from here
     .site-content-contain {position: relative;
     top: 95px;
 	}
-	
-	
-	
+
 	}
 
 @media screen and (max-width: 767px) 
@@ -2668,59 +2657,182 @@ product-page styling strat from here
 }
 
 
-.products-page .dropdown-toggle {
-	background-color:transparent ! important;
-	text-decoration:none;
+.short-by {
+	margin-top:25px;
 }
 
-.products-page .btn-group.open .dropdown-menu {
-	left: -96px;
-	padding: 10px 20px;
-	margin:0px;
-	border-radius:0px;
-	width: 165px;
-    background-color: #ba5c82;
-	color: #fff;
+.products-page .short-by {
+    text-align: right;
+    width: 150px;
+    float: right;
 }
 
-.products-page .btn-group.open .dropdown-menu li {
-	padding:5px 0;
-	text-align: right;
+.products-page .short-by h4 {
+    font-size: 14px;
 }
 
-.products-page .btn-group.open .dropdown-menu li:hover {
-    font-weight:600;
+.products-page .short-by ul {
+    list-style:none;
+	background-color: #ba5c82;
+    padding: 15px;
+    color: #e5e5e5;
+	display:none;
+	position: absolute;
+	right: 4%;
 }
 
-.products-page .btn-group.open .dropdown-toggle {
-    box-shadow: none;
-}
-
-
-.products-page .btn-group a.dropdown-toggle {
-	color:#333;
-}
-
-.products-page .btn-group .dropdown-toggle:hover {
-	color:#333;
-}
-
-.products-page .btn-group .dropdown-toggle:focus {
-	color:#333;
-}
-
-
-.products-page .dropdown-toggle:after {
-          content: '\f107';
-        position: relative;
-    padding-left:10px;
-    top: 2px;
+.products-page .short-by h4:after {
+    content: '\f107';
+    position: relative;
+    padding-left: 10px;
     color: #333;
     font-size: 20px;
-    z-index: 102;
+    z-index: 101;
     font-family: FontAwesome;
 }
 
+.products-page .short-by ul li {
+    cursor: pointer;
+}
+
+.products-page .short-by ul li:hover {
+    color:#fff;
+}
+
+@media screen and (max-width: 768px)
+{
+.products-page .short-by {
+    font-weight: 400 ! important;
+    background-color: #fff;
+    bottom: 0;
+	right: 0;
+    font-size: 14px;
+    width: 50%;
+    text-align: center;
+    position: fixed;
+    border-top: 1px solid #ebebeb;
+    line-height: 16px;
+    z-index: 102;
+    border-right: 1px solid #ebebeb;
+}
+	.products-page .short-by h4 {
+	text-transform: capitalize;
+	padding: 15px 25px;
+	margin:0px;
+	    font-weight: 400 ! important;
+    background-color: #fff;
+    bottom: 0;
+    font-size: 14px;
+    width: 50%;
+    text-align: center;
+    position: fixed;
+    border-top: 1px solid #ebebeb;
+    line-height: 16px;
+    z-index: 102;
+    border-left: 1px solid #ebebeb;
+}
+
+.products-page .short-by ul {
+    position: fixed;
+    bottom: 49px;
+    background-color: #fff;
+	color:#333;
+    width: 50%;
+    right: 0;
+    text-align: center;
+    z-index: 101;
+    display: none;
+	    padding: 0px;
+    margin-bottom: 0px;
+	border: 1px solid #ebebeb;
+	border-bottom: none;
+}
+
+.products-page .short-by ul li:last-child {
+    border-bottom: none ! important;
+	
+}
+
+.products-page .short-by ul li {
+    border-bottom: 1px solid #ebebeb;
+    padding: 15px 25px;
+	min-height:47px;
+	max-height:47px;
+    font-size: 12px;
+    text-transform: capitalize;
+    list-style-type: none;
+    cursor: pointer;
+    position: relative;
+}
+
 .short-by {
-	margin-top:25px;
+    margin-top: 0px;
+}
+
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) 
+{
+	.product-list {
+	width: calc(50% - 15px);
+	margin-right: 30px;
+	}
+
+.product-list:nth-child(2n + 2) {margin-right:0;
+}
+
+}
+
+.products-page .pagination {
+	width:100%;
+	text-align:center;
+}
+
+.products-page .pagination ul {
+	list-style:none;
+}
+.products-page .pagination ul li {
+	display:inline-block;
+	margin: 0 5px;
+    padding: 2px 8px;
+    color:#ba5c82;
+	font-weight:600;
+	font-size:16px;
+}
+
+.products-page .pagination ul li:hover {
+	    background-color: #ba5c82;
+		color:#fff;
+}
+
+.products-page .pagination ul li i {
+		font-weight:600;
+}
+
+.products-page .pagination ul #active {
+	background-color:#ba5c82;
+	color:#fff;
+}
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) 
+{
+.recipe-content {
+  min-height: 297px;
+}
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1224px) 
+{
+.recipe-content {
+  min-height: 244px;
+}
+}
+
+@media screen and (min-width: 1225px) and (max-width: 1645px) 
+{
+.recipe-content {
+  min-height: 190px;
+}
 }

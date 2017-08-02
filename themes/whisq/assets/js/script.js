@@ -200,6 +200,25 @@ $('.search-btn').click(function(){
     document.cookie = "whisq_offset ="+$offset_value;
     location.reload();
   });
+  
+  
+     //product listing pagination
+ $('#pagination .next').click(function(){
+   $offset_value = $('#pagination #active').val();
+   $final = $offset_value + 10;
+   document.cookie = "whisq_offset ="+$final;
+   location.reload();
+ });  
+
+   //product listing pagination
+ $('#pagination .prev').click(function(){
+   $offset_value = $('#pagination #active').val();
+   if($offset_value > 0) {
+   $final = $offset_value - 10;
+   document.cookie = "whisq_offset ="+$final;
+   location.reload();
+   }
+ });
 
     var $prod_height = $('.product-list').height();
   var fp = $prod_height + 65;
@@ -232,13 +251,25 @@ $('.search-btn').click(function(){
 	
 	$(".left-side-bar h4").click(function(){
         $("#product_cats").slideToggle();
+		
+        $(".sort-cat").hide();
     });
 	
-	$(".dropdown-toggle").click(function(){
-        $(".btn-group .open").slideToggle();
+	$(".short-by h4").click(function(){
+        $(".sort-cat").slideToggle();
+		$("#product_cats").hide();
     });
+	
+	
 	}
 	
+		if(window.innerWidth > 768 ){
+	$(".short-by h4").click(function(){
+        $(".sort-cat").slideToggle();
+    });
+		}
+		
+		
 });
 
 

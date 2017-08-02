@@ -9,23 +9,22 @@
  */
 
 ?>
+<div class="stickyfilters">
 <div class="filter short-by">
-		<form action="#" method="post" name="form" class="" >
-		<div class="btn-group">
-		   <a class="dropdown-toggle btn-select" data-toggle="dropdown" href="#">Sort by</a>
-	<ul name="orderby" class="dropdown-menu" onchange="this.form.submit()">
-					<li value="popularity">popularity</li>
-					<li value="title">title</li>
-					<li value="rating">average rating</li>
-					<li value="date">newness</li>
-					<li value="price">price low to high</li>
-					<li value="price-desc">price high to low</li>
+<form action="#" method="post" name="form" class="" >
+			<h4>Sort by</h4>
+			<ul name="orderby" class="sort-cat" onchange="this.form.submit()">
+			<li value="popularity">Best Selling</li>
+			<li value="title">title</li>
+			<li value="rating">average rating</li>
+			<li value="date">Date. New to Old</li>
+			<li value="price">Price. Low to High</li>
+			<li value="price-desc">Price. High to Low</li>
 			</ul>
-    </div>
 			</form>
 		<?php
  				  if(isset($_POST['orderby'])){
- 						$selected_val = $_POST['orderby'];    
+ 						$selected_val = $_POST['orderby'];  
  				  }
  				?>
 	</div>
@@ -59,6 +58,7 @@
 			?> 
 			</ul>
 			</div>
+		</div>
 			<div class="main-content">
 			<?php
 		    $category = $_COOKIE['cat_name'];
