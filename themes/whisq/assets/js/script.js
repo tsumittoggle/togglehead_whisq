@@ -276,9 +276,7 @@ $('.search-btn').click(function(){
   var fp = $prod_height + 65;
   $('.product-list').css('height', fp + 'px');
 
-  
-
-	
+ 	
 	$("#all").trigger("click");
 	
 		
@@ -324,9 +322,7 @@ $('.search-btn').click(function(){
 		
 });
 
- 
-  //Set some options later
-  $("#myCarousel").swipe( {fingers:2} );
+
 })(jQuery);
 
 
