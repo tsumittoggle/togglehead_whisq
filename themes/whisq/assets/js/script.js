@@ -86,6 +86,7 @@ $('#carousel03').owlCarousel({
      return false;
   });
 
+  if(window.innerWidth > 768 ) {
   $(window).scroll(function() {    
     var scroll = $(window).scrollTop();    
     if (scroll <= 400) {
@@ -102,6 +103,11 @@ $('#carousel03').owlCarousel({
       $("header").removeClass("sticky");
     }
 });
+  }
+
+if(window.innerWidth < 768 ){
+	$("header").addClass("sticky");
+}
 
   $()
 
@@ -212,12 +218,13 @@ $('.search-btn').click(function(){
     location.reload();
   });
 
-  $('.product a').click(function(e){
+  $('.product').click(function(){
     document.cookie = "cat name = all";
   });
 
   $('.sub-menu li').click(function(e){
     $value = $(this).text();
+	e.stopPropagation();
     document.cookie = "cat name="+$value; 
   });
 
@@ -227,6 +234,25 @@ $('.search-btn').click(function(){
     document.cookie = "whisq_offset ="+$offset_value;
     location.reload();
   });
+  
+  
+     //product listing pagination
+ $('#pagination .next').click(function(){
+   $offset_value = $('#pagination #active').val();
+   $final = $offset_value + 10;
+   document.cookie = "whisq_offset ="+$final;
+   location.reload();
+ });  
+
+   //product listing pagination
+ $('#pagination .prev').click(function(){
+   $offset_value = $('#pagination #active').val();
+   if($offset_value > 0) {
+   $final = $offset_value - 10;
+   document.cookie = "whisq_offset ="+$final;
+   location.reload();
+   }
+ });
 
     //product listing pagination
   $('#pagination .next').click(function(){
@@ -251,11 +277,51 @@ $('.search-btn').click(function(){
   $('.product-list').css('height', fp + 'px');
 
   
-});
 
-$(document).ready(function(){
 	
 	$("#all").trigger("click");
+	
+		
+	
+	if($('.spatulas').hasClass('spatulas'+'-active')){
+	$('.spatulas').addClass('catactive');
+	}
+	
+	else if($('.all-product').hasClass('all'+'-active')){
+	$('.all-product').addClass('catactive');
+	}
+	
+	else if($('.pans').hasClass('pans'+'-active')){
+	$('.pans').addClass('catactive');
+	}
+	
+	else if($('.bakeryaccessories').hasClass('bakeryaccessories'+'-active')){
+	$('.bakeryaccessories').addClass('catactive');
+	}
+	
+	if(window.innerWidth <= 768 ){
+	
+	$(".left-side-bar h4").click(function(){
+        $("#product_cats").slideToggle();
+		
+        $(".sort-cat").hide();
+    });
+	
+	$(".short-by h4").click(function(){
+        $(".sort-cat").slideToggle();
+		$("#product_cats").hide();
+    });
+	
+	
+	}
+	
+		if(window.innerWidth > 768 ){
+	$(".short-by h4").click(function(){
+        $(".sort-cat").slideToggle();
+    });
+		}
+		
+		
 });
 
  

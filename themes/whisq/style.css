@@ -247,7 +247,7 @@ Header styling strat from here
   z-index: 100;
 }
 
-header .sub-menu {box-shadow: 0 0 20px rgba(0,0,0,0.15);}
+header .sub-menu {box-shadow: 0 0 5px rgba(0,0,0,0.15);}
 
 nav li {
   display: inline-block;
@@ -721,13 +721,17 @@ Feature product styling strat from here
 .feature-item ins .woocommerce-Price-currencySymbol {margin-right: 6px;}
 
 
+.feature-btn:focus {
+	color:#fff;
+}
+
 .feature-btn,
 .added_to_cart {
   display: none;
   padding: 8px 20px;
   border-radius: 5px;
   position: relative;
-  z-index: 1000;
+  z-index: 99;
   background-color: #b95b81;
   color: #fff;
   text-decoration: none;
@@ -762,7 +766,8 @@ Feature product styling strat from here
 .feature-item:hover .feature-btn,
 .feature-item:hover .added_to_cart  {
   display: inline-block;
-  text-decoration: none
+  text-decoration: none;
+  color: #fff;
 }
 
 .feature-item:hover .feature-title { 
@@ -971,9 +976,9 @@ Recipes styling start from here
 
 .recipe-content {
   width: 100%;
-  min-height: 205px;
-  padding: 35px 0 45px;
+  padding: 35px 0 35px;
   border: 1.5px solid #ebebeb;
+  border-top: none;
   position: relative;
 }
 
@@ -1163,7 +1168,7 @@ Store styling start from here
   border-radius: 50%;
   position: relative;
   left: 0;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
   list-style: none;
   text-align: center;
 }
@@ -1515,7 +1520,10 @@ header li .sub-menu {
   background: rgba(0, 0, 0, 0);
 }
 
-header .menu-item-has-children:after {color: #fff;}
+header .menu-item-has-children:after {
+	right: 0;
+	color: #fff;
+}
 
 header li .sub-menu li a {color: #fff;}
 
@@ -1547,6 +1555,8 @@ header li .sub-menu:after {display: none;}
     display: table-cell;
     vertical-align: middle;
   }
+  
+  .sub-menu .menu-item:after {display: none;}
 
   header nav li {
     display: block;
@@ -1835,6 +1845,10 @@ padding: 35px;
 	-moz-appearance:none;
 }
 
+.select-section select::-ms-expand {
+    display: none;
+}
+
 .select-section option {
 	padding-left: 8px;
 }
@@ -1876,7 +1890,7 @@ padding: 35px;
 
 	.city-address {
 		min-height:auto ! important;
-		padding-bottom: 136px;
+		padding-bottom: 150px;
 	}
 	
 }
@@ -2138,7 +2152,6 @@ Locate Us styling start from here
 	font-weight: 600;
 	margin-top: 0px;
     margin-bottom: 0px;
-	min-height: 52px;
 }
 
 .products-page .left-side-bar ul li {
@@ -2148,6 +2161,28 @@ Locate Us styling start from here
 	text-transform:capitalize;
 	list-style-type: none;
 	cursor:pointer;
+	position:relative;
+}
+
+.catactive {
+	color:#ba5c82;
+}
+
+li.catactive a {
+    color: #ba5c82;
+}
+
+.catactive:after {
+content: '';
+display: block;
+position: absolute;
+top: 15px;
+left: 0;
+width: 0;
+height: 0;
+border-color: transparent transparent transparent #ba5c82;
+border-style: solid;
+border-width: 10px;
 }
 
 .products-page .left-side-bar ul li:first-child {
@@ -2252,19 +2287,142 @@ product-page styling strat from here
 	width:auto;
 	background-size:cover ! important;
 	background-position:bottom center ! important;
+	background-attachment: fixed;
 	background-repeat:no-repeat;
 	position: relative;
 }
 
-@media screen and (max-width: 480px) 
-{
-	.product-list {
-	width: calc(100% - 25px);
+.products-page .left-side-bar ul {
+	display:block;
+	
 }
+
+@media screen and (max-width: 768px) 
+{
+	
+	
+	
+	
+	
+	.product-list {
+	width: 100%;
+	margin-left:0px;
+}
+
+.left-side-bar h4 {
+	    font-weight: 400 ! important;
+		background-color: #fff;
+		    bottom: 0;
+			    font-size: 14px;
+    width: 50%;
+    text-align: center;
+    position: fixed;
+	border-top: 1px solid #ebebeb;
+	    line-height: 16px;
+		z-index: 101;
+		    border-right: 1px solid #ebebeb;
+}
+
+.left-side-bar h4:after {
+    content: '\f107';
+    position: relative;
+    padding-left: 10px;
+    color: #333;
+    font-size: 20px;
+    z-index: 101;
+    font-family: FontAwesome;
+}
+
+
+.stickyfilters {
+	width:100%;
+	margin-left: -4%;
+	z-index: 101;
+}
+
+
+.products-page .left-side-bar ul {
+	position: fixed;
+	bottom: 49px;
+    background-color: #fff;
+    width: 50%;
+	left:0;
+    text-align: center;
+	border-right: 1px solid #ebebeb;
+	z-index: 101;
+	display:none;
+	
+}
+
+
+
+.products-page .left-side-bar {
+	clear:none;	
+    text-align: center;
+	width: 50%;
+    border: none;
+    border-left: 0px;
+	background-color:#fff;
+}
+
+.products-page .left-side-bar ul li {
+    font-size: 12px;
+	min-height:47px;
+	max-height:47px;
+}
+
+.products-page .main-content {
+	width:100%;
+	    margin-top: 25px;
+}
+
 .prodcontent {
 	min-height:300px;
 }
+
+.products-page .btn-group.open .dropdown-menu {
+    padding: 0px ! important;
+    border-radius: 0px;
+    width: 100% ! important;
+    background-color: #fff ! important;
+    color: #333 ! important;
+	box-shadow: none ! important;
+	border: 1px solid #ebebeb ! important;
+	border-left: 1px solid #ebebeb ! important;
+	left: 0 ! important;
+	   bottom: 83px;
+    position: relative;
 }
+
+.products-page .btn-group.open .dropdown-menu li:last-child {
+    border-bottom: none ! important;
+	
+}
+
+.products-page .btn-group.open .dropdown-menu li {
+    border-bottom: 1px solid #ebebeb ! important;
+    padding: 15px 25px ! important;
+    font-size: 12px ! important;
+    text-transform: capitalize ! important;
+    list-style-type: none ! important;
+    cursor: pointer ! important;
+    position: relative ! important;
+	text-align:center ! important;
+}
+
+.products-page .btn-group.open .dropdown-menu li:hover {
+    font-weight: 400 ! important;
+}
+
+}
+
+@media screen and (max-width: 768px) 
+{
+    .site-content-contain {position: relative;
+    top: 95px;
+	}
+
+	}
 
 @media screen and (max-width: 767px) 
 {
@@ -2324,6 +2482,7 @@ product-page styling strat from here
 
 
 .bottom-wrapper {
+	background-attachment: fixed ! important;
 	min-height:400px;
 	width:100%;
 	background-size:cover ! important;
@@ -2384,7 +2543,6 @@ product-page styling strat from here
 }
 
 .whisqtitle p {
-	    margin: 0 4%;
 	    color: #fff;
     text-transform: none;
     text-align: right;
@@ -2521,43 +2679,182 @@ product-page styling strat from here
 }
 
 
-.products-page .dropdown-toggle {
-	background-color:transparent ! important;
-	text-decoration:none;
+.short-by {
+	margin-top:25px;
 }
 
-.products-page .btn-group.open .dropdown-menu {
-	left: -96px ! important;
-	padding: 10px 20px;
+.products-page .short-by {
+    text-align: right;
+    width: 150px;
+    float: right;
+}
+
+.products-page .short-by h4 {
+    font-size: 14px;
+}
+
+.products-page .short-by ul {
+    list-style:none;
+	background-color: #ba5c82;
+    padding: 15px;
+    color: #e5e5e5;
+	display:none;
+	position: absolute;
+	right: 4%;
+}
+
+.products-page .short-by h4:after {
+    content: '\f107';
+    position: relative;
+    padding-left: 10px;
+    color: #333;
+    font-size: 20px;
+    z-index: 101;
+    font-family: FontAwesome;
+}
+
+.products-page .short-by ul li {
+    cursor: pointer;
+}
+
+.products-page .short-by ul li:hover {
+    color:#fff;
+}
+
+@media screen and (max-width: 768px)
+{
+.products-page .short-by {
+    font-weight: 400 ! important;
+    background-color: #fff;
+    bottom: 0;
+	right: 0;
+    font-size: 14px;
+    width: 50%;
+    text-align: center;
+    position: fixed;
+    border-top: 1px solid #ebebeb;
+    line-height: 16px;
+    z-index: 102;
+    border-right: 1px solid #ebebeb;
+}
+	.products-page .short-by h4 {
+	text-transform: capitalize;
+	padding: 15px 25px;
 	margin:0px;
-	border-radius:0px;
-	width: 165px;
-    background-color: #ba5c82;
-	color: #fff;
+	    font-weight: 400 ! important;
+    background-color: #fff;
+    bottom: 0;
+    font-size: 14px;
+    width: 50%;
+    text-align: center;
+    position: fixed;
+    border-top: 1px solid #ebebeb;
+    line-height: 16px;
+    z-index: 102;
+    border-left: 1px solid #ebebeb;
 }
 
-.products-page .btn-group.open .dropdown-menu li {
-	padding:5px 0;
-	text-align: right;
+.products-page .short-by ul {
+    position: fixed;
+    bottom: 49px;
+    background-color: #fff;
+	color:#333;
+    width: 50%;
+    right: 0;
+    text-align: center;
+    z-index: 101;
+    display: none;
+	    padding: 0px;
+    margin-bottom: 0px;
+	border: 1px solid #ebebeb;
+	border-bottom: none;
 }
 
-.products-page .btn-group.open .dropdown-menu li:hover {
-    font-weight:600;
-}
-
-.products-page .btn-group.open .dropdown-toggle {
-    box-shadow: none;
+.products-page .short-by ul li:last-child {
+    border-bottom: none ! important;
 	
 }
 
+.products-page .short-by ul li {
+    border-bottom: 1px solid #ebebeb;
+    padding: 15px 25px;
+	min-height:47px;
+	max-height:47px;
+    font-size: 12px;
+    text-transform: capitalize;
+    list-style-type: none;
+    cursor: pointer;
+    position: relative;
+}
 
-.products-page .dropdown-toggle:after {
-          content: '\f107';
-        position: relative;
-    padding-left:10px;
-    top: 2px;
-    color: #333;
-    font-size: 23px;
-    z-index: -1;
-    font-family: FontAwesome;
+.short-by {
+    margin-top: 0px;
+}
+
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) 
+{
+	.product-list {
+	width: calc(50% - 15px);
+	margin-right: 30px;
+	}
+
+.product-list:nth-child(2n + 2) {margin-right:0;
+}
+
+}
+
+.products-page .pagination {
+	width:100%;
+	text-align:center;
+}
+
+.products-page .pagination ul {
+	list-style:none;
+}
+.products-page .pagination ul li {
+	display:inline-block;
+	margin: 0 5px;
+    padding: 2px 8px;
+    color:#ba5c82;
+	font-weight:600;
+	font-size:16px;
+}
+
+.products-page .pagination ul li:hover {
+	    background-color: #ba5c82;
+		color:#fff;
+}
+
+.products-page .pagination ul li i {
+		font-weight:600;
+}
+
+.products-page .pagination ul #active {
+	background-color:#ba5c82;
+	color:#fff;
+}
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) 
+{
+.recipe-content {
+  min-height: 297px;
+}
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1224px) 
+{
+.recipe-content {
+  min-height: 244px;
+}
+}
+
+@media screen and (min-width: 1225px) and (max-width: 1645px) 
+{
+.recipe-content {
+  min-height: 190px;
+}
 }
