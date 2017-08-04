@@ -12,9 +12,9 @@
 
 <div class="stickyfilters">
 <div class="filter short-by">
-<form action="#" method="post" name="form" class="" >
+
 			<h4>Sort by</h4>
-			<ul name="orderby" class="sort-cat" onchange="this.form.submit()">
+			<ul name="orderby" class="sort-cat">
 			<li value="popularity">Best Selling</li>
 			<li value="title">title</li>
 			<li value="rating">average rating</li>
@@ -22,13 +22,9 @@
 			<li value="price">Price. Low to High</li>
 			<li value="price-desc">Price. High to Low</li>
 			</ul>
-
-			</form>
 		<?php
- 				  if(isset($_POST['orderby'])){
- 						$selected_val = $_POST['orderby'];  
- 				  }
- 				?>
+			$selected_val = $_COOKIE['short_cat'];
+ 		?>
 	</div>
         <div class="left-side-bar">
 		<?php
