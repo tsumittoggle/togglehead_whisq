@@ -808,9 +808,9 @@ add_action( 'woocommerce_after_single_product', 'add_content_after_product', 15 
 
 function add_content_after_product() {?>
 
-	<div class="wrapper cf">
-	<div class="recipe cf">
+	<div class="wrapper cf">	
 	<h2 class="heading">featured recipes</h2>
+	<div class="recipe cf">
   <?php
 		$recipe = array( 'post_type' => 'recipes', 'posts_per_page' => 3, 'orderby' => 'rand' );
 		$recipe_list = new WP_Query( $recipe );
@@ -857,8 +857,10 @@ function product_detail_last_description() {
         $category_thumbnail = get_woocommerce_term_meta($term->term_id, 'thumbnail_id', true);
         $image = wp_get_attachment_url($category_thumbnail);
         ?>
-        <div class="cat-description" style="background-image: url(<?php echo $image ?>);">
-			     <p> <?php echo $term->description; ?></p>
+        <div class="bottom-wrapper cat-description" style="background-image: url(<?php echo $image ?>);">
+			     <div class="bottombancont">
+				 <p> <?php echo $term->description; ?></p>
+				 </div>
         </div>
         <?php
     }
