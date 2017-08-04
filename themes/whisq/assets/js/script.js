@@ -309,21 +309,19 @@ $('.search-btn').click(function(){
         $("#product_cats").slideToggle(500);		
 		$(".left-side-bar h4").toggleClass('caticorotate');
 		
-		$(".short-by h4").removeClass('addinline');
-		
     });
 	
 	$(".short-by h4").click(function(){
 		$("#product_cats").hide(500);
         $(".sort-cat").slideToggle(500);
-		$(".short-by h4").toggleClass('addinline');
 		$(".left-side-bar h4").removeClass('caticorotate');
     });
 	
 	
 	}
 	
-		if(window.innerWidth > 768 ){
+	
+	if(window.innerWidth > 768 ){
 	$(".short-by h4").click(function(){
         $(".sort-cat").slideToggle();
 		$(this).toggleClass('addinline');
