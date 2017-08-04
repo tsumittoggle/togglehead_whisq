@@ -318,12 +318,9 @@ $('.search-btn').click(function(){
         $(".sort-cat").slideToggle();
     });
 		}
-		
-		
 });
 
 
 })(jQuery);
-
 
 
