@@ -32,11 +32,13 @@
 			<span><?php the_field('email_recipes'); ?></span>
 		<?php endif; ?>
 	</div>
+	<div class="recipepara">
 	<p><?php the_excerpt(); ?></p>
+	</div>
 	<div class="recipe-detail">
 	  <?php if(get_field('integedien')) : ?>
 		<div class="ingrediean">
-			<h4>ingrediean</h4>
+			<h4>Ingredients</h4>
 			<div class="ingrediean-content">
 				<?php the_field('integedien'); ?>
 			</div>
@@ -61,8 +63,8 @@
 		<?php endif; ?>
   </div>
   <div class="post-change">
-	  <span class="prev"><?php previous_post_link(); ?></span>
-	  <span class="next"><?php next_post_link(); ?></span>     
+	  <span class="prev"><?php previous_post_link('%link','Previous'); ?></span>
+	  <span class="next"><?php next_post_link('%link','Next'); ?></span>     
   </div>
 </div>
 <div class="extra-wrapper">
@@ -81,23 +83,26 @@
 			  	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 			  		<?php the_post_thumbnail(); ?>
 			  	</a>
-			  </div>		  
+			  </div>
+			  <div class="recipes-page-content">
 			  <h3>
           <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 				    <?php the_title(); ?>
 				  </a>
 				</h3>
 				<p><?php the_excerpt(); ?></p>
+				
 				<div class="share">
         	<span>share</span>
   	      <?php echo do_shortcode('[DISPLAY_ULTIMATE_SOCIAL_ICONS]'); ?>
        </div>
+	   </div>
 			</div>
-		</div>
 		<?php
 		endwhile;
 		wp_reset_query(); 
   ?>
+  </div>
   <div class="related-accesories">
   			<?php
 		  
