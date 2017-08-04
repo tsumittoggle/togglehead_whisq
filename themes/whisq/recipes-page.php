@@ -8,12 +8,18 @@ get_header();
 			<h2><?php the_title(); ?></h2>
 			<p class="wrapper breadcrumb-url"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Home</a> > <span><?php the_title(); ?></span></p>
 		</div>
-
-		<div class="recipes-page">
+		<?php
+		    $category = $_COOKIE['category_name'];
+		    if($category == 'All') {
+		    	$category = str_replace($category ,'','');
+		    }
+		    $offset = $_COOKIE['whisq_offset'];
+		    ?>
+		<div class="recipes-page" style="overflow: auto;">
 			<div class="recipes-content">
 	<div class="recipe cf">
   <?php
-		$recipe = array( 'post_type' => 'recipes', 'posts_per_page' => 9 );
+		$recipe = array( 'post_type' => 'recipes', 'posts_per_page' => 9,'offset' =>  $offset, 'recipes_categories' => $category);
 		$recipe_list = new WP_Query( $recipe );
 		while ( $recipe_list->have_posts() ) : $recipe_list->the_post();
 		$count;
@@ -72,9 +78,9 @@ $terms = get_terms($taxonomy); // Get all terms of a taxonomy
 ?>
    <h3>category</h3>
    <ul>
-      <li class="all">All</li>
+      <li class="all <?php if($category == '') {echo 'active';} ?>">All</li>
       <?php foreach ( $terms as $term ) { ?>
-        <li class="<?php echo $term->name; ?>"><?php echo $term->name; ?></li>
+        <li class="<?php echo $term->name; ?> <?php if($category == $term->name) {echo 'active';} ?>"><?php echo $term->name; ?></li>
       <?php } ?>
     </ul>
 <?php ?>
@@ -104,6 +110,30 @@ $terms = get_terms($taxonomy); // Get all terms of a taxonomy
 </div>
 </div>
 </div>
+<?php
+		$recipe = array( 'post_type' => 'recipes', 'posts_per_page' => 2, 'orderby' => 'rand' );
+		$recipe_list = new WP_Query( $recipe );
+		while ( $recipe_list->have_posts() ) : $recipe_list->the_post();
+
+      $number_product++;
+	
+		endwhile;
+		wp_reset_query(); 
+  ?>
+			<div id="pagination" class="pagination">
+				<ul>
+				<li id="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></li>
+				<?php
+	        for($i = 0; $i < $number_product; $i = $i + 10 ) { 
+	        	$pagination;
+	        	?>
+	        	<li id="<?php if($i == $offset) {echo "active";} ?>" value="<?php echo $i; ?>"><?php echo $pagination = $pagination + 1; ?></li>
+	        	<?php
+				}
+				?>
+				<li id="next"><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+				</ul>
+			</div>
 <?php
 get_footer();
 ?>
