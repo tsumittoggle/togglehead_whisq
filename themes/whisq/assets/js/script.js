@@ -13,7 +13,7 @@ if(window.innerWidth < 1300 ) {
   //Banner slider window height javascript
    $('.item:first-child').addClass('active');	
    var header_height = $('header').height();
-   var padding_space = 0;
+   var padding_space = 40;
    total = padding_space + header_height;
    var height = $(window).height();
    jQuery('#myCarousel').css('height',height - total+'px'); 
@@ -78,8 +78,11 @@ $('#carousel03').owlCarousel({
   $('.product_type_simple').addClass('feature-btn');
 
   var $feture_height = $('.feature-item').height();
+  var $product_height = $('.woocommerce .products li').height();
   var f = $feture_height + 45;
+  var p = $product_height + 30;
   $('.feature-item').css('height', f + 'px');
+   $('.woocommerce .products li').css('height', p + 'px');
 
   //setting height for carousal
   if(window.innerWidth < 768 ){
@@ -110,12 +113,6 @@ $('#carousel03').owlCarousel({
 });
   }
 
-//if(window.innerWidth < 768 ){
-//	$("header").addClass("sticky");
-//}
-
-  $()
-
   //js for opening menu
   $('.hamburger').click(function(){
   if($('.menu-main').hasClass('menu-open')){
@@ -138,21 +135,7 @@ $('#carousel03').owlCarousel({
   }
 
 });
-
-//js for mega menu if has child class to menu
-// $('.menu-item-has-children').click(function(){
-
-//   if($(this).find('.sub-menu').hasClass('menu-open')){
-//     $('.menu-item-has-children').find('.sub-menu').removeClass('menu-open').addClass('menu-close');
-//     $(this).find('.sub-menu').addClass('menu-close');
-//   } 
-//   else{
-//     $('.menu-item-has-children').find('.sub-menu').removeClass('menu-open').addClass('menu-close');
-//      $(this).find('.sub-menu').addClass('menu-open');
-//   }
-// });
   
-
 //js for opening user profile
 $('.user-btn').click(function(){
     if($('.user-profile').hasClass('profile-open')){
@@ -240,8 +223,6 @@ $('.search-btn').click(function(){
     location.reload();
   });
   
-  
-     //product listing pagination
  $('#pagination .next').click(function(){
    $offset_value = $('#pagination #active').val();
    $final = $offset_value + 10;
@@ -249,7 +230,6 @@ $('.search-btn').click(function(){
    location.reload();
  });  
 
-   //product listing pagination
  $('#pagination .prev').click(function(){
    $offset_value = $('#pagination #active').val();
    if($offset_value > 0) {
@@ -259,25 +239,15 @@ $('.search-btn').click(function(){
    }
  });
 
-    //product listing pagination
-  $('#pagination .next').click(function(){
-    $offset_value = $('#pagination #active').val();
-    $final = $offset_value + 10;
-    document.cookie = "whisq_offset ="+$final;
+//short by
+$('.sort-cat li').click(function(){
+    $value = $(this).attr("value");
+    document.cookie = "short_cat="+$value;
     location.reload();
-  });  
+});
 
-    //product listing pagination
-  $('#pagination .prev').click(function(){
-    $offset_value = $('#pagination #active').val();
-    if($offset_value > 0) {
-    $final = $offset_value - 10;
-    document.cookie = "whisq_offset ="+$final;
-    location.reload();
-    }
-  });
 
-    var $prod_height = $('.product-list').height();
+var $prod_height = $('.product-list').height();
   var fp = $prod_height + 65;
   $('.product-list').css('height', fp + 'px');
 
@@ -327,13 +297,9 @@ $('.search-btn').click(function(){
 		$(this).toggleClass('addinline');
     });
 		}
-		
-		
-		
 });
 
 
 })(jQuery);
-
 
 
