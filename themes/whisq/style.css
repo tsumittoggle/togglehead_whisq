@@ -2204,7 +2204,7 @@ product-page styling strat from here
         position: initial ! important;
     border-radius: 0px ! important;
 	border: 1px solid #ebebeb;
-	padding:50px ! important;
+	padding:30px ! important;
 	margin:0px ! important;
 	width:50% ! important;
 	float:left ! important;
@@ -2602,6 +2602,13 @@ Recipes styling
 .page-template-recipes-page .recipes-page {
 	width:92%;
 	margin:0 auto;
+	margin-top: 25px;
+}
+
+.page-template-recipes-page .recipes-page:after {
+    content: '';
+    clear: both;
+    display: block;
 }
 
 .page-template-recipes-page .recipes-content {
@@ -2612,6 +2619,7 @@ Recipes styling
 .page-template-recipes-page .recipe-sidebar {
 	width:25%;
 	float:left;
+	margin-top: 15px;
 }
 
 
@@ -2746,5 +2754,279 @@ Recipes styling
     border: 1.5px solid #ebebeb;
     border-top: none;
     position: relative;
+}
+
+ .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-page-content h3 {
+    width: 70%;
+    margin: 0 auto 20px;
+    color: #ba5c82;
+    font: 600 24px/32px 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+.page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-page-content a, .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-page-content a:focus, .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-page-content a:hover {
+    color:#333;
+	text-decoration:none;
+}
+
+ .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-page-content p {
+    width: 70%;
+    margin: 0 auto;
+    color: #333;
+    font: 400 14px/22px 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+.page-template-recipes-page .page-container .recipes-content .recipe-tip .tip {
+	width: 100%;
+    display: inline-block;
+    background-color: #ba5c82;
+    text-align: center;
+    padding: 80px;
+	color:#fff;
+}
+
+.page-template-recipes-page .page-container .recipes-content .recipe-tip {
+	margin:0 15px;
+}
+
+.page-template-recipes-page .page-container .recipes-content .recipe-tip .tip p {
+    color: #fff ! important;
+}
+
+.single-featured-image-header {
+	display:none;
+}
+
+.single-recipes .header-post {
+	width:92%;
+	margin:0 auto;
+	margin-top:40px;
+	text-align:center;	
+}
+
+.single-recipes .header-post img {
+	width:85%;
+	height:auto;
+}
+
+.single-recipes .wrap:after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.single-recipes .content-area .list {
+	text-transform:capitalize;
+	cursor:pointer;
+	margin-top:30px;
+	margin-bottom:30px;
+}
+
+.single-recipes .content-area .list span:first-child:before {
+	content: '\f0f5';
+	padding-right:5px;
+	padding-left:10px;
+	font-family:FontAwesome;
+}
+
+.single-recipes .content-area .list span:nth-child(2):before {
+	content: '\f017';
+	padding-right:5px;
+	padding-left:10px;
+	font-family:FontAwesome;
+}
+
+.single-recipes .content-area .list span:nth-child(3):before {
+	content: '\f0f5';
+	padding-right:5px;
+	padding-left:10px;
+	font-family:FontAwesome;
+}
+
+.single-recipes .content-area .list span:nth-child(4):before {
+	content: '\f003';
+	padding-right:5px;
+	padding-left:10px;
+	font-family:FontAwesome;
+}
+
+.single-recipes .content-area .wrapper .recipepara {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.single-recipes .content-area .recipe-detail {
+	width:100%;
+}
+
+.single-recipes .content-area .recipe-detail .ingrediean {
+	width:50%;
+	display:inline-block;
+	float:left;
+	padding:10px;
+}
+
+.single-recipes .content-area .recipe-detail .ingrediean .ingrediean-content, .single-recipes .content-area .recipe-detail .method .method-content {
+	text-align:left;
+}
+
+.single-recipes .content-area .recipe-detail .ingrediean .ingrediean-content {
+	line-height: 40px;	
+}
+
+.single-recipes .content-area .recipe-detail .ingrediean h4, .single-recipes .content-area .recipe-detail .method h4 {
+	font-size:18px;
+	font-weight:600;
+	text-transform:uppercase;
+	text-align:left;
+	padding:20px 0px;
+}
+
+.single-recipes .content-area .recipe-detail .method ul {list-style:none;}
+.single-recipes .content-area .recipe-detail .method ul li{padding-bottom:15px;}
+.single-recipes .content-area .recipe-detail .method ul li:before {
+	content: '\f061';
+	font-family:FontAwesome;
+	padding-right:15px;
+    font-size: 25px;
+	color: #ba5c82;
+}
+
+.single-recipes .content-area .recipe-detail .method {
+	width:50%;
+	display:inline-block;
+	float:left;
+	padding:10px;
+}
+
+
+.single-recipes .content-area .share span {
+    display: inline-block;
+    vertical-align: middle;
+    text-transform: capitalize;
+    padding-right: 25px;
+    font-weight: 600;
+    margin-top: -30px ! important;
+}
+
+.single-recipes .content-area .sfsi_widget {
+    display: inline-block;
+}
+
+.single-recipes .content-area .tag {
+	text-align:left;
+}
+
+.single-recipes .content-area .tag p:first-child {
+	font-size:14px;
+	font-weight:600;
+	text-transform:uppercase;
+	display:inline-block;
+}
+.single-recipes .content-area .tag p:first-child:before {
+	content: '\f02b';
+	font-family:FontAwesome;
+	padding-right:15px;
+    font-size: 25px;
+	color: #ba5c82;
+}
+
+
+.single-recipes .content-area .tag p:first-child:after {
+	content:':';
+	padding-right:5px;
+}
+
+.single-recipes .content-area .tag p:nth-child(2) {
+	font-size:12px;
+	font-weight:600;
+	text-transform:capitalize;
+	display:inline-block;
+}
+
+.single-recipes .content-area .post-change .prev, .single-recipes .content-area .post-change .next {
+	padding: 15px;
+    border: 1px solid #ebebeb;
+}
+.single-recipes .content-area .post-change .prev a, .single-recipes .content-area .post-change .next a {
+	text-decoration:none;
+}
+
+.single-recipes .content-area .post-change .prev:before {
+	content: '\f053';
+	font-family:FontAwesome;
+	padding-right:15px;
+}
+
+.single-recipes .content-area .post-change .next:after {
+	content: '\f054';
+	font-family:FontAwesome;
+	padding-left:15px;
+}
+
+.single-recipes .page-container .recipe {
+    width: 92%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.single-recipes .page-container .recipe .recipes-page-list {
+    width: 33.33%;
+    float: left;
+    padding: 15px;
+}
+
+.single-recipes .page-container .recipe .recipes-page-content {
+    width: 100%;
+    padding: 35px 20px;
+    border: 1.5px solid #ebebeb;
+    border-top: none;
+    position: relative;
     min-height: 265px;
+}
+
+.single-recipes .page-container .recipe .recipe-page-img a img {
+    width: 100%;
+    height: auto;
+}
+
+
+.single-recipes .page-container .related-accesories {
+	width:92%;
+	margin:0 auto;
+}
+.single-recipes .page-container .product-list {
+    border-radius: 3px;
+    border: 1.5px solid #ebebeb;
+    width: 32%;
+    float: left;
+	margin:0px;
+	margin-right:2%;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.single-recipes .page-container .product-list:last-child {
+	margin-right:0;
+}
+
+.single-recipes .page-container .select-extra li {
+    position: initial ! important;
+    border-radius: 0px ! important;
+    border: 1px solid #ebebeb;
+    padding: 30px ! important;
+    margin: 0px ! important;
+    width: 50% ! important;
+    float: left ! important;
+    text-align: center ! important;
+    background-color: #ffffff ! important;
+}
+
+.single-recipes .page-container .select-extra {
+    padding: 0px ! important;
+    margin: 0px ! important;
+    width: 100% ! important;
+	list-style:none;
 }
