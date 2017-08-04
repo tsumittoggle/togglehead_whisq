@@ -247,7 +247,9 @@ Header styling strat from here
   z-index: 100;
 }
 
-header .sub-menu {box-shadow: 0 0 20px rgba(0,0,0,0.15);}
+header .sub-menu {box-shadow: 0 0 10px rgba(0,0,0,0.15);}
+
+.sticky li .sub-menu {top: 58px;}
 
 nav li {
   display: inline-block;
@@ -465,6 +467,7 @@ nav li a:focus {color: #be5f84;}
 
 .sticky {
   width: 100%;
+  height: 95px;
   position: fixed;
   top: 0;
   z-index: 10000;
@@ -865,7 +868,7 @@ body .btn {
 #carousel02 .owl-dots {
   width: 100%;
   position: absolute;
-  bottom: 35px;
+  bottom: 12px;
 }
 
 #carousel03 .owl-dots .owl-dot.active span, 
@@ -1281,6 +1284,8 @@ footer {
   float: left;
 }
 
+.footer-nav {padding-left: 8%;}
+
 .footer-section:last-child {margin-right: 0;}
 
 .footer-section li li a {
@@ -1436,6 +1441,27 @@ header nav li {margin: 0px 40px;}
     width: 80px;    
     height: 75px ! important;
   } 
+
+  .sticky h1 img {
+    height: 56px ! important;
+    width: 60px;
+  }
+
+.sticky .header-top {
+position: relative;
+    top: 12px;
+    right: 65px;
+}
+
+.sticky {height: 70px;}
+
+.sticky .user-btn {display: inline-block;}
+
+.sticky .shop-cart {position: static;}
+
+.sticky .header-section {margin: 11px 8px 0 40px;}
+
+.owl-dots {display: none;}
 
 .beggning-menu:hover:after,
 .creators-menu:hover:after,

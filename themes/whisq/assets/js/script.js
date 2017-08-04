@@ -5,7 +5,7 @@ $(document).ready(function(){
   //Banner slider window height javascript
    $('.item:first-child').addClass('active');	
    var header_height = $('header').height();
-   var padding_space = 0;
+   var padding_space = 40;
    total = padding_space + header_height;
    var height = $(window).height();
    jQuery('#myCarousel').css('height',height - total+'px'); 
