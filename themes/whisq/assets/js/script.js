@@ -85,6 +85,7 @@ $('#carousel03').owlCarousel({
    $('.woocommerce .products li').css('height', p + 'px');
    
    $('.accessoriesused').click(function(){
+
 	   $('.product-list').css('height','auto');
    });
    
