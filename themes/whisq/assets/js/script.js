@@ -253,6 +253,13 @@ $('.sort-cat li').click(function(){
     location.reload();
 });
 
+  //category
+  $('.category li').click(function(){
+    $value = $(this).text();
+    document.cookie = "category name="+$value;
+    location.reload();
+  });
+
 
 var $prod_height = $('.product-list').height();
   var fp = $prod_height + 65;
