@@ -177,6 +177,7 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
   font-style: normal;
   font-weight: bold;
 }
+
 body a { 
   display: inline-block;
   color: #000;
@@ -1675,6 +1676,24 @@ padding:20px;
 }
 @media screen and (max-width: 1024px) 
 {
+	
+	.single-recipes .content-area .recipe-detail .ingrediean, .single-recipes .content-area .recipe-detail .method {
+    width: 100% ! important;
+	text-align:center;
+	}
+	
+	.single-recipes .content-area .recipe-detail .ingrediean .ingrediean-content, .single-recipes .content-area .recipe-detail .method .method-content {
+    text-align: center ! important;
+}
+
+.single-recipes .content-area .recipe-detail .ingrediean h4, .single-recipes .content-area .recipe-detail .method h4 {
+    text-align: center ! important;
+}
+
+.single-recipes .content-area .tag {
+    text-align: center ! important;
+}
+	
 	.city-address .cityhoverwrap {
 	bottom:0% ! important;
 }
@@ -2233,16 +2252,28 @@ product-page styling strat from here
 	width:100% ! important;
 }
 .single-product .page-container .type-product .woocommerce-tabs .wc-tabs li {
-        position: initial ! important;
+        position: relative ! important;
     border-radius: 0px ! important;
 	border: 1px solid #ebebeb;
-	padding:30px ! important;
+	    border-bottom-color: #ebebeb ! important;
+	padding:0px ! important;
 	margin:0px ! important;
 	width:50% ! important;
 	float:left ! important;
 	text-align:center ! important;
 	background-color: #ffffff ! important;
 }
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li::after, .woocommerce div.product .woocommerce-tabs ul.tabs li::before {
+    border: none;
+    position: absolute;
+    bottom: -1px;
+    width: 0 ! important;
+    height: 0 ! important;
+    content: ' ';
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a { width:100%;height:100%;padding:35px;}
 
 .single-product .page-container .type-product .woocommerce-tabs .wc-tabs li.active {
     background-color: #f9f9f9 ! important;
@@ -2251,7 +2282,8 @@ product-page styling strat from here
 
 .single-product .page-container .type-product .woocommerce-tabs #tab-description {
 	width:80%;
-	margin:0 auto;
+	min-height: 200px;
+	margin:30px auto;
 	border:none;
 	box-shadow:none;
 }
@@ -2268,6 +2300,7 @@ product-page styling strat from here
 
 .single-product .page-container .type-product .woocommerce-tabs #tab-additional_information {
 	border:none;
+	min-height: 200px;
 	box-shadow:none;
 	margin-bottom:0px;
 	margin: 30px auto;
@@ -2328,6 +2361,8 @@ product-page styling strat from here
     border: 1.5px solid #ebebeb;
     float: left;
 	margin-right: 2%;
+	padding: 20px 20px 5px;
+	overflow: hidden;
 }
 
 .single-product .page-container .site-content .related ul li:last-child {
@@ -2364,8 +2399,8 @@ padding: 25px;
 .single-product .page-container .wrapper .heading {
 	font-size: 25px;
     color: #333;
-    margin: 0px;
     padding: 35px;
+	margin: 0px 0px 50px;
     border: 1px solid #ebebeb;
 }
 
@@ -2375,10 +2410,46 @@ padding: 25px;
     margin: 0 auto;
 }
 
+
 .single-product .page-container .wrapper .recipe .feature-recipes-list {
 	width: 33.33%;
     float: left;
     padding: 15px;
+}
+
+
+@media screen and (max-width: 768px) {
+	.single-product .page-container .wrapper .recipe .feature-recipes-list {
+	width: 100%;
+    float: left;
+    padding: 15px;
+}
+.single-product .page-container .wrapper .recipe .feature-recipe-content {
+	min-height: auto ! important;
+}
+
+.page-container .woocommerce-product-gallery {
+	width:92% ! important;
+	margin:0 auto;
+}
+.page-container .entry-summary {
+	width:92% ! important;
+	margin:0 auto;
+}
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1224px) {
+	.single-product .page-container .wrapper .recipe .feature-recipes-list {
+	width: 50%;
+    float: left;
+    padding: 15px;
+}
+
+.single-product .page-container .wrapper .recipe .feature-recipe-content {
+	min-height: 300px ! important;
+}
+
 }
 
 .single-product .page-container .wrapper .recipe .feature-recipe-content {
@@ -2387,12 +2458,9 @@ padding: 25px;
     border: 1.5px solid #ebebeb;
     border-top: none;
     position: relative;
-	min-height: 265px;
+	min-height: 320px;
 }
 
-.single-product .page-container .wrapper .recipe .feature-recipe-content .sfsi_holders {
-	height:0px ! important;
-}
 
 .single-product .page-container .wrapper .recipe .feature-recipe-content .sfsi_widget {
 padding-top:15px;
@@ -2408,12 +2476,18 @@ padding-top:15px;
 
 .single-product .page-container .site-content .related h2 {
 	font-size: 25px;
+	margin: 50px 0px 65px;
     color: #333;
-    margin: 0px;
     padding: 35px;
     border: 1px solid #ebebeb;
 	text-align:center;
 }
+
+.single-product .page-container .site-content .related {
+	margin-bottom:25px;
+}
+
+
 
 .onsale {
 	display:none;
@@ -2789,15 +2863,21 @@ Recipes styling
     border: 1.5px solid #ebebeb;
     border-top: none;
     position: relative;
+	min-height: 400px;
 }
 
  .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-page-content h3 {
     width: 70%;
     margin: 0 auto 20px;
-    color: #ba5c82;
+    color: #be5f84;
     font: 600 24px/32px 'Open Sans', sans-serif;
     text-align: center;
 }
+
+ .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-page-content h3 a ,  .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-page-content h3 a:hover {
+    color: #be5f84;
+	 
+ }
 
 .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-page-content a, .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-page-content a:focus, .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-page-content a:hover {
     color:#333;
@@ -2819,6 +2899,7 @@ Recipes styling
     text-align: center;
     padding: 80px;
 	color:#fff;
+	margin: 15px 0px 20px;
 }
 
 .page-template-recipes-page .page-container .recipes-content .recipe-tip {
@@ -2952,6 +3033,7 @@ Recipes styling
 
 .single-recipes .content-area .tag {
 	text-align:left;
+	padding: 30px 0px;
 }
 
 .single-recipes .content-area .tag p:first-child {
@@ -2984,6 +3066,8 @@ Recipes styling
 .single-recipes .content-area .post-change .prev, .single-recipes .content-area .post-change .next {
 	padding: 15px;
     border: 1px solid #ebebeb;
+	display: inline-block;
+	font-size:14px;
 }
 .single-recipes .content-area .post-change .prev a, .single-recipes .content-area .post-change .next a {
 	text-decoration:none;
@@ -2993,12 +3077,15 @@ Recipes styling
 	content: '\f053';
 	font-family:FontAwesome;
 	padding-right:15px;
+	font-size:14px;
 }
 
 .single-recipes .content-area .post-change .next:after {
 	content: '\f054';
 	font-family:FontAwesome;
 	padding-left:15px;
+	font-size:14px;
+	margin-right: 15px;
 }
 
 .single-recipes .page-container .recipe {
@@ -3019,7 +3106,6 @@ Recipes styling
     border: 1.5px solid #ebebeb;
     border-top: none;
     position: relative;
-    min-height: 265px;
 }
 
 .single-recipes .page-container .recipe .recipe-page-img a img {
@@ -3031,6 +3117,7 @@ Recipes styling
 .single-recipes .page-container .related-accesories {
 	width:92%;
 	margin:0 auto;
+	padding-top: 15px;
 }
 .single-recipes .page-container .product-list {
     border-radius: 3px;
@@ -3057,11 +3144,13 @@ Recipes styling
     float: left ! important;
     text-align: center ! important;
     background-color: #ffffff ! important;
+	cursor:pointer;
 }
 
 .single-recipes .page-container .select-extra {
-    padding: 0px ! important;
-    margin: 0px ! important;
+        min-height: 82px;
+    height: auto;
+	    margin-bottom: 30px;
     width: 100% ! important;
 	list-style:none;
 }
@@ -3069,6 +3158,16 @@ Recipes styling
 .woocommerce ul.products li.product .button {display: none;}
 
 .single-product .page-container .site-content .related ul li h2 {margin-top: 30px;}
+
+list-style:none;}
+.woocommerce ul.products li.product .button {display: none;}
+
+.single-product .page-container .site-content .related ul li h2 {margin-top: 30px;display:block;}
+
+.single-product .page-container .site-content .related ul li h2:hover {
+    margin-top: 0px;
+	display:block;
+}
 
 .woocommerce ul.products li.product .price {margin-top: 30px;}
 
@@ -3078,4 +3177,249 @@ Recipes styling
   display: block;
   margin-top: 0;
   transition: all 0.5s;
+}
+
+.woocommerce ul.products li.product:hover h2 {
+  display: block ! important;;
+	
+}
+
+.woocommerce ul.products li.product:after {
+	content: inherit ! important;
+	margin:0px ! important;
+}
+
+.recipelisthide {
+	display:none;
+}
+
+.single-recipes .page-container .post-change {
+	font-size:0;
+	    padding: 30px 0px 50px 0px;
+}
+
+#sfsi_holder {
+	height:0px ! important;
+}
+
+
+.woocommerce div.product form.cart .button:focus,
+.woocommerce a.button:focus {
+	color:#fff;
+}
+.woocommerce div.product form.cart .button,
+.woocommerce a.button {
+	line-height: inherit;
+  padding: 8px 20px;
+  border-radius: 5px;
+  position: relative;
+  z-index: 99;
+  background-color: #b95b81;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0px 5px 0px 0px #9a506e;
+  outline:none;
+}
+
+.woocommerce div.product form.cart .button:hover,
+.woocommerce a.button:hover {
+  background-color: #b95b81;
+  color:#fff;
+}
+
+.woocommerce div.product form.cart .button:after,
+.woocommerce a.button:after {
+  content: ' ';
+  display: block;
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  background: #cd83a0;
+  border-radius: 5px;
+}
+.woocommerce div.product form.cart .button:hover:after,
+.woocommerce a.button:hover:after {
+  width: 100%;
+  -webkit-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  transition: all 0.6s;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1024px) {
+	
+	.page-template-recipes-page .page-container .recipe .recipes-page-list {
+	width: 100% ! important;
+	min-height:auto ! important;
+}
+
+.page-template-recipes-page .recipe-sidebar .recipe-tip, .page-template-recipes-page .recipe-sidebar .feature-recipes { 
+	display:none;
+	}
+
+	.page-template-recipes-page .recipes-content {
+    width: 100% ! important;
+}
+
+.page-template-recipes-page .recipe-sidebar .category h3 {
+	font-weight: 400 ! important;
+    background-color: #fff;
+    bottom: 0;
+    font-size: 14px;
+    width: 100%;
+    left: 0;
+    color: #333;
+    text-align: center;
+    min-height: 49px;
+    max-height: 49px;
+    position: fixed;
+    border-top: 1px solid #ebebeb;
+    line-height: 16px;
+    z-index: 104;
+	text-transform: capitalize;
+    padding: 15px 25px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.page-template-recipes-page .recipe-sidebar .category h3:after {
+    content: '\f106';
+    position: absolute;
+    padding-left: 10px;
+    margin-top: -2px;
+    color: #333;
+    font-size: 20px;
+    z-index: 101;
+    font-family: FontAwesome;
+}
+
+.page-template-recipes-page .recipe-sidebar .category ul {
+    position: fixed;
+    bottom: 38px;
+    background-color: #fff;
+    width: 100%;
+	display:none;
+    left: 0;
+    text-align: center;
+    z-index: 101;
+    display: block;
+    cursor: pointer;
+}
+	
+}
+
+.page-template-recipes-page .page-container .recipe .recipes-page-list:first-child .recipe-page-content {
+	min-height:auto;
+}
+
+@media screen and (max-width: 768px) { 
+.single-product .page-container .site-content .related ul li {
+    width: 100%;
+	margin-right:0 ! important;
+
+}
+
+.single-product .page-container .site-content .related ul li:hover .woocommerce ul.products li.product a {
+	margin-top:1em ! important;
+
+}
+
+.woocommerce ul.products li.product .button {
+	display:inline-block ! important;
+	margin-top:1em ! important;
+}
+
+.single-product .page-container .site-content .related ul li h2,.single-product .page-container .site-content .related ul li h2:hover {
+    margin-top: 30px;
+
+}
+
+.woocommerce ul.products li.product .price {
+    transition: none ! important;
+    margin-top: 1em ! important;
+}
+
+.woocommerce ul.products li.product:hover .price {
+  transition: none ! important;
+  margin-top: 1em ! important;
+}
+
+}
+
+@media screen and (max-width: 767px) { 
+.single-product .page-container .site-content .whisqtitle p {
+	text-align:right;
+	}
+
+}
+
+.single-product .page-container .site-content .whisqtitle p {
+    width:92%;
+	margin:0 auto;
+	text-align:right;
+	}
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) { 
+.single-product .page-container .site-content .related ul li {
+    width: 47%;
+	margin-right:6% ! important;
+
+}
+
+.single-product .page-container .site-content .related ul li:nth-child(2n + 2) {margin-right:0 ! important;
+}
+
+.single-product .page-container .site-content .related ul li:hover .woocommerce ul.products li.product a {
+	margin-top:1em ! important;
+
+}
+
+.woocommerce ul.products li.product .button {
+	display:inline-block ! important;
+	margin-top:1em ! important;
+}
+
+.single-product .page-container .site-content .related ul li h2,.single-product .page-container .site-content .related ul li h2:hover {
+    margin-top: 30px;
+
+}
+
+.woocommerce ul.products li.product .price {
+    transition: none ! important;
+    margin-top: 1em ! important;
+}
+
+.woocommerce ul.products li.product:hover .price {
+  transition: none ! important;
+  margin-top: 1em ! important;
+}
+
+}
+
+
+}
+
+.page-template-recipes-page .page-container .recipe .recipes-page-list:hover .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-more {
+    right: 16px;
+    opacity: 1 ! important;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    transition: all 1s;
+}
+
+.page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-more {
+    width: 52px;
+    height: 50px;
+    position: absolute;
+    top: -28px;
+    right: 16px;
+    background: #be5f84;
+    padding: 16px 0 0 2px;
+    border-radius: 50%;
+    opacity: 0;
+>>>>>>> bf789d9acc0c235f23fbabe4f9c5708044abb5c5
 }

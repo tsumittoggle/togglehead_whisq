@@ -69,8 +69,8 @@
 </div>
 <div class="extra-wrapper">
   <ul class="select-extra">
-  	<li>you may also like</li>
-  	<li>accesories used for make recipe</li>
+  	<li class="youmaylike">you may also like</li>
+  	<li class="accessoriesused">accesories used for make recipe</li>
   </ul>
 	<div class="recipe cf">
   <?php
@@ -103,7 +103,7 @@
 		wp_reset_query(); 
   ?>
   </div>
-  <div class="related-accesories">
+  <div class="related-accesories recipelisthide">
   			<?php
 		  
 			$bandproduct_args = array(

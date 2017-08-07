@@ -33,6 +33,10 @@ get_header();
 				  </h3>
 				  <p><?php the_excerpt(); ?></p>
 				  <a class="recipe-more" href="<?php get_post_permalink(); ?>" title="<?php the_title(); ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+			  <div class="share">
+        	<span>share</span>
+  	      <?php echo do_shortcode('[DISPLAY_ULTIMATE_SOCIAL_ICONS]'); ?>
+       </div>
 			  </div>
 			</div>
 		<?php
