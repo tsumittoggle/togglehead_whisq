@@ -78,11 +78,11 @@ $('#carousel03').owlCarousel({
   $('.product_type_simple').addClass('feature-btn');
 
   var $feture_height = $('.feature-item').height();
-  var $product_height = $('.woocommerce .products li').height();
+  //var $product_height = $('.woocommerce .products li').height();
   var f = $feture_height + 45;
-  var p = $product_height + 45;
+  //var p = $product_height + 45;
   $('.feature-item').css('height', f + 'px');
-   $('.woocommerce .products li').css('height', p + 'px');
+   //$('.woocommerce .products li').css('height', p + 'px');
    
    $('.accessoriesused').click(function(){
 
@@ -260,9 +260,7 @@ $('.sort-cat li').click(function(){
   });
 
 
-var $prod_height = $('.product-list').height();
-  var fp = $prod_height + 65;
-  $('.product-list').css('height', fp + 'px');
+
 
  	
 	$("#all").trigger("click");
@@ -285,7 +283,7 @@ var $prod_height = $('.product-list').height();
 	$('.bakeryaccessories').addClass('catactive');
 	}
 	
-	if(window.innerWidth <= 768 ){
+	if(window.innerWidth <= 1024 ){
 	
 	$(".left-side-bar h4").click(function(){
         $(".sort-cat").hide(500);
@@ -304,7 +302,7 @@ var $prod_height = $('.product-list').height();
 	}
 	
 	
-	if(window.innerWidth > 768 ){
+	if(window.innerWidth > 1024 ){
 	$(".short-by h4").click(function(){
         $(".sort-cat").slideToggle();
 		$(this).toggleClass('addinline');
@@ -337,7 +335,7 @@ var $prod_height = $('.product-list').height();
   $('.share-icon').css('display','none');
  $('.share-rec').click(function(){
 
-    $(this).children('.share-icon').toggle();
+    $(this).children('.share-icon').toggle(500);
  });   
 
 });

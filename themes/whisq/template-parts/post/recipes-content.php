@@ -39,7 +39,7 @@
 	<div class="recipepara">
 	<p><?php the_excerpt(); ?></p>
 	</div>
-	<div class="recipe-detail">
+	<div class="recipe-detail cf">
 	  <?php if(get_field('integedien')) : ?>	  
 		<div class="ingrediean">
 			<h4><img src="<?php echo esc_url( home_url( '/wp-content/uploads/bowl.png') ); ?>" class="fa ffa-shopping-cart">Ingredients</h4>

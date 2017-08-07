@@ -457,7 +457,7 @@ header li:nth-child(1) .sub-menu:after {background-image: url(../../uploads/who-
     width: 40px;
     position: fixed;
     right: 35px;
-    bottom: 35px;
+    bottom: 55px;
     z-index: 1000;
     background: #be5f84;
     border-radius: 50%;
@@ -732,7 +732,6 @@ body .btn {
 }
 .img-box {
   min-height: auto;
-  margin-top: 15px;
 }
 .owl-carousel { position: relative; }
 #carousel02 .owl-dots {
@@ -1795,7 +1794,7 @@ Locate Us styling start from here
     text-decoration: none;
 }
 .woocommerce-Price-currencySymbol {
-	padding-right:5px;
+	padding-right:5px ! important;
 }
 .products-page .left-side-bar {
     border: 1px solid #ebebeb;
@@ -1906,16 +1905,18 @@ border-width: 10px;
 product-page styling strat from here
 ===================================================================*/
 
+.product-list .feature-btn,
+.product-list .added_to_cart  {
+	display:inline-block;
+	text-decoration:none;
+}
+
 .product-list:hover .feature-btn,
 .product-list:hover .added_to_cart  {
   display: inline-block;
   text-decoration: none
 }
 .product-list:hover .product-title { 
-  margin-top: 0; 
-  -webkit-transition: margin 0.8s;
-  -moz-transition: margin 0.8s;
-  transition: margin 0.8s;
 }
 .prodcontent {
 	min-height:500px;
@@ -1926,11 +1927,13 @@ product-page styling strat from here
 	background-repeat:no-repeat;
 	position: relative;
 }
+
+
 .products-page .left-side-bar ul {
 	display:block;
 	
 }
-@media screen and (max-width: 768px) 
+@media screen and (max-width: 1024px) 
 {
 	
 	.page-template-product-page .site-info, .page-template-product-list .site-info, .page-template-recipes-page .site-info {
@@ -2063,12 +2066,7 @@ product-page styling strat from here
 	min-height:350px;
 }
 }
-@media screen and (min-width: 481px) and (max-width: 1199px) 
-{
-	.product-list {
-	width: calc(50% - 25px);
-}
-}
+
 @media screen and (min-width: 1025px) and (max-width: 1224px) 
 {
 .prodcontent {
@@ -2099,7 +2097,6 @@ product-page styling strat from here
 
 .bottom-wrapper {
 	background-attachment: fixed ! important;
-	min-height:400px;
 	width:100%;
 	background-size:cover ! important;
 	background-position:bottom center ! important;
@@ -2107,32 +2104,13 @@ product-page styling strat from here
     display: flex;               /* establish flex container */
     align-items: center;
 }
-@media screen and (max-width: 480px) 
-{
-	.bottom-wrapper {
-	min-height:250px;
-}
-}
 
-@media screen and (min-width: 481px) and (max-width: 1024px) 
-{
-.bottom-wrapper {
-	min-height:300px;
-}
-}
-@media screen and (min-width: 1025px) and (max-width: 1224px) 
-{
-.bottom-wrapper {
-	min-height:350px;
-}
-
-}
 .bottombancont {
 	background-color:#fff;
 	    width: 90%;
 	height:auto;
-	    padding: 5%;
-	    margin: 5%;
+	    padding: 50px;
+	    margin: 50px 5%;
 	text-align:center;
 }
 .page-container .woocommerce-product-gallery {
@@ -2208,7 +2186,20 @@ product-page styling strat from here
 }
 .page-container .type-product ins span {
 	color:#333;
+	margin: 0;
+    padding: 0;
+    font-size: 16px;
 }
+
+.page-container .type-product .entry-summary .price ins span {
+	font-size: 25px;
+}
+
+
+.woocommerce ul.products li.product .price {margin-bottom:0px;}
+
+.woocommerce ul.products li.product:hover .woocommerce ul.products li.product .price {margin-bottom:0px;}
+
 .page-container .type-product .product_title:after {
 	content:' ';
     width:80px;
@@ -2253,16 +2244,27 @@ product-page styling strat from here
 	width:100% ! important;
 }
 .single-product .page-container .type-product .woocommerce-tabs .wc-tabs li {
-        position: relative ! important;
+    position: relative ! important;
     border-radius: 0px ! important;
+    font-size: 25px;
 	border: 1px solid #ebebeb;
-	    border-bottom-color: #ebebeb ! important;
+	background-color:rgba(223, 223, 223, 0.05) ! important;
+	border-bottom-color: #ebebeb ! important;
 	padding:0px ! important;
 	margin:0px ! important;
 	width:50% ! important;
 	float:left ! important;
 	text-align:center ! important;
-	background-color: #ffffff ! important;
+	margin: 15px 0px 15px ! important;
+	box-shadow:none;
+}
+
+.single-product .page-container .type-product .woocommerce-tabs .wc-tabs li a { 
+	color:#999 ! important;
+}
+
+.single-product .page-container .type-product li {
+	font-size:16px;
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li::after, .woocommerce div.product .woocommerce-tabs ul.tabs li::before {
@@ -2277,9 +2279,16 @@ product-page styling strat from here
 .woocommerce div.product .woocommerce-tabs ul.tabs li a { width:100%;height:100%;padding:35px;text-transform:capitalize;}
 
 .single-product .page-container .type-product .woocommerce-tabs .wc-tabs li.active {
-    background-color: #f9f9f9 ! important;
-	
+    	
+	background-color:#fff ! important;
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 15px;
 }
+
+.single-product .page-container .type-product .woocommerce-tabs .wc-tabs li.active a {
+	color:#333 ! important;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs::before {border-bottom:none;}
 
 .single-product .page-container .type-product .woocommerce-tabs #tab-description {
 	width:80%;
@@ -2315,7 +2324,7 @@ product-page styling strat from here
 	border:none;
 	background-color:#fff;
 	margin-bottom:0px;
-	font-size: 14px;
+	font-size: 16px;
     color: #333;
     font-weight: 400;
 }
@@ -2362,18 +2371,14 @@ product-page styling strat from here
     border: 1.5px solid #ebebeb;
     float: left;
 	margin-right: 2%;
-	padding: 20px 20px 5px;
+	padding: 25px;
 	overflow: hidden;
 }
 
-.single-product .page-container .site-content .related ul li:last-child {
+.single-product .page-container .site-content .related ul li:nth-child(3) {
 	    margin-right: 0%;
 }
 
-
-.single-product .page-container .site-content .related ul li a img{
-padding: 25px;
-}
 
 .single-product .page-container .site-content .related ul li h2 {
 	    color: #ba5c82;
@@ -2400,8 +2405,9 @@ padding: 25px;
 .single-product .page-container .wrapper .heading {
 	font-size: 25px;
     color: #333;
+	font-weight: 700;
     padding: 35px;
-	margin: 0px 0px 50px;
+	margin: 50px 0px;
     border: 1px solid #ebebeb;
 }
 
@@ -2413,11 +2419,18 @@ padding: 25px;
 
 
 .single-product .page-container .wrapper .recipe .feature-recipes-list {
-	width: 33.33%;
+	width: 32%;
+    margin-right: 2%;
     float: left;
-    padding: 15px;
 }
 
+.single-product .page-container .wrapper .recipe .feature-recipes-list:nth-child(3) {
+	margin-right: 0%;
+}
+
+.single-product .page-container .wrapper .recipe .feature-recipe-content h3 {
+	color: #ba5c82;
+}
 
 @media screen and (max-width: 768px) {
 	.single-product .page-container .wrapper .recipe .feature-recipes-list {
@@ -2440,15 +2453,15 @@ padding: 25px;
 
 }
 
-@media screen and (min-width: 769px) and (max-width: 1224px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
 	.single-product .page-container .wrapper .recipe .feature-recipes-list {
-	width: 50%;
-    float: left;
-    padding: 15px;
+	width: 47%;
+    margin-right: 6% ! important;
+	margin: 0 3.8% 5.8% 0;
 }
 
-.single-product .page-container .wrapper .recipe .feature-recipe-content {
-	min-height: 300px ! important;
+.single-product .page-container .wrapper .recipe .feature-recipes-list:nth-child(2n + 2) {
+    margin-right: 0 ! important;
 }
 
 }
@@ -2459,9 +2472,15 @@ padding: 25px;
     border: 1.5px solid #ebebeb;
     border-top: none;
     position: relative;
-	min-height: 320px;
 }
-
+@media screen and (min-width: 769px) {
+.single-product .feature-recipe-content p:nth-child(3) {min-height:80px;}
+}
+ .single-product .feature-recipe-content h3 { min-height: 52px; }
+.single-product .feature-recipes-img a img {
+	width:100% ! important;
+	height:auto ! important;
+}
 
 .single-product .page-container .wrapper .recipe .feature-recipe-content .sfsi_widget {
 padding-top:15px;
@@ -2477,7 +2496,8 @@ padding-top:15px;
 
 .single-product .page-container .site-content .related h2 {
 	font-size: 25px;
-	margin: 50px 0px 65px;
+	font-weight: 700;
+	margin: 50px 0px;
     color: #333;
     padding: 35px;
     border: 1px solid #ebebeb;
@@ -2488,7 +2508,11 @@ padding-top:15px;
 	margin-bottom:25px;
 }
 
-
+.single-product .page-container .type-product .share {
+	margin:0px ! important;
+	padding-right:5px;
+	float:left;
+}
 
 .onsale {
 	display:none;
@@ -2551,7 +2575,7 @@ padding-top:15px;
 .products-page .short-by ul li:hover {
     color:#fff;
 }
-@media screen and (max-width: 768px)
+@media screen and (max-width: 1024px)
 {
 
 	
@@ -2648,7 +2672,7 @@ border:none;
 }
 
 }
-@media screen and (min-width: 481px) and (max-width: 768px) 
+@media screen and (min-width: 619px) and (max-width: 1024px) 
 {
 	.product-list {
 	width: calc(50% - 15px);
@@ -2738,6 +2762,7 @@ Recipes styling
     font: 400 25px/40px Parisienne;
     padding: 50px 35px 33px;
 	margin-top: -23px;
+	margin-bottom: 0px;
     border: 1.5px solid #ebebeb;
 }
 
@@ -2758,17 +2783,18 @@ Recipes styling
 .page-template-recipes-page .recipe-sidebar .category h3, .page-template-recipes-page .recipe-sidebar .feature-recipes h3 {
 	text-transform: uppercase;
     color:#ba5c82;
-    padding: 15px 25px;
+    padding: 25px 15px ! important;
 	text-align:center;
     font-weight: 600;
     margin-top: 0px;
     margin-bottom: 0px;
 }
+.page-template-recipes-page .recipe-sidebar .category ul {margin-bottom:0px;}
 
 .page-template-recipes-page .recipe-sidebar .category ul li {
     border: 1px solid #ebebeb;
 	border-top:none;
-    padding: 15px 25px;
+    padding: 20px 10px;
     font-size: 16px;
     text-transform: capitalize;
     list-style-type: none;
@@ -2778,7 +2804,7 @@ Recipes styling
 
 .page-template-recipes-page .recipe-sidebar .category ul li:first-child {
     border-top: 1px solid #ebebeb;
-    padding: 15px 25px;
+    padding: 25px 15px;
     font-size: 16px;
     text-transform: capitalize;
     list-style-type: none;
@@ -2820,7 +2846,7 @@ Recipes styling
 }
 
 .page-template-recipes-page .recipe-sidebar .feature-recipes .recipes-page-list .recipe-page-content h3 {
-	font-size:12px;
+	font-size:14px;
 	text-transform:capitalize;
 	text-align:left;
 	font-weight:600;
@@ -2830,7 +2856,7 @@ Recipes styling
 .page-template-recipes-page .recipe-sidebar .feature-recipes .recipes-page-list .recipe-page-content li {
     text-align: left;
 	font-size:14px;
-	padding:15px 25px ! important;
+	padding:25px 15px ! important;
 	text-transform:capitalize;
     padding: 10px;
     color:#ba5c82;
@@ -2839,6 +2865,7 @@ Recipes styling
 .page-template-recipes-page .page-container .recipe {
 	clear:both;
 	width:100%;
+	margin:0 auto;
 }
 
  .page-template-recipes-page .page-container .recipe .recipes-page-list {
@@ -2865,7 +2892,6 @@ Recipes styling
     border: 1.5px solid #ebebeb;
     border-top: none;
     position: relative;
-	min-height: 400px;
 }
 
  .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-page-content h3 {
@@ -2895,6 +2921,7 @@ Recipes styling
 	margin-bottom:10px;
 }
 
+
 .page-template-recipes-page .page-container .recipes-content .recipe-tip .tip {
 	width: 100%;
     display: inline-block;
@@ -2902,7 +2929,7 @@ Recipes styling
     text-align: center;
     padding: 80px;
 	color:#fff;
-	margin: 15px 0px 20px;
+	margin: 15px 0px 15px;
 }
 
 .page-template-recipes-page .page-container .recipes-content .recipe-tip {
@@ -3132,23 +3159,18 @@ Recipes styling
 	    margin-bottom: 30px;
     width: 100% ! important;
 list-style:none;}
-.woocommerce ul.products li.product .button {display: none;}
 
 .single-product .page-container .site-content .related ul li h2 {margin-top: 30px;display:block;}
 
 .single-product .page-container .site-content .related ul li h2:hover {
-    margin-top: 0px;
 	display:block;
 }
 
-.woocommerce ul.products li.product .price {margin-top: 30px;}
 
 .woocommerce ul.products li.product:hover .button,
 .woocommerce ul.products li.product:hover h2,
 .woocommerce ul.products li.product:hover .price {
   display: inline-block;
-  margin-top: 0;
-  transition: all 0.5s;
 }
 
 
@@ -3280,7 +3302,7 @@ list-style:none;}
 
 .page-template-recipes-page .recipe-sidebar .category ul {
     position: fixed;
-    bottom: 38px;
+    bottom: 48px;
     background-color: #fff;
     width: 100%;
 	display:none;
@@ -3354,6 +3376,7 @@ list-style:none;}
 .single-product .page-container .site-content .related ul li {
     width: 47%;
 	margin-right:6% ! important;
+	margin: 0 3.8% 5.8% 0;
 
 }
 
@@ -3468,6 +3491,7 @@ margin: 0 3.8% 2.992em 0;
 .share-rec {
   text-align: center;
   margin-top: 25px;
+  min-height: 50px;
 }
 
 .share-rec span {
@@ -3475,9 +3499,15 @@ margin: 0 3.8% 2.992em 0;
   text-transform: capitalize;
 }
 
-.share-rec span i {
-  font-size: 24px;
-  margin-right: 2px;
+.share-rec span i:first-child {
+  font-size: 35px;
+  margin-right: 5px;
+  top: 6px;
+    position: relative;
+}
+
+.share-rec span i:nth-child(2) {
+  font-size: 18px;
 }
 
 .share-rec span span {
@@ -3493,6 +3523,19 @@ margin: 0 3.8% 2.992em 0;
   transition: all 0.5;
 }
 
-.recipes-page-list a i {padding: 0px 15px;}
+.recipes-page-list a i {padding: 0px 18px;}
 
 .addtoany_share_save_container {display:none ! important;}
+
+.woocommerce ul.products li.product a img {margin:0px;}
+
+@media screen and (min-width: 1025px) and (max-width: 1224px) {
+.page-template-recipes-page .recipe-page-content p:nth-child(3) {min-height:135px;}
+}
+
+@media screen and (min-width: 1225px) {
+.page-template-recipes-page .recipe-page-content p:nth-child(3) {min-height:90px;}}
+
+.page-template-recipes-page .page-container .recipe .recipes-page-list:first-child .recipe-page-content p:nth-child(3) {
+    min-height: auto;
+}
