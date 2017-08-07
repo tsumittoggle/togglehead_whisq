@@ -57,10 +57,10 @@
 		</div>
 	<?php endif; ?>
 	</div>
-  <div class="share">
-  	<span>share</span>
-  	<?php echo do_shortcode('[DISPLAY_ULTIMATE_SOCIAL_ICONS]'); ?>
-  </div>
+  <div class="share-rec">
+				  <span><i class="fa fa-share-alt-square" aria-hidden="true"></i><i>share</i></span>
+				   <div class="share-icon"><?php echo do_shortcode('[addtoany]'); ?></div>
+				  </div>
   <div class="tag">
   	<?php if(get_field('tags')) : ?>
 			<p><img src="<?php echo esc_url( home_url( '/wp-content/uploads/price-tag.png') ); ?>" class="fa ffa-shopping-cart">tags</p><?php the_field('tags'); ?>
