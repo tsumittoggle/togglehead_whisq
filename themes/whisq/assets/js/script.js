@@ -80,9 +80,17 @@ $('#carousel03').owlCarousel({
   var $feture_height = $('.feature-item').height();
   var $product_height = $('.woocommerce .products li').height();
   var f = $feture_height + 45;
-  var p = $product_height + 30;
+  var p = $product_height + 45;
   $('.feature-item').css('height', f + 'px');
    $('.woocommerce .products li').css('height', p + 'px');
+   
+   $('.accessoriesused').click(function(){
+
+	   $('.product-list').css('height','auto');
+   });
+   
+   
+   
 
   //setting height for carousal
   if(window.innerWidth < 768 ){
@@ -94,7 +102,6 @@ $('#carousel03').owlCarousel({
      return false;
   });
 
-  if(window.innerWidth > 768 ) {
   $(window).scroll(function() {    
     var scroll = $(window).scrollTop();    
     if (scroll <= 400) {
@@ -111,8 +118,7 @@ $('#carousel03').owlCarousel({
       $("header").removeClass("sticky");
     }
 });
-  }
-
+  
   //js for opening menu
   $('.hamburger').click(function(){
   if($('.menu-main').hasClass('menu-open')){
@@ -212,7 +218,7 @@ $('.search-btn').click(function(){
 
   $('.sub-menu li').click(function(e){
     $value = $(this).text();
-	e.stopPropagation();
+	  e.stopPropagation();
     document.cookie = "cat name="+$value; 
   });
 
@@ -304,6 +310,34 @@ var $prod_height = $('.product-list').height();
 		$(this).toggleClass('addinline');
     });
 		}
+		
+	$(".youmaylike").click(function(){		
+		$(".single-recipes .recipe").removeClass('recipelisthide');
+        $(".single-recipes .related-accesories").addClass('recipelisthide');
+    });
+	
+	$(".accessoriesused").click(function(){
+        $(".single-recipes .related-accesories").removeClass('recipelisthide');
+		$(".single-recipes .recipe").addClass('recipelisthide');
+    });
+		
+		
+	if(window.innerWidth < 1025 ){
+	$(".recipe-sidebar .category ul").hide();
+	$(".recipe-sidebar .category h3").click(function(){
+        $(".recipe-sidebar .category ul").slideToggle();
+		$(".recipe-sidebar .category h3").toggleClass('caticorotate');
+		$(this).toggleClass('addinline');
+    });
+	
+	}		
+		
+ //share icon
+  $('.share-icon').css('display','none');
+ $('.share-rec').click(function(){
+
+    $(this).children('.share-icon').toggle();
+ });   
 });
 
 

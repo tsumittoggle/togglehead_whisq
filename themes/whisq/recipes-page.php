@@ -31,7 +31,8 @@ get_header();
 			  		<?php the_post_thumbnail(); ?>
 			  	</a>
 			  </div>
-			  <div class="recipe-page-content">			  
+			  <div class="recipe-page-content">		
+			    <a class="recipe-more" href="" title="Ultimate Chocolate Cupcake"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>	  
 				  <h3>
             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 				      <?php the_title(); ?>
@@ -39,6 +40,10 @@ get_header();
 				  </h3>
 				  <p><?php the_excerpt(); ?></p>
 				  <a class="recipe-more" href="<?php get_post_permalink(); ?>" title="<?php the_title(); ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+				  <div class="share-rec">
+				  <span><i class="fa fa-share-alt-square" aria-hidden="true"></i><i>share</i></span>
+				   <div class="share-icon"><?php echo do_shortcode('[addtoany]'); ?></div>
+				  </div>
 			  </div>
 			</div>
 		<?php
