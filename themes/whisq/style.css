@@ -2234,16 +2234,28 @@ product-page styling strat from here
 	width:100% ! important;
 }
 .single-product .page-container .type-product .woocommerce-tabs .wc-tabs li {
-        position: initial ! important;
+        position: relative ! important;
     border-radius: 0px ! important;
 	border: 1px solid #ebebeb;
-	padding:30px ! important;
+	    border-bottom-color: #ebebeb ! important;
+	padding:0px ! important;
 	margin:0px ! important;
 	width:50% ! important;
 	float:left ! important;
 	text-align:center ! important;
 	background-color: #ffffff ! important;
 }
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li::after, .woocommerce div.product .woocommerce-tabs ul.tabs li::before {
+    border: none;
+    position: absolute;
+    bottom: -1px;
+    width: 0 ! important;
+    height: 0 ! important;
+    content: ' ';
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a { width:100%;height:100%;padding:35px;}
 
 .single-product .page-container .type-product .woocommerce-tabs .wc-tabs li.active {
     background-color: #f9f9f9 ! important;
@@ -2331,6 +2343,8 @@ product-page styling strat from here
     border: 1.5px solid #ebebeb;
     float: left;
 	margin-right: 2%;
+	padding: 20px 20px 5px;
+	overflow: hidden;
 }
 
 .single-product .page-container .site-content .related ul li:last-child {
@@ -3116,16 +3130,31 @@ Recipes styling
 list-style:none;}
 .woocommerce ul.products li.product .button {display: none;}
 
-.single-product .page-container .site-content .related ul li h2 {margin-top: 30px;}
+.single-product .page-container .site-content .related ul li h2 {margin-top: 30px;display:block;}
+
+.single-product .page-container .site-content .related ul li h2:hover {
+    margin-top: 0px;
+	display:block;
+}
 
 .woocommerce ul.products li.product .price {margin-top: 30px;}
 
 .woocommerce ul.products li.product:hover .button,
 .woocommerce ul.products li.product:hover h2,
 .woocommerce ul.products li.product:hover .price {
-  display: block;
+  display: inline-block;
   margin-top: 0;
   transition: all 0.5s;
+}
+
+.woocommerce ul.products li.product:hover h2 {
+  display: block ! important;;
+	
+}
+
+.woocommerce ul.products li.product:after {
+	content: inherit ! important;
+	margin:0px ! important;
 }
 
 .recipelisthide {
@@ -3237,9 +3266,10 @@ list-style:none;}
 
 .page-template-recipes-page .recipe-sidebar .category ul {
     position: fixed;
-    bottom: 38px;;
+    bottom: 38px;
     background-color: #fff;
     width: 100%;
+	display:none;
     left: 0;
     text-align: center;
     z-index: 101;
@@ -3251,4 +3281,90 @@ list-style:none;}
 
 .page-template-recipes-page .page-container .recipe .recipes-page-list:first-child .recipe-page-content {
 	min-height:auto;
+}
+
+@media screen and (max-width: 768px) { 
+.single-product .page-container .site-content .related ul li {
+    width: 100%;
+	margin-right:0 ! important;
+
+}
+
+.single-product .page-container .site-content .related ul li:hover .woocommerce ul.products li.product a {
+	margin-top:1em ! important;
+
+}
+
+.woocommerce ul.products li.product .button {
+	display:inline-block ! important;
+	margin-top:1em ! important;
+}
+
+.single-product .page-container .site-content .related ul li h2,.single-product .page-container .site-content .related ul li h2:hover {
+    margin-top: 30px;
+
+}
+
+.woocommerce ul.products li.product .price {
+    transition: none ! important;
+    margin-top: 1em ! important;
+}
+
+.woocommerce ul.products li.product:hover .price {
+  transition: none ! important;
+  margin-top: 1em ! important;
+}
+
+}
+
+@media screen and (max-width: 767px) { 
+.single-product .page-container .site-content .whisqtitle p {
+	text-align:right;
+	}
+
+}
+
+.single-product .page-container .site-content .whisqtitle p {
+    width:92%;
+	margin:0 auto;
+	text-align:right;
+	}
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) { 
+.single-product .page-container .site-content .related ul li {
+    width: 49%;
+	margin-right:2% ! important;
+
+}
+
+.single-product .page-container .site-content .related ul li:nth-child(2n + 2) {margin-right:0 ! important;
+}
+}
+
+.single-product .page-container .site-content .related ul li:hover .woocommerce ul.products li.product a {
+	margin-top:1em ! important;
+
+}
+
+.woocommerce ul.products li.product .button {
+	display:inline-block ! important;
+	margin-top:1em ! important;
+}
+
+.single-product .page-container .site-content .related ul li h2,.single-product .page-container .site-content .related ul li h2:hover {
+    margin-top: 30px;
+
+}
+
+.woocommerce ul.products li.product .price {
+    transition: none ! important;
+    margin-top: 1em ! important;
+}
+
+.woocommerce ul.products li.product:hover .price {
+  transition: none ! important;
+  margin-top: 1em ! important;
+}
+
 }

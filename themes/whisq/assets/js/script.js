@@ -80,7 +80,7 @@ $('#carousel03').owlCarousel({
   var $feture_height = $('.feature-item').height();
   var $product_height = $('.woocommerce .products li').height();
   var f = $feture_height + 45;
-  var p = $product_height + 30;
+  var p = $product_height + 45;
   $('.feature-item').css('height', f + 'px');
    $('.woocommerce .products li').css('height', p + 'px');
    
@@ -323,6 +323,16 @@ var $prod_height = $('.product-list').height();
 		$(".single-recipes .recipe").addClass('recipelisthide');
     });
 		
+		
+	if(window.innerWidth < 1025 ){
+	$(".recipe-sidebar .category ul").hide();
+	$(".recipe-sidebar .category h3").click(function(){
+        $(".recipe-sidebar .category ul").slideToggle();
+		$(".recipe-sidebar .category h3").toggleClass('caticorotate');
+		$(this).toggleClass('addinline');
+    });
+	
+	}		
 		
 });
 
