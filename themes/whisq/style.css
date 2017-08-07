@@ -2797,7 +2797,7 @@ Recipes styling
 .page-template-recipes-page .recipe-sidebar .category ul li {
     border: 1px solid #ebebeb;
 	border-top:none;
-    padding: 20px 10px;
+    padding: 20px 30px 20px 30px;
     font-size: 16px;
     text-transform: capitalize;
     list-style-type: none;
@@ -2807,7 +2807,7 @@ Recipes styling
 
 .page-template-recipes-page .recipe-sidebar .category ul li:first-child {
     border-top: 1px solid #ebebeb;
-    padding: 25px 15px;
+    padding: 20px 30px 20px 30px;
     font-size: 16px;
     text-transform: capitalize;
     list-style-type: none;
