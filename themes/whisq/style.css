@@ -3108,6 +3108,22 @@ Recipes styling
     position: relative;
 }
 
+
+
+.woocommerce ul.products li.product .button {display: none;}
+
+.single-product .page-container .site-content .related ul li h2 {margin-top: 30px;}
+
+.woocommerce ul.products li.product .price {margin-top: 30px;}
+
+.woocommerce ul.products li.product:hover .button,
+.woocommerce ul.products li.product:hover h2,
+.woocommerce ul.products li.product:hover .price {
+  display: block;
+  margin-top: 0;
+  transition: all 0.5s;
+}
+
 .single-recipes .page-container .recipe .recipe-page-img a img {
     width: 100%;
     height: auto;
@@ -3152,6 +3168,12 @@ Recipes styling
     height: auto;
 	    margin-bottom: 30px;
     width: 100% ! important;
+	list-style:none;}
+
+.woocommerce ul.products li.product .button {display: none;}
+
+.single-product .page-container .site-content .related ul li h2 {margin-top: 30px;}
+
 list-style:none;}
 .woocommerce ul.products li.product .button {display: none;}
 
@@ -3167,7 +3189,7 @@ list-style:none;}
 .woocommerce ul.products li.product:hover .button,
 .woocommerce ul.products li.product:hover h2,
 .woocommerce ul.products li.product:hover .price {
-  display: inline-block;
+  display: block;
   margin-top: 0;
   transition: all 0.5s;
 }
@@ -3415,4 +3437,5 @@ list-style:none;}
     padding: 16px 0 0 2px;
     border-radius: 50%;
     opacity: 0;
+>>>>>>> bf789d9acc0c235f23fbabe4f9c5708044abb5c5
 }
