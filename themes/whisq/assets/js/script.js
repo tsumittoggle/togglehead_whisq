@@ -80,9 +80,17 @@ $('#carousel03').owlCarousel({
   var $feture_height = $('.feature-item').height();
   var $product_height = $('.woocommerce .products li').height();
   var f = $feture_height + 45;
-  var p = $product_height + 30;
+  var p = $product_height + 45;
   $('.feature-item').css('height', f + 'px');
    $('.woocommerce .products li').css('height', p + 'px');
+   
+   $('.accessoriesused').click(function(){
+
+	   $('.product-list').css('height','auto');
+   });
+   
+   
+   
 
   //setting height for carousal
   if(window.innerWidth < 768 ){
@@ -94,7 +102,6 @@ $('#carousel03').owlCarousel({
      return false;
   });
 
-  if(window.innerWidth > 768 ) {
   $(window).scroll(function() {    
     var scroll = $(window).scrollTop();    
     if (scroll <= 400) {
@@ -111,7 +118,23 @@ $('#carousel03').owlCarousel({
       $("header").removeClass("sticky");
     }
 });
-  }
+  
+  $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();    
+    if (scroll <= 400) {
+        $("#backtop").removeClass("back-top").addClass("remove-top");
+    }
+    else {
+      $("#backtop").addClass("back-top").removeClass("remove-top");
+    }
+
+    if (scroll > 10) {
+      $("header").addClass("sticky");
+    }
+    else {
+      $("header").removeClass("sticky");
+    }
+});
 
   //js for opening menu
   $('.hamburger').click(function(){
@@ -304,6 +327,28 @@ var $prod_height = $('.product-list').height();
 		$(this).toggleClass('addinline');
     });
 		}
+		
+	$(".youmaylike").click(function(){		
+		$(".single-recipes .recipe").removeClass('recipelisthide');
+        $(".single-recipes .related-accesories").addClass('recipelisthide');
+    });
+	
+	$(".accessoriesused").click(function(){
+        $(".single-recipes .related-accesories").removeClass('recipelisthide');
+		$(".single-recipes .recipe").addClass('recipelisthide');
+    });
+		
+		
+	if(window.innerWidth < 1025 ){
+	$(".recipe-sidebar .category ul").hide();
+	$(".recipe-sidebar .category h3").click(function(){
+        $(".recipe-sidebar .category ul").slideToggle();
+		$(".recipe-sidebar .category h3").toggleClass('caticorotate');
+		$(this).toggleClass('addinline');
+    });
+	
+	}		
+		
 });
 
 
