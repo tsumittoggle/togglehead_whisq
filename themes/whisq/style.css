@@ -1676,6 +1676,24 @@ padding:20px;
 }
 @media screen and (max-width: 1024px) 
 {
+	
+	.single-recipes .content-area .recipe-detail .ingrediean, .single-recipes .content-area .recipe-detail .method {
+    width: 100% ! important;
+	text-align:center;
+	}
+	
+	.single-recipes .content-area .recipe-detail .ingrediean .ingrediean-content, .single-recipes .content-area .recipe-detail .method .method-content {
+    text-align: center ! important;
+}
+
+.single-recipes .content-area .recipe-detail .ingrediean h4, .single-recipes .content-area .recipe-detail .method h4 {
+    text-align: center ! important;
+}
+
+.single-recipes .content-area .tag {
+    text-align: center ! important;
+}
+	
 	.city-address .cityhoverwrap {
 	bottom:0% ! important;
 }
@@ -2845,15 +2863,21 @@ Recipes styling
     border: 1.5px solid #ebebeb;
     border-top: none;
     position: relative;
+	min-height: 400px;
 }
 
  .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-page-content h3 {
     width: 70%;
     margin: 0 auto 20px;
-    color: #ba5c82;
+    color: #be5f84;
     font: 600 24px/32px 'Open Sans', sans-serif;
     text-align: center;
 }
+
+ .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-page-content h3 a ,  .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-page-content h3 a:hover {
+    color: #be5f84;
+	 
+ }
 
 .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-page-content a, .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-page-content a:focus, .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-page-content a:hover {
     color:#333;
@@ -3009,6 +3033,7 @@ Recipes styling
 
 .single-recipes .content-area .tag {
 	text-align:left;
+	padding: 30px 0px;
 }
 
 .single-recipes .content-area .tag p:first-child {
@@ -3333,13 +3358,12 @@ list-style:none;}
 
 @media screen and (min-width: 769px) and (max-width: 1024px) { 
 .single-product .page-container .site-content .related ul li {
-    width: 49%;
-	margin-right:2% ! important;
+    width: 47%;
+	margin-right:6% ! important;
 
 }
 
 .single-product .page-container .site-content .related ul li:nth-child(2n + 2) {margin-right:0 ! important;
-}
 }
 
 .single-product .page-container .site-content .related ul li:hover .woocommerce ul.products li.product a {
@@ -3367,4 +3391,27 @@ list-style:none;}
   margin-top: 1em ! important;
 }
 
+}
+
+
+}
+
+.page-template-recipes-page .page-container .recipe .recipes-page-list:hover .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-more {
+    right: 16px;
+    opacity: 1 ! important;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    transition: all 1s;
+}
+
+.page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-more {
+    width: 52px;
+    height: 50px;
+    position: absolute;
+    top: -28px;
+    right: 16px;
+    background: #be5f84;
+    padding: 16px 0 0 2px;
+    border-radius: 50%;
+    opacity: 0;
 }
