@@ -218,7 +218,7 @@ $('.search-btn').click(function(){
 
   $('.sub-menu li').click(function(e){
     $value = $(this).text();
-	e.stopPropagation();
+	  e.stopPropagation();
     document.cookie = "cat name="+$value; 
   });
 
@@ -332,6 +332,14 @@ var $prod_height = $('.product-list').height();
 	
 	}		
 		
+
+ //share icon
+  $('.share-icon').css('display','none');
+ $('.share-rec').click(function(){
+
+    $(this).children('.share-icon').toggle();
+ });   
+
 });
 
 

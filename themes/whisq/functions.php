@@ -784,7 +784,7 @@ add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
 function woo_rename_tabs( $tabs ) {
 
 	if($tabs['description']['title']) {
-	$tabs['description']['title'] = __( 'Uee & feature' );	
+	$tabs['description']['title'] = __( 'use & feature' );	
 	$tabs['description']['priority'] = 15;	
 	}	
 

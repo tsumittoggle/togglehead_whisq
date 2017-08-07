@@ -96,9 +96,10 @@
 				</h3>
 				<p><?php the_excerpt(); ?></p>
 				
-				<div class="share">
-        	<span>share</span>
-  	      <?php echo do_shortcode('[DISPLAY_ULTIMATE_SOCIAL_ICONS]'); ?>
+			  <div class="share-rec">
+				  <span><i class="fa fa-share-alt-square" aria-hidden="true"></i><i>share</i></span>
+				   <div class="share-icon"><?php echo do_shortcode('[addtoany]'); ?></div>
+				  </div>
        </div>
 	   </div>
 			</div>

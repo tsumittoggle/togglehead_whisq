@@ -3151,6 +3151,7 @@ list-style:none;}
   transition: all 0.5s;
 }
 
+
 .woocommerce ul.products li.product .button {
 	margin-top:0 ! important;
 }
@@ -3462,3 +3463,36 @@ margin: 0 3.8% 2.992em 0;
     font-family: FontAwesome;
     padding-right: 10px;
 }
+
+/*Share icon */
+.share-rec {
+  text-align: center;
+  height: 45px;
+  margin-top: 25px;
+}
+
+.share-rec span {
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.share-rec span i {
+  font-size: 24px;
+  margin-right: 2px;
+}
+
+.share-rec span span {
+  display: inline-block;
+}
+
+.share-icon {display: inline-block;}
+
+.recipes-page-list {position: relative;}
+
+.recipes-page-list:hover .recipe-more {
+  opacity: 1;
+  transition: all 0.5;
+}
+
+.recipes-page-list a i {padding: 0px 15px;}
+
