@@ -3473,7 +3473,7 @@ margin: 0 3.8% 2.992em 0;
 
 .share-rec span {
   display: inline-block;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .share-rec span i {
@@ -3496,3 +3496,4 @@ margin: 0 3.8% 2.992em 0;
 
 .recipes-page-list a i {padding: 0px 15px;}
 
+.addtoany_share_save_container {display:none ! important;}
