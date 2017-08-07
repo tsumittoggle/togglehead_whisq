@@ -2149,7 +2149,7 @@ product-page styling strat from here
 }
 .whisqtitle p {
 	    color: #fff;
-    text-transform: none;
+    text-transform: capitalize;
     text-align: right;
     padding-bottom: 10px;
 }
@@ -2734,7 +2734,7 @@ Recipes styling
 
 .page-template-recipes-page .recipe-sidebar .recipe-tip p {
     color: #000;
-    font: 400 30px/40px Parisienne;
+    font: 400 25px/40px Parisienne;
     padding: 50px 35px 33px;
 	margin-top: -23px;
     border: 1.5px solid #ebebeb;
@@ -2874,7 +2874,7 @@ Recipes styling
     text-align: center;
 }
 
- .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-page-content h3 a ,  .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-page-content h3 a:hover {
+ .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-page-content h3 a ,  .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-page-content h3 a:hover, .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-page-content h3 a:focus {
     color: #be5f84;
 	 
  }
@@ -3344,7 +3344,7 @@ list-style:none;}
 
 @media screen and (max-width: 767px) { 
 .single-product .page-container .site-content .whisqtitle p {
-	text-align:right;
+	text-align:center ! important;
 	}
 
 }
@@ -3355,6 +3355,7 @@ list-style:none;}
 	text-align:right;
 	}
 
+	
 
 @media screen and (min-width: 769px) and (max-width: 1024px) { 
 .single-product .page-container .site-content .related ul li {
