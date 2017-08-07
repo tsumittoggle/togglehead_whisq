@@ -15,7 +15,7 @@ get_header();
 		    }
 		    $offset = $_COOKIE['whisq_offset'];
 		    ?>
-		<div class="recipes-page" style="overflow: auto;">
+		<div class="recipes-page">
 			<div class="recipes-content">
 	<div class="recipe cf">
   <?php
