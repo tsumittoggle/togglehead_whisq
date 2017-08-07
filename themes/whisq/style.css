@@ -3023,6 +3023,7 @@ Recipes styling
 }
 
 
+
 .woocommerce ul.products li.product .button {display: none;}
 
 .single-product .page-container .site-content .related ul li h2 {margin-top: 30px;}
@@ -3078,6 +3079,18 @@ Recipes styling
     padding: 0px ! important;
     margin: 0px ! important;
     width: 100% ! important;
-	list-style:none;
->>>>>>> product_front
+	list-style:none;}
+
+.woocommerce ul.products li.product .button {display: none;}
+
+.single-product .page-container .site-content .related ul li h2 {margin-top: 30px;}
+
+.woocommerce ul.products li.product .price {margin-top: 30px;}
+
+.woocommerce ul.products li.product:hover .button,
+.woocommerce ul.products li.product:hover h2,
+.woocommerce ul.products li.product:hover .price {
+  display: block;
+  margin-top: 0;
+  transition: all 0.5s;
 }
