@@ -3490,7 +3490,7 @@ margin: 0 3.8% 2.992em 0;
 .recipes-page-list {position: relative;}
 
 .recipes-page-list:hover .recipe-more {
-  opacity: 1;
+  opacity: 1 !important;
   transition: all 0.5;
 }
 

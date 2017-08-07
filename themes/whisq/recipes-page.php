@@ -31,8 +31,7 @@ get_header();
 			  		<?php the_post_thumbnail(); ?>
 			  	</a>
 			  </div>
-			  <div class="recipe-page-content">		
-			    <a class="recipe-more" href="" title="Ultimate Chocolate Cupcake"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>	  
+			  <div class="recipe-page-content">			  
 				  <h3>
             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 				      <?php the_title(); ?>
@@ -40,7 +39,7 @@ get_header();
 				  </h3>
 				  <p><?php the_excerpt(); ?></p>
 				  <a class="recipe-more" href="<?php get_post_permalink(); ?>" title="<?php the_title(); ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-				  <div class="share-rec">
+			  <div class="share-rec">
 				  <span><i class="fa fa-share-alt-square" aria-hidden="true"></i><i>share</i></span>
 				   <div class="share-icon"><?php echo do_shortcode('[addtoany]'); ?></div>
 				  </div>
@@ -99,20 +98,13 @@ $terms = get_terms($taxonomy); // Get all terms of a taxonomy
 		?>
 			<div class="recipes-page-list">
 			  <div class="recipe-page-img">
-			  <a href="<?php get_post_permalink(); ?>">
 			  	<?php the_post_thumbnail(); ?>
-				</a>
 			  </div>
 			  <div class="recipe-page-content">
 				  <h3><?php the_title(); ?></h3>
-      <?php
-	  $count=0;
-	  foreach ( $terms as $term ) {
-	  $count++;
-	  if($count<2) {
-		 ?>
+      <?php foreach ( $terms as $term ) { ?>
         <li class="<?php echo $term->name; ?>"><?php echo $term->name; ?></li>
-      <?php } }?>
+      <?php } ?>
 			  </div>
 			</div>
 		<?php
