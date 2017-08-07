@@ -102,7 +102,6 @@ $('#carousel03').owlCarousel({
      return false;
   });
 
-  if(window.innerWidth > 768 ) {
   $(window).scroll(function() {    
     var scroll = $(window).scrollTop();    
     if (scroll <= 400) {
@@ -119,7 +118,23 @@ $('#carousel03').owlCarousel({
       $("header").removeClass("sticky");
     }
 });
-  }
+  
+  $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();    
+    if (scroll <= 400) {
+        $("#backtop").removeClass("back-top").addClass("remove-top");
+    }
+    else {
+      $("#backtop").addClass("back-top").removeClass("remove-top");
+    }
+
+    if (scroll > 10) {
+      $("header").addClass("sticky");
+    }
+    else {
+      $("header").removeClass("sticky");
+    }
+});
 
   //js for opening menu
   $('.hamburger').click(function(){
