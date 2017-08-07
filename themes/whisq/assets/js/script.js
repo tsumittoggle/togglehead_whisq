@@ -119,23 +119,6 @@ $('#carousel03').owlCarousel({
     }
 });
   
-  $(window).scroll(function() {    
-    var scroll = $(window).scrollTop();    
-    if (scroll <= 400) {
-        $("#backtop").removeClass("back-top").addClass("remove-top");
-    }
-    else {
-      $("#backtop").addClass("back-top").removeClass("remove-top");
-    }
-
-    if (scroll > 10) {
-      $("header").addClass("sticky");
-    }
-    else {
-      $("header").removeClass("sticky");
-    }
-});
-
   //js for opening menu
   $('.hamburger').click(function(){
   if($('.menu-main').hasClass('menu-open')){
