@@ -3451,3 +3451,14 @@ margin: 0 3.8% 2.992em 0;
     color:#333;
 	text-decoration:none;
 }
+
+
+.page-template-recipes-page .recipe-sidebar .category ul li.active:before {
+    content: '\f105';
+    position: relative;
+    color: #333;
+    font-size: 20px;
+    z-index: 101;
+    font-family: FontAwesome;
+    padding-right: 10px;
+}
