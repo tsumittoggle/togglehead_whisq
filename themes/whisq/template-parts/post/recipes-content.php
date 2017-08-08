@@ -73,8 +73,8 @@
 </div>
 <div class="extra-wrapper">
   <ul class="select-extra cf">
-  	<li class="youmaylike active">you may also like</li>
-  	<li class="accessoriesused">accesories used to make this recipe</li>
+  	<li class="youmaylike active"><p>Similar Recipes</p></li>
+  	<li class="accessoriesused"><p>Products in use</p></li>
   </ul>
 	<div class="recipe cf">
   <?php
