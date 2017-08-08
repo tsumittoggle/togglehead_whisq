@@ -72,9 +72,9 @@
   </div>
 </div>
 <div class="extra-wrapper">
-  <ul class="select-extra">
-  	<li class="youmaylike">you may also like</li>
-  	<li class="accessoriesused">accesories used for make recipe</li>
+  <ul class="select-extra cf">
+  	<li class="youmaylike active">you may also like</li>
+  	<li class="accessoriesused">accesories used to make this recipe</li>
   </ul>
 	<div class="recipe cf">
   <?php
@@ -109,7 +109,7 @@
   ?>
   </div>
   </div>
-  <div class="related-accesories recipelisthide">
+  <div class="related-accesories cf recipelisthide">
   			<?php
 		  
 			$bandproduct_args = array(

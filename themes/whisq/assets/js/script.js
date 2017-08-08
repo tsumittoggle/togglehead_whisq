@@ -86,7 +86,7 @@ $('#carousel03').owlCarousel({
    
    $('.accessoriesused').click(function(){
 
-	   $('.product-list').css('height','auto');
+//	   $('.product-list').css('height','auto');
    });
    
    
@@ -329,7 +329,12 @@ $('.sort-cat li').click(function(){
     });
 	
 	}		
-		
+	
+
+	$(".select-extra li").click(function () {
+    $(".select-extra li").removeClass("active");
+    $(this).addClass("active");   
+});
 
  //share icon
   $('.share-icon').css('display','none');
