@@ -282,6 +282,9 @@ $('.sort-cat li').click(function(){
 	else if($('.bakeryaccessories').hasClass('bakeryaccessories'+'-active')){
 	$('.bakeryaccessories').addClass('catactive');
 	}
+	else if($('.bowls').hasClass('bowls'+'-active')){
+	$('.bowls').addClass('catactive');
+	}
 	
 	if(window.innerWidth <= 1024 ){
 	
