@@ -2476,9 +2476,7 @@ letter-spacing: 1px;}
     border-top: none;
     position: relative;
 }
-@media screen and (min-width: 769px){
-.single-product .feature-recipe-content p:nth-child(3)  {min-height:80px;}
-}
+
  .single-product .feature-recipe-content h3 { min-height: 60px; }
 .single-product .feature-recipes-img a img {
 	width:100% ! important;
@@ -2786,7 +2784,7 @@ Recipes styling
     margin: 0 auto;
 	text-align:center;
     position: relative;
-    z-index: 100;
+    z-index: 2;
     color: #fff;
     font: 600 25px/30px 'Open Sans', sans-serif;
     background-color: #be5f84;
@@ -2951,6 +2949,12 @@ Recipes styling
 }
 
 
+@media screen and (max-width: 768px) {
+	.page-template-recipes-page .page-container .recipes-content .recipe-tip .tip {
+    padding: 30px ! important;
+	}
+}
+
 .page-template-recipes-page .page-container .recipes-content .recipe-tip .tip {
 	width: 100%;
     display: inline-block;
@@ -3045,7 +3049,7 @@ Recipes styling
 	content: '\f061';
 	font-family:FontAwesome;
 	padding-right:15px;
-    font-size: 25px;
+    font-size: 20px;
 	color: #ba5c82;
 }
 
@@ -3175,12 +3179,6 @@ Recipes styling
 
 }
 
-@media screen and (min-width: 769px)
-{
-.single-recipes .page-container .recipe .recipes-page-list .recipes-page-content p:nth-child(3) {
-    min-height: 80px;
-}
-}
 
 @media screen and (max-width: 1024px) and (min-width: 769px)
 {
@@ -3244,7 +3242,7 @@ Recipes styling
 	text-transform: capitalize;
     border-radius: 0px ! important;
     border: 1px solid #ebebeb;
-    padding: 35px ! important;
+    padding: 25px ! important;
     margin: 0px ! important;
     width: 50% ! important;
     float: left ! important;
@@ -3255,8 +3253,10 @@ Recipes styling
 }
 
 .single-recipes .page-container .select-extra li p{
-	font-size:25px;
-	margin-bottom:0px;
+	font-size: 15px;
+    margin-bottom: 0px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 @media screen and (max-width: 768px) {
@@ -3333,7 +3333,7 @@ list-style:none;}
   box-shadow: 0px 5px 0px 0px #9a506e;
   outline:none;
       display: block;
-    width: inherit;
+	  width: 30%;
     margin: 0 auto;
 }
 
@@ -3566,9 +3566,9 @@ margin: 0 3.8% 2.992em 0;
 
 
  .single-recipes .page-container .recipe .recipes-page-content h3 {
-    min-height: 52px;
+    min-height: 60px;
     color: #be5f84;
-    font-size: 24px;
+    font: 600 24px/32px 'Open Sans', sans-serif;
     text-align: center;
 }
 

@@ -341,10 +341,26 @@ $('.sort-cat li').click(function(){
    });
 
    $('.recipes-page-list p:nth-child(3)').each(function() {
+     $(this).height(maxHeight);	 
+   });
+   
+//	 $('.recipes-page-list:nth-child(1) p:nth-child(3)').css("height","auto ! important");
+		}
+		
+		
+					if(window.innerWidth > 768 ){
+   var maxHeight = -1;
+
+   $('.feature-recipes-list p').each(function() {
+     maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+   });
+
+   $('.feature-recipes-list p:nth-child(3)').each(function() {
      $(this).height(maxHeight);
    });
 		}
 
+		
 	$(".select-extra li").click(function () {
     $(".select-extra li").removeClass("active");
     $(this).addClass("active");   
