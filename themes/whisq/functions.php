@@ -784,7 +784,7 @@ add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
 function woo_rename_tabs( $tabs ) {
 
 	if($tabs['description']['title']) {
-	$tabs['description']['title'] = __( 'use & feature' );	
+	$tabs['description']['title'] = __( 'use & features' );	
 	$tabs['description']['priority'] = 15;	
 	}	
 
@@ -825,9 +825,10 @@ function add_content_after_product() {?>
 			  <div class="feature-recipe-content">
 				  <h3><?php the_title(); ?></h3>
 				  <p><?php the_excerpt(); ?></p>
-				  <div class="social-share">
-				    <span class="share">share</span>
-				    <?php echo do_shortcode('[DISPLAY_ULTIMATE_SOCIAL_ICONS]'); ?>
+				  <a class="recipe-more" href="<?php get_post_permalink(); ?>" title="<?php the_title(); ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+			      <div class="share-rec">
+				  <span><i><img src="http://www.togglehead.net/whisq/wp-content/uploads/allshare.png">share</i></span>
+				   <div class="share-icon"><?php echo do_shortcode('[addtoany]'); ?></div>
 				  </div>
 				</div>
 			</div>
@@ -923,3 +924,29 @@ function create_recipes_taxonomies() {
     register_taxonomy( 'recipes_categories', array( 'recipes' ), $args );
 }
 add_action( 'init', 'create_recipes_taxonomies', 0 );
+
+
+// Filters
+add_filter( 'woocommerce_get_catalog_ordering_args', 'custom_woocommerce_get_catalog_ordering_args' );
+add_filter( 'woocommerce_default_catalog_orderby_options', 'custom_woocommerce_catalog_orderby' );
+add_filter( 'woocommerce_catalog_orderby', 'custom_woocommerce_catalog_orderby' );
+ 
+ // Apply custom args to main query
+function custom_woocommerce_get_catalog_ordering_args( $args ) {
+	$orderby_value = isset( $_GET['orderby'] ) ? woocommerce_clean( $_GET['orderby'] ) : apply_filters( 'woocommerce_default_catalog_orderby', get_option( 'woocommerce_default_catalog_orderby' ) );
+ 
+	if ( 'oldest_to_recent' == $orderby_value ) {
+		$args['orderby'] = 'date';
+		$args['order'] = 'ASC';
+	}
+ 
+	return $args;
+}
+ 
+// Create new sorting method
+function custom_woocommerce_catalog_orderby( $sortby ) {
+	
+	$sortby['oldest_to_recent'] = __( 'Oldest to most recent', 'woocommerce' );
+	
+	return $sortby;
+}

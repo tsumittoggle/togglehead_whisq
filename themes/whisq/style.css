@@ -182,6 +182,7 @@ body a {
   display: inline-block;
   color: #000;
   text-decoration:none;
+  cursor:pointer;
    }
 .woocommerce-MyAccount-content,
 .sfsi_footerLnk { display: none; }
@@ -1804,16 +1805,14 @@ Locate Us styling start from here
 	font-size: 16px;
 	text-transform:capitalize;
 	list-style-type: none;
-	cursor:pointer;
 	position:relative;
 }
-.catactive {
-	color:#ba5c82;
-}
-li.catactive a {
+
+.products-page .left-side-bar ul li.active a {
     color: #ba5c82;
 }
-.catactive:after {
+@media screen and (min-width: 1025px) {
+.products-page .left-side-bar ul li.active:after {
 content: '';
 display: block;
 position: absolute;
@@ -1824,6 +1823,7 @@ height: 0;
 border-color: transparent transparent transparent #ba5c82;
 border-style: solid;
 border-width: 10px;
+}
 }
 .products-page .left-side-bar ul li:first-child {
 	border-top: 1px solid #ebebeb;
@@ -1942,6 +1942,11 @@ product-page styling strat from here
 	width: 100%;
 	margin-left:0px;
 }
+
+.products-page .left-side-bar ul li {
+    padding: 15px 25px;
+}
+
 .left-side-bar h4 {
 	font-weight: 400 ! important;
 	background-color: #fff;
@@ -1951,6 +1956,7 @@ product-page styling strat from here
 	text-align: center;
 	min-height:49px;
 	max-height:49px;
+	padding: 15px 25px !important;
 	position: fixed;
 	border-top: 1px solid #ebebeb;
 	line-height: 16px;
@@ -2043,12 +2049,7 @@ product-page styling strat from here
     .site-content-contain {position: relative;
 	}
 	}
-@media screen and (max-width: 767px) 
-{
-.prodbancont p {
-	display:none;
-}
-}
+
 @media screen and (min-width: 481px) and (max-width: 1024px) 
 {
 .prodcontent {
@@ -2076,6 +2077,18 @@ product-page styling strat from here
 .prodbancont h4 {
 	    font-size: 3em;
 }
+
+@media screen and (max-width: 767px) 
+{
+.prodbancont p {
+	display:none;
+}
+
+.prodbancont h4 {
+	    font-size: 2em;
+}
+}
+
 .footer-section a {
 	display:block;
 }
@@ -2224,7 +2237,6 @@ product-page styling strat from here
 	vertical-align: middle;
 	text-transform:capitalize;
 	padding-right: 25px;
-	font-weight:600;
 	margin-top: -30px ! important;
 }
 .page-container .type-product .sfsi_widget {
@@ -2411,12 +2423,14 @@ letter-spacing: 1px;}
     padding: 35px;
 	margin: 50px 0px;
     border: 1px solid #ebebeb;
+	letter-spacing: 1px;
 }
 
 .single-product .page-container .wrapper .recipe {
 	width: 92%;
     text-align: center;
     margin: 0 auto;
+	margin-bottom: 50px;
 }
 
 
@@ -2504,6 +2518,7 @@ padding-top:15px;
     border: 1px solid #ebebeb;
 	text-align:center;
 	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 
 .single-product .page-container .site-content .related {
@@ -2514,6 +2529,7 @@ padding-top:15px;
 	margin:0px ! important;
 	padding-right:5px;
 	float:left;
+	padding-right: 15px;
 }
 
 .onsale {
@@ -3015,7 +3031,8 @@ Recipes styling
 }
 
 .single-recipes .content-area .recipe-detail {
-	width:100%;min-height: 100px;
+	    margin: 0 auto;
+	width:75%;min-height: 100px;
     height: auto;
 }
 
@@ -3333,7 +3350,7 @@ list-style:none;}
   box-shadow: 0px 5px 0px 0px #9a506e;
   outline:none;
       display: block;
-	  width: 30%;
+	  width: 35%;
     margin: 0 auto;
 }
 
@@ -3597,6 +3614,7 @@ margin: 0 3.8% 2.992em 0;
 /*Share icon */
 .share-rec {
   cursor:pointer;
+  position:relative;
   text-align: center;
   margin-top: 25px;
   min-height: 50px;
@@ -3607,18 +3625,20 @@ margin: 0 3.8% 2.992em 0;
   text-transform: capitalize;
 }
 
-.share-rec span i:first-child {
-  font-size: 35px;
-  margin-right: 5px;
-  top: 6px;
-    position: relative;
+.share-rec span i img {
+	width:24px;
+	height:24px;
+	margin-right: 5px;
+    margin-top: -4px;
 }
 
-.share-rec span i:nth-child(2) {
-  font-size: 18px;
+
+.share-rec span i {
+  font-size: 14px;
+  display:inline-block;
 }
 
-.share-rec span span {
+.share-rec span {
   display: inline-block;
 }
 

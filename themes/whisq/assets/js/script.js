@@ -265,26 +265,7 @@ $('.sort-cat li').click(function(){
  	
 	$("#all").trigger("click");
 	
-		
 	
-	if($('.spatulas').hasClass('spatulas'+'-active')){
-	$('.spatulas').addClass('catactive');
-	}
-	
-	else if($('.all-product').hasClass('all'+'-active')){
-	$('.all-product').addClass('catactive');
-	}
-	
-	else if($('.pans').hasClass('pans'+'-active')){
-	$('.pans').addClass('catactive');
-	}
-	
-	else if($('.bakeryaccessories').hasClass('bakeryaccessories'+'-active')){
-	$('.bakeryaccessories').addClass('catactive');
-	}
-	else if($('.bowls').hasClass('bowls'+'-active')){
-	$('.bowls').addClass('catactive');
-	}
 	
 	if(window.innerWidth <= 1024 ){
 	
@@ -369,8 +350,7 @@ $('.sort-cat li').click(function(){
  //share icon
   $('.share-icon').css('display','none');
  $('.share-rec').click(function(){
-
-    $(this).children('.share-icon').toggle(500);
+    $(this).children('.share-icon').fadeToggle('slow');
  });   
 
 });
