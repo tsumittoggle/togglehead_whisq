@@ -763,7 +763,6 @@ add_action( 'woocommerce_share', 'social_share' );
 function social_share(){
 	?>
 	<span class="share">share</span>
-	
 	<?php
 }
 
@@ -950,3 +949,5 @@ function custom_woocommerce_catalog_orderby( $sortby ) {
 	
 	return $sortby;
 }
+
+add_theme_support( 'wc-product-gallery-lightbox' );

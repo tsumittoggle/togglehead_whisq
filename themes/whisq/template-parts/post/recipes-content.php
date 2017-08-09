@@ -10,7 +10,7 @@
 
 ?>
 	<div class="whisqtitle">
-		<h2>recipes</h2>
+		<h2>recipes</h2><p><button onclick="history.go(-1);">Back </button></p>
 		<p class="wrapper breadcrumb-url"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Home</a> > <a href="<?php echo esc_url( home_url( '/recipes/' ) ); ?>" rel="home">Recipes</a> > <span><?php the_title(); ?></span></p>
 	</div>
 <div class="header-post">
@@ -42,7 +42,7 @@
 	<div class="recipe-detail cf">
 	  <?php if(get_field('integedien')) : ?>	  
 		<div class="ingrediean">
-			<h4><img src="<?php echo esc_url( home_url( '/wp-content/uploads/bowl.png') ); ?>" class="fa ffa-shopping-cart">Ingredients</h4>
+			<img src="<?php echo esc_url( home_url( '/wp-content/uploads/bowl.png') ); ?>" class="rcimg"><h4>Ingredients</h4>
 			<div class="ingrediean-content">
 				<?php the_field('integedien'); ?>
 			</div>
@@ -50,7 +50,7 @@
 	<?php endif; ?>
 	<?php if(get_field('method')) : ?>
 		<div class="method">
-			<h4><img src="<?php echo esc_url( home_url( '/wp-content/uploads/cook.png') ); ?>" class="fa ffa-shopping-cart">method</h4>
+			<img src="<?php echo esc_url( home_url( '/wp-content/uploads/cook.png') ); ?>" class="rcimg"><h4>method</h4>
 			<div class="method-content">
 			  <?php the_field('method'); ?>
 			</div>
@@ -58,12 +58,12 @@
 	<?php endif; ?>
 	</div>
   <div class="share-rec">
-				  <span><i class="fa fa-share-alt-square" aria-hidden="true"></i><i>share</i></span>
+				  <span><i><img src="http://www.togglehead.net/whisq/wp-content/uploads/allshare.png">share</i></span>
 				   <div class="share-icon"><?php echo do_shortcode('[addtoany]'); ?></div>
 				  </div>
   <div class="tag">
   	<?php if(get_field('tags')) : ?>
-			<p><img src="<?php echo esc_url( home_url( '/wp-content/uploads/price-tag.png') ); ?>" class="fa ffa-shopping-cart">tags</p><?php the_field('tags'); ?>
+			<p><img src="<?php echo esc_url( home_url( '/wp-content/uploads/price-tag.png') ); ?>" class="rcimg">tags</p><?php the_field('tags'); ?>
 		<?php endif; ?>
   </div>
   <div class="post-change">
@@ -95,9 +95,9 @@
 				  </a>
 				</h3>
 				<p><?php the_excerpt(); ?></p>
-				
+				<a class="recipe-more" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 			  <div class="share-rec">
-				  <span><i class="fa fa-share-alt-square" aria-hidden="true"></i><i>share</i></span>
+				  <span><i><img src="http://www.togglehead.net/whisq/wp-content/uploads/allshare.png">share</i></span>
 				   <div class="share-icon"><?php echo do_shortcode('[addtoany]'); ?></div>
 				  </div>
        </div>

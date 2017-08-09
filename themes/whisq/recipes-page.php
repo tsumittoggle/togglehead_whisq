@@ -38,9 +38,9 @@ get_header();
 				    </a>
 				  </h3>
 				  <p><?php the_excerpt(); ?></p>
-				  <a class="recipe-more" href="<?php get_post_permalink(); ?>" title="<?php the_title(); ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+				  <a class="recipe-more" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 			  <div class="share-rec">
-				  <span><i class="fa fa-share-alt-square" aria-hidden="true"></i><i>share</i></span>
+				  <span><i><img src="http://www.togglehead.net/whisq/wp-content/uploads/allshare.png">share</i></span>
 				   <div class="share-icon"><?php echo do_shortcode('[addtoany]'); ?></div>
 				  </div>
 			  </div>
@@ -73,7 +73,7 @@ get_header();
 <div class="recipe-sidebar">
 <div class="recipe-tip">
 <h3>tips</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae congue risus, id consequat erat. Nam sollicitudin nibh sit amet quam pretium, in mattis orci vestibulum. Donec blandit dolor in urna ultricies, id hendrerit dui mattis. Suspendisse eget cursus massa. Integer ut enim nibh.</p>
+<p>Butter & flour your cake pans generously. Get into every nook and cranny so that your dough doesn’t adhere to the pan.</p>
 </div>
 <div class="category">
 <?php
