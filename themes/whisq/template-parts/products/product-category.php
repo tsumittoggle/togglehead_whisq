@@ -28,6 +28,19 @@
 	</div>
         <div class="left-side-bar">
 		<?php
+			  if(is_page('pans')) {
+			  	$category = 'pans';
+			  } elseif (is_page('spatulas')) {
+			  	$category = 'spatulas';
+			  } elseif (is_page('bowls')) {
+			  	$category = 'bowls';
+			  } elseif (is_page('bakery accessories')) {
+			  	$category = 'bakery-accessories';
+			  } elseif (is_page('product-shop')) {
+			  	$category = '';
+			  	$all_active = 'active';
+			  }
+
 			$args = array(
 			    'number'     => $number,
 			    'orderby'    => $orderby,
@@ -43,7 +56,7 @@
 			?>
 			<h4>category</h4>
 			<ul id="product_cats">
-			<li class="all-product"><a href="<?php echo esc_url( home_url( '/product-shop/') ); ?>">all</a></li>
+			<li class="all-product <?php echo $all_active; ?>"><a href="<?php echo esc_url( home_url( '/product-shop/') ); ?>">all</a></li>
 			<?php
 			$count = count($product_categories);
 			if ( $count > 0 ){
@@ -51,7 +64,7 @@
            $cat = $product_category->name;
            $cat_url = str_replace( ' ','-',$cat);
 			    	?>
-			        <li class="<?php echo $cat_url; ?><?php if($cat_url == $category) {echo "active";} ?>"><a href="<?php echo esc_url( home_url( '/product-shop/'.$cat_url.'/') ); ?>" rel="home">  <?php echo  $cat ?></a></li>
+			        <li class="<?php echo $cat_url.' '; ?><?php if($cat_url == $category) {echo "active";} ?>"><a href="<?php echo esc_url( home_url( '/product-shop/'.$cat_url.'/') ); ?>" rel="home">  <?php echo  $cat ?></a></li>
 			 <?php   }
 			}
 			?> 
@@ -63,17 +76,7 @@
 		    // $category = $_COOKIE['cat_name'];
 		    // if($category == 'all') {
 		    // 	$category = str_replace($category ,'','');
-			  if(is_page('pans')) {
-			  	$category = 'pans';
-			  } elseif (is_page('spatulas')) {
-			  	$category = 'spatulas';
-			  } elseif (is_page('bowls')) {
-			  	$category = 'bowls';
-			  } elseif (is_page('bakery accessories')) {
-			  	$category = 'bakeryaccessories';
-			  }
 		    
-
 		  $offset = $_COOKIE['whisq_offset'];
 		  
 			$bandproduct_args = array(
