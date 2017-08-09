@@ -9,7 +9,7 @@ get_header();
 			<?php if(is_page('product-shop')) {?>
 			  <p class="wrapper breadcrumb-url"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Home</a> > <span><?php the_title(); ?></span></p>
 			<?php } else { ?>
-              <p class="wrapper breadcrumb-url"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Home</a> > <a href="<?php echo esc_url( home_url( '/product' ) ); ?>" rel="home">Product</a> > <span><?php the_title(); ?></span></p>
+              <p class="wrapper breadcrumb-url"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Home</a> > <a href="<?php echo esc_url( home_url( '/product' ) ); ?>" rel="home">Products</a> > <span><?php the_title(); ?></span></p>
 			<?php } ?>
 		</div>
       <?php
