@@ -783,12 +783,12 @@ add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
 function woo_rename_tabs( $tabs ) {
 
 	if($tabs['description']['title']) {
-	$tabs['description']['title'] = __( 'use & features' );	
+	$tabs['description']['title'] = __( 'uses & features' );	
 	$tabs['description']['priority'] = 15;	
 	}	
 
 	if($tabs['additional_information']['title']) {
-	$tabs['additional_information']['title'] = __( 'product detail' );	
+	$tabs['additional_information']['title'] = __( 'product details' );	
 	$tabs['additional_information']['priority'] = 10;	
 }
 

@@ -10,8 +10,8 @@
 
 ?>
 	<div class="whisqtitle">
-		<h2>recipes</h2><p><button onclick="history.go(-1);">Back </button></p>
-		<p class="wrapper breadcrumb-url"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Home</a> > <a href="<?php echo esc_url( home_url( '/recipes/' ) ); ?>" rel="home">Recipes</a> > <span><?php the_title(); ?></span></p>
+		<h2>recipes</h2>
+		<p class="wrapper breadcrumb-url"><a class="backlink" onclick="history.go(-1);">Back</a><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Home</a> > <a href="<?php echo esc_url( home_url( '/recipes/' ) ); ?>" rel="home">Recipes</a> > <span><?php the_title(); ?></span></p>
 	</div>
 <div class="header-post">
 <?php the_post_thumbnail(); ?>
