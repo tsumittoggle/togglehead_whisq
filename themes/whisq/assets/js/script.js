@@ -333,6 +333,17 @@ $('.sort-cat li').click(function(){
 	
 	}		
 	
+			if(window.innerWidth > 1024 ){
+   var maxHeight = -1;
+
+   $('.recipes-page-list p').each(function() {
+     maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+   });
+
+   $('.recipes-page-list p:nth-child(3)').each(function() {
+     $(this).height(maxHeight);
+   });
+		}
 
 	$(".select-extra li").click(function () {
     $(".select-extra li").removeClass("active");

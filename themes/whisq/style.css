@@ -855,12 +855,7 @@ Recipes styling start from here
   border-radius: 50%;
   opacity: 0;
 }
-.recipe-more:hover {
-  opacity: 0.5;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  transition: all 0.5s;
-}
+
 .recipe-more:after {
   content: ' ';
   display: block;
@@ -1331,15 +1326,8 @@ header li .sub-menu:after {display: none;}
   .recipes-list p {width: 90%;}
   .recipe {margin-bottom: 20px;}
   .recipe-more {
-    right: 20px;
+    right: 16px;
     opacity: 1;
-  }
-  .recipes-list:hover {
-    right: 20px;
-    opacity: 1;
-    -webkit-transition: all 1s;
-    -moz-transition: all 1s;
-    transition: all 1s;
   }
   .events {
     width: 100%;
@@ -2152,27 +2140,31 @@ product-page styling strat from here
 .poduct-select .prev a , .poduct-select .next a {
 	vertical-align:middle;
 	font-size:16px;
-	font-weight:600;
+	font-weight:400;
 }
 .poduct-select .prev a:hover , .poduct-select .next a:hover , .poduct-select .prev a:focus , .poduct-select .next a:focus {
 	color:#333;
 	text-decoration:none;
 }
 .poduct-select .next a:after {
-	    content: "\f105";
-		font-family: FontAwesome;
-		font-size: 40px;
-		font-weight:normal;
-		vertical-align: middle;
-		padding-left: 15px;
+	content: "\f105";
+    font-family: FontAwesome;
+    font-size: 28px;
+    top: -3px;
+    position: relative;
+    font-weight: normal;
+    vertical-align: middle;
+    padding-left: 10px;
 }
 .poduct-select .prev a:before {
 	    content: "\f104";
 		font-family: FontAwesome;
-		font-size: 40px;
-		font-weight:normal;
+		font-size: 28px;
+		top: -3px;
+		position: relative;
+		font-weight: normal;
 		vertical-align: middle;
-		padding-right: 15px;
+		padding-right: 10px;
 }
 .page-container .type-product .product_title {
     font-size: 25px;
@@ -2220,7 +2212,9 @@ product-page styling strat from here
 	margin: 25px 0px ! important;
 }
 .page-container .type-product form .quantity:before {
-	content:'Quantity';	
+	content: 'Quantity';
+    padding-right: 15px;
+    font-size: 16px;	
 }
 .page-container .type-product .woocommerce-product-details__short-description p {
 	font-weight:600;
@@ -2691,14 +2685,14 @@ border:none;
 .product-list:nth-child(2n + 2) {margin-right:0;
 }
 }
-.products-page .pagination {
+.pagination {
 	width:100%;
 	text-align:center;
 }
-.products-page .pagination ul {
+.pagination ul {
 	list-style:none;
 }
-.products-page .pagination ul li {
+.pagination ul li {
 	display:inline-block;
 	margin: 0 5px;
     padding: 2px 8px;
@@ -2707,14 +2701,14 @@ border:none;
 	font-size:16px;
 	cursor: pointer;
 }
-.products-page .pagination ul li:hover {
+.pagination ul li:hover {
 	    background-color: #ba5c82;
 		color:#fff;
 }
-.products-page .pagination ul li i {
+.pagination ul li i {
 		font-weight:600;
 }
-.products-page .pagination ul #active {
+.pagination ul #active {
 	background-color:#ba5c82;
 	color:#fff;
 }
@@ -2760,17 +2754,26 @@ Recipes styling
 	float:left;
 }
 
+@media screen and (min-width: 1024px) and (max-width: 1224px) { 
+	.page-template-recipes-page .recipes-content {
+	width:70% ! important;
+	}
+.page-template-recipes-page .recipe-sidebar {
+	width:30% ! important;
+	}
+}
+
 .page-template-recipes-page .recipe-sidebar {
 	width:25%;
 	float:left;
 	margin-top: 15px;
-	padding: 0px 15px;
+	padding: 0px 0px 0px 15px;
 }
 
 
 .page-template-recipes-page .recipe-sidebar .recipe-tip p {
     color: #000;
-    font: 400 25px/40px Parisienne;
+    font: 400 30px/40px  Parisienne;
     padding: 50px 35px 33px;
 	margin-top: -23px;
 	margin-bottom: 0px;
@@ -2803,13 +2806,17 @@ Recipes styling
 .page-template-recipes-page .recipe-sidebar .category h3, .page-template-recipes-page .recipe-sidebar .feature-recipes h3 {
 	text-transform: uppercase;
     color:#ba5c82;
-    padding: 25px 15px ! important;
+    padding: 25px 15px;
 	text-align:center;
     font-weight: 600;
     margin-top: 0px;
     margin-bottom: 0px;
 }
 }
+
+ .page-template-recipes-page .recipe-sidebar .feature-recipes .recipe-page-content h3 {
+	padding: 10px 15px 0px;
+ }
 
 .page-template-recipes-page .recipe-sidebar .category ul {margin-bottom:0px;}
 
@@ -2839,17 +2846,16 @@ Recipes styling
 	clear:both;
 	display: inline-block;
 }
-.page-template-recipes-page .recipe-sidebar .feature-recipes .recipes-page-list:after {
-    content: ' ';
-    width: 100%;
-    display: inline-block;
-    margin: 25px 0px;
-    border: 0.5px solid #ebebeb;
-	background-color:#ebebeb;
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
+
+.page-template-recipes-page .recipe-sidebar .feature-recipes .recipes-page-list {
+    
+    padding-bottom: 30px;
+    border-bottom: 0.5px solid #ebebeb;
 }
 
+.page-template-recipes-page .recipe-sidebar .feature-recipes .recipes-page-list:last-child {
+	padding-top: 30px;
+}
 .page-template-recipes-page .recipe-sidebar .feature-recipes .recipes-page-list .recipe-page-img img {
 	width:100%;
 	height:auto;
@@ -2877,10 +2883,11 @@ Recipes styling
 
 .page-template-recipes-page .recipe-sidebar .feature-recipes .recipes-page-list .recipe-page-content li {
     text-align: left;
+	position: absolute;
+    bottom: 30px;
 	font-size:14px;
-	padding:25px 15px ! important;
+	padding:0px 15px 10px;
 	text-transform:capitalize;
-    padding: 10px;
     color:#ba5c82;
 }
 
@@ -2936,7 +2943,6 @@ Recipes styling
 }
 
  .page-template-recipes-page .page-container .recipe .recipes-page-list .recipe-page-content p {
-    width: 70%;
     margin: 0 auto;
     color: #333;
     font: 400 14px/22px 'Open Sans', sans-serif;
@@ -3631,19 +3637,40 @@ margin: 0 3.8% 2.992em 0;
 
 .woocommerce ul.products li.product a img {margin:0px;}
 
-@media screen and (min-width: 1025px) and (max-width: 1224px) {
-.page-template-recipes-page .recipe-page-content p:nth-child(3) {min-height:135px;}
-}
-
-@media screen and (min-width: 1225px) {
-.page-template-recipes-page .recipe-page-content p:nth-child(3) {min-height:90px;}}
 
 .page-template-recipes-page .page-container .recipe .recipes-page-list:first-child .recipe-page-content p:nth-child(3) {
     min-height: auto;
 }
-
 .single-recipes .wrapper .post-title {
 	margin:30px 0px;
+}
+
+.page-template-recipes-page .recipes-page-list:hover .recipe-more {
+    right: 16px;
+    opacity: 1;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    transition: all 1s;
+}
+
+@media screen and (max-width: 768px)
+{
+.page-template-recipes-page .recipes-page-list .recipe-more {
+    right: 20px;
+    opacity: 1 ! important;
+}
+}
+
+.page-template-recipes-page .recipes-page-list .recipe-more {
+    width: 52px;
+    height: 50px;
+    position: absolute;
+    top: -28px;
+    right: 16px;
+    background: #be5f84;
+    padding: 16px 0 0 2px;
+    border-radius: 50%;
+    opacity: 0;
 }
 
 /*==================================================================
@@ -3675,3 +3702,4 @@ Recipes styling
     float: left;
     padding-left: 25px;
 }
+
