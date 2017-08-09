@@ -39,7 +39,7 @@
 	<div class="recipepara">
 	<p><?php the_excerpt(); ?></p>
 	</div>
-	<div class="recipe-detail">
+	<div class="recipe-detail cf">
 	  <?php if(get_field('integedien')) : ?>	  
 		<div class="ingrediean">
 			<h4><img src="<?php echo esc_url( home_url( '/wp-content/uploads/bowl.png') ); ?>" class="fa ffa-shopping-cart">Ingredients</h4>
@@ -57,10 +57,10 @@
 		</div>
 	<?php endif; ?>
 	</div>
-  <div class="share">
-  	<span>share</span>
-  	<?php echo do_shortcode('[DISPLAY_ULTIMATE_SOCIAL_ICONS]'); ?>
-  </div>
+  <div class="share-rec">
+				  <span><i class="fa fa-share-alt-square" aria-hidden="true"></i><i>share</i></span>
+				   <div class="share-icon"><?php echo do_shortcode('[addtoany]'); ?></div>
+				  </div>
   <div class="tag">
   	<?php if(get_field('tags')) : ?>
 			<p><img src="<?php echo esc_url( home_url( '/wp-content/uploads/price-tag.png') ); ?>" class="fa ffa-shopping-cart">tags</p><?php the_field('tags'); ?>
@@ -72,9 +72,9 @@
   </div>
 </div>
 <div class="extra-wrapper">
-  <ul class="select-extra">
-  	<li class="youmaylike">you may also like</li>
-  	<li class="accessoriesused">accesories used for make recipe</li>
+  <ul class="select-extra cf">
+  	<li class="youmaylike active"><p>Similar Recipes</p></li>
+  	<li class="accessoriesused"><p>Products in use</p></li>
   </ul>
 	<div class="recipe cf">
   <?php
@@ -102,13 +102,14 @@
 				  </div>
        </div>
 	   </div>
-			</div>
+			
 		<?php
 		endwhile;
 		wp_reset_query(); 
   ?>
   </div>
-  <div class="related-accesories recipelisthide">
+  </div>
+  <div class="related-accesories cf recipelisthide">
   			<?php
 		  
 			$bandproduct_args = array(

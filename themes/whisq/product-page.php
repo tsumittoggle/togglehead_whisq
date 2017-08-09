@@ -18,7 +18,7 @@ get_header();
 			</div>
 		</div>
 
-		<div class="products-page">
+		<div class="products-page cf">
 			<?php get_template_part( 'template-parts/products/product', 'items' ); ?>
 			</div>
 			<div class="bottom-wrapper" style="background: url(<?php the_field('bottom_banner'); ?>)">

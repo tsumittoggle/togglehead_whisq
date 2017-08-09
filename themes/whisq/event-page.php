@@ -15,7 +15,7 @@ get_header();
 		<div class="wrapper locatecontent page-content">
 			<?php the_content(); ?>
 		</div>
-<div class="upcoming">
+<div class="upcoming cf">
 <h3>Upcoming events</h3>
 <?php
 		global $post;
@@ -78,7 +78,7 @@ foreach($get_posts as $post) { setup_postdata($post);
     ?>
 </div>
 
-<div class="past">
+<div class="past cf">
 <h3>past events</h3>
 <?php
 global $post;

@@ -763,7 +763,7 @@ add_action( 'woocommerce_share', 'social_share' );
 function social_share(){
 	?>
 	<span class="share">share</span>
-	<?php echo do_shortcode('[DISPLAY_ULTIMATE_SOCIAL_ICONS]'); ?>
+	
 	<?php
 }
 

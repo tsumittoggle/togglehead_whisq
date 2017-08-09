@@ -78,15 +78,15 @@ $('#carousel03').owlCarousel({
   $('.product_type_simple').addClass('feature-btn');
 
   var $feture_height = $('.feature-item').height();
-  var $product_height = $('.woocommerce .products li').height();
+  //var $product_height = $('.woocommerce .products li').height();
   var f = $feture_height + 45;
-  var p = $product_height + 45;
+  //var p = $product_height + 45;
   $('.feature-item').css('height', f + 'px');
-   $('.woocommerce .products li').css('height', p + 'px');
+   //$('.woocommerce .products li').css('height', p + 'px');
    
    $('.accessoriesused').click(function(){
 
-	   $('.product-list').css('height','auto');
+//	   $('.product-list').css('height','auto');
    });
    
    
@@ -260,9 +260,7 @@ $('.sort-cat li').click(function(){
   });
 
 
-var $prod_height = $('.product-list').height();
-  var fp = $prod_height + 65;
-  $('.product-list').css('height', fp + 'px');
+
 
  	
 	$("#all").trigger("click");
@@ -284,8 +282,11 @@ var $prod_height = $('.product-list').height();
 	else if($('.bakeryaccessories').hasClass('bakeryaccessories'+'-active')){
 	$('.bakeryaccessories').addClass('catactive');
 	}
+	else if($('.bowls').hasClass('bowls'+'-active')){
+	$('.bowls').addClass('catactive');
+	}
 	
-	if(window.innerWidth <= 768 ){
+	if(window.innerWidth <= 1024 ){
 	
 	$(".left-side-bar h4").click(function(){
         $(".sort-cat").hide(500);
@@ -304,7 +305,7 @@ var $prod_height = $('.product-list').height();
 	}
 	
 	
-	if(window.innerWidth > 768 ){
+	if(window.innerWidth > 1024 ){
 	$(".short-by h4").click(function(){
         $(".sort-cat").slideToggle();
 		$(this).toggleClass('addinline');
@@ -331,13 +332,29 @@ var $prod_height = $('.product-list').height();
     });
 	
 	}		
-		
+	
+			if(window.innerWidth > 1024 ){
+   var maxHeight = -1;
+
+   $('.recipes-page-list p').each(function() {
+     maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+   });
+
+   $('.recipes-page-list p:nth-child(3)').each(function() {
+     $(this).height(maxHeight);
+   });
+		}
+
+	$(".select-extra li").click(function () {
+    $(".select-extra li").removeClass("active");
+    $(this).addClass("active");   
+});
 
  //share icon
   $('.share-icon').css('display','none');
  $('.share-rec').click(function(){
 
-    $(this).children('.share-icon').toggle();
+    $(this).children('.share-icon').toggle(500);
  });   
 
 });
