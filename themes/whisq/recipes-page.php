@@ -99,13 +99,20 @@ $terms = get_terms($taxonomy); // Get all terms of a taxonomy
 		?>
 			<div class="recipes-page-list">
 			  <div class="recipe-page-img">
+			  <a href="<?php get_post_permalink(); ?>">
 			  	<?php the_post_thumbnail(); ?>
+				</a>
 			  </div>
 			  <div class="recipe-page-content">
 				  <h3><?php the_title(); ?></h3>
-      <?php foreach ( $terms as $term ) { ?>
+      <?php
+	  $count=0;
+	  foreach ( $terms as $term ) {
+	  $count++;
+	  if($count<2) {
+		 ?>
         <li class="<?php echo $term->name; ?>"><?php echo $term->name; ?></li>
-      <?php } ?>
+      <?php } }?>
 			  </div>
 			</div>
 		<?php

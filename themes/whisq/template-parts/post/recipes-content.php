@@ -20,15 +20,19 @@
 	<h2 class="post-title"><?php the_title(); ?></h2>
 	<div class="list">
 		<?php if(get_field('servings')) : ?>
-			<span><?php the_field('servings'); ?></span>
+		<img src="<?php echo esc_url( home_url( '/wp-content/uploads/restaurant.png') ); ?>" class="fa ffa-shopping-cart">
+			<span>Servings - <?php the_field('servings'); ?></span>
 		<?php endif; ?>
 		<?php if(get_field('preparation')) : ?>
-			<span><?php the_field('preparation'); ?></span>
+		<img src="<?php echo esc_url( home_url( '/wp-content/uploads/clock.png') ); ?>" class="fa ffa-shopping-cart">
+			<span>Preparation - <?php the_field('preparation'); ?></span>
 		<?php endif; ?>
 		<?php if(get_field('baking')) : ?>
-			<span><?php the_field('baking'); ?></span>
+		<img src="<?php echo esc_url( home_url( '/wp-content/uploads/baking.png') ); ?>" class="fa ffa-shopping-cart">
+			<span>Baking - <?php the_field('baking'); ?></span>
 		<?php endif; ?>
 		<?php if(get_field('email_recipes')) : ?>
+		<img src="<?php echo esc_url( home_url( '/wp-content/uploads/email.png') ); ?>" class="fa ffa-shopping-cart">
 			<span><?php the_field('email_recipes'); ?></span>
 		<?php endif; ?>
 	</div>
@@ -36,9 +40,9 @@
 	<p><?php the_excerpt(); ?></p>
 	</div>
 	<div class="recipe-detail">
-	  <?php if(get_field('integedien')) : ?>
+	  <?php if(get_field('integedien')) : ?>	  
 		<div class="ingrediean">
-			<h4>Ingredients</h4>
+			<h4><img src="<?php echo esc_url( home_url( '/wp-content/uploads/bowl.png') ); ?>" class="fa ffa-shopping-cart">Ingredients</h4>
 			<div class="ingrediean-content">
 				<?php the_field('integedien'); ?>
 			</div>
@@ -46,7 +50,7 @@
 	<?php endif; ?>
 	<?php if(get_field('method')) : ?>
 		<div class="method">
-			<h4>method</h4>
+			<h4><img src="<?php echo esc_url( home_url( '/wp-content/uploads/cook.png') ); ?>" class="fa ffa-shopping-cart">method</h4>
 			<div class="method-content">
 			  <?php the_field('method'); ?>
 			</div>
@@ -59,7 +63,7 @@
   </div>
   <div class="tag">
   	<?php if(get_field('tags')) : ?>
-			<p>tags</p><?php the_field('tags'); ?>
+			<p><img src="<?php echo esc_url( home_url( '/wp-content/uploads/price-tag.png') ); ?>" class="fa ffa-shopping-cart">tags</p><?php the_field('tags'); ?>
 		<?php endif; ?>
   </div>
   <div class="post-change">
