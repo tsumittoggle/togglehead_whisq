@@ -6,7 +6,11 @@ get_header();
 ?>	
 		<div class="whisqtitle">
 			<h2><?php the_title(); ?></h2>
-			<p class="wrapper breadcrumb-url"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Home</a> > <span><?php the_title(); ?></span></p>
+			<?php is_page('products') {?>
+		   	<p class="wrapper breadcrumb-url"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Home</a> > <span><?php the_title(); ?></span></p>
+			<?php } else { ?>
+        <p class="wrapper breadcrumb-url"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Home</a> > <span><?php the_title(); ?></span></p>
+			<?php } ?>
 		</div>
       <?php
 		  $store_list = new WP_Query( $store );
