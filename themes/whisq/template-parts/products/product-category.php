@@ -119,15 +119,20 @@
 			    wp_reset_query(); 
 			?>
 			</div>
-<!-- 			<div id="pagination" class="pagination">
+			<?php if($number_product > 9) {?>
+			<div id="pagination" class="pagination">
 				<ul>
+				<li id="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></li>
 				<?php
 	        for($i = 0; $i < $number_product; $i = $i + 10 ) { 
 	        	$pagination;
 	        	?>
-	        	<li value="<?php echo $i; ?>"><?php echo $pagination = $pagination + 1; ?></li>
-	      <?php  }
+	        	<li id="<?php if($i == $offset) {echo "active";} ?>" value="<?php echo $i; ?>"><?php echo $pagination = $pagination + 1; ?></li>
+	        	<?php
+				}
 				?>
+				<li id="next"><i class="fa fa-angle-right" aria-hidden="true"></i></li>
 				</ul>
-			</div> -->
+			</div>
+			<?php } ?>
 	    

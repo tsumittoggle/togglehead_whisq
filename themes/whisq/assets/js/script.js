@@ -349,10 +349,15 @@ $('.sort-cat li').click(function(){
 
  //share icon
   $('.share-icon').css('display','none');
- $('.share-rec').click(function(){
-	 $(this).children('.shareact .sharehide').toggle();
-	  $('.sharehide').toggle();
-    $(this).children('.share-icon').delay(600).toggle('slow');
+ $('.shareact').click(function(){
+	 
+	 //if($(this).children('.shareact').hasClass('share-toggle')) {
+	//	$(this).children('.shareact').removeClass('share-toggle'); 
+	// }else {
+	//	$(this).children('.shareact').addClass('share-toggle'); 
+	 //}
+	 $(this).next().toggle('slow');
+   // $(this).children('.share-icon').toggle('slow');
  });   
 
 });

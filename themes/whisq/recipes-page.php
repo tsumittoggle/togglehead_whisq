@@ -131,6 +131,7 @@ $terms = get_terms($taxonomy); // Get all terms of a taxonomy
 		endwhile;
 		wp_reset_query(); 
   ?>
+            <?php if( $number_product > 9) { ?>
 			<div id="pagination" class="pagination">
 				<ul>
 				<li id="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></li>
@@ -145,6 +146,7 @@ $terms = get_terms($taxonomy); // Get all terms of a taxonomy
 				<li id="next"><i class="fa fa-angle-right" aria-hidden="true"></i></li>
 				</ul>
 			</div>
+			<?php } ?>
 <?php
 get_footer();
 ?>
