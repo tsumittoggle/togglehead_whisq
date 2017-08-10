@@ -40,7 +40,7 @@ get_header();
 				  <p><?php the_excerpt(); ?></p>
 				  <a class="recipe-more" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 			  <div class="share-rec">
-				  <span><i><img src="http://www.togglehead.net/whisq/wp-content/uploads/allshare.png">share</i></span>
+				  <span class="shareact"><img src="http://www.togglehead.net/whisq/wp-content/uploads/allshare.png"><i class="sharehide">share</i></span>
 				   <div class="share-icon"><?php echo do_shortcode('[addtoany]'); ?></div>
 				  </div>
 			  </div>
@@ -54,9 +54,9 @@ get_header();
 		$tips_list = new WP_Query( $tips );
 		while ( $tips_list->have_posts() ) : $tips_list->the_post();
 		?>
-		<div class="tip item">
-			<?php the_content(); ?>
-			<?php the_title(); ?>
+		<div class="tip2 item">
+			<p><?php the_content(); ?></p>
+			<p>- <?php the_title(); ?></p>
     </div>
 		<?php
 		endwhile;

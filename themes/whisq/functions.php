@@ -826,7 +826,7 @@ function add_content_after_product() {?>
 				  <p><?php the_excerpt(); ?></p>
 				  <a class="recipe-more" href="<?php get_post_permalink(); ?>" title="<?php the_title(); ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 			      <div class="share-rec">
-				  <span><i><img src="http://www.togglehead.net/whisq/wp-content/uploads/allshare.png">share</i></span>
+				  <span class="shareact"><img src="http://www.togglehead.net/whisq/wp-content/uploads/allshare.png"><i class="sharehide">share</i></span>
 				   <div class="share-icon"><?php echo do_shortcode('[addtoany]'); ?></div>
 				  </div>
 				</div>

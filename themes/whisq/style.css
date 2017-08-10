@@ -2102,7 +2102,6 @@ product-page styling strat from here
 
 .bottom-wrapper {
 	width:100%;
-	background-size:cover ! important;
 	background-position:bottom center ! important;
 	background-repeat:no-repeat;
     display: flex;               /* establish flex container */
@@ -2649,7 +2648,7 @@ border:none;
     position: fixed;
     border-top: 1px solid #ebebeb;
     line-height: 16px;
-    z-index: 102;
+    z-index: 98;
     border-left: 1px solid #ebebeb;
 	cursor:pointer;
 }
@@ -2661,7 +2660,7 @@ border:none;
     width: 100%;
     right: 0;
     text-align: center;
-    z-index: 101;
+    z-index: 97;
     display: none;
 	padding: 0px;
     margin-bottom: 0px;
@@ -2890,7 +2889,7 @@ Recipes styling
 }
 
 .page-template-recipes-page .recipe-sidebar .feature-recipes .recipes-page-list .recipe-page-content h3 {
-	font-size:14px;
+	font-size:12px;
 	text-transform:capitalize;
 	text-align:left;
 	font-weight:600;
@@ -2901,7 +2900,7 @@ Recipes styling
     text-align: left;
 	position: absolute;
     bottom: 30px;
-	font-size:14px;
+	font-size:12px;
 	padding:0px 15px 10px;
 	text-transform:capitalize;
     color:#ba5c82;
@@ -2980,16 +2979,34 @@ Recipes styling
 	.page-template-recipes-page .page-container .recipes-content .recipe-tip .tip {
     padding: 30px ! important;
 	}
+	
+	.page-template-recipes-page .page-container .recipes-content .recipe-tip .tip2 {
+    background-image: none ! important;
+	
+    padding: 20px ! important;
+}
 }
 
-.page-template-recipes-page .page-container .recipes-content .recipe-tip .tip {
+.page-template-recipes-page .page-container .recipes-content .recipe-tip .tip2 {
 	width: 100%;
     display: inline-block;
     background-color: #ba5c82;
     text-align: center;
+	font: 400 25px/35px Parisienne;
     padding: 80px;
 	color:#fff;
 	margin: 15px 0px 15px;
+	
+	    width: 100%;
+    background-size: cover ! important;
+    background-position: bottom center ! important;
+    background-repeat: no-repeat;
+    position: relative;
+    background-image: url(../../uploads/pans-1-1.jpg);
+}
+
+.page-template-recipes-page .page-container .recipes-content .recipe-tip .tip2 p:last-child {
+		font: 400 15px/30px 'Open Sans', sans-serif;
 }
 
 .page-template-recipes-page .page-container .recipes-content .recipe-tip {
@@ -3013,7 +3030,7 @@ Recipes styling
 }
 
 .single-recipes .header-post img {
-	width:85%;
+	width:50%;
 	height:auto;
 }
 
@@ -3038,11 +3055,13 @@ Recipes styling
 .single-recipes .content-area .wrapper .recipepara {
     font-size: 18px;
     font-weight: 400;
-	padding-top: 5px;
+	width: 92%;
+    padding-top: 5px;
+    margin: 0 auto;
 }
 
 .single-recipes .content-area .recipe-detail {
-	    margin: 0 auto;
+	    margin: 20px auto 0;
 	width:75%;min-height: 100px;
     height: auto;
 }
@@ -3051,15 +3070,15 @@ Recipes styling
 	width:50%;
 	display:inline-block;
 	float:left;
-	padding:10px;
 	text-align: left;
 }
+
+.single-recipes .content-area .recipe-detail .ingrediean ul { list-style:none;    line-height: 32px;}
 
 .single-recipes .content-area .recipe-detail .method {
 	width:50%;
 	display:inline-block;
 	float:left;
-	padding:10px;
 	text-align: left;
 }
 
@@ -3217,6 +3236,10 @@ Recipes styling
     width: 100%;
     float: left;
     padding: 15px;
+}
+
+.single-recipes .content-area .wrapper .post-title {
+	font-size:20px;
 }
 
 .single-recipes .page-container .recipe .recipes-page-list .recipes-page-content p:nth-child(3) {
@@ -3412,6 +3435,11 @@ list-style:none;}
 
 @media screen and (max-width: 1024px) {
 	
+	.single-recipes .header-post img {
+    width: 100% ! important;
+    height: auto;
+}
+	
 .page-template-recipes-page .recipe-sidebar .recipe-tip, .page-template-recipes-page .recipe-sidebar .feature-recipes { 
 	display:none;
 	}
@@ -3434,7 +3462,7 @@ list-style:none;}
     position: fixed;
     border-top: 1px solid #ebebeb;
     line-height: 16px;
-    z-index: 104;
+    z-index: 98;
 	text-transform: capitalize;
     padding: 15px 25px;
     margin-top: 0px;
@@ -3663,11 +3691,11 @@ margin: 0 3.8% 2.992em 0;
   text-transform: capitalize;
 }
 
-.share-rec span i img {
+.share-rec span img {
 	width:24px;
 	height:24px;
 	margin-right: 5px;
-    margin-top: -4px;
+    margin-top: -2px;
 }
 
 
@@ -3689,7 +3717,9 @@ margin: 0 3.8% 2.992em 0;
 
 .recipes-page-list:hover .recipe-more {
   opacity: 1 !important;
-  transition: all 0.5;
+      -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    transition: all 1s;
 }
 
 .recipes-page-list a i {padding: 0px 18px;}
@@ -3767,8 +3797,8 @@ Recipes styling
 .rcimg {
 	width:24px;
 	height:24px;
-	margin-right: 15px;
-    margin-top: -11px;
+	margin-right: 8px;
+    margin-top: -8px;
 }
 
 .instaico {
@@ -3780,9 +3810,39 @@ Recipes styling
 {
 .single-recipes .content-area .list span {
     display: block;
+	margin-bottom:10px
+}
+
+.single-recipes .content-area .list img {
+	margin-bottom:10px
+}
+
+.backlink {
+	display:none;
 }
 }
 
 .backlink {
 	float:left;
 }
+
+
+span.shareact {
+      position: absolute;
+	  margin-left:-35px;
+	      margin-top: 2px;
+	  transition: all 0.6s;
+}
+
+.sharehide{display:none;}
+
+.tag {width:75%;margin:0 auto;}
+
+.backlink:before {content: '\f104';
+	    position: absolute;
+    margin-top: -8px;
+    margin-left: -26px;
+    color: #fff;
+    font-size: 25px;
+    font-family: FontAwesome;
+    padding-left: 10px;}

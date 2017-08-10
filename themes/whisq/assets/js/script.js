@@ -350,7 +350,9 @@ $('.sort-cat li').click(function(){
  //share icon
   $('.share-icon').css('display','none');
  $('.share-rec').click(function(){
-    $(this).children('.share-icon').fadeToggle('slow');
+	 $(this).children('.shareact .sharehide').toggle();
+	  $('.sharehide').toggle();
+    $(this).children('.share-icon').delay(600).toggle('slow');
  });   
 
 });
