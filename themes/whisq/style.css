@@ -184,6 +184,11 @@ body a {
   text-decoration:none;
   cursor:pointer;
    }
+ body a:hover {
+	text-decoration:none;
+	color: inherit;
+ } 
+   
 .woocommerce-MyAccount-content,
 .sfsi_footerLnk { display: none; }
 .count {
@@ -3032,7 +3037,7 @@ Recipes styling
 	
 	    width: 100%;
     background-size: cover ! important;
-    background-position: bottom center ! important;
+    background-position: center ! important;
     background-repeat: no-repeat;
     position: relative;
     background-image: url(../../uploads/recipequote.jpg);
@@ -3937,7 +3942,6 @@ span.shareact {
 
 
 .share-icon {
-	margin-left: 80px;
 	position: absolute;
     left: 33px;
 }
@@ -3945,6 +3949,14 @@ span.shareact {
 @media screen and (min-width: 360px){
 .share-icon {
 	margin-left: 40px;
+}
+
+}
+
+@media screen and (max-width: 360px){
+.share-rec span i {
+    display: block;
+    margin-left: -5px;
 }
 }
 
