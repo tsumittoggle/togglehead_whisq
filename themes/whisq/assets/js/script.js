@@ -359,6 +359,9 @@ $('.sort-cat li').click(function(){
 	 $(this).next().toggle('slow');
    // $(this).children('.share-icon').toggle('slow');
  });   
+ 
+ //event page scripts
+ $('.atcb-link').addClass('btn');
 
 });
 

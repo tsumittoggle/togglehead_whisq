@@ -2106,8 +2106,8 @@ product-page styling strat from here
 
 .bottom-wrapper {
 	width:100%;
-	background-repeat:no-repeat;
-	background-size:100% 100%;
+	background-repeat: no-repeat ! important;
+    background-position: center ! important;
     display: flex;               /* establish flex container */
     align-items: center;
 	padding: 10px 0px;
@@ -4068,12 +4068,18 @@ span.shareact {
 
 .loading {opacity: 1 !important;padding:8px 20px ! important;}
 
-.upcoming { width: 92%;
+/*==================================================================
+Event styling
+===================================================================*/
+
+.upcoming, .past { width: 92%;
     margin: 0 auto; }
 	
-.upcoming h3 {font-size: 25px;
+.eventheading {font-size: 25px;
     color: #be5f84;
-    margin: 40px 0px;}	
+    margin: 40px 0px;
+	text-transform:capitalize;
+	}	
 	
 .content-event {
 	width: 30%;
@@ -4096,4 +4102,43 @@ span.shareact {
     text-transform: uppercase;
     color: #fff;
     font: 600 15px/16px 'Open Sans', sans-serif;
+}
+
+.eventcontenttitle {
+	font-size:25px;
+	color: #be5f84;
+	margin-bottom:30px;
+	line-height: 40px;
+}
+
+.content-event .event-time {
+	margin-bottom:30px;
+font-weight: 600;
+}
+
+.content-event address {
+	font-weight:600;
+	margin-bottom:30px;
+}
+
+.page-template-event-page .btn {padding:8px 25px;}
+
+.atc_event {display: none;}
+
+.page-template-event-page .share {
+	margin-top:10px;
+}
+
+.page-template-event-page .past .thumblist {
+	width:32%;
+	margin-right:2%;
+}
+
+.page-template-event-page .past .thumblist:last-child {
+	margin-right:0;
+}
+
+.page-template-event-page .past .thumblist img, .past .thumblist a {
+	width:100%;
+	height:auto;
 }

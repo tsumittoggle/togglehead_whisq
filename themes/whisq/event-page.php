@@ -16,12 +16,12 @@ get_header();
 			<?php the_content(); ?>
 		</div>
 <div class="upcoming cf">
-<h3>Upcoming events</h3>
+<h3 class="eventheading">Upcoming events</h3>
 
 <div class="events">
 <p class="event-date2">
           <span><?php echo tribe_get_start_date( $post->ID, false, 'M' ); ?></span>
-      	  <span><?php echo tribe_get_start_date( $post->ID, false, 'Y' ); ?></span>
+      	  <span><?php echo tribe_get_start_date( $post->ID, false, 'd' ); ?></span>
         </p>
 <?php
 		global $post;
@@ -32,13 +32,13 @@ foreach($get_posts as $post) { setup_postdata($post);
     <?php if ( has_post_thumbnail() ) { ?>
     
       <div class="thumbList">
-        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('thumbnail', array('class' => 'scale-with-grid attachment-thumbnail')); ?></a>
+        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
         
       </div>
       
 </div>
 <div class="content-event">
-      	<h3><?php the_title(); ?></h3>
+      	<h3 class="eventcontenttitle"><?php the_title(); ?></h3>
       	<div class="event-time">
       	  <span><?php echo tribe_get_start_date( $post->ID, false, 'j a' ); ?></span>
       	  <span><?php echo tribe_get_end_date( $post->ID, false, 'j a' ); ?></span>
@@ -48,8 +48,8 @@ foreach($get_posts as $post) { setup_postdata($post);
        </address>
        <div class="buttons">
          <a href="<?php the_permalink(); ?>" class="btn">know more</a>
-         <a href="<?php the_permalink(); ?>" class="btn">add to calendar</a>
-         <script type="text/javascript">(function () {
+         <script type="text/javascript">
+		 (function () {
             if (window.addtocalendar)if(typeof window.addtocalendar.start == "function")return;
             if (window.ifaddtocalendar == undefined) { window.ifaddtocalendar = 1;
                 var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
@@ -84,7 +84,7 @@ foreach($get_posts as $post) { setup_postdata($post);
 </div>
 
 <div class="past cf">
-<h3>past events</h3>
+<h3 class="eventheading">past events</h3>
 <?php
 global $post;
 $get_posts = tribe_get_events(array('posts_per_page'=>3, 'eventDisplay'=>'past') );
@@ -93,7 +93,7 @@ foreach($get_posts as $post) { setup_postdata($post);
     <?php if ( has_post_thumbnail() ) { ?>
     
       <div class="thumbList">
-        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('thumbnail', array('class' => 'scale-with-grid attachment-thumbnail')); ?></a>
+        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
       </div>
       <h6 class="event-day">
       	<span><?php echo tribe_get_start_date( $post->ID, false, 'M' ); ?></span>
