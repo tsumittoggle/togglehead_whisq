@@ -19,15 +19,25 @@
 			<li value="popularity">Best Selling</li>			
 			<li value="rating">Average rating</li>
 			<li value="date">Date. New to Old</li>
-			<li value="price">Price. Low to High</li>
-			<li value="price-desc">Price. High to Low</li>
+			<li value="meta_value_num">Price. Low to High</li>
+			<li value="_price">Price. High to Low</li>
 			</ul>
 		<?php
+		 //product shorting filter
 			$selected_val = $_COOKIE['short_cat'];
+
+			if($selected_val == 'title') {
+				$order_val = 'asc';
+			} elseif ($selected_val == 'date') {
+				$order_val = 'desc';
+			} elseif ($selected_val == 'meta_value_num') {
+				$order_val = 'asc';
+			}
  		?>
 	</div>
-        <div class="left-side-bar">
+    <div class="left-side-bar">
 		<?php
+		   //product filter by category
 			  if(is_page('pans')) {
 			  	$category = 'pans';
 			  } elseif (is_page('spatulas')) {
@@ -84,9 +94,11 @@
 				'offset'              =>  $offset,
 				'product_cat'         =>  $category,
 				'post_status'         => 'publish',
+
 				'posts_per_page'      => '9',
-				'orderby'             =>  $selected_val,
-				'order'               => 'ASC',
+                'orderby'   => $selected_val,
+                'meta_key'  => '_price',
+                'order' => $order_val
 			);
 			$loop = new WP_Query( $bandproduct_args );
 			    while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
