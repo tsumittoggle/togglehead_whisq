@@ -38,9 +38,9 @@ get_header();
 				    </a>
 				  </h3>
 				  <p><?php the_excerpt(); ?></p>
-				  <a class="recipe-more" href="<?php get_post_permalink(); ?>" title="<?php the_title(); ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-			    <div class="share-rec">
-				  <span><i class="fa fa-share-alt-square" aria-hidden="true"></i><i>share</i></span>
+				  <a class="recipe-more" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+			  <div class="share-rec">
+				  <span class="shareact"><img src="http://www.togglehead.net/whisq/wp-content/uploads/allshare.png"><i class="sharehide">share</i></span>
 				   <div class="share-icon"><?php echo do_shortcode('[addtoany]'); ?></div>
 				  </div>
 			  </div>
@@ -54,9 +54,9 @@ get_header();
 		$tips_list = new WP_Query( $tips );
 		while ( $tips_list->have_posts() ) : $tips_list->the_post();
 		?>
-		<div class="tip item">
-			<?php the_content(); ?>
-			<?php the_title(); ?>
+		<div class="tip2 item">
+			<p><?php the_content(); ?></p>
+			<p>- <?php the_title(); ?></p>
     </div>
 		<?php
 		endwhile;
@@ -73,7 +73,7 @@ get_header();
 <div class="recipe-sidebar">
 <div class="recipe-tip">
 <h3>tips</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae congue risus, id consequat erat. Nam sollicitudin nibh sit amet quam pretium, in mattis orci vestibulum. Donec blandit dolor in urna ultricies, id hendrerit dui mattis. Suspendisse eget cursus massa. Integer ut enim nibh.</p>
+<p>Butter & flour your cake pans generously. Get into every nook and cranny so that your dough doesn’t adhere to the pan.</p>
 </div>
 <div class="category">
 <?php
@@ -131,11 +131,12 @@ $terms = get_terms($taxonomy); // Get all terms of a taxonomy
 		endwhile;
 		wp_reset_query(); 
   ?>
+            <?php if( $number_product >= 9) { ?>
 			<div id="pagination" class="pagination">
 				<ul>
 				<li id="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></li>
 				<?php
-	        for($i = 0; $i < $number_product; $i = $i + 10 ) { 
+	        for($i = 0; $i < $number_product; $i = $i + 9 ) { 
 	        	$pagination;
 	        	?>
 	        	<li id="<?php if($i == $offset) {echo "active";} ?>" value="<?php echo $i; ?>"><?php echo $pagination = $pagination + 1; ?></li>
@@ -145,6 +146,7 @@ $terms = get_terms($taxonomy); // Get all terms of a taxonomy
 				<li id="next"><i class="fa fa-angle-right" aria-hidden="true"></i></li>
 				</ul>
 			</div>
+			<?php } ?>
 <?php
 get_footer();
 ?>

@@ -11,7 +11,7 @@
 ?>
 	<div class="whisqtitle">
 		<h2>recipes</h2>
-		<p class="wrapper breadcrumb-url"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Home</a> > <a href="<?php echo esc_url( home_url( '/recipes/' ) ); ?>" rel="home">Recipes</a> > <span><?php the_title(); ?></span></p>
+		<p class="wrapper breadcrumb-url"><a class="backlink" onclick="history.go(-1);">Back</a><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Home</a> > <a href="<?php echo esc_url( home_url( '/recipes/' ) ); ?>" rel="home">Recipes</a> > <span><?php the_title(); ?></span></p>
 	</div>
 <div class="header-post">
 <?php the_post_thumbnail(); ?>
@@ -20,20 +20,20 @@
 	<h2 class="post-title"><?php the_title(); ?></h2>
 	<div class="list">
 		<?php if(get_field('servings')) : ?>
-		<img src="<?php echo esc_url( home_url( '/wp-content/uploads/restaurant.png') ); ?>" class="fa ffa-shopping-cart">
-			<span>Servings - <?php the_field('servings'); ?></span>
+		<span><img src="<?php echo esc_url( home_url( '/wp-content/uploads/restaurant.png') ); ?>" class="fa ffa-shopping-cart">
+			Servings - <?php the_field('servings'); ?></span>
 		<?php endif; ?>
 		<?php if(get_field('preparation')) : ?>
-		<img src="<?php echo esc_url( home_url( '/wp-content/uploads/clock.png') ); ?>" class="fa ffa-shopping-cart">
-			<span>Preparation - <?php the_field('preparation'); ?></span>
+		<span><img src="<?php echo esc_url( home_url( '/wp-content/uploads/clock.png') ); ?>" class="fa ffa-shopping-cart">
+			Preparation - <?php the_field('preparation'); ?></span>
 		<?php endif; ?>
 		<?php if(get_field('baking')) : ?>
-		<img src="<?php echo esc_url( home_url( '/wp-content/uploads/baking.png') ); ?>" class="fa ffa-shopping-cart">
-			<span>Baking - <?php the_field('baking'); ?></span>
+		<span><img src="<?php echo esc_url( home_url( '/wp-content/uploads/baking.png') ); ?>" class="fa ffa-shopping-cart">
+			Baking - <?php the_field('baking'); ?></span>
 		<?php endif; ?>
 		<?php if(get_field('email_recipes')) : ?>
-		<img src="<?php echo esc_url( home_url( '/wp-content/uploads/email.png') ); ?>" class="fa ffa-shopping-cart">
-			<span><?php the_field('email_recipes'); ?></span>
+		<span><img src="<?php echo esc_url( home_url( '/wp-content/uploads/email.png') ); ?>" class="fa ffa-shopping-cart">
+			 <a target='_blank' href="http://www.addtoany.com/add_to/google_gmail?linkurl=http%3A%2F%2Fwww.togglehead.net%2Fwhisq%2Frecipes%2Fdemo%2F&linkname=Baked%20Cheesecake&linknote="><?php the_field('email_recipes'); ?></span></a>
 		<?php endif; ?>
 	</div>
 	<div class="recipepara">
@@ -42,7 +42,7 @@
 	<div class="recipe-detail cf">
 	  <?php if(get_field('integedien')) : ?>	  
 		<div class="ingrediean">
-			<h4><img src="<?php echo esc_url( home_url( '/wp-content/uploads/bowl.png') ); ?>" class="fa ffa-shopping-cart">Ingredients</h4>
+			<img src="<?php echo esc_url( home_url( '/wp-content/uploads/bowl.png') ); ?>" class="rcimg"><h4>Ingredients</h4>
 			<div class="ingrediean-content">
 				<?php the_field('integedien'); ?>
 			</div>
@@ -50,7 +50,7 @@
 	<?php endif; ?>
 	<?php if(get_field('method')) : ?>
 		<div class="method">
-			<h4><img src="<?php echo esc_url( home_url( '/wp-content/uploads/cook.png') ); ?>" class="fa ffa-shopping-cart">method</h4>
+			<img src="<?php echo esc_url( home_url( '/wp-content/uploads/cook.png') ); ?>" class="rcimg"><h4>method</h4>
 			<div class="method-content">
 			  <?php the_field('method'); ?>
 			</div>
@@ -58,17 +58,17 @@
 	<?php endif; ?>
 	</div>
   <div class="share-rec">
-				  <span><i class="fa fa-share-alt-square" aria-hidden="true"></i><i>share</i></span>
-				   <div class="share-icon"><?php echo do_shortcode('[addtoany]'); ?></div>
+				  <span class="">share</span>
+				   <div class="share-perma-icon"><?php echo do_shortcode('[addtoany]'); ?></div>
 				  </div>
   <div class="tag">
   	<?php if(get_field('tags')) : ?>
-			<p><img src="<?php echo esc_url( home_url( '/wp-content/uploads/price-tag.png') ); ?>" class="fa ffa-shopping-cart">tags</p><?php the_field('tags'); ?>
+			<p><img src="<?php echo esc_url( home_url( '/wp-content/uploads/price-tag.png') ); ?>" class="rcimg">tags</p><?php the_field('tags'); ?>
 		<?php endif; ?>
   </div>
   <div class="post-change">
-	  <span class="prev"><?php previous_post_link('%link','Previous'); ?></span>
-	  <span class="next"><?php next_post_link('%link','Next'); ?></span>     
+	  <span><?php previous_post_link('%link','<span class="prev">Previous</span>'); ?></span>
+	  <span><?php next_post_link('%link','<span class="next">Next</span>'); ?></span>     
   </div>
 </div>
 <div class="extra-wrapper">
@@ -95,9 +95,9 @@
 				  </a>
 				</h3>
 				<p><?php the_excerpt(); ?></p>
-				
+				<a class="recipe-more" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 			  <div class="share-rec">
-				  <span><i class="fa fa-share-alt-square" aria-hidden="true"></i><i>share</i></span>
+				  <span class="shareact"><img src="http://www.togglehead.net/whisq/wp-content/uploads/allshare.png"><i class="sharehide">share</i></span>
 				   <div class="share-icon"><?php echo do_shortcode('[addtoany]'); ?></div>
 				  </div>
        </div>

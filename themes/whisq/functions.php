@@ -399,7 +399,7 @@ function whisq_colors_css_wrap() {
 	require_once( get_parent_theme_file_path( '/inc/color-patterns.php' ) );
 	$hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
 ?>
-	<style type="text/css" id="custom-theme-colors" <?php if ( is_customize_preview() ) { echo 'data-hue="' . $hue . '"'; } ?>>
+	<style type="text/css" id="custom-theme-colors" <?php if ( is_customize_preview() ) { echo 'data-hue="' . $hue . '"'; } ?>
 		<?php echo whisq_custom_colors_css(); ?>
 	</style>
 <?php }
@@ -753,6 +753,15 @@ function next_previous_product() {
 
 <?php }
 }
+
+//adding add to cart
+add_action('woocommerce_after_add_to_cart_button', 'add_cart_btn');
+
+function add_cart_btn() {
+	?>
+  <a rel="nofollow" href="/whisq/product-shop/?add-to-cart=354" data-quantity="1" data-product_id="354" data-product_sku="" class="button product_type_simple add_to_cart_button ajax_add_to_cart feature-btn">Add to cart</a>
+  <?php
+}
 	
 //removing meta tag
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
@@ -763,7 +772,6 @@ add_action( 'woocommerce_share', 'social_share' );
 function social_share(){
 	?>
 	<span class="share">share</span>
-	
 	<?php
 }
 
@@ -784,12 +792,12 @@ add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
 function woo_rename_tabs( $tabs ) {
 
 	if($tabs['description']['title']) {
-	$tabs['description']['title'] = __( 'use & features' );	
+	$tabs['description']['title'] = __( 'uses & features' );	
 	$tabs['description']['priority'] = 15;	
 	}	
 
 	if($tabs['additional_information']['title']) {
-	$tabs['additional_information']['title'] = __( 'product detail' );	
+	$tabs['additional_information']['title'] = __( 'product details' );	
 	$tabs['additional_information']['priority'] = 10;	
 }
 
@@ -827,7 +835,7 @@ function add_content_after_product() {?>
 				  <p><?php the_excerpt(); ?></p>
 				  <a class="recipe-more" href="<?php get_post_permalink(); ?>" title="<?php the_title(); ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 			      <div class="share-rec">
-				  <span><i class="fa fa-share-alt-square" aria-hidden="true"></i><i>share</i></span>
+				  <span class="shareact"><img src="http://www.togglehead.net/whisq/wp-content/uploads/allshare.png"><i class="sharehide">share</i></span>
 				   <div class="share-icon"><?php echo do_shortcode('[addtoany]'); ?></div>
 				  </div>
 				</div>
@@ -950,3 +958,6 @@ function custom_woocommerce_catalog_orderby( $sortby ) {
 	
 	return $sortby;
 }
+
+add_theme_support( 'wc-product-gallery-lightbox' );
+
