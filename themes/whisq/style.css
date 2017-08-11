@@ -3978,7 +3978,6 @@ span.shareact {
   margin-left: 10px;  
 }
 
->>>>>>> dev
 /* product popup */
 #yith-wacp-popup .yith-wacp-wrapper {
   width: 100%;
@@ -4099,4 +4098,6 @@ span.shareact {
 }
 
 .loading {opacity: 1 !important;padding:8px 20px ! important;}
->>>>>>> dev
+
+
+.atc_event {display: none;}

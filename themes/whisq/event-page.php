@@ -21,6 +21,16 @@ get_header();
 		global $post;
 $get_posts = tribe_get_events(array('posts_per_page'=>2, 'eventDisplay'=>'upcoming') );
 foreach($get_posts as $post) { setup_postdata($post);
+  $today = date("d M Y");
+$expire = tribe_get_start_date( $post->ID, false, 'j M Y' ); 
+
+$today_time = strtotime($today);
+$expire_time = strtotime($expire);
+echo $today_time;
+echo ' and ';
+echo $expire_time;
+
+if($today_time <= $expire_time) {
         ?>
         
     <?php if ( has_post_thumbnail() ) { ?>
@@ -43,7 +53,6 @@ foreach($get_posts as $post) { setup_postdata($post);
        </address>
        <div class="buttons">
          <a href="<?php the_permalink(); ?>" class="btn">know more</a>
-         <a href="<?php the_permalink(); ?>" class="btn">add to calendar</a>
          <script type="text/javascript">(function () {
             if (window.addtocalendar)if(typeof window.addtocalendar.start == "function")return;
             if (window.ifaddtocalendar == undefined) { window.ifaddtocalendar = 1;
@@ -51,19 +60,19 @@ foreach($get_posts as $post) { setup_postdata($post);
                 s.type = 'text/javascript';s.charset = 'UTF-8';s.async = true;
                 s.src = ('https:' == window.location.protocol ? 'https' : 'http')+'://addtocalendar.com/atc/1.5/atc.min.js';
                 var h = d[g]('body')[0];h.appendChild(s); }})();
-         </script>
+    </script>
 
     <!-- 3. Place event data -->
     <span class="addtocalendar atc-style-blue">
         <var class="atc_event">
             <var class="atc_date_start"><?php echo tribe_get_start_date( $post->ID, false, 'Y-m-j g:i' ); ?></var>
-            <var class="atc_date_end"><?php echo tribe_get_end_date( $post->ID, false, 'Y-m-j g:i' ); ?></var>
+            <var class="atc_date_end"><?php echo tribe_get_start_date( $post->ID, false, 'Y-m-j g:i' ); ?></var>
             <var class="atc_timezone">Europe/London</var>
-            <var class="atc_title">Star Wars Day Party</var>
-            <var class="atc_description">May the force be with you</var>
-            <var class="atc_location">Tatooine</var>
-            <var class="atc_organizer">Luke Skywalker</var>
-            <var class="atc_organizer_email">luke@starwars.com</var>
+            <var class="atc_title"><?php echo the_title(); ?></var>
+            <var class="atc_description"><?php echo the_excerpt(); ?></var>
+            <var class="atc_location"><?php echo tribe_get_venue($post->ID, false); ?></var>
+            <var class="atc_organizer"><?php echo tribe_get_organizer($post->ID, false); ?></var>
+            <var class="atc_organizer_email"><?php echo tribe_get_organizer_email($post->ID, false); ?></var>
         </var>
     </span>
        </div>
@@ -72,7 +81,7 @@ foreach($get_posts as $post) { setup_postdata($post);
        <?php echo do_shortcode('[addtoany]'); ?>
        </div>
       </div>
-    <?php } } //endforeach 
+    <?php } } } //endforeach 
      ?>
     <?php wp_reset_query(); 
     ?>
