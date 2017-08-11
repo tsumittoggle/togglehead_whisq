@@ -51,13 +51,13 @@ foreach($get_posts as $post) { setup_postdata($post);
                 s.type = 'text/javascript';s.charset = 'UTF-8';s.async = true;
                 s.src = ('https:' == window.location.protocol ? 'https' : 'http')+'://addtocalendar.com/atc/1.5/atc.min.js';
                 var h = d[g]('body')[0];h.appendChild(s); }})();
-    </script>
+         </script>
 
     <!-- 3. Place event data -->
     <span class="addtocalendar atc-style-blue">
         <var class="atc_event">
-            <var class="atc_date_start">2015-05-04 12:00:00</var>
-            <var class="atc_date_end">2015-05-04 18:00:00</var>
+            <var class="atc_date_start"><?php echo tribe_get_start_date( $post->ID, false, 'Y-m-j g:i' ); ?></var>
+            <var class="atc_date_end"><?php echo tribe_get_end_date( $post->ID, false, 'Y-m-j g:i' ); ?></var>
             <var class="atc_timezone">Europe/London</var>
             <var class="atc_title">Star Wars Day Party</var>
             <var class="atc_description">May the force be with you</var>

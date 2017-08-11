@@ -100,6 +100,7 @@
         'order' => $order_val
 			);
 			$loop = new WP_Query( $bandproduct_args );
+			if($loop->have_posts()) {
 			    while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
 			    
 			       <div class="product-list">  
@@ -124,21 +125,43 @@
 			        </div>
 
 			<?php 
+			    endwhile;
+			    wp_reset_query(); 
+			  } else {
+			  	?>
+			  	<h2>No product available</h2>
+			  	<?php
+			  }
+			?>
+			</div>
+			<?php
+				$bandproduct_args = array(
+				'post_type'           => 'product',
+				'product_cat'         =>  $category,
+				'post_status'         => 'publish',
+				'posts_per_page'      => '-1',
+			);
+
+			$loop = new WP_Query( $bandproduct_args );
+			    while ( $loop->have_posts() ) : $loop->the_post(); global $product; 
 			    $number_product;
 			    $number_product = $number_product + 1;
 			    endwhile;
-			    wp_reset_query(); 
+			wp_reset_query(); 
 			?>
-			</div>
-<!-- 			<div id="pagination" class="pagination">
+			
+			<div id="pagination" class="pagination">
 				<ul>
+				<li id="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></li>
 				<?php
 	        for($i = 0; $i < $number_product; $i = $i + 10 ) { 
 	        	$pagination;
 	        	?>
-	        	<li value="<?php echo $i; ?>"><?php echo $pagination = $pagination + 1; ?></li>
-	      <?php  }
+	        	<li id="<?php if($i == $offset) {echo "active";} ?>" value="<?php echo $i; ?>"><?php echo $pagination = $pagination + 1; ?></li>
+	        	<?php
+				}
 				?>
+				<li id="next"><i class="fa fa-angle-right" aria-hidden="true"></i></li>
 				</ul>
-			</div> -->
+			</div>
 	    

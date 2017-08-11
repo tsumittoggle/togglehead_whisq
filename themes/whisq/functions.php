@@ -753,7 +753,16 @@ function next_previous_product() {
 
 <?php }
 }
-	
+
+//adding add to cart
+add_action('woocommerce_after_add_to_cart_button', 'add_cart_btn');
+
+function add_cart_btn() {
+	?>
+  <a rel="nofollow" href="/whisq/product-shop/?add-to-cart=354" data-quantity="1" data-product_id="354" data-product_sku="" class="button product_type_simple add_to_cart_button ajax_add_to_cart feature-btn">Add to cart</a>
+  <?php
+}
+
 //removing meta tag
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
@@ -766,6 +775,7 @@ function social_share(){
 	
 	<?php
 }
+
 
 //removing sell otion
 remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
@@ -950,3 +960,5 @@ function custom_woocommerce_catalog_orderby( $sortby ) {
 	
 	return $sortby;
 }
+
+add_theme_support( 'wc-product-gallery-lightbox' );

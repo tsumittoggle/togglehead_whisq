@@ -352,9 +352,9 @@ $('.sort-cat li').click(function(){
 
  //share icon
   $('.share-icon').css('display','none');
- $('.share-rec').click(function(){
 
-    $(this).children('.share-icon').toggle(500);
+ $('.share-rec').click(function(){
+    $(this).children('.share-icon').toggle();
  });   
 
 });

@@ -11,6 +11,7 @@
 ?>
 	<div class="whisqtitle">
 		<h2>recipes</h2>
+		<p><button onclick="history.go(-1);">Back </button></p>
 		<p class="wrapper breadcrumb-url"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Home</a> > <a href="<?php echo esc_url( home_url( '/recipes/' ) ); ?>" rel="home">Recipes</a> > <span><?php the_title(); ?></span></p>
 	</div>
 <div class="header-post">
@@ -33,7 +34,15 @@
 		<?php endif; ?>
 		<?php if(get_field('email_recipes')) : ?>
 		<img src="<?php echo esc_url( home_url( '/wp-content/uploads/email.png') ); ?>" class="fa ffa-shopping-cart">
-			<span><?php the_field('email_recipes'); ?></span>
+			<a target='_blank' href="http://www.addtoany.com/add_to/google_gmail?linkurl=http%3A%2F%2Fwww.togglehead.net%2Fwhisq%2Frecipes%2Fdemo%2F&linkname=Baked%20Cheesecake&linknote="><span><?php the_field('email_recipes'); ?></span></a>
+			<?php
+$encodedTo = rawurlencode($message->to);
+$encodedSubject = rawurlencode($message->subject);
+$encodedBody = rawurlencode($message->body);
+$uri = "mailto:$encodedTo&subject=$encodedSubject&body=$encodedBody";
+$encodedUri = htmlspecialchars($uri);
+echo "<a href=\"$encodedUri\">Send email</a>";
+?>
 		<?php endif; ?>
 	</div>
 	<div class="recipepara">
@@ -59,7 +68,7 @@
 	</div>
   <div class="share-rec">
 				  <span><i class="fa fa-share-alt-square" aria-hidden="true"></i><i>share</i></span>
-				   <div class="share-icon"><?php echo do_shortcode('[addtoany]'); ?></div>
+				   <div class="share-icon"><?php echo do_shortcode('[addtoany]'); ?><a href="#" target="_blank"><img src="" alt="insta"></a></div>
 				  </div>
   <div class="tag">
   	<?php if(get_field('tags')) : ?>
