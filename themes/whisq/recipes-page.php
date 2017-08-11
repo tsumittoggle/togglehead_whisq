@@ -131,12 +131,12 @@ $terms = get_terms($taxonomy); // Get all terms of a taxonomy
 		endwhile;
 		wp_reset_query(); 
   ?>
-            <?php if( $number_product > 9) { ?>
+            <?php if( $number_product >= 9) { ?>
 			<div id="pagination" class="pagination">
 				<ul>
 				<li id="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></li>
 				<?php
-	        for($i = 0; $i < $number_product; $i = $i + 10 ) { 
+	        for($i = 0; $i < $number_product; $i = $i + 9 ) { 
 	        	$pagination;
 	        	?>
 	        	<li id="<?php if($i == $offset) {echo "active";} ?>" value="<?php echo $i; ?>"><?php echo $pagination = $pagination + 1; ?></li>

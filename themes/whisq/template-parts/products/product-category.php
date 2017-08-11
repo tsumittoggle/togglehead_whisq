@@ -15,9 +15,9 @@
 
 			<h4>Sort by</h4>
 			<ul name="orderby" class="sort-cat">
-			<li value="popularity">Best Selling</li>
-			<li value="title">title</li>
-			<li value="rating">average rating</li>
+			<li value="title">Title</li>
+			<li value="popularity">Best Selling</li>			
+			<li value="rating">Average rating</li>
 			<li value="date">Date. New to Old</li>
 			<li value="price">Price. Low to High</li>
 			<li value="price-desc">Price. High to Low</li>
@@ -84,7 +84,7 @@
 				'offset'              =>  $offset,
 				'product_cat'         =>  $category,
 				'post_status'         => 'publish',
-				'posts_per_page'      => '10',
+				'posts_per_page'      => '9',
 				'orderby'             =>  $selected_val,
 				'order'               => 'ASC',
 			);
@@ -113,18 +113,33 @@
 			        </div>
 
 			<?php 
+			    endwhile;
+			    wp_reset_query(); 
+			?>
+			</div>
+			<?php
+			$bandproduct_args = array(
+				'post_type'           => 'product',
+				'product_cat'         =>  $category,
+				'post_status'         => 'publish',
+				'posts_per_page'      => -1,
+			);
+			$loop = new WP_Query( $bandproduct_args );
+			    while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
+
+
+			<?php 
 			    $number_product;
 			    $number_product = $number_product + 1;
 			    endwhile;
 			    wp_reset_query(); 
 			?>
-			</div>
-			<?php if($number_product > 9) {?>
+			<?php if($number_product >= 9) {?>
 			<div id="pagination" class="pagination">
 				<ul>
 				<li id="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></li>
 				<?php
-	        for($i = 0; $i < $number_product; $i = $i + 10 ) { 
+	        for($i = 0; $i < $number_product; $i = $i + 9 ) { 
 	        	$pagination;
 	        	?>
 	        	<li id="<?php if($i == $offset) {echo "active";} ?>" value="<?php echo $i; ?>"><?php echo $pagination = $pagination + 1; ?></li>
