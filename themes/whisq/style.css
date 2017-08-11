@@ -4071,6 +4071,9 @@ span.shareact {
 .upcoming { width: 92%;
     margin: 0 auto; }
 	
+.upcoming h3 {font-size: 25px;
+    color: #be5f84;
+    margin: 40px 0px;}	
 	
 .content-event {
 	width: 30%;
@@ -4082,7 +4085,15 @@ span.shareact {
     padding: 2px 2px 7px 2px;
     background: #be5f84;
     position: absolute;
-    top: 23px;
-    right: 5%;
+    top: 14px;
+    right: -14px;
     z-index: 100;
+}
+
+.event-date2 span {
+    display: block;
+    padding: 6px 8px 0px 8px;
+    text-transform: uppercase;
+    color: #fff;
+    font: 600 15px/16px 'Open Sans', sans-serif;
 }
