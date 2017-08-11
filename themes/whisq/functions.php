@@ -399,7 +399,7 @@ function whisq_colors_css_wrap() {
 	require_once( get_parent_theme_file_path( '/inc/color-patterns.php' ) );
 	$hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
 ?>
-	<style type="text/css" id="custom-theme-colors" <?php if ( is_customize_preview() ) { echo 'data-hue="' . $hue . '"'; } ?>>
+	<style type="text/css" id="custom-theme-colors" <?php if ( is_customize_preview() ) { echo 'data-hue="' . $hue . '"'; } ?>
 		<?php echo whisq_custom_colors_css(); ?>
 	</style>
 <?php }
@@ -772,7 +772,6 @@ add_action( 'woocommerce_share', 'social_share' );
 function social_share(){
 	?>
 	<span class="share">share</span>
-	
 	<?php
 }
 
@@ -794,12 +793,12 @@ add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
 function woo_rename_tabs( $tabs ) {
 
 	if($tabs['description']['title']) {
-	$tabs['description']['title'] = __( 'use & features' );	
+	$tabs['description']['title'] = __( 'uses & features' );	
 	$tabs['description']['priority'] = 15;	
 	}	
 
 	if($tabs['additional_information']['title']) {
-	$tabs['additional_information']['title'] = __( 'product detail' );	
+	$tabs['additional_information']['title'] = __( 'product details' );	
 	$tabs['additional_information']['priority'] = 10;	
 }
 
@@ -837,7 +836,7 @@ function add_content_after_product() {?>
 				  <p><?php the_excerpt(); ?></p>
 				  <a class="recipe-more" href="<?php get_post_permalink(); ?>" title="<?php the_title(); ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 			      <div class="share-rec">
-				  <span><i class="fa fa-share-alt-square" aria-hidden="true"></i><i>share</i></span>
+				  <span class="shareact"><img src="http://www.togglehead.net/whisq/wp-content/uploads/allshare.png"><i class="sharehide">share</i></span>
 				   <div class="share-icon"><?php echo do_shortcode('[addtoany]'); ?></div>
 				  </div>
 				</div>
@@ -962,3 +961,4 @@ function custom_woocommerce_catalog_orderby( $sortby ) {
 }
 
 add_theme_support( 'wc-product-gallery-lightbox' );
+

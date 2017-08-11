@@ -15,29 +15,19 @@
 
 			<h4>Sort by</h4>
 			<ul name="orderby" class="sort-cat">
-			<li value="popularity">Best Selling</li>
-			<li value="title">title</li>
-			<li value="rating">average rating</li>
+			<li value="title">Title</li>
+			<li value="popularity">Best Selling</li>			
+			<li value="rating">Average rating</li>
 			<li value="date">Date. New to Old</li>
-			<li value="meta_value_num">Price. Low to High</li>
-			<li value="_price">Price. High to Low</li>
+			<li value="price">Price. Low to High</li>
+			<li value="price-desc">Price. High to Low</li>
 			</ul>
 		<?php
-		 //product shorting filter
 			$selected_val = $_COOKIE['short_cat'];
-
-			if($selected_val == 'title') {
-				$order_val = 'asc';
-			} elseif ($selected_val == 'date') {
-				$order_val = 'desc';
-			} elseif ($selected_val == 'meta_value_num') {
-				$order_val = 'asc';
-			}
  		?>
 	</div>
-    <div class="left-side-bar">
+        <div class="left-side-bar">
 		<?php
-		   //product filter by category
 			  if(is_page('pans')) {
 			  	$category = 'pans';
 			  } elseif (is_page('spatulas')) {
@@ -94,13 +84,11 @@
 				'offset'              =>  $offset,
 				'product_cat'         =>  $category,
 				'post_status'         => 'publish',
-				'posts_per_page'      => '10',
-        'orderby'   => $selected_val,
-        'meta_key'  => '_price',
-        'order' => $order_val
+				'posts_per_page'      => '9',
+				'orderby'             =>  $selected_val,
+				'order'               => 'ASC',
 			);
 			$loop = new WP_Query( $bandproduct_args );
-			if($loop->have_posts()) {
 			    while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
 			    
 			       <div class="product-list">  
@@ -127,34 +115,31 @@
 			<?php 
 			    endwhile;
 			    wp_reset_query(); 
-			  } else {
-			  	?>
-			  	<h2>No product available</h2>
-			  	<?php
-			  }
 			?>
 			</div>
 			<?php
-				$bandproduct_args = array(
+			$bandproduct_args = array(
 				'post_type'           => 'product',
 				'product_cat'         =>  $category,
 				'post_status'         => 'publish',
-				'posts_per_page'      => '-1',
+				'posts_per_page'      => -1,
 			);
-
 			$loop = new WP_Query( $bandproduct_args );
-			    while ( $loop->have_posts() ) : $loop->the_post(); global $product; 
+			    while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
+
+
+			<?php 
 			    $number_product;
 			    $number_product = $number_product + 1;
 			    endwhile;
-			wp_reset_query(); 
+			    wp_reset_query(); 
 			?>
-			
+			<?php if($number_product >= 9) {?>
 			<div id="pagination" class="pagination">
 				<ul>
 				<li id="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></li>
 				<?php
-	        for($i = 0; $i < $number_product; $i = $i + 10 ) { 
+	        for($i = 0; $i < $number_product; $i = $i + 9 ) { 
 	        	$pagination;
 	        	?>
 	        	<li id="<?php if($i == $offset) {echo "active";} ?>" value="<?php echo $i; ?>"><?php echo $pagination = $pagination + 1; ?></li>
@@ -164,4 +149,4 @@
 				<li id="next"><i class="fa fa-angle-right" aria-hidden="true"></i></li>
 				</ul>
 			</div>
-	    
+			<?php } ?>
