@@ -1040,7 +1040,7 @@ body .banner-btn {
   width: 68%;
   float: left;
 }
-.events img {width: 100%;}
+.events img {width: 100%;height:auto;}
 .tips {
   width: 30%;
   margin-left: 2%;
@@ -2106,7 +2106,6 @@ product-page styling strat from here
 
 .bottom-wrapper {
 	width:100%;
-	background-position:bottom center ! important;
 	background-repeat:no-repeat;
 	background-size:100% 100%;
     display: flex;               /* establish flex container */
@@ -3866,32 +3865,6 @@ margin: 0 3.8% 2.992em 0;
 Recipes styling
 ===================================================================*/
 
-.page-template-event-page .upcoming, .page-template-event-page .past {
-	width:92%;
-	margin:0 auto;
-}
-
-.page-template-event-page .upcoming h3, .page-template-event-page .past h3 {
-	font-size: 25px;
-	color: #be5f84;
-}
-
-.page-template-event-page .upcoming .thumbList { 
-	width: 75%;
-    float: left;
-	}
-
-.page-template-event-page .upcoming .thumbList img {
-	width:100%;
-	height:auto;
-} 	
-	
-.page-template-event-page .upcoming .content-event {
-	width: 25%;
-    float: left;
-    padding-left: 25px;
-}
-
 .rcimg {
 	width:24px;
 	height:24px;
@@ -4094,3 +4067,22 @@ span.shareact {
 }
 
 .loading {opacity: 1 !important;padding:8px 20px ! important;}
+
+.upcoming { width: 92%;
+    margin: 0 auto; }
+	
+	
+.content-event {
+	width: 30%;
+    margin-left: 2%;
+    float: left;
+}
+
+.event-date2 {
+    padding: 2px 2px 7px 2px;
+    background: #be5f84;
+    position: absolute;
+    top: 23px;
+    right: 5%;
+    z-index: 100;
+}

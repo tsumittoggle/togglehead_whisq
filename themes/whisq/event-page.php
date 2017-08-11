@@ -17,6 +17,12 @@ get_header();
 		</div>
 <div class="upcoming cf">
 <h3>Upcoming events</h3>
+
+<div class="events">
+<p class="event-date2">
+          <span><?php echo tribe_get_start_date( $post->ID, false, 'M' ); ?></span>
+      	  <span><?php echo tribe_get_start_date( $post->ID, false, 'Y' ); ?></span>
+        </p>
 <?php
 		global $post;
 $get_posts = tribe_get_events(array('posts_per_page'=>2, 'eventDisplay'=>'upcoming') );
@@ -27,12 +33,11 @@ foreach($get_posts as $post) { setup_postdata($post);
     
       <div class="thumbList">
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('thumbnail', array('class' => 'scale-with-grid attachment-thumbnail')); ?></a>
-        <h6 class="event-day">
-          <span><?php echo tribe_get_start_date( $post->ID, false, 'M' ); ?></span>
-      	  <span><?php echo tribe_get_start_date( $post->ID, false, 'Y' ); ?></span>
-        </h6>
+        
       </div>
-      <div class="content-event">
+      
+</div>
+<div class="content-event">
       	<h3><?php the_title(); ?></h3>
       	<div class="event-time">
       	  <span><?php echo tribe_get_start_date( $post->ID, false, 'j a' ); ?></span>
