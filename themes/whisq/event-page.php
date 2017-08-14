@@ -17,37 +17,39 @@ get_header();
 		</div>
 <div class="upcoming cf">
 <h3 class="eventheading">Upcoming events</h3>
-
-<div class="events">
-<p class="event-date2">
-          <span><?php echo tribe_get_start_date( $post->ID, false, 'M' ); ?></span>
-      	  <span><?php echo tribe_get_start_date( $post->ID, false, 'd' ); ?></span>
-        </p>
 <?php
 		global $post;
 $get_posts = tribe_get_events(array('posts_per_page'=>2, 'eventDisplay'=>'upcoming') );
 foreach($get_posts as $post) { setup_postdata($post);
         ?>
+		<div class="eventrow cf">
+<div class="events">
+<p class="event-date2">
+          <span><?php echo tribe_get_start_date( $post->ID, false, 'M' ); ?></span>
+      	  <span><?php echo tribe_get_start_date( $post->ID, false, 'd' ); ?></span>
+        </p>
+
         
     <?php if ( has_post_thumbnail() ) { ?>
     
       <div class="thumbList">
-        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
-        
+        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>        
       </div>
       
 </div>
 <div class="content-event">
       	<h3 class="eventcontenttitle"><?php the_title(); ?></h3>
       	<div class="event-time">
+		  <img src="<?php echo esc_url( home_url( '/wp-content/uploads/time.png') ); ?>" class="eventtimeico">
       	  <span><?php echo tribe_get_start_date( $post->ID, false, 'j a' ); ?></span>
       	  <span><?php echo tribe_get_end_date( $post->ID, false, 'j a' ); ?></span>
       	</div>
       	<address>
+		<img src="<?php echo esc_url( home_url( '/wp-content/uploads/location.png') ); ?>" class="eventlocico">
        		<?php echo tribe_get_full_address ($post->ID, false); ?>
        </address>
        <div class="buttons">
-         <a href="<?php the_permalink(); ?>" class="btn">know more</a>
+         <a href="<?php the_permalink(); ?>" class="know-btn">know more</a>
          <script type="text/javascript">
 		 (function () {
             if (window.addtocalendar)if(typeof window.addtocalendar.start == "function")return;
@@ -77,6 +79,7 @@ foreach($get_posts as $post) { setup_postdata($post);
        <?php echo do_shortcode('[addtoany]'); ?>
        </div>
       </div>
+	  </div>
     <?php } } //endforeach 
      ?>
     <?php wp_reset_query(); 
@@ -94,18 +97,22 @@ foreach($get_posts as $post) { setup_postdata($post);
     
       <div class="thumbList">
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
-      </div>
-      <h6 class="event-day">
+		<div class="thumbContent">
+		<h3><?php the_title(); ?></h3>
+      <p class="pastevent-day">
       	<span><?php echo tribe_get_start_date( $post->ID, false, 'M' ); ?></span>
       	<span><?php echo tribe_get_start_date( $post->ID, false, 'Y' ); ?></span>
-      </h6>
-      <div class="event-excerpt">
-        <?php the_title(); ?>  
+      </p>
+      <div class="event-excerpt">  
         <?php the_excerpt(); ?>
       </div>
       <address>
-       	<?php echo tribe_get_full_address ($post->ID, false); ?>
-       </address>    
+	  <img src="<?php echo esc_url( home_url( '/wp-content/uploads/location.png') ); ?>" class="pasteventlocico">
+       	<span><?php echo tribe_get_full_address ($post->ID, false); ?></span>
+       </address>   
+	  </div>
+	 </div>
+       
     <?php }
 } //endforeach 
   ?>

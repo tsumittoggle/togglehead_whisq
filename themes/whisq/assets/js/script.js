@@ -325,7 +325,6 @@ $('.sort-cat li').click(function(){
      $(this).height(maxHeight);	 
    });
    
-//	 $('.recipes-page-list:nth-child(1) p:nth-child(3)').css("height","auto ! important");
 		}
 		
 		
@@ -340,10 +339,50 @@ $('.sort-cat li').click(function(){
      $(this).height(maxHeight);
    });
 		}
+		
+if(window.innerWidth > 768 ){
+   var maxHeight = -1;
 
+   $('.event-excerpt p').each(function() {
+     maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+   });
+
+   $('.event-excerpt p').each(function() {
+     $(this).height(maxHeight);
+   });
+		}		
+
+		if(window.innerWidth > 768 ){
+   var maxHeight = -1;
+
+   $('.thumbContent address').each(function() {
+     maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+   });
+
+   $('.thumbContent address').each(function() {
+     $(this).height(maxHeight);
+   });
+		}
 		
 	$(".select-extra li").click(function () {
     $(".select-extra li").removeClass("active");
+    $(this).addClass("active");   
+});
+
+if(window.innerWidth > 768 ){
+   var maxHeight = -1;
+
+   $('.thumbContent h3').each(function() {
+     maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+   });
+
+   $('.thumbContent h3').each(function() {
+     $(this).height(maxHeight);
+   });
+		}
+		
+	$(".select-extra h3").click(function () {
+    $(".select-extra h3").removeClass("active");
     $(this).addClass("active");   
 });
 
