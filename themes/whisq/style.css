@@ -4124,6 +4124,7 @@ Event styling
 .content-event .event-time {
 	margin-bottom:30px;
 	font-weight: 600;
+	text-transform: uppercase;
 }
 
 .content-event .event-time .eventlocico {
@@ -4460,4 +4461,78 @@ content: ' ';
     z-index: -1;
     background: #cd83a0;
     border-radius: 5px;
+}
+
+.eventwrapper {
+	width:92%;
+	margin:0 auto;
+}
+
+.eventdetailtitle {
+	text-align:center;
+	font-size: 25px;
+    color: #be5f84;
+    margin: 40px 0px;
+    text-transform: capitalize;
+}
+
+.detail-img {
+	text-align: center;
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.detail-img img {
+	max-width:850px;
+	width:100%;
+}
+
+.single-tribe_events .event-day {
+	padding: 2px 2px 7px 2px;
+    background: #be5f84;
+    position: absolute;
+    top: 10px;
+	right: -10px;
+    z-index: 100;
+}
+.single-tribe_events .event-day span {
+    text-align: center;
+    display: block;
+    padding: 6px 8px 0px 8px;
+    text-transform: uppercase;
+    color: #fff;
+    font: 600 15px/16px 'Open Sans', sans-serif;
+}
+.event-date-time {
+	position:relative;
+	max-width:850px;
+	width:100%;
+	margin:0 auto;
+	text-align:center;
+	font-weight: 600;
+	margin-top: 20px;
+}
+
+.event-date-time .event-time {
+    text-transform: uppercase;	
+}
+
+.event-date-time address {
+	width: 50%;
+    float: left;
+    text-align: left;
+}
+
+.event-date-time .event-time .eventtimespan
+{
+	float: left;
+    width: 50%;
+    text-align: left;
+}
+
+.single-tribe_events .singleeventico {
+	    margin-top: -5px;
+    margin-right: 10px;
 }

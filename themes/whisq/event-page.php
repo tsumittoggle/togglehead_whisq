@@ -41,8 +41,7 @@ foreach($get_posts as $post) { setup_postdata($post);
       	<h3 class="eventcontenttitle"><?php the_title(); ?></h3>
       	<div class="event-time">
 		  <img src="<?php echo esc_url( home_url( '/wp-content/uploads/time.png') ); ?>" class="eventtimeico">
-      	  <span><?php echo tribe_get_start_date( $post->ID, false, 'j a' ); ?></span>
-      	  <span><?php echo tribe_get_end_date( $post->ID, false, 'j a' ); ?></span>
+      	  <span><?php echo tribe_get_start_date( $post->ID, false, 'j a' ); ?> - <?php echo tribe_get_end_date( $post->ID, false, 'j a' ); ?></span>
       	</div>
       	<address>
 		<img src="<?php echo esc_url( home_url( '/wp-content/uploads/location.png') ); ?>" class="eventlocico">
