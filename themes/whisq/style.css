@@ -4087,6 +4087,7 @@ Event styling
     color: #be5f84;
     margin: 0px 0px 40px 0px;
 	text-transform:capitalize;
+	display:inline-block;
 	}	
 	
 .content-event {
@@ -4135,6 +4136,7 @@ Event styling
 .content-event .event-time .eventtimeico {
 	float:left;
 	margin-right:20px;
+	margin-top: -4px;
 }
 
 .content-event address {
@@ -4142,8 +4144,7 @@ Event styling
 }
 .content-event address img {
 	float:left;
-	margin-right: 24px;
-    margin-left: 3px;
+	margin-right: 20px;
 }
 
 .content-event address .tribe-address {
@@ -4346,7 +4347,6 @@ Event styling
 .atc-style-blue .atcb-link:focus
 {
     padding: 8px 25px;
-	margin-top: 10px;
     margin-bottom: 5px;
     border-radius: 5px;
     border: none;
@@ -4526,36 +4526,26 @@ content: ' ';
 }
 
 .event-date-time .event-time {
-    text-transform: uppercase;	
+    text-transform: uppercase;
+display:inline-block;
+vertical-align:top;	
 }
 
 .event-date-time address {
-	width: 50%;
-    float: left;
+	display: inline-block;
     text-align: left;
+	    margin-left: 20px;
 }
 
 .event-date-time .event-time .eventtimespan
 {
-	float: left;
-    width: 50%;
+	display: inline-block;
     text-align: left;
 }
 
 @media screen and (max-width: 768px)
 {
-	.event-date-time address {
-	width: 100%;
-}
-
-.event-date-time .event-time .eventtimespan
-{
-	width: 100%;
-}
-
-.single-tribe_events address {
-    margin-top:20px;
-}
+	
 
 .single-tribe_events address img {
     margin-left:4px;
@@ -4571,7 +4561,6 @@ content: ' ';
 .single-tribe_events address .tribe-address {
     display: inline-block;
     font-weight: 600;
-    width: 80%;
 }
 
 .single-tribe_events .event-left {
@@ -4589,8 +4578,335 @@ content: ' ';
 	width:92%;
 	margin:0 auto;
 	text-align:center;
+	margin-bottom: 50px;
 }
 
-.single-event-content .share {
+.single-tribe_events .pastevent-form {
+	width:100%;
+	margin:0 auto;
 	text-align:center;
+}
+
+.single-tribe_events .pastevent-form ul {
+	list-style:none;
+	column-count: 3;
+}
+.single-tribe_events .pastevent-form ul li{
+	    width: 100%;
+    float: left;
+}
+.single-tribe_events .pastevent-form ul li a {
+	display:block;
+}
+
+@media screen and (min-width: 401px) and (max-width: 768px)
+{
+	.single-tribe_events .pastevent-form ul {
+	column-count: 2;
+}
+}
+
+@media screen and (max-width: 400px)
+{
+	.single-tribe_events .pastevent-form ul {
+	column-count: 1;
+}
+}
+
+.single-tribe_events .share {
+	margin:30px 0px;
+	text-align:center;
+}
+
+@media screen and (max-width: 1024px) {
+	.single-tribe_events .event-left {
+	width:100%;
+	margin:0 auto;
+	text-align:center;
+}
+
+.single-tribe_events .event-form {
+	width:100%;
+	margin:0 auto;
+	text-align:center;
+}
+}
+
+.eventheadico {
+	padding-right:10px;
+}
+
+@media screen and (max-width: 361px) {
+.atc-style-blue .atcb-link,
+.atc-style-blue .atcb-link:hover,
+.atc-style-blue .atcb-link:active,
+.atc-style-blue .atcb-link:focus
+{
+	margin-top: 10px;
+}
+}
+
+.single-tribe_events .addtocalendar {
+	margin:30px 0px;
+}
+
+.page-template-event-page .link-more {
+	display:none;
+}
+
+
+.eventsort-by {
+	    text-align: left;
+    width: 150px;
+    float: right;
+}
+
+.eventsort-by ul {
+    list-style: none;
+    background-color: #fff;
+    color: #333;
+	display:none;	
+    font-size: 18px;
+	width: 150px;
+    position: absolute;	
+    border: 1px solid #ebebeb;
+    border-top: none;
+    right: 4%;
+	cursor:pointer;
+}
+
+.eventsort-by h4:after {
+    content: '\f106';
+    position: relative;
+    color: #333;
+    font-size: 20px;
+	margin-right:10px;
+    z-index: 101;
+    font-family: FontAwesome;
+    float: right;
+    transform: rotate(180deg) translateX(-40%);
+    -webkit-transform: rotate(180deg) translateX(-40%);
+    -moz-transform: rotate(180deg) translateX(-40%);
+    -o-transform: rotate(180deg) translateX(-40%);
+    -ms-transform: rotate(180deg) translateX(-40%);
+}
+
+.eventsort-by h4 {
+    padding: 15px;
+    border: 1px solid #ebebeb;
+	margin:0;
+	cursor:pointer;
+}
+
+.eventsort-by ul li {
+	cursor:pointer;
+	padding: 10px 15px 10px 15px;
+	margin-bottom:0px;	
+    border-bottom: 0.5px solid #ebebeb;
+}
+
+.eventsort-by ul li:last-child {
+    border-bottom: none;
+}
+
+.event-video {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.event-video iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/*form css starts*/
+.form-radio,
+.form-group {
+  position: relative;
+  display: block;
+  margin-top: 50px;
+}
+.form-inline > .form-group,
+.form-inline > .btn {
+  display: inline-block;
+  margin-bottom: 0;
+}
+.form-group input {
+  height: 30px;
+}
+.form-group .control-label {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+  color: #979393;
+  font-weight: normal;
+  -webkit-transition: all 0.28s ease;
+  transition: all 0.28s ease;
+}
+.form-group .bar {
+  position: relative;
+  border-bottom: 0.0625rem solid #979393;
+  display: block;
+}
+.form-group .bar::before {
+  content: '';
+  height: 2px;
+  width: 0;
+  left: 50%;
+  bottom: -0.0625rem;
+  position: absolute;
+  background: #6f6c6c;
+  -webkit-transition: left 0.28s ease, width 0.28s ease;
+  transition: left 0.28s ease, width 0.28s ease;
+  z-index: 2;
+}
+.form-group input,
+.form-group textarea {
+  display: block;
+  background: none;
+  font-size: 18px;
+  padding-bottom: 10px;
+  border-width: 0;
+  border-color: transparent;
+  line-height: 1.9;
+  width: 100%;
+  color: transparent;
+  -webkit-transition: all 0.28s ease;
+  transition: all 0.28s ease;
+  box-shadow: none;
+}
+.form-group select,
+.form-group input:focus,
+.form-group input:valid,
+.form-group input.form-file,
+.form-group input.has-value,
+.form-group textarea:focus,
+.form-group textarea:valid,
+.form-group textarea.form-file,
+.form-group textarea.has-value {
+  color: #bf6084;
+}
+.form-group select ~ .control-label,
+.form-group input:focus ~ .control-label,
+.form-group input:valid ~ .control-label,
+.form-group input.form-file ~ .control-label,
+.form-group input.has-value ~ .control-label,
+.form-group textarea:focus ~ .control-label,
+.form-group textarea:valid ~ .control-label,
+.form-group textarea.form-file ~ .control-label,
+.form-group textarea.has-value ~ .control-label {
+  color: #979393;
+  font-weight: bold;
+  top: -25px;
+  left: 0;
+}
+.form-group select:focus,
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+}
+.form-group select:focus ~ .control-label,
+.form-group input:focus ~ .control-label,
+.form-group textarea:focus ~ .control-label {
+  color: #6f6c6c;
+}
+.form-group select:focus ~ .bar::before,
+.form-group input:focus ~ .bar::before,
+.form-group textarea:focus ~ .bar::before {
+  width: 100%;
+  left: 0;
+}
+.test33{
+	position: relative;
+    margin-top: 50px;
+}
+.add-new {
+	top: -10px;
+	color: gray;
+}
+/*form css ends*/
+
+.submitbutton {
+	padding: 8px 40px;
+	outline:none;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: none;
+    position: relative;
+    z-index: 100;
+    background-color: #b95b81;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    box-shadow: 0px 5px 0px 0px #9a506e;
+}
+
+.submitbutton:hover:after {
+    width: 100%;
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+    transition: all 0.6s;
+    text-decoration: none;
+}
+
+.submitbutton:after {
+content: ' ';
+    display: block;
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background: #cd83a0;
+    border-radius: 5px;
+}
+
+.contact-form p {
+	text-align:center;
+	margin-top: 30px;
+}
+
+.regiform {
+	border: 1px solid #ebebeb;
+	padding: 50px;
+}
+
+.regiform h2 {
+	text-align:center;
+	font-size:25px;
+	color:#333;
+	margin-top:0px;
+}
+
+@media screen and (max-width: 500px) 
+{
+	.single-tribe_events address img {
+    margin-right: 10px;	
+    margin-top: 10px;
+}
+.single-tribe_events address .tribe-address {
+    margin-top: 10px;
+	width: 80%;
+}
+}
+
+.single-tribe_events .single-event-content {
+	margin-top:30px;
+}
+
+@media screen and (max-width: 768px) 
+{
+.eventsort-by {
+    float: none;
+    margin-bottom: 40px;
+}
 }

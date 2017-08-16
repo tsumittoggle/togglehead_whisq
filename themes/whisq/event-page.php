@@ -16,7 +16,7 @@ get_header();
 			<?php the_content(); ?>
 		</div>
 <div class="upcoming cf">
-<h3 class="eventheading">Upcoming events</h3>
+<div class="cf"><img src="<?php echo esc_url( home_url( '/wp-content/uploads/events.png') ); ?>" class="eventheadico"><h3 class="eventheading">Upcoming events</h3></div>
 <?php
 		global $post;
 $get_posts = tribe_get_events(array('posts_per_page'=>2, 'eventDisplay'=>'upcoming') );
@@ -38,10 +38,10 @@ foreach($get_posts as $post) { setup_postdata($post);
       
 </div>
 <div class="content-event">
-      	<h3 class="eventcontenttitle"><?php the_title(); ?></h3>
+      	 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><h3 class="eventcontenttitle"><?php the_title(); ?></h3></a>
       	<div class="event-time">
 		  <img src="<?php echo esc_url( home_url( '/wp-content/uploads/time.png') ); ?>" class="eventtimeico">
-      	  <span><?php echo tribe_get_start_date( $post->ID, false, 'j a' ); ?> - <?php echo tribe_get_end_date( $post->ID, false, 'j a' ); ?></span>
+      	  <span><?php echo tribe_get_start_date( $post->ID, false, 'g a' ); ?> - <?php echo tribe_get_end_date( $post->ID, false, 'g a' ); ?></span>
       	</div>
       	<address>
 		<img src="<?php echo esc_url( home_url( '/wp-content/uploads/location.png') ); ?>" class="eventlocico">
@@ -62,16 +62,15 @@ foreach($get_posts as $post) { setup_postdata($post);
     <!-- 3. Place event data -->
     <span class="addtocalendar atc-style-blue">
         <var class="atc_event">
-            <var class="atc_date_start">2015-05-04 12:00:00</var>
-            <var class="atc_date_end">2015-05-04 18:00:00</var>
+            <var class="atc_date_start"><?php echo tribe_get_start_date( $post->ID, false, 'Y-m-j g:i' ); ?></var>
+            <var class="atc_date_end"><?php echo tribe_get_start_date( $post->ID, false, 'Y-m-j g:i' ); ?></var>
             <var class="atc_timezone">Europe/London</var>
-            <var class="atc_title">Star Wars Day Party</var>
-            <var class="atc_description">May the force be with you</var>
-            <var class="atc_location">Tatooine</var>
-            <var class="atc_organizer">Luke Skywalker</var>
-            <var class="atc_organizer_email">luke@starwars.com</var>
+            <var class="atc_title"><?php echo the_title(); ?></var>
+            <var class="atc_description"><?php echo the_excerpt(); ?></var>
+            <var class="atc_location"><?php echo tribe_get_venue($post->ID, false); ?></var>
+            <var class="atc_organizer"><?php echo tribe_get_organizer($post->ID, false); ?></var>
+            <var class="atc_organizer_email"><?php echo tribe_get_organizer_email($post->ID, false); ?></var>
         </var>
-    </span>
        </div>
        <div class="share">
        <span>Share</span>
@@ -86,21 +85,38 @@ foreach($get_posts as $post) { setup_postdata($post);
 </div>
 
 <div class="past cf">
-<h3 class="eventheading">past events</h3>
+<div class="cf"><img src="<?php echo esc_url( home_url( '/wp-content/uploads/events.png') ); ?>" class="eventheadico"><h3 class="eventheading">past events</h3>
+<div class="eventsort-by">
+	  <h4>Year</h4>
+      <ul name="orderby" class="event-cat">
+      <li value="2016">2016</li>
+      <li value="2017">2017</li>      
+      </ul>
+</div>
+      <?php
+      $selected_event = $_COOKIE['event_cat'];
+	  if($selected_event == '') {
+        $selected_event = date('Y');
+      }
+      ?>
+</div>
 <?php
 global $post;
 $get_posts = tribe_get_events(array('posts_per_page'=>3, 'eventDisplay'=>'past') );
 foreach($get_posts as $post) { setup_postdata($post);
         ?>        
-    <?php if ( has_post_thumbnail() ) { ?>
+    <?php if ( has_post_thumbnail() ) { 
+	   $year = tribe_get_start_date( $post->ID, false, 'Y' );
+     if($year == $selected_event) {
+	?>
     
       <div class="thumbList">
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
 		<div class="thumbContent">
-		<h3><?php the_title(); ?></h3>
+		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><h3><?php the_title(); ?></h3></a>
       <p class="pastevent-day">
-      	<span><?php echo tribe_get_start_date( $post->ID, false, 'M' ); ?></span>
-      	<span><?php echo tribe_get_start_date( $post->ID, false, 'Y' ); ?></span>
+          <span><?php echo tribe_get_start_date( $post->ID, false, 'M' ); ?></span>
+      	  <span><?php echo tribe_get_start_date( $post->ID, false, 'd' ); ?></span>
       </p>
       <div class="event-excerpt">  
         <?php the_excerpt(); ?>
@@ -113,6 +129,7 @@ foreach($get_posts as $post) { setup_postdata($post);
 	 </div>
        
     <?php }
+	}
 } //endforeach 
   ?>
     <?php wp_reset_query(); 

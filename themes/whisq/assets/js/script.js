@@ -19,6 +19,18 @@ if(window.innerWidth < 1300 ) {
    jQuery('#myCarousel').css('height',height - total+'px'); 
    console.log("LoL" + total);
 }
+$(window).on("load", function(){
+	$('.test33').each(function() {
+	label = $(this).find('label');
+	labi = $(this).find('i');
+	
+	console.log(label);
+	$(this).find('span').addClass('form-group');
+$(this).find('span').find("input").attr("required","required");	
+	$(this).find('span').append(label);
+	$(this).find('span').append(labi);	
+});
+});
 	 
 
     $('#carousel01').owlCarousel({
@@ -416,6 +428,34 @@ if(window.innerWidth > 768 ){
  
  //event page scripts
  $('.atcb-link').addClass('btn');
+ 
+ $('.event-cat li').click(function(){
+    $value = $(this).attr("value");
+    document.cookie = "event_cat="+$value;
+    location.reload();
+});  
+ 
+ $(".eventsort-by h4").click(function(){
+        $(".event-cat").slideToggle();
+		$(this).toggleClass('addinline');
+    });
+	
+
+/*$('.contact-form input').click(function(){
+	
+$tel = $('.contact-form .wpcf7-validates-as-tel').val();
+if($tel == '') {
+$('.contact-form .control-label').css({'top':'4px','color':'gray'});
+}
+
+$tel = $('.contact-form .wpcf7-validates-as-email').val();
+if($mail == '') {
+$('.contact-form .control-label').css({'top':'4px','color':'gray'});
+}
+
+$(this).parent('.wpcf7-form-control-wrap').next().next().css({'top':'-16px','color':'#333'});
+
+});	*/
 
 });
 
