@@ -4218,6 +4218,11 @@ Event styling
     font: 600 15px/16px 'Open Sans', sans-serif;
 }
 
+.page-template-event-page abbr, .single-tribe_events abbr {
+	cursor: inherit ! important;
+    border-bottom: none ! important;
+    text-decoration: none;
+}
 
 .thumbContent address {
 	margin:0px;
@@ -4255,10 +4260,15 @@ Event styling
 .events {
     width: 100%;
 }
-.eventcontenttitle {
-	margin-top:30px;
+
+
 }
 
+@media screen and (min-width: 769px) and (max-width: 1024px)
+{
+	.eventcontenttitle {
+	margin-top:30px;
+}
 }
 
 .page-template-event-page .past .thumbList address .pasteventlocico {
@@ -4532,7 +4542,55 @@ content: ' ';
     text-align: left;
 }
 
+@media screen and (max-width: 768px)
+{
+	.event-date-time address {
+	width: 100%;
+}
+
+.event-date-time .event-time .eventtimespan
+{
+	width: 100%;
+}
+
+.single-tribe_events address {
+    margin-top:20px;
+}
+
+.single-tribe_events address img {
+    margin-left:4px;
+}
+	
+}
+
 .single-tribe_events .singleeventico {
-	    margin-top: -5px;
     margin-right: 10px;
+    float: left;
+}
+
+.single-tribe_events address .tribe-address {
+    display: inline-block;
+    font-weight: 600;
+    width: 80%;
+}
+
+.single-tribe_events .event-left {
+	width:48%;
+	margin-right:4%;
+	float:left;
+}
+
+.single-tribe_events .event-form {
+	width:48%;
+	float:left;
+}
+
+.single-tribe_events .pastevent-left {
+	width:92%;
+	margin:0 auto;
+	text-align:center;
+}
+
+.single-event-content .share {
+	text-align:center;
 }
