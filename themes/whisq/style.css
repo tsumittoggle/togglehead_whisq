@@ -4589,7 +4589,9 @@ vertical-align:top;
 
 .single-tribe_events .pastevent-form ul {
 	list-style:none;
-	column-count: 3;
+	-webkit-column-count:3;
+-moz-column-count: 3;
+ column-count:3; 
 }
 .single-tribe_events .pastevent-form ul li{
 	    width: 100%;
