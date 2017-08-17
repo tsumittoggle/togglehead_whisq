@@ -4677,6 +4677,8 @@ vertical-align:top;
 	cursor:pointer;
 }
 
+.remove-class {display: none;}
+
 .eventsort-by h4:after {
     content: '\f106';
     position: relative;

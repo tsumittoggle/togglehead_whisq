@@ -95,8 +95,8 @@ foreach($get_posts as $post) { setup_postdata($post);
 <div class="eventsort-by">
 	  <h4><?php echo $selected_event; ?></h4>
       <ul name="orderby" class="event-cat">
-      <li value="2016">2016</li>
-      <li value="2017">2017</li>      
+      <li class="<?php if($selected_event == 2016){ echo "remove-class";} ?>" value="2016">2016</li>
+      <li class="<?php if($selected_event == 2017){ echo "remove-class";} ?>" value="2017">2017</li>      
       </ul>
 </div>
 
