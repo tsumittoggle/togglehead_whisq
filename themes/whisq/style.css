@@ -4589,13 +4589,16 @@ vertical-align:top;
 
 .single-tribe_events .pastevent-form ul {
 	list-style:none;
-	-webkit-column-count:3;
+	column-count: 3;
+column-gap: 13px;
 -moz-column-count: 3;
- column-count:3; 
+-moz-column-gap: 13px;
+-webkit-column-count: 3;
+-webkit-column-gap: 13px;
 }
 .single-tribe_events .pastevent-form ul li{
 	    width: 100%;
-    float: left;
+    display: inline-block;
 }
 .single-tribe_events .pastevent-form ul li a {
 	display:block;
@@ -4644,6 +4647,10 @@ vertical-align:top;
 .atc-style-blue .atcb-link:active,
 .atc-style-blue .atcb-link:focus
 {
+	margin-top: 10px;
+}
+
+.know-btn {
 	margin-top: 10px;
 }
 }
@@ -4914,4 +4921,11 @@ content: ' ';
     float: none;
     margin-bottom: 40px;
 }
+.eventsort-by ul {
+	left:4% ! important;
+}
+}
+
+.tribe-address br {
+	display:none;
 }
