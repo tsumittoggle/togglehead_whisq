@@ -960,5 +960,146 @@ function custom_woocommerce_catalog_orderby( $sortby ) {
 	return $sortby;
 }
 
+//product added light box
 add_theme_support( 'wc-product-gallery-lightbox' );
 
+//==================================================================
+//cart page detail
+//==================================================================
+// add_action('woocommerce_before_cart', 'displays_cart_products_feature_image');
+// function displays_cart_products_feature_image() {
+//     foreach ( WC()->cart->get_cart() as $cart_item ) {
+//         $item = $cart_item['data'];
+//         if(!empty($item)){
+//             $product = new WC_product($item->id);
+//             // $image = wp_get_attachment_image_src( get_post_thumbnail_id( $product->ID ), 'single-post-thumbnail' );
+//             echo $product->name;
+//             echo $product->price;
+//             echo $product->quantity;
+//             echo $product->get_image();
+//             $quantity = $cart_item['quantity'];
+//             echo $quantity;
+//             $pice_total = $cart_item['data']->get_price();
+
+//             $total =  $pice_total * $quantity;
+//             echo $total;
+//             
+//             // to display only the first product image uncomment the line bellow
+//             // break;
+//         }
+//     }
+// }
+
+//==================================================================
+//checkout page detail
+//==================================================================
+
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+
+add_action( 'woocommerce_before_checkout_form', 'login_form', 15 );
+
+function login_form() {
+	?>
+	<div class="login-already">
+		<p>Already a member? click here to <a href="#" title="Login">login</a></p>
+	</div>
+	<?php
+}
+
+remove_action( 'woocommerce_checkout_order_review', 'woocommerce_order_review', 10 );
+
+add_action( 'woocommerce_checkout_order_review', 'order_detail', 15 );
+
+function order_detail() {
+	if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+?>
+	<?php do_action( 'woocommerce_before_cart_table' ); ?>
+
+	<div class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
+		<div class="cart-content">
+			
+			<?php
+			foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+				$_product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+				$product_id = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
+
+				if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
+					$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
+					?>
+					<div class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
+
+						<div class="thumbnail-item" class="product-thumbnail">
+							<?php
+								$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
+
+								if ( ! $product_permalink ) {
+									echo $thumbnail;
+								} else {
+									printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail );
+								}
+							?>
+						</div>
+            
+            <div class="item-detail">
+						<h2 class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
+							<?php
+								if ( ! $product_permalink ) {
+									echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;';
+								} else {
+									echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key );
+								}
+
+								// Meta data
+								echo WC()->cart->get_item_data( $cart_item );
+
+								// Backorder notification
+								if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
+									echo '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>';
+								}
+							?>
+						</h2>
+						</div>
+
+					<div class="product-subtotal" data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>">
+							<?php
+							  $total = apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
+								echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
+							?>
+						</div> 
+						</div>
+					</div>
+					<?php
+				}
+			}
+			?>
+
+<div class="cart-collaterals">
+	<?php
+		/**
+		 * woocommerce_cart_collaterals hook.
+		 *
+		 * @hooked woocommerce_cross_sell_display
+		 * @hooked woocommerce_cart_totals - 10
+		 */
+	 	do_action( 'woocommerce_cart_collaterals' );
+	?>
+</div>
+</div>
+<?php do_action( 'woocommerce_after_cart' ); 
+
+if( WC()->cart->get_cart_contents_count() > 0){ ?>
+<?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> <span>items</span> 
+  <?php } 
+ if( WC()->cart->total > 0){ ?>
+<?php $total_price = sprintf ( _n( '%d', '%d', WC()->cart->total ), WC()->cart->total ); ?> 
+<div class="total-card">
+<p><span>Order Total</span><span><?php echo $total_price; ?></span></p>
+<p><span>Delivery</span><span>_</span></p>
+<p class="final-total"><span>Total Payable</span><span><?php echo $total_price; ?></span></p>
+</div>
+  <?php } 
+}
+?>
