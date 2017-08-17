@@ -86,19 +86,20 @@ foreach($get_posts as $post) { setup_postdata($post);
 
 <div class="past cf">
 <div class="cf"><img src="<?php echo esc_url( home_url( '/wp-content/uploads/events.png') ); ?>" class="eventheadico"><h3 class="eventheading">past events</h3>
-<div class="eventsort-by">
-	  <h4>Year</h4>
-      <ul name="orderby" class="event-cat">
-      <li value="2016">2016</li>
-      <li value="2017">2017</li>      
-      </ul>
-</div>
       <?php
       $selected_event = $_COOKIE['event_cat'];
 	  if($selected_event == '') {
         $selected_event = date('Y');
       }
       ?>
+<div class="eventsort-by">
+	  <h4><?php echo $selected_event; ?></h4>
+      <ul name="orderby" class="event-cat">
+      <li value="2016">2016</li>
+      <li value="2017">2017</li>      
+      </ul>
+</div>
+
 </div>
 <?php
 global $post;

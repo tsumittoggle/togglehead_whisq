@@ -23,7 +23,7 @@ $event_id = get_the_ID();
 ?>
 <div class="whisqtitle">
 			<h2>Events</h2>
-			<p class="wrapper breadcrumb-url"><a class="backlink" onclick="history.go(-1);">Back</a><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Home</a> > <a href="<?php echo esc_url( home_url( '/events/' ) ); ?>" rel="home">Events</a> > <span><?php the_title(); ?></span></p>
+			<p class="wrapper breadcrumb-url"><a class="backlink" href="<?php echo esc_url( home_url( '/events/' ) ); ?>">Back</a><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Home</a> > <a href="<?php echo esc_url( home_url( '/events/' ) ); ?>" rel="home">Events</a> > <span><?php the_title(); ?></span></p>
 		</div>
 <?php while ( have_posts() ) :  the_post(); ?>
 <div class="eventwrapper">
