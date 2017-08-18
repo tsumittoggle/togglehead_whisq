@@ -5100,3 +5100,13 @@ content: ' ';
 .page-template-faq-page-php .container{
   padding: 50px 0;
 }
+.div.wpcf7-validation-errors{
+  position: absolute;
+  bottom: 0;
+  color: red;
+  margin: 0;
+  border: 0;
+}
+.span.wpcf7-not-valid-tip{
+  position: absolute;
+}
