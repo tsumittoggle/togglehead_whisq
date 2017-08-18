@@ -635,18 +635,6 @@ function create_post_type() {
       'supports' => array( 'title', 'editor', 'thumbnail'), 
     )
   );
-  register_post_type( 'faq',
-    array(
-      'labels' => array(
-        'name' => __( 'Faq' ),
-        'singular_name' => __( 'Faq' )
-      ),
-      'public' => true,
-      'has_archive' => true,
-      'taxonomies'  => array( 'category', 'post_tag' ),
-      'supports' => array( 'title', 'editor'), 
-    )
-  );
 }
 
 /**
@@ -774,7 +762,7 @@ function add_cart_btn() {
   <a rel="nofollow" href="/whisq/product-shop/?add-to-cart=354" data-quantity="1" data-product_id="354" data-product_sku="" class="button product_type_simple add_to_cart_button ajax_add_to_cart feature-btn">Add to cart</a>
   <?php
 }
-	
+
 //removing meta tag
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
@@ -786,6 +774,7 @@ function social_share(){
 	<span class="share">share</span>
 	<?php
 }
+
 
 //removing sell otion
 remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
@@ -971,5 +960,204 @@ function custom_woocommerce_catalog_orderby( $sortby ) {
 	return $sortby;
 }
 
+//product added light box
 add_theme_support( 'wc-product-gallery-lightbox' );
 
+//==================================================================
+//cart page detail
+//==================================================================
+// add_action('woocommerce_before_cart', 'displays_cart_products_feature_image');
+// function displays_cart_products_feature_image() {
+//     foreach ( WC()->cart->get_cart() as $cart_item ) {
+//         $item = $cart_item['data'];
+//         if(!empty($item)){
+//             $product = new WC_product($item->id);
+//             // $image = wp_get_attachment_image_src( get_post_thumbnail_id( $product->ID ), 'single-post-thumbnail' );
+//             echo $product->name;
+//             echo $product->price;
+//             echo $product->quantity;
+//             echo $product->get_image();
+//             $quantity = $cart_item['quantity'];
+//             echo $quantity;
+//             $pice_total = $cart_item['data']->get_price();
+
+//             $total =  $pice_total * $quantity;
+//             echo $total;
+//             
+//             // to display only the first product image uncomment the line bellow
+//             // break;
+//         }
+//     }
+// }
+
+//==================================================================
+//checkout page detail
+//==================================================================
+
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+
+add_action( 'woocommerce_before_checkout_form', 'login_form', 15 );
+
+function login_form() {
+	?>
+	<div class="login-already">
+		<p>Already a member? click here to <a href="#" title="Login">login</a></p>
+	</div>
+	<?php
+}
+
+remove_action( 'woocommerce_checkout_order_review', 'woocommerce_order_review', 10 );
+
+add_action( 'woocommerce_checkout_order_review', 'order_detail', 15 );
+
+function order_detail() {
+	if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+?>
+	<?php do_action( 'woocommerce_before_cart_table' ); ?>
+
+	<div class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
+		<div class="cart-content">
+			
+			<?php
+			foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+				$_product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+				$product_id = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
+
+				if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
+					$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
+					?>
+					<div class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
+
+						<div class="thumbnail-item" class="product-thumbnail">
+							<?php
+								$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
+
+								if ( ! $product_permalink ) {
+									echo $thumbnail;
+								} else {
+									printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail );
+								}
+							?>
+						</div>
+            
+            <div class="item-detail">
+						<h2 class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
+							<?php
+								if ( ! $product_permalink ) {
+									echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;';
+								} else {
+									echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key );
+								}
+
+								// Meta data
+								echo WC()->cart->get_item_data( $cart_item );
+
+								// Backorder notification
+								if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
+									echo '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>';
+								}
+							?>
+						</h2>
+						</div>
+
+					<div class="product-subtotal" data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>">
+							<?php
+							  $total = apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
+								echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
+							?>
+						</div> 
+						</div>
+					</div>
+					<?php
+				}
+			}
+			?>
+
+<div class="cart-collaterals">
+	<?php
+		/**
+		 * woocommerce_cart_collaterals hook.
+		 *
+		 * @hooked woocommerce_cross_sell_display
+		 * @hooked woocommerce_cart_totals - 10
+		 */
+	 	do_action( 'woocommerce_cart_collaterals' );
+	?>
+</div>
+</div>
+<?php do_action( 'woocommerce_after_cart' ); 
+
+if( WC()->cart->get_cart_contents_count() > 0){ ?>
+<?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> <span>items</span> 
+  <?php } 
+ if( WC()->cart->total > 0){ ?>
+<?php $total_price = sprintf ( _n( '%d', '%d', WC()->cart->total ), WC()->cart->total ); ?> 
+<div class="total-card">
+<p><span>Order Total</span><span><?php echo $total_price; ?></span></p>
+<p><span>Delivery</span><span>_</span></p>
+<p class="final-total"><span>Total Payable</span><span><?php echo $total_price; ?></span></p>
+</div>
+  <?php } 
+}
+
+
+function faq_register() {
+    $labels = array(
+        'name' => _x('faq', 'post type general name'),
+        'singular_name' => _x('faq Item', 'post type singular name'),
+        'add_new' => _x('Add New', 'faq item'),
+        'add_new_item' => __('Add New faq Item'),
+        'edit_item' => __('Edit faq Item'),
+        'new_item' => __('New faq Item'),
+        'view_item' => __('View faq Item'),
+        'search_items' => __('Search faq Items'),
+        'not_found' =>  __('Nothing found'),
+        'not_found_in_trash' => __('Nothing found in Trash'),
+        'parent_item_colon' => ''
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'query_var' => true,
+        'rewrite' => true,
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'menu_position' => 8,
+        'supports' => array('title','editor','thumbnail', 'excerpt')
+    ); 
+    register_post_type( 'faq' , $args );
+}
+add_action('init', 'faq_register');
+
+function create_faq_taxonomies() {
+    $labels = array(
+        'name'              => _x( 'Categories', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Category', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Categories' ),
+        'all_items'         => __( 'All Categories' ),
+        'parent_item'       => __( 'Parent Category' ),
+        'parent_item_colon' => __( 'Parent Category:' ),
+        'edit_item'         => __( 'Edit Category' ),
+        'update_item'       => __( 'Update Category' ),
+        'add_new_item'      => __( 'Add New Category' ),
+        'new_item_name'     => __( 'New Category Name' ),
+        'menu_name'         => __( 'Categories' ),
+    );
+
+    $args = array(
+        'hierarchical'      => true, 
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'categories' ),
+    );
+
+    register_taxonomy( 'faq_categories', array( 'faq' ), $args );
+}
+add_action( 'init', 'create_faq_taxonomies', 0 );

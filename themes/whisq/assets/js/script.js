@@ -414,14 +414,8 @@ if(window.innerWidth > 768 ){
 });
 
  //share icon
-  $('.share-icon').css('display','none');
- $('.shareact').click(function(){
-	 
-	 //if($(this).children('.shareact').hasClass('share-toggle')) {
-	//	$(this).children('.shareact').removeClass('share-toggle'); 
-	// }else {
-	//	$(this).children('.shareact').addClass('share-toggle'); 
-	 //}
+$('.share-icon').css('display','none');
+$('.shareact').click(function(){	 
 	 $(this).next().toggle('slow');
    // $(this).children('.share-icon').toggle('slow');
  });   
@@ -459,6 +453,20 @@ $(this).parent('.wpcf7-form-control-wrap').next().next().css({'top':'-16px','col
 
 });
 
+
+$(document).ready(function(){
+    $(".question").on("click", function(){
+      $(this).parent().hasClass("active")
+      if($(this).parent().hasClass("active")){
+        $(".qa-body").removeClass("active");
+        $(this).parent().removeClass("active");
+      }
+      else{
+        $(".qa-body").removeClass("active");
+        $(this).parent().addClass("active");
+      }
+    });
+  });
 
 })(jQuery);
 
