@@ -1102,4 +1102,62 @@ if( WC()->cart->get_cart_contents_count() > 0){ ?>
 </div>
   <?php } 
 }
-?>
+
+
+function faq_register() {
+    $labels = array(
+        'name' => _x('faq', 'post type general name'),
+        'singular_name' => _x('faq Item', 'post type singular name'),
+        'add_new' => _x('Add New', 'faq item'),
+        'add_new_item' => __('Add New faq Item'),
+        'edit_item' => __('Edit faq Item'),
+        'new_item' => __('New faq Item'),
+        'view_item' => __('View faq Item'),
+        'search_items' => __('Search faq Items'),
+        'not_found' =>  __('Nothing found'),
+        'not_found_in_trash' => __('Nothing found in Trash'),
+        'parent_item_colon' => ''
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'query_var' => true,
+        'rewrite' => true,
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'menu_position' => 8,
+        'supports' => array('title','editor','thumbnail', 'excerpt')
+    ); 
+    register_post_type( 'faq' , $args );
+}
+add_action('init', 'faq_register');
+
+function create_faq_taxonomies() {
+    $labels = array(
+        'name'              => _x( 'Categories', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Category', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Categories' ),
+        'all_items'         => __( 'All Categories' ),
+        'parent_item'       => __( 'Parent Category' ),
+        'parent_item_colon' => __( 'Parent Category:' ),
+        'edit_item'         => __( 'Edit Category' ),
+        'update_item'       => __( 'Update Category' ),
+        'add_new_item'      => __( 'Add New Category' ),
+        'new_item_name'     => __( 'New Category Name' ),
+        'menu_name'         => __( 'Categories' ),
+    );
+
+    $args = array(
+        'hierarchical'      => true, 
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'categories' ),
+    );
+
+    register_taxonomy( 'faq_categories', array( 'faq' ), $args );
+}
+add_action( 'init', 'create_faq_taxonomies', 0 );
