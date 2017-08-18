@@ -506,8 +506,8 @@ Banner slider styling strat from here
  .banner-mobile {display: none;}
  
 .page-container .container {
-  width: 100%;
-  padding: 0;
+  /*width: 100%;*/
+  /*padding: 0;*/
 }
 .carousel-inner {height: 100%;}
 .carousel .item {
@@ -4929,3 +4929,87 @@ content: ' ';
 .tribe-address br {
 	display:none;
 }
+
+/*contact us css*/
+
+.contact-page{
+  position: relative;
+  margin-top: 50px;
+}
+.contact-page .left{
+  font-weight: 700;
+  font-size: 16px;
+}
+.contact-page .left p{
+  margin: 40px 0;
+}
+.contact-page .right{
+  position: absolute;
+    top: 0;
+    right: 0
+}
+.contact-form{
+  padding:30px 50px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.12); 
+  background-color: #fff;
+}
+.contact-form h1{
+  font-size: 25px;
+  margin:0;
+  text-align: center;
+}
+.below-section{
+  background-color: #f8f8f8;
+  padding: 30px 0 50px 0;
+  margin-bottom: 50px;
+}
+.below-section .wrapper{
+  overflow: hidden;
+  margin-bottom: 30px;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 40px 0;
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+}
+.img-part{
+  width: 10%;
+  float: left;
+}
+.para-part{
+  width: 90%;
+  float: left;
+}
+.para-part a{
+  color: #000;
+  text-decoration: none;
+}
+@media screen and (max-width: 991px){
+  .contact-page{
+    margin-top:10px;
+  }
+  .contact-page .right{
+    position: relative;
+      top: initial;
+      right: initial;
+  }
+  .contact-form{
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: 550px){
+  .para-part {
+      width: 100%;
+      float: none; 
+      margin-top: 15px;
+  }
+  .img-part {
+      width: 100%;
+      float: none; 
+  }
+  .contact-form{
+    padding:30px;
+  }
+}
+/*contact us css ends*/
