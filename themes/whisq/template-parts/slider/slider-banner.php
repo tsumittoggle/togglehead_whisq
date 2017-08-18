@@ -10,7 +10,7 @@
 
 ?>
 
-<div class="container">
+<div class="container-home">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
     <div class="carousel-inner owl-carousel owl-theme" id="carousel02">

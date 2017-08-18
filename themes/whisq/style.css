@@ -505,7 +505,7 @@ Banner slider styling strat from here
 ===================================================================*/
  .banner-mobile {display: none;}
  
-.page-container .container {
+.page-container .container-home {
   /*width: 100%;*/
   /*padding: 0;*/
 }
