@@ -5470,3 +5470,42 @@ content: ' ';
     }
 }
 /*beginner css ends*/
+
+/*checkout css starts*/
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea{
+  border: 1px solid #eee;
+  padding: 10px 0 10px 10px;
+}
+.woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2{
+  display: none;
+}
+.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1 {
+  float: left;
+  width: 100%;
+}
+.woocommerce .col2-set, .woocommerce-page .col2-set {
+  width: 70%;
+  float: left;
+}
+.woocommerce-checkout-review-order, #order_review_heading{
+  float: left;
+  width: 30%;
+}
+.woocommerce-checkout .item-detail{
+  padding: 0 0 0 20px;
+}
+.woocommerce-checkout .item-detail .product-subtotal{
+  float: left;
+}
+.woocommerce-checkout .entry-header{
+  display: none;
+}
+.woocommerce-checkout .cart_item{
+  padding: 20px;
+  border:0;
+}
+.cart-content{
+  border-top: 2px solid #eee;
+  border-bottom: 2px solid #eee;
+}
+/*checkout css ends*/

@@ -997,7 +997,7 @@ add_theme_support( 'wc-product-gallery-lightbox' );
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
 
-add_action( 'woocommerce_before_checkout_form', 'login_form', 15 );
+remove_action( 'woocommerce_before_checkout_form', 'login_form', 15 );
 
 function login_form() {
 	?>
@@ -1043,51 +1043,51 @@ function order_detail() {
 							?>
 						</div>
             
-            <div class="item-detail">
-						<h2 class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
-							<?php
-								if ( ! $product_permalink ) {
-									echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;';
-								} else {
-									echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key );
-								}
+           				<div class="item-detail">
+							<h2 class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
+								<?php
+									if ( ! $product_permalink ) {
+										echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;';
+									} else {
+										echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key );
+									}
 
-								// Meta data
-								echo WC()->cart->get_item_data( $cart_item );
+									// Meta data
+									echo WC()->cart->get_item_data( $cart_item );
 
-								// Backorder notification
-								if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
-									echo '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>';
-								}
-							?>
-						</h2>
-						</div>
-
-					<div class="product-subtotal" data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>">
+									// Backorder notification
+									if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
+										echo '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>';
+									}
+								?>
+							</h2>
+							<div class="product-subtotal" data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>">
 							<?php
 							  $total = apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
 								echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
 							?>
+							</div>
 						</div> 
-						</div>
+
 					</div>
+		
 					<?php
 				}
 			}
 			?>
-
-<div class="cart-collaterals">
-	<?php
-		/**
-		 * woocommerce_cart_collaterals hook.
-		 *
-		 * @hooked woocommerce_cross_sell_display
-		 * @hooked woocommerce_cart_totals - 10
-		 */
-	 	do_action( 'woocommerce_cart_collaterals' );
-	?>
 </div>
-</div>
+			<div class="cart-collaterals">
+				<?php
+					/**
+					 * woocommerce_cart_collaterals hook.
+					 *
+					 * @hooked woocommerce_cross_sell_display
+					 * @hooked woocommerce_cart_totals - 10
+					 */
+				 	do_action( 'woocommerce_cart_collaterals' );
+				?>
+			</div>
+	</div>
 <?php do_action( 'woocommerce_after_cart' ); 
 
 if( WC()->cart->get_cart_contents_count() > 0){ ?>
