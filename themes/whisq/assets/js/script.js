@@ -352,7 +352,13 @@ $('.share-icon').css('display','none');
 $('.shareact').click(function(){	 
 	 $(this).next().toggle('slow');
    // $(this).children('.share-icon').toggle('slow');
- });   
+ }); 
+
+ $('.event-cat li').click(function(){
+    $value = $(this).attr("value");
+    document.cookie = "event_cat="+$value;
+    location.reload();
+});  
 
 });
 
