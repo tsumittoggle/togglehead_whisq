@@ -4575,6 +4575,7 @@ vertical-align:top;
 .single-tribe_events .event-form {
 	width:48%;
 	float:left;
+  position: relative;
 }
 
 .single-tribe_events .pastevent-left {
@@ -5559,11 +5560,11 @@ top: 0;
     z-index: -1;
 }
 
-.beginner-body {
+.page-template-beginner-page {
     overflow: hidden;
 }
 
-.beginner-body .feature-btn {
+.page-template-beginner-page .feature-btn {
     display: inline-block;
     margin-top: 30px;
 }
@@ -5606,7 +5607,7 @@ top: 0;
   .fixed-before {
       display: none;
   }
-    .beginner-body {
+    .page-template-beginner-page {
         text-align: center;
     }
     .begin-1 {
