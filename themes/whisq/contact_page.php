@@ -29,7 +29,7 @@ get_header();
                 </div>
                 <div class="para-part">
                     <?php if(get_field('email') ) : ?>
-                    <?php the_field('email'); ?>
+                    <a href="mailto:<?php the_field('email'); ?>"><?php the_field('email'); ?></a>
                     <?php endif; ?>
                 </div>
             </div>

@@ -175,7 +175,7 @@ if ( ! defined( 'YITH_WCWL' ) ) {
                 <div class="no-wishlist">
 									<p class="no-wish-head">wishlist empty</p>
 									<p>Save your pieces of clothing in one place Add now, <span>buy latter</span></p>
-									<img src="" alt="no_wishlist" />
+									<img style="height: 80px" src="<?php echo esc_url( home_url( '/wp-content/uploads/wishlist-empty.png' ) ); ?>" alt="no_wishlist" />
 									<div>
 									<a href="<?php echo esc_url( home_url( '/product-shop/' ) ); ?>" class="feature-btn button" title="Continue Shopping">continue shopping</a>
 									</div>
