@@ -5509,3 +5509,6 @@ content: ' ';
   border-bottom: 2px solid #eee;
 }
 /*checkout css ends*/
+.footer-section .sub-menu li.menu-item:after{
+  display: none;
+}
