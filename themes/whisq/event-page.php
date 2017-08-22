@@ -89,12 +89,26 @@ if($today_time <= $expire_time) {
 
 <div class="past cf">
 <h3>past events</h3>
+      <h4>Year</h4>
+      <ul name="orderby" class="event-cat">
+      <li value="2016">2016</li>
+      <li value="2017">2017</li>      
+      </ul>
+      <?php
+      $selected_event = $_COOKIE['event_cat'];
+      if($selected_event == '') {
+        $selected_event = date('Y');
+      }
+      ?>
 <?php
 global $post;
 $get_posts = tribe_get_events(array('posts_per_page'=>3, 'eventDisplay'=>'past') );
 foreach($get_posts as $post) { setup_postdata($post);
         ?>        
-    <?php if ( has_post_thumbnail() ) { ?>
+    <?php if ( has_post_thumbnail() ) { 
+     $year = tribe_get_start_date( $post->ID, false, 'Y' );
+     if($year == $selected_event) {
+     ?>
     
       <div class="thumbList">
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('thumbnail', array('class' => 'scale-with-grid attachment-thumbnail')); ?></a>
@@ -110,7 +124,7 @@ foreach($get_posts as $post) { setup_postdata($post);
       <address>
        	<?php echo tribe_get_full_address ($post->ID, false); ?>
        </address>    
-    <?php }
+    <?php }}
 } //endforeach 
   ?>
     <?php wp_reset_query(); 
