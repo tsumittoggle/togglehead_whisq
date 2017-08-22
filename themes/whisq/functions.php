@@ -1161,3 +1161,27 @@ function create_faq_taxonomies() {
     register_taxonomy( 'faq_categories', array( 'faq' ), $args );
 }
 add_action( 'init', 'create_faq_taxonomies', 0 );
+
+add_action( 'yith_wcwl_before_wishlist_title', 'before_wishlist' );
+
+function before_wishlist() { ?>
+		<div class="whisqtitle">
+			<h2><?php the_title(); ?></h2>
+			<p class="wrapper breadcrumb-url"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Home</a> > <span><?php the_title(); ?></span></p>
+		</div>
+<?php }
+
+add_action( 'yith_wcwl_before_wishlist_share', 'no_product_wishlist' );
+
+function no_product_wishlist() {
+?>
+<!-- <div class="no-wishlist">
+	<p class="no-wish-head">wishlist empty</p>
+	<p>Save your pieces of clothing in one place Add now, <span>buy latter</span></p>
+	<img src="" alt="no_wishlist" />
+	<div>
+	<a href="" class="feature-btn button" title="Continue Shopping">continue shopping</a>
+	</div>
+</div> -->
+<?php
+}
