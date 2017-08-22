@@ -4747,7 +4747,7 @@ column-gap: 13px;
   margin-bottom: 0;
 }
 .form-group input {
-  height: 30px;
+  height: auto;
 }
 .form-group .control-label {
   position: absolute;
@@ -5186,4 +5186,123 @@ content: ' ';
 }
 .woocommerce-cart-form__contents{
   overflow: hidden;
+}
+@media screen and (max-width: 767px){
+  .below-section{
+    padding: 30px 0;
+  }
+  .below-section .wrapper{
+    margin: 10px 0;
+  }
+}
+.creator-img-block {
+    position: relative;
+}
+
+.bg-image-left {
+    position: absolute;
+    width: 120%;
+    height: 350px;
+    background: #eee;
+    top: 60px;
+    left: -20px;
+    z-index: -1;
+}
+.bg-image-right {
+    position: absolute;
+    width: 120%;
+    height: 350px;
+    background: #eee;
+    top: 60px;
+    left: initial;
+    right: -20px;
+    z-index: -1;
+}
+.creator-para{
+  margin-top: 30px;
+  text-align: center;
+}
+.creator-img-block{
+  margin-top: 30px;
+}
+.creator-content-block{
+  margin-top: 30px;
+}
+.creator-content-block h3{
+  text-transform: uppercase;
+  font-size: 20px;
+  color: #b95b81;
+  font-weight: 700;
+}
+.creator-content-block p{
+  margin-top:20px;
+}
+.creator-container .feature-btn{
+  display: inline-block;
+  margin-top: 30px;
+}
+.creator-container{
+  padding-bottom: 50px;
+}
+@media screen and (min-width:0px) {
+    .bg-image-left {
+        display: none;
+    }
+    .creator-content-block{
+    text-align: center;
+  }
+}
+@media screen and (min-width:768px) {
+  .creator-content-block{
+    text-align: left;
+  }
+    .bg-image-left {
+        height: 220px;
+        top: 40px;
+        display: block;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .bg-image-left {
+        height: 300px;
+        top: 60px;
+        display: block;
+    }
+}
+
+@media screen and (min-width:1201px) {
+    .bg-image-left {
+        height: 350px;
+        top: 60px;
+        display: block;
+    }
+}
+@media screen and (min-width:0px) {
+    .bg-image-right {
+        display: none;
+    }
+}
+@media screen and (min-width:768px) {
+    .bg-image-right {
+        height: 220px;
+        top: 40px;
+        display: block;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .bg-image-right {
+        height: 300px;
+        top: 60px;
+        display: block;
+    }
+}
+
+@media screen and (min-width:1201px) {
+    .bg-image-right {
+        height: 350px;
+        top: 60px;
+        display: block;
+    }
 }
