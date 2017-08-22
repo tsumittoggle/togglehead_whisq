@@ -11,7 +11,7 @@
 ?>
 
 <h4>genius tips</h4>
-<div class="container tip-content">
+<div class="container-home tip-content">
   <div id="myCarousel1" class="carousel slide" data-ride="carousel">
 
     <div class="carousel-inner owl-carousel owl-theme" id="carousel03">

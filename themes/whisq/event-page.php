@@ -16,44 +16,41 @@ get_header();
 			<?php the_content(); ?>
 		</div>
 <div class="upcoming cf">
-<h3>Upcoming events</h3>
+<div class="cf"><img src="<?php echo esc_url( home_url( '/wp-content/uploads/events.png') ); ?>" class="eventheadico"><h3 class="eventheading">Upcoming events</h3></div>
 <?php
 		global $post;
 $get_posts = tribe_get_events(array('posts_per_page'=>2, 'eventDisplay'=>'upcoming') );
 foreach($get_posts as $post) { setup_postdata($post);
-  $today = date("d M Y");
-$expire = tribe_get_start_date( $post->ID, false, 'j M Y' ); 
-
-$today_time = strtotime($today);
-$expire_time = strtotime($expire);
-echo $today_time;
-echo ' and ';
-echo $expire_time;
-
-if($today_time <= $expire_time) {
         ?>
+		<div class="eventrow cf">
+<div class="events">
+<p class="event-date2">
+          <span><?php echo tribe_get_start_date( $post->ID, false, 'M' ); ?></span>
+      	  <span><?php echo tribe_get_start_date( $post->ID, false, 'd' ); ?></span>
+        </p>
+
         
     <?php if ( has_post_thumbnail() ) { ?>
     
       <div class="thumbList">
-        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('thumbnail', array('class' => 'scale-with-grid attachment-thumbnail')); ?></a>
-        <h6 class="event-day">
-          <span><?php echo tribe_get_start_date( $post->ID, false, 'M' ); ?></span>
-      	  <span><?php echo tribe_get_start_date( $post->ID, false, 'Y' ); ?></span>
-        </h6>
+        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>        
       </div>
-      <div class="content-event">
-      	<h3><?php the_title(); ?></h3>
+      
+</div>
+<div class="content-event">
+      	 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><h3 class="eventcontenttitle"><?php the_title(); ?></h3></a>
       	<div class="event-time">
-      	  <span><?php echo tribe_get_start_date( $post->ID, false, 'j a' ); ?></span>
-      	  <span><?php echo tribe_get_end_date( $post->ID, false, 'j a' ); ?></span>
+		  <img src="<?php echo esc_url( home_url( '/wp-content/uploads/time.png') ); ?>" class="eventtimeico">
+      	  <span><?php echo tribe_get_start_date( $post->ID, false, 'g a' ); ?> - <?php echo tribe_get_end_date( $post->ID, false, 'g a' ); ?></span>
       	</div>
       	<address>
+		<img src="<?php echo esc_url( home_url( '/wp-content/uploads/location.png') ); ?>" class="eventlocico">
        		<?php echo tribe_get_full_address ($post->ID, false); ?>
        </address>
        <div class="buttons">
-         <a href="<?php the_permalink(); ?>" class="btn">know more</a>
-         <script type="text/javascript">(function () {
+         <a href="<?php the_permalink(); ?>" class="know-btn">know more</a>
+         <script type="text/javascript">
+		 (function () {
             if (window.addtocalendar)if(typeof window.addtocalendar.start == "function")return;
             if (window.ifaddtocalendar == undefined) { window.ifaddtocalendar = 1;
                 var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
@@ -74,57 +71,66 @@ if($today_time <= $expire_time) {
             <var class="atc_organizer"><?php echo tribe_get_organizer($post->ID, false); ?></var>
             <var class="atc_organizer_email"><?php echo tribe_get_organizer_email($post->ID, false); ?></var>
         </var>
-    </span>
        </div>
        <div class="share">
        <span>Share</span>
        <?php echo do_shortcode('[addtoany]'); ?>
        </div>
       </div>
-    <?php } } } //endforeach 
+	  </div>
+    <?php } } //endforeach 
      ?>
     <?php wp_reset_query(); 
     ?>
 </div>
 
 <div class="past cf">
-<h3>past events</h3>
-      <h4>Year</h4>
-      <ul name="orderby" class="event-cat">
-      <li value="2016">2016</li>
-      <li value="2017">2017</li>      
-      </ul>
+<div class="cf"><img src="<?php echo esc_url( home_url( '/wp-content/uploads/events.png') ); ?>" class="eventheadico"><h3 class="eventheading">past events</h3>
       <?php
       $selected_event = $_COOKIE['event_cat'];
-      if($selected_event == '') {
+	  if($selected_event == '') {
         $selected_event = date('Y');
       }
       ?>
+<div class="eventsort-by">
+	  <h4><?php echo $selected_event; ?></h4>
+      <ul name="orderby" class="event-cat">
+      <li class="<?php if($selected_event == 2016){ echo "remove-class";} ?>" value="2016">2016</li>
+      <li class="<?php if($selected_event == 2017){ echo "remove-class";} ?>" value="2017">2017</li>      
+      </ul>
+</div>
+
+</div>
 <?php
 global $post;
 $get_posts = tribe_get_events(array('posts_per_page'=>3, 'eventDisplay'=>'past') );
 foreach($get_posts as $post) { setup_postdata($post);
         ?>        
     <?php if ( has_post_thumbnail() ) { 
-     $year = tribe_get_start_date( $post->ID, false, 'Y' );
+	   $year = tribe_get_start_date( $post->ID, false, 'Y' );
      if($year == $selected_event) {
-     ?>
+	?>
     
       <div class="thumbList">
-        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('thumbnail', array('class' => 'scale-with-grid attachment-thumbnail')); ?></a>
-      </div>
-      <h6 class="event-day">
-      	<span><?php echo tribe_get_start_date( $post->ID, false, 'M' ); ?></span>
-      	<span><?php echo tribe_get_start_date( $post->ID, false, 'Y' ); ?></span>
-      </h6>
-      <div class="event-excerpt">
-        <?php the_title(); ?>  
+        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
+		<div class="thumbContent">
+		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><h3><?php the_title(); ?></h3></a>
+      <p class="pastevent-day">
+          <span><?php echo tribe_get_start_date( $post->ID, false, 'M' ); ?></span>
+      	  <span><?php echo tribe_get_start_date( $post->ID, false, 'd' ); ?></span>
+      </p>
+      <div class="event-excerpt">  
         <?php the_excerpt(); ?>
       </div>
       <address>
-       	<?php echo tribe_get_full_address ($post->ID, false); ?>
-       </address>    
-    <?php }}
+	  <img src="<?php echo esc_url( home_url( '/wp-content/uploads/location.png') ); ?>" class="pasteventlocico">
+       	<span><?php echo tribe_get_full_address ($post->ID, false); ?></span>
+       </address>   
+	  </div>
+	 </div>
+       
+    <?php }
+	}
 } //endforeach 
   ?>
     <?php wp_reset_query(); 

@@ -19,6 +19,18 @@ if(window.innerWidth < 1300 ) {
    jQuery('#myCarousel').css('height',height - total+'px'); 
    console.log("LoL" + total);
 }
+$(window).on("load", function(){
+	$('.test33').each(function() {
+	label = $(this).find('label');
+	labi = $(this).find('i');
+	
+	console.log(label);
+	$(this).find('span').addClass('form-group');
+$(this).find('span').find("input").attr("required","required");	
+	$(this).find('span').append(label);
+	$(this).find('span').append(labi);	
+});
+});
 	 
 
     $('#carousel01').owlCarousel({
@@ -260,9 +272,24 @@ $('.sort-cat li').click(function(){
   });
 
 
+//zoom error creating problem for media query
+$(document).keydown(function(event) {
+if (event.ctrlKey==true && (event.which == '61' || event.which == '107' || event.which == '173' || event.which == '109'  || event.which == '187'  || event.which == '189'  ) ) {
+        event.preventDefault();
+     }
+    // 107 Num Key  +
+    // 109 Num Key  -
+    // 173 Min Key  hyphen/underscor Hey
+    // 61 Plus key  +/= key
+});
 
-
- 	
+$(window).bind('mousewheel DOMMouseScroll', function (event) {
+       if (event.ctrlKey == true) {
+       event.preventDefault();
+       }
+});
+ //zoom error closed
+ 
 	$("#all").trigger("click");
 	
 	
@@ -325,7 +352,6 @@ $('.sort-cat li').click(function(){
      $(this).height(maxHeight);	 
    });
    
-//	 $('.recipes-page-list:nth-child(1) p:nth-child(3)').css("height","auto ! important");
 		}
 		
 		
@@ -340,10 +366,50 @@ $('.sort-cat li').click(function(){
      $(this).height(maxHeight);
    });
 		}
+		
+if(window.innerWidth > 768 ){
+   var maxHeight = -1;
 
+   $('.event-excerpt p').each(function() {
+     maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+   });
+
+   $('.event-excerpt p:first-child').each(function() {
+     $(this).height(maxHeight);
+   });
+		}		
+
+		if(window.innerWidth > 768 ){
+   var maxHeight = -1;
+
+   $('.thumbContent address').each(function() {
+     maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+   });
+
+   $('.thumbContent address').each(function() {
+     $(this).height(maxHeight);
+   });
+		}
 		
 	$(".select-extra li").click(function () {
     $(".select-extra li").removeClass("active");
+    $(this).addClass("active");   
+});
+
+if(window.innerWidth > 768 ){
+   var maxHeight = -1;
+
+   $('.thumbContent h3').each(function() {
+     maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+   });
+
+   $('.thumbContent h3').each(function() {
+     $(this).height(maxHeight);
+   });
+		}
+		
+	$(".select-extra h3").click(function () {
+    $(".select-extra h3").removeClass("active");
     $(this).addClass("active");   
 });
 
@@ -352,7 +418,12 @@ $('.share-icon').css('display','none');
 $('.shareact').click(function(){	 
 	 $(this).next().toggle('slow');
    // $(this).children('.share-icon').toggle('slow');
- }); 
+
+ });   
+ 
+ //event page scripts
+ $('.atcb-link').addClass('btn');
+ 
 
  $('.event-cat li').click(function(){
     $value = $(this).attr("value");
@@ -360,8 +431,45 @@ $('.shareact').click(function(){
     location.reload();
 });  
 
+ 
+ $(".eventsort-by h4").click(function(){
+        $(".event-cat").slideToggle();
+		$(this).toggleClass('addinline');
+    });
+	
+
+/*$('.contact-form input').click(function(){
+	
+$tel = $('.contact-form .wpcf7-validates-as-tel').val();
+if($tel == '') {
+$('.contact-form .control-label').css({'top':'4px','color':'gray'});
+}
+
+$tel = $('.contact-form .wpcf7-validates-as-email').val();
+if($mail == '') {
+$('.contact-form .control-label').css({'top':'4px','color':'gray'});
+}
+
+$(this).parent('.wpcf7-form-control-wrap').next().next().css({'top':'-16px','color':'#333'});
+
+});	*/
+
 });
 
+
+$(document).ready(function(){
+    $(".question").on("click", function(){
+      $(this).parent().hasClass("active")
+      if($(this).parent().hasClass("active")){
+        $(".qa-body").removeClass("active");
+        $(this).parent().removeClass("active");
+      }
+      else{
+        $(".qa-body").removeClass("active");
+        $(this).parent().addClass("active");
+      }
+    });
+  });
 
 })(jQuery);
 

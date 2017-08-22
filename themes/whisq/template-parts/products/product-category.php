@@ -99,9 +99,12 @@
 			                    echo get_the_post_thumbnail( $loop->post->ID, 'shop_catalog' ); 
 			                else 
 			                    echo '<img src="' . woocommerce_placeholder_img_src() . '" alt="Placeholder" />'; 
-
-			                echo do_shortcode('[yith_wcwl_add_to_wishlist]');
+                     ?>
+                    <div class="wishlist-add">
+                    <?php
+                    echo do_shortcode('[yith_wcwl_add_to_wishlist]');
 			            ?>
+			            </div>
 			            </a>
 			            </div>
 			            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
