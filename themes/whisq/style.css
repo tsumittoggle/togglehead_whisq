@@ -5116,6 +5116,7 @@ content: ' ';
 
 .wpcf7-not-valid-tip {
   position: absolute;
+  bottom: -20px;
 }
 
 .wrap-content h3 {
@@ -5327,7 +5328,8 @@ right: 0;
 top: 0;
 }
 
-.wishlist-add .yith-wcwl-wishlistexistsbrowse {margin-bottom: 20px;}
+.wishlist-add .yith-wcwl-wishlistexistsbrowse,
+.wishlist-add .yith-wcwl-wishlistaddedbrowse {margin-bottom: 20px;}
 
 .wishlist-add .yith-wcwl-wishlistexistsbrowse .feedback,
 .wishlist-add .yith-wcwl-wishlistaddedbrowse .feedback {
