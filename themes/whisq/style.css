@@ -5479,3 +5479,167 @@ top: 0;
         display: block;
     }
 }
+
+/*beginner css starts*/
+.beginner-content h3 {
+    color: #be5f84;
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+.beginner-content h4 {
+    color: #be5f84;
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+.beginner-content p {
+    margin-top: 30px;
+}
+
+.fixed-after {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.what-we-do {
+    background-color: #eee;
+    padding: 40px 0 80px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.what-we-do h3 {
+    font-size: 22px;
+    color: #be5f84;
+    text-transform: uppercase;
+}
+
+.what-we-do p {
+    margin-top: 20px;
+}
+
+.begin-1 {
+    margin-top: -50px;
+}
+
+.begin-1 p {
+    margin-top: 150px;
+}
+
+.bg-patch {
+    position: absolute;
+    width: 94%;
+    height: 100%;
+    background: orange;
+    left: 40px;
+    top: 20px;
+    z-index: -2;
+}
+
+.begin-2 .left {
+    margin-top: -100px;
+}
+.begin-2 .left p {
+    margin: 20px 0;
+}
+
+.begin-2 .right {
+    padding-top: 150px;
+}
+
+.bg-patch-grey {
+    position: absolute;
+    top: -50px;
+    width: 150%;
+    background: #eee;
+    left: 80%;
+    padding: 200px 20% 100px 20%;
+    z-index: -1;
+}
+
+.beginner-body {
+    overflow: hidden;
+}
+
+.beginner-body .feature-btn {
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.begining-last {
+    margin: 50px 0;
+}
+
+.begining-last .para {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+}
+.fixed-before{
+  margin-top: 100px;
+}
+@media screen and (max-width:1199px) and (min-width: 768px) {
+    .begin-1 p {
+        margin-top: 100px;
+    }
+    .begin-2 .left {
+        margin-top: 40px;
+    }
+    .bg-patch-grey{
+      position: relative;
+      top:0;
+      left:0;
+      padding: 40px;
+      width: auto;
+    }
+    .begin-2 .right {
+      padding-top: 40px;
+  }
+  .fixed-before {
+      display: none;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .fixed-before {
+      display: none;
+  }
+    .beginner-body {
+        text-align: center;
+    }
+    .begin-1 {
+        margin-top: 0;
+    }
+    .begin-1 p {
+        margin-top: 0;
+        margin: 40px 0;
+    }
+    .begin-1 .bg-patch {
+        display: none;
+    }
+    .begin-2 .left {
+        margin-top: 0px;
+    }
+    .begin-2 .left img {
+        margin-bottom: 30px;
+    }
+    .begin-2 .right {
+        padding-top: 30px;
+    }
+    .bg-patch-grey {
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 40px;
+        width:100%;
+    }
+    .what-we-do {
+        padding: 40px 0;
+    }
+    .beginner-content {
+        margin-bottom: 30px;
+    }
+}
+/*beginner css ends*/
