@@ -4785,7 +4785,7 @@ column-gap: 13px;
   padding-bottom: 10px;
   border-width: 0;
   border-color: transparent;
-  line-height: 1.9;
+  line-height: 1;
   width: 100%;
   color: transparent;
   -webkit-transition: all 0.28s ease;
@@ -5023,7 +5023,7 @@ content: ' ';
       margin: auto;
       margin: 0 auto 50px auto;
   }
-  .section-faq h3{
+  .section-faq h3 {
     text-transform: uppercase;
     font-size: 20px;
     display: inline-block;
@@ -5096,17 +5096,94 @@ content: ' ';
       padding-left: 10px;
     }
   }
+
+
 /*faq css ends*/
-.page-template-faq-page-php .container{
+.page-template-faq-page-php .container {
   padding: 50px 0;
 }
-.div.wpcf7-validation-errors{
+
+.wpcf7-validation-errors {
   position: absolute;
   bottom: 0;
   color: red;
-  margin: 0;
-  border: 0;
+  margin: 0 !important;
+  border: 0 !important;
 }
-.span.wpcf7-not-valid-tip{
+
+.wpcf7-not-valid-tip {
   position: absolute;
+}
+
+.wrap-content h3 {
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 28px;
+    display: inline-block;
+    width: 100%;
+    margin: 30px 0 15px 0;
+    color: #b95b81;
+  }
+
+ .wrap-content {
+  padding: 30px 0 60px;
+ } 
+
+.wrap-content ul {
+  margin: 15px 0 0 14px;
+}
+
+.wrap-content li {
+  margin-bottom: 15px;
+}
+/*cart page css*/
+.cart_item{
+  overflow: hidden;
+  border-top:2px solid #eee;
+  padding: 50px 0 50px 50px;
+}
+.thumbnail-item{
+  width: 20%;
+  float:left;
+  text-align: center;
+}
+.thumbnail-item img{
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.12);
+}
+.item-detail{
+  width: 80%;
+  float:left;
+  padding: 20px 40px 0 40px;
+}
+.item-detail .product-name{
+  float: left;
+  margin:0;
+  font-size: 17px;
+}
+.item-detail .product-name a{
+  color: #b95b81;
+  text-decoration: none;
+}
+.item-detail .product-subtotal{
+  float: right;
+}
+.item-detail .product-quantity{
+  clear: both;
+  margin-top: 30px;
+  display: inline-block;
+  width: 100%;
+}
+.item-detail .product-quantity .quantity{
+  display: inline-block;
+}
+.cart-content{
+  width: 70%;
+  float: left;
+}
+.cart-collaterals{
+  width: 30% !important;
+  float: left;
+}
+.woocommerce-cart-form__contents{
+  overflow: hidden;
 }
