@@ -250,7 +250,7 @@ $option4['sfsi_ytube_chnlid'] 			= 	(isset($option2['sfsi_ytube_chnlid']))
          	
             <div class="radio_section fb_url twt_fld_2"><input name="sfsi_twitter_aboutPage" <?php echo ($option2['sfsi_twitter_aboutPage']=='yes') ?  'checked="true"' : '' ;?> type="checkbox" value="yes" class="styled"  /><label>Tweet about my page:</label><textarea name="sfsi_twitter_aboutPageText" id="sfsi_twitter_aboutPageText" type="text" class="add_txt" placeholder="Hey, check out this cool site I found: www.yourname.com #Topic via@my_twitter_name" /><?php echo ($option2['sfsi_twitter_aboutPageText']!='') ?  stripslashes($option2['sfsi_twitter_aboutPageText']) : 'Hey check out this cool site I found' ;?></textarea></div>
             <div class= "sfsi_new_prmium_follw">
-				<p><b>New: </b>In our Premium Plugin you can also insert tags to automatically pull the title of the story, as well as the link to the story. <a href="https://www.ultimatelysocial.com/usm-premium/?utm_source=usmi_settings_page&utm_campaign=better_tweets&utm_medium=banner" target="_blank">See all features</a></p>
+				<p><b>New: </b>Tweeting becomes really fun in the Premium Plugin – you can insert tags to automatically pull the title of the story & link to the story, attach pictures & snippets to the Tweets (‘Twitter cards’) and user Url-shorteners, all leading to more Tweets and traffic for your site!. <a href="https://www.ultimatelysocial.com/usm-premium/?utm_source=usmi_settings_page&utm_campaign=better_tweets&utm_medium=banner" target="_blank">See all features</a></p>
 			</div>
         </div>
     </div>

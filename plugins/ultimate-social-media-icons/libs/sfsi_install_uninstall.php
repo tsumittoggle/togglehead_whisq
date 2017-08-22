@@ -12,7 +12,7 @@ function sfsi_update_plugin()
     }
     
     //Install version
-    update_option("sfsi_pluginVersion", "1.74");
+    update_option("sfsi_pluginVersion", "1.76");
 
     if(!get_option('sfsi_serverphpVersionnotification'))
     {
@@ -131,9 +131,17 @@ function sfsi_update_plugin()
         $option4['sfsi_instagram_token']    = '';
         update_option('sfsi_section4_options', serialize($option4));
     }
+
+    $option5 = unserialize(get_option('sfsi_section5_options',false));
+    if(isset($option5) && !empty($option5) && !isset($option5['sfsi_custom_social_hide']))
+    {
+        $option5['sfsi_custom_social_hide']    = 'no';
+        update_option('sfsi_section5_options', serialize($option5));
+    }
 }
 function sfsi_activate_plugin()
 {
+    add_option('sfsi_plugin_do_activation_redirect', true);
     /* check for CURL enable at server */
    curl_enable_notice();
     if(!get_option('show_new_notification'))
@@ -300,6 +308,7 @@ function sfsi_activate_plugin()
         'sfsi_youtube_MouseOverText'=>'YouTube',
         'sfsi_share_MouseOverText'=>'Share',
         'sfsi_custom_MouseOverTexts'=>'',
+        'sfsi_custom_social_hide' => 'no'
         );
     add_option('sfsi_section5_options',  serialize($options5));
     
@@ -548,8 +557,12 @@ function sfsi_check_wp_head() {
         $path=pathinfo($_SERVER['REQUEST_URI']);
         if($path['basename']=="themes.php" || $path['basename']=="theme-editor.php" || $path['basename']=="admin.php?page=sfsi-options")
         {
-            echo "<div class=\"error\" >" . "<p> Error : Please fix your theme to make plugins work correctly: Go to the <a href=\"theme-editor.php\">Theme Editor</a> and insert <code>&lt;?php wp_head(); ?&gt;</code> just before the <code>&lt;/head&gt;</code> line of your theme's <code>header.php</code> file." . "</p></div>";
-        }   
+            $currentTheme = wp_get_theme();
+                        
+            if(isset($currentTheme) && !empty($currentTheme) && $currentTheme->get( 'Name' ) != "Customizr"){
+                echo "<div class=\"error\" >" . "<p> Error : Please fix your theme to make plugins work correctly: Go to the <a href=\"theme-editor.php\">Theme Editor</a> and insert <code>&lt;?php wp_head(); ?&gt;</code> just before the <code>&lt;/head&gt;</code> line of your theme's <code>header.php</code> file." . "</p></div>";
+            }
+        }  
     }
 }
 /* admin notice if wp_footer is missing in active theme */
