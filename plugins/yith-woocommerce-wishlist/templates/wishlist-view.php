@@ -174,7 +174,8 @@ if ( ! defined( 'YITH_WCWL' ) ) {
                 <div colspan="<?php echo esc_attr( $column_count ) ?>" class="wishlist-empty"><?php echo apply_filters( 'yith_wcwl_no_product_to_remove_message', __( 'No products were added to the wishlist', 'yith-woocommerce-wishlist' ) ) ?></div>
                 <div class="no-wishlist">
 									<p class="no-wish-head">wishlist empty</p>
-									<p>Save your pieces of clothing in one place Add now, <span>buy latter</span></p>
+									<p class="p-second">Save your pieces of clothing in one place</p>
+									<p>Add now, <span>buy latter</span></p>
 									<img style="height: 80px" src="<?php echo esc_url( home_url( '/wp-content/uploads/wishlist-empty.png' ) ); ?>" alt="no_wishlist" />
 									<div>
 									<a href="<?php echo esc_url( home_url( '/product-shop/' ) ); ?>" class="feature-btn button" title="Continue Shopping">continue shopping</a>

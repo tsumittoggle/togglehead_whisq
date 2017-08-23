@@ -1185,3 +1185,4 @@ function no_product_wishlist() {
 </div> -->
 <?php
 }
+
