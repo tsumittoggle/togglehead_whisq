@@ -26,18 +26,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 wc_print_notices();
 
 do_action( 'woocommerce_before_cart' ); 
-if( WC()->cart->get_cart_contents_count() > 0){ ?>
+?>
 <div class="my-cart-outer">
+<?php
+if( WC()->cart->get_cart_contents_count() > 0){ ?>
+
 	<span>my shopping cart (<?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> 
 	items)</span> 
-	  <?php } 
+	  <?php  
 	 if( WC()->cart->total > 0){ ?>
 	<?php $total_price = sprintf ( _n( '%d', '%d', WC()->cart->total ), WC()->cart->total ); ?> 
 	<div class="total-card">
-	<span>&#8377;<?php echo $total_price; ?></span>
+		<span>&#8377;&nbsp;<?php echo $total_price; ?></span>
 	</div>
-</div>
-  <?php } ?>
+	  <?php } ?>
+	</div>
     <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
         <?php do_action( 'woocommerce_before_cart_table' ); ?>
         <div class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
@@ -166,6 +169,9 @@ if( WC()->cart->get_cart_contents_count() > 0){ ?>
     </form>
      </div>
     </div>
+    <?php } else { ?>
+    <h2 class="text-center">NO PRODUCT IN CART</h2>
+    <?php } ?>
     <div class="cart-footer">
         <div class="cart-footer-left">
             <a href="#" class="btn-cart">add more from wishlist</a>
