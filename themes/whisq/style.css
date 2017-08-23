@@ -4254,7 +4254,6 @@ Recipes styling
 }
 
 .woocommerce div.product form.cart .button,
-<<<<<<< HEAD
 .woocommerce a.button,
 .woocommerce .wishlist_table a.button {
 	line-height: inherit;
@@ -4267,21 +4266,7 @@ Recipes styling
   text-decoration: none;
   box-shadow: 0px 5px 0px 0px #9a506e;
   outline:none;
-      display: inline-block;
-=======
-.woocommerce a.button {
-    line-height: inherit;
-    padding: 8px 20px;
-    border-radius: 5px;
-    position: relative;
-    z-index: 99;
-    background-color: #b95b81;
-    color: #fff;
-    text-decoration: none;
-    box-shadow: 0px 5px 0px 0px #9a506e;
-    outline: none;
-    display: inline-block;
->>>>>>> d9fa99f16220f1fff5658e940d0d80519e4041c1
+  display: inline-block;
     margin: 0 auto;
 }
 
@@ -5439,14 +5424,9 @@ Event styling
 }
 
 .single-tribe_events .event-form {
-<<<<<<< HEAD
 	width:48%;
 	float:left;
   position: relative;
-=======
-    width: 48%;
-    float: left;
->>>>>>> d9fa99f16220f1fff5658e940d0d80519e4041c1
 }
 
 .single-tribe_events .pastevent-left {
@@ -5998,7 +5978,7 @@ Event styling
 }
 
 .wpcf7-not-valid-tip {
-    position: absolute;
+  bottom: -20px;
 }
 
 .wrap-content h3 {
@@ -6121,7 +6101,6 @@ Event styling
   padding: 30px 0;
   border-top:1px solid #eee !important;
 }
-<<<<<<< HEAD
 
 /*===================================================================
 Whislist page styling
@@ -6259,7 +6238,8 @@ right: 0;
 top: 0;
 }
 
-.wishlist-add .yith-wcwl-wishlistexistsbrowse {margin-bottom: 20px;}
+.wishlist-add .yith-wcwl-wishlistexistsbrowse,
+.wishlist-add .yith-wcwl-wishlistaddedbrowse {margin-bottom: 20px;}
 
 .wishlist-add .yith-wcwl-wishlistexistsbrowse .feedback,
 .wishlist-add .yith-wcwl-wishlistaddedbrowse .feedback {
@@ -6307,6 +6287,7 @@ top: 0;
 .order-total{
 
 }
+
 @media screen and (max-width: 767px) {
     .below-section {
         padding: 30px 0;
@@ -6315,7 +6296,6 @@ top: 0;
     .below-section .wrapper {
         margin: 10px 0;
     }
->>>>>>> d9fa99f16220f1fff5658e940d0d80519e4041c1
 }
 .creator-img-block {
     position: relative;
@@ -6559,18 +6539,12 @@ top: 0;
 }
 
 @media screen and (max-width:767px) {
-<<<<<<< HEAD
-  .fixed-before {
-      display: none;
-  }
-    .page-template-beginner-page {
-=======
+
     .fixed-before {
         display: none;
     }
 
     .beginner-body {
->>>>>>> d9fa99f16220f1fff5658e940d0d80519e4041c1
         text-align: center;
     }
 
