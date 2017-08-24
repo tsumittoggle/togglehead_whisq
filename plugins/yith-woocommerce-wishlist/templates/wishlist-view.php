@@ -52,7 +52,7 @@ if ( ! defined( 'YITH_WCWL' ) ) {
      do_action( 'yith_wcwl_before_wishlist' ); ?>
 
     <!-- WISHLIST TABLE -->
-	<div class="shop_table cart wishlist_table" data-pagination="<?php echo esc_attr( $pagination )?>" data-per-page="<?php echo esc_attr( $per_page )?>" data-page="<?php echo esc_attr( $current_page )?>" data-id="<?php echo $wishlist_id ?>" data-token="<?php echo $wishlist_token ?>">
+	<div class="shop_table cf cart wishlist_table" data-pagination="<?php echo esc_attr( $pagination )?>" data-per-page="<?php echo esc_attr( $per_page )?>" data-page="<?php echo esc_attr( $current_page )?>" data-id="<?php echo $wishlist_id ?>" data-token="<?php echo $wishlist_token ?>">
 
 	    <?php $column_count = 2; ?>
         <?php
@@ -172,6 +172,15 @@ if ( ! defined( 'YITH_WCWL' ) ) {
         else: ?>
             <div>
                 <div colspan="<?php echo esc_attr( $column_count ) ?>" class="wishlist-empty"><?php echo apply_filters( 'yith_wcwl_no_product_to_remove_message', __( 'No products were added to the wishlist', 'yith-woocommerce-wishlist' ) ) ?></div>
+                <div class="no-wishlist">
+									<p class="no-wish-head">wishlist empty</p>
+									<p class="p-second">Save your pieces of product in one place</p>
+									<p>Add now, <span>buy latter</span></p>
+									<img style="height: 80px" src="<?php echo esc_url( home_url( '/wp-content/uploads/wishlist-empty.png' ) ); ?>" alt="no_wishlist" />
+									<div>
+									<a href="<?php echo esc_url( home_url( '/product-shop/' ) ); ?>" class="feature-btn button" title="Continue Shopping">continue shopping</a>
+									</div>
+								</div>
             </div>
         <?php
         endif;
