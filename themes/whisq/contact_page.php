@@ -25,7 +25,7 @@ get_header();
         <div class="col-md-6">
             <div class="wrapper">
                 <div class="img-part">
-                    <img src="http://via.placeholder.com/30x30">
+                    <img src="<?php echo esc_url( home_url( '/wp-content/uploads/mail.png') ); ?>" alt="mail">
                 </div>
                 <div class="para-part">
                     <?php if(get_field('email') ) : ?>
@@ -35,7 +35,7 @@ get_header();
             </div>
             <div class="wrapper">
                 <div class="img-part">
-                    <img src="http://via.placeholder.com/30x30">
+                    <img src="<?php echo esc_url( home_url( '/wp-content/uploads/location-1.png') ); ?>" alt="Location">
                 </div>
                 <div class="para-part">
                     <?php if(get_field('address') ) : ?>

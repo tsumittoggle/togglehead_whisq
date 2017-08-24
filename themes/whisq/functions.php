@@ -759,7 +759,7 @@ add_action('woocommerce_after_add_to_cart_button', 'add_cart_btn');
 
 function add_cart_btn() {
 	?>
-  <a rel="nofollow" href="/whisq/product-shop/?add-to-cart=354" data-quantity="1" data-product_id="354" data-product_sku="" class="button product_type_simple add_to_cart_button ajax_add_to_cart feature-btn">Add to cart</a>
+  <!-- <a rel="nofollow" href="/whisq/product-shop/?add-to-cart=354" data-quantity="1" data-product_id="354" data-product_sku="" class="button product_type_simple add_to_cart_button ajax_add_to_cart feature-btn">Add to cart</a> -->
   <?php
 }
 

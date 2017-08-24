@@ -380,11 +380,12 @@
                     </div>
                 </div>
 
-				<div class="sfsi_need_another_one_link">
+				<!--<div class="sfsi_need_another_one_link">
 					<p>Need another one?<a href="mailto:biz@ultimatelysocial.com"> Tell us</a></p>
-				</div>
+				</div>-->
 				<div class="sfsi_need_another_tell_us">
-					<a href="https://www.ultimatelysocial.com/usm-premium/?utm_source=usmi_settings_page&utm_campaign=more_platforms&utm_medium=banner" target="_blank">See all features Premium Plugin</a>
+                    <a href="https://www.ultimatelysocial.com/all-platforms/" target="_blank">See all features Premium Plugin</a>                                  
+					<!--<a href="https://www.ultimatelysocial.com/usm-premium/?utm_source=usmi_settings_page&utm_campaign=more_platforms&utm_medium=banner" target="_blank">See all features Premium Plugin</a>-->
 				</div>
             </div>
         </li>

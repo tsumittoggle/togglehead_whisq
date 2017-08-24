@@ -1,0 +1,33 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PBO Move to Wishlist for YITH WooCommerce Wishlist\n"
+"POT-Creation-Date: 2015-10-07 15:53+0200\n"
+"PO-Revision-Date: 2015-10-07 15:53+0200\n"
+"Last-Translator: Piotr Boguslawski\n"
+"Language-Team: Piotr Boguslawski\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.5\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: pbo-move-to-wishlist.php\n"
+
+msgid "Internal error: %s."
+msgstr ""
+
+msgid "View Wishlist"
+msgstr ""
+
+msgid "Move to Wishlist"
+msgstr ""
+
+msgid "%s is enabled but not effective. It requires WooCommerce and YITH WooCommerce Wishlist in order to work."
+msgstr ""
+
+msgid "%s successfully moved to Wishlist."
+msgstr ""
+
+
+
