@@ -5893,7 +5893,7 @@ Event styling
     color: #b95b81;
 }
 .qa-body {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #eee;
     padding: 30px 10px;
 }
 .question {
@@ -5902,7 +5902,7 @@ Event styling
     margin-bottom: 0px;
 }
 .question span {
-    width: 4%;
+    width: 6%;
     float: left;
 }
 .question p {
@@ -5926,7 +5926,7 @@ Event styling
 }
 .answer p {
     width: 90%;
-    margin-left: 4%;
+    margin-left: 6%;
 }
 .active .answer {
     height: auto;
@@ -7001,4 +7001,19 @@ top: 0;
     position: relative;
     line-height: 1;
     margin-left: 10px;
+}
+@media screen and (max-width:767px){
+    .main {
+        border: 0;
+        padding: 0;
+    }
+    .page-template-faq-page-php .container{
+        padding: 50px 0 0 0;
+    }
+    .question p:after {
+        right: -10px;
+    }   
+    .active .question p:after {
+        right: -10px;
+    }
 }
