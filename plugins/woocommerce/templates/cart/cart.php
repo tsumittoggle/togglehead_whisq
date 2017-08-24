@@ -61,6 +61,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 									esc_attr( $_product->get_sku() )
 								), $cart_item_key );
 							?>
+							 <?php
+                    echo do_shortcode('[yith_wcwl_add_to_wishlist]');
+			            ?>
 						</td>
 
 						<td class="product-thumbnail">

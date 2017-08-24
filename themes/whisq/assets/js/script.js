@@ -85,8 +85,10 @@ $('#carousel03').owlCarousel({
     }
 });
 
-$('.product-remove .remove').click(function(){
-location.reload();
+$('.product-remove').click(function(){
+    setInterval(function(){ 
+      location.reload(); 
+    }, 1000);
 });
 
   //adding class for add to card
@@ -96,7 +98,7 @@ location.reload();
   //var $product_height = $('.woocommerce .products li').height();
   var f = $feture_height + 45;
   //var p = $product_height + 45;
-  $('.feature-item').css('height', f + 'px');
+  //$('.feature-item').css('height', f + 'px');
    //$('.woocommerce .products li').css('height', p + 'px');
    
    $('.accessoriesused').click(function(){

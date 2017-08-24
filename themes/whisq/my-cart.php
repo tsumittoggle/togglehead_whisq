@@ -139,7 +139,7 @@ if( WC()->cart->get_cart_contents_count() > 0){ ?>
 	                <div class="actions">
 	                    <?php if ( wc_coupons_enabled() ) { ?>
 	                    <div class="coupon">
-	                        <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Enter Descount Code', 'woocommerce' ); ?>" />
+	                        <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Enter Discount Code', 'woocommerce' ); ?>" />
 	                        <input type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply', 'woocommerce' ); ?>" />
 	                        <?php do_action( 'woocommerce_cart_coupon' ); ?>
 	                    </div>
@@ -167,15 +167,23 @@ if( WC()->cart->get_cart_contents_count() > 0){ ?>
         </div>
         </div>
     </form>
-     </div>
-    </div>
+  
     <?php } else { ?>
-    <h2 class="text-center">NO PRODUCT IN CART</h2>
+    </div>
+                    <div class="no-wishlist">
+									<p class="no-wish-head">cart empty</p>
+									<p class="p-second">Save your pieces of product in one place</p>
+									<p>Add now, <span style="float: none;">buy latter</span></p>
+									<img style="height: 80px" src="<?php echo esc_url( home_url( '/wp-content/uploads/wishlist-empty.png' ) ); ?>" alt="no_wishlist" />
+									<div>
+									<a href="<?php echo esc_url( home_url( '/product-shop/' ) ); ?>" class="feature-btn button" title="Continue Shopping">continue shopping</a>
+									</div>
+								</div>
     <?php } ?>
     <div class="cart-footer">
         <div class="cart-footer-left">
-            <a href="#" class="btn-cart">add more from wishlist</a>
-            <a href="#" class="btn-cart">continue shopping</a>
+            <a href="<?php echo esc_url( home_url( '/wishlist/') ); ?>" class="btn-cart">add more from wishlist</a>
+            <a href="<?php echo esc_url( home_url( '/product-shop/') ); ?>" class="btn-cart">continue shopping</a>
         </div>
         <div class="cart-footer-right">
             <a href="#">need help? contact us</a>
