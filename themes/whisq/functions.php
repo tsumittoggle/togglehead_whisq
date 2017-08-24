@@ -1089,15 +1089,17 @@ function order_detail() {
 			</div>
 	</div>
 <?php do_action( 'woocommerce_after_cart' ); 
-
 if( WC()->cart->get_cart_contents_count() > 0){ ?>
-<?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> <span>items</span> 
+<div class="lolo">
+<span><?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> items</span> 
+</div>
   <?php } 
+
  if( WC()->cart->total > 0){ ?>
 <?php $total_price = sprintf ( _n( '%d', '%d', WC()->cart->total ), WC()->cart->total ); ?> 
 <div class="total-card">
 <p><span>Order Total</span><span><?php echo $total_price; ?></span></p>
-<p><span>Delivery</span><span>_</span></p>
+<p><span>Delivery</span></p>
 <p class="final-total"><span>Total Payable</span><span><?php echo $total_price; ?></span></p>
 </div>
   <?php } 

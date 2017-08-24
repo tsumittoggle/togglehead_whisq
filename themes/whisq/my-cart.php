@@ -34,8 +34,8 @@ if( WC()->cart->get_cart_contents_count() > 0){ ?>
 	<span>my shopping cart (<?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> 
 	items)</span> 
 	  <?php  
-	 if( WC()->cart->total > 0){ ?>
-	<?php $total_price = sprintf ( _n( '%d', '%d', WC()->cart->total ), WC()->cart->total ); ?> 
+	 if( WC()->cart->subtotal > 0){ ?>
+	<?php $total_price = sprintf ( _n( '%d', '%d', WC()->cart->subtotal ), WC()->cart->subtotal ); ?> 
 	<div class="total-card">
 		<span>&#8377;&nbsp;<?php echo $total_price; ?></span>
 	</div>
@@ -144,7 +144,7 @@ if( WC()->cart->get_cart_contents_count() > 0){ ?>
 	                        <?php do_action( 'woocommerce_cart_coupon' ); ?>
 	                    </div>
 	                    <?php } ?>
-	                    <!-- <input type="submit" class="button" name="update_cart" value="<?php //esc_attr_e( 'Update cart', 'woocommerce' ); ?>" /> -->
+	                    <input type="submit" class="button update-cart" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>" />
 	                    <?php do_action( 'woocommerce_cart_actions' ); ?>
 	                    <?php wp_nonce_field( 'woocommerce-cart' ); ?>
 	                </div>
