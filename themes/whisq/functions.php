@@ -1089,15 +1089,17 @@ function order_detail() {
 			</div>
 	</div>
 <?php do_action( 'woocommerce_after_cart' ); 
-
 if( WC()->cart->get_cart_contents_count() > 0){ ?>
-<?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> <span>items</span> 
+<div class="lolo">
+<span><?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> items</span> 
+</div>
   <?php } 
+
  if( WC()->cart->total > 0){ ?>
 <?php $total_price = sprintf ( _n( '%d', '%d', WC()->cart->total ), WC()->cart->total ); ?> 
 <div class="total-card">
 <p><span>Order Total</span><span><?php echo $total_price; ?></span></p>
-<p><span>Delivery</span><span>_</span></p>
+<p><span>Delivery</span></p>
 <p class="final-total"><span>Total Payable</span><span><?php echo $total_price; ?></span></p>
 </div>
   <?php } 
@@ -1161,27 +1163,3 @@ function create_faq_taxonomies() {
     register_taxonomy( 'faq_categories', array( 'faq' ), $args );
 }
 add_action( 'init', 'create_faq_taxonomies', 0 );
-
-add_action( 'yith_wcwl_before_wishlist_title', 'before_wishlist' );
-
-function before_wishlist() { ?>
-		<div class="whisqtitle">
-			<h2><?php the_title(); ?></h2>
-			<p class="wrapper breadcrumb-url"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Home</a> > <span><?php the_title(); ?></span></p>
-		</div>
-<?php }
-
-add_action( 'yith_wcwl_before_wishlist_share', 'no_product_wishlist' );
-
-function no_product_wishlist() {
-?>
-<!-- <div class="no-wishlist">
-	<p class="no-wish-head">wishlist empty</p>
-	<p>Save your pieces of clothing in one place Add now, <span>buy latter</span></p>
-	<img src="" alt="no_wishlist" />
-	<div>
-	<a href="" class="feature-btn button" title="Continue Shopping">continue shopping</a>
-	</div>
-</div> -->
-<?php
-}

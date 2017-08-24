@@ -85,6 +85,9 @@ $('#carousel03').owlCarousel({
     }
 });
 
+$('.product-remove .remove').click(function(){
+location.reload();
+});
 
   //adding class for add to card
   $('.product_type_simple').addClass('feature-btn');
