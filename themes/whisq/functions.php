@@ -1087,14 +1087,13 @@ function order_detail() {
 				 	do_action( 'woocommerce_cart_collaterals' );
 				?>
 			</div>
-	</div>
-<?php do_action( 'woocommerce_after_cart' ); 
+	</div<?php do_action( 'woocommerce_after_cart' ); 
 
 if( WC()->cart->get_cart_contents_count() > 0){ ?>
 <?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> <span>items</span> 
   <?php } 
- if( WC()->cart->total > 0){ ?>
-<?php $total_price = sprintf ( _n( '%d', '%d', WC()->cart->total ), WC()->cart->total ); ?> 
+ if( WC()->cart->subtotal > 0){ ?>
+<?php $total_price = sprintf ( _n( '%d', '%d', WC()->cart->subtotal ), WC()->cart->subtotal ); ?> 
 <div class="total-card">
 <p><span>Order Total</span><span><?php echo $total_price; ?></span></p>
 <p><span>Delivery</span><span>_</span></p>

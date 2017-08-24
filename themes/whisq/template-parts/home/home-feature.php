@@ -45,6 +45,13 @@
 			                else 
 			                    echo '<img src="' . woocommerce_placeholder_img_src() . '" alt="Placeholder" />'; 
 			            ?>
+			            <a>
+			            <div class="wishlist-add">
+                    <?php
+                    echo do_shortcode('[yith_wcwl_add_to_wishlist]');
+			            ?>
+			            </div>
+			            </a>
 			            </div>
 			            <h3 class="feature-title"><?php the_title(); ?></h3>
 

@@ -85,13 +85,15 @@ $('#carousel03').owlCarousel({
     }
 });
 
-
+$('.update-cart').click(function(){
+  setInterval(function(){ location.reload(); }, 1000);   
+});
   //adding class for add to card
   $('.product_type_simple').addClass('feature-btn');
 
   var $feture_height = $('.feature-item').height();
   //var $product_height = $('.woocommerce .products li').height();
-  var f = $feture_height + 45;
+  var f = 520 + 45;
   //var p = $product_height + 45;
   $('.feature-item').css('height', f + 'px');
    //$('.woocommerce .products li').css('height', p + 'px');
