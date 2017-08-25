@@ -1163,3 +1163,11 @@ function create_faq_taxonomies() {
     register_taxonomy( 'faq_categories', array( 'faq' ), $args );
 }
 add_action( 'init', 'create_faq_taxonomies', 0 );
+
+
+//my account page content
+// do_action( 'woocommerce_before_customer_login_form', 'login_top_content', 10 );
+
+// function login_top_content() {
+// 	echo "welcome";
+// }

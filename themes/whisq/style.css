@@ -955,7 +955,7 @@ Feature product styling strat from here
 
 .home .feature-btn {
     opacity: 0;
-    position: absolute;
+    position: relative;
     bottom: -15px;
 }
 .added_to_cart {display: none;}
@@ -5444,6 +5444,7 @@ Event styling
 .single-tribe_events .event-form {
     width: 48%;
     float: left;
+    position: relative;
 }
 
 .single-tribe_events .pastevent-left {
@@ -5897,6 +5898,7 @@ Event styling
 .main {
     border: 1px solid #ddd;
     padding: 40px 0 0 0;
+    background: #fff;
 }
 .section-faq {
     width: 90%;
@@ -5912,7 +5914,7 @@ Event styling
     color: #b95b81;
 }
 .qa-body {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #eee;
     padding: 30px 10px;
 }
 .question {
@@ -5921,7 +5923,7 @@ Event styling
     margin-bottom: 0px;
 }
 .question span {
-    width: 4%;
+    width: 6%;
     float: left;
 }
 .question p {
@@ -5945,7 +5947,7 @@ Event styling
 }
 .answer p {
     width: 90%;
-    margin-left: 4%;
+    margin-left: 6%;
 }
 .active .answer {
     height: auto;
@@ -5983,7 +5985,7 @@ Event styling
 
 /*faq css ends*/
 .page-template-faq-page-php .container {
-    padding: 50px 0;
+    padding: 50px 15px;
 }
 
 .wpcf7-validation-errors {
@@ -6486,7 +6488,7 @@ top: 0;
     position: absolute;
     width: 94%;
     height: 100%;
-    background: orange;
+    background: #fdc689;
     left: 40px;
     top: 20px;
     z-index: -2;
@@ -6570,7 +6572,7 @@ top: 0;
     }
 
     .begin-1 {
-        margin-top: 0;
+        margin-top: 40px;
     }
 
     .begin-1 p {
@@ -6598,8 +6600,9 @@ top: 0;
         position: relative;
         top: 0;
         left: 0;
-        padding: 40px;
+        padding: 40px 0px 0 0;
         width: 100%;
+        background: #fff;
     }
 
     .what-we-do {
@@ -6741,24 +6744,57 @@ top: 0;
     width: 100% !important;
   }
 }
-@media screen and (max-width: 767px){
-  .woocommerce-checkout-review-order{
-    width: 90%;
-    margin: 0 auto;
-    float: none;
-  }
-  #order_review_heading{
-    width: 90%;
-    margin: 30px auto 0 auto;
-    float: none;
+
+.woocommerce-checkout .total-card{
+  float: none;
+  padding: 0 20px;
+}
+.woocommerce-checkout .total-card p{
+  overflow: hidden;
+}
+.woocommerce-checkout .total-card p span:nth-child(1){
+  float: left;
+}
+.woocommerce-checkout .total-card p span:nth-child(2){
+  float: right;
+}
+.woocommerce-checkout .place-order{
+  padding: 0 !important;
+  margin: 0 !important;
+  text-align: center;
+}
+.woocommerce-checkout .place-order .button{
+  float: none !important;
+  width: 100% !important;
+  padding: 10px 0;
+  margin: 0 !important;
+}
+.woocommerce-checkout .item-detail .product-name{
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+@media screen and (max-width: 1199px){
+  .woocommerce-checkout-review-order, #order_review_heading{
+    width: 30%;
   }
   .woocommerce .col2-set, .woocommerce-page .col2-set{
-    width: 90%;
-    margin: 0 auto;
-    float: none;
+    width: 60%;
   }
-  .woocommerce-checkout form{
-    margin: 50px 0 50px 0px;
+}
+@media screen and (max-width: 991px){
+  .woocommerce-checkout-review-order, #order_review_heading{
+    width: 40%;
+  }
+  .woocommerce .col2-set, .woocommerce-page .col2-set{
+    width: 50%;
+  }
+  .woocommerce-checkout .form-row-first, .woocommerce-checkout .form-row-last{
+    width: 100% !important;
+  }
+  .bg-patch-grey{
+    padding: 20px 0 0 0;
+    background: transparent;
   }
 }
 
@@ -7042,4 +7078,78 @@ top: 0;
     line-height: 1;
     margin-left: 10px;
 }
+@media screen and (max-width:767px){
+    .main {
+        border: 0;
+        padding: 0;
+    }
+    .page-template-faq-page-php .container{
+        padding: 50px 15px 0 15px;
+    }
+    .question p:after {
+        right: -10px;
+    }   
+    .active .question p:after {
+        right: -10px;
+    }
+    .bg-grey-faq{
+        display: none;
+    }
+}
+.faq-cont{
+    position: relative;
+}
+.bg-grey-faq{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 500px;
+    background: #eee;
+    z-index: -1;
+}
+.woocommerce div.product form.cart .button{
+    opacity: 1;
+}
+#tribe-events{
+    margin-bottom: 45px;
+}
 
+
+
+.woocommerce-account .woocommerce-MyAccount-content {
+    display: block;
+}
+
+.woocommerce-page #customer_login {
+    width: 45%;
+    float: left;
+    margin-left: 5%;
+}
+
+.page-id-669 #main {
+    background: grey;
+}
+
+.woocommerce .page-container form.login {
+    border: none;
+    text-align: center;
+}
+
+.page-template-account-page .col2-set .col-1 {
+text-align: center;
+}
+
+.page-template-account-page p,
+.page-template-account-page h2 {
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+.ywsl-label {display: none;}
+
+.account-registration,
+.account-login {
+    display: block !important;
+}
+
+.page-template-account-page .col2-set .col-1 {display: none;}
