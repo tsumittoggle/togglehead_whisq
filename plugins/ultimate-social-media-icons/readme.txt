@@ -1,24 +1,23 @@
-=== Social Media Share Buttons and Social Icons (Ultimate Sharing) ===
+=== Social Share Buttons ===
 Contributors: socialdude
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZWYMA8LFHGHCC
-Tags: social media, share, buttons, social, icons, facebook, instagram, youtube, twitter, social share, counter, pop-up
+Tags: social media, share, buttons, social, icons, share icons, share buttons, sharing icons, sharing buttons, social share, sharing, social sharing
 Requires at least: 2.8
-Tested up to: 4.8
-Stable tag: 1.7.4
+Tested up to: 4.8.1
+Stable tag: 1.7.6
 License: GPLv2 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Easy-to-use share buttons plugin which adds social media icons to your site to enable sharing - with tons of customization features!    
+Share buttons plugin which adds social media icons to your site to enable sharing.  
 
 == Description ==
 
-Social media plugin which let's you add icons for RSS, Email, Facebook, Twitter, LinkedIn, Google+, Pinterest, Instagram, Youtube, 'Share' (covering 200+ other social media platforms) and upload custom icons of your choice. 
+Social media plugin which let's you add share icons for RSS, Email, Facebook, Twitter, LinkedIn, Google+, Pinterest, Instagram, Youtube, 'Share' (covering 200+ other social media platforms) and upload custom share icons of your choice. 
 
 The social media plugin offers a wide range of options, for example you can: 
 
-- Pick from 16 different designs for your social media icons
-- Give several actions to one social media icon (e.g. your facebook icon can lead visitors to your Facebook page, and also give visitors the opportunity to like your page)
-- Decide to give your social media icons an animation (e.g. automatic shuffling, mouse-over effects) to make your visitors aware of them, increasing the chance that they follow/share your blog
+- Pick from 16 different designs for your social media share icons
+- Give several actions to one social media share icon (e.g. your facebook share icon can lead visitors to your Facebook page, and also give visitors the opportunity to like your page)
+- Decide to give your social media icons an animation (e.g. automatic shuffling, mouse-over effects) to make your visitors aware of the share icons, increasing the chance that they follow/share your blog
 - Make your social media icons 'float' or 'sticky'
 - Allow visitors to subscribe to your blog by Email 
 - Add 'counts' to your social media buttons
@@ -32,9 +31,9 @@ The social media plugin is very easy to use as it takes you through all the step
 - Step 2: Define what actions your social media icons should perform
 - Step 3: Pick design & animation options for your social media icons
 - Step 4: Add counts to your social media icons (optional)
-- Step 5: Select from various other options, e.g. make your social media icons 'float'
+- Step 5: Select from various other social share options, e.g. make your social media icons 'float'
 - Step 6: Add sharing/linking icons next to each blog post (optional)
-- Step 7: Add a customized pop-up asking people to follow/share (optional)
+- Step 7: Add a customized pop-up asking people to follow or share (optional)
 - Step 8: Add a subscription form on your site (optional)
 
 In case of issues please check the FAQ on http://ultimatelysocial.com/faq
@@ -45,18 +44,18 @@ We hope you enjoy the free social media plugin!
 
 We released a Premium Plugin with many more exciting features: 
 
-- **Many more social networks** supported, including a Snapchat button, Whatsapp button, Yummly button, Phone button, Yelp button, Soundcloud button, Skype button, Flickr button, Blogger button, Reddit button, Vimeo button, Tumblr button, Xing button, Vkontakte button (VK), Telegram button, Amazon button, Goodreads button, Angies list button, Steam button, Twitch button, Spotify button, Odnoklassniki button (OK), Buffer button, Weibo button, Pocket button, Meneame button, Frype button, LiveJournal button, Patreon button, Dloky button, Discord button, Github button, Wordpress button, Etsy button, Better Business Bureau button, Digg button, Delicious button, Print button, Share icon
-- **More design styles** to make your icons look really cool & matching the design of your website
+- **Many more social networks** supported, including Snapchat share buttons, Whatsapp share buttons, Yummly share buttons, Phone button, Yelp share buttons, Soundcloud share buttons, Skype share buttons Flickr share buttons, Blogger share buttons, Reddit share buttons, Vimeo share buttons, Tumblr share buttons, Xing share buttons, Vkontakte share buttons (VK), Telegram share buttons, Amazon share buttons, Goodreads share buttons, Angies list share buttons, Steam share buttons, Twitch share buttons, Spotify share buttons, Odnoklassniki share buttons (OK), Buffer share buttons, Weibo share buttons, Pocket share buttons, Meneame share buttons, Frype share buttons, LiveJournal share buttons, Patreon share buttons, Dloky share buttons, Discord share buttons, Github share buttons, Wordpress buttons, Etsy share buttons, Better Business Bureau share buttons, Digg share buttons, Delicious share buttons, Print share buttons, and many other share buttons!
+- **More design styles** to make your social share icons look really cool & matching the design of your website
 - **Themed design styles**, e.g. if you have a website about cats you can pick from social media logos which look like cats etc.
-- **Better sharing and following features**, e.g. you can define the Tweet-texts better (e.g. pull the post titles into your Tweets automatically), let people follow you on Facebook directly without leaving your site etc.
-- **Place icons on specific pages**, i.e. you can define on which pages the icons to the social media sites should not show
-- **Position icons by anchor and margins**, i.e. you can define the margins where your icons should be displayed (from top/bottom/left/right), and then have them floating, or stick, still visible when user scrolls down or not etc. 
+- **Better social sharing and following features**, e.g. you can define the Tweet-texts better (e.g. pull the post titles into your Tweets automatically), let people follow you on Facebook directly without leaving your site etc.
+- **Place the social icons on specific pages**, i.e. you can define on which pages the icons to the social media sites should not show
+- **Position the social icons by anchor and margins**, i.e. you can define the margins where your share icons should be displayed (from top/bottom/left/right), and then have them floating, or stick, still visible when user scrolls down or not etc. 
 - **Optimized for mobile** - you can define separate selections for your social network icons for mobile
 - **More functions for email icon**, such as Share (by email), Contact you, Link to a certain page etc. 
 - **Social media counters optimized** to encourage more social media sharing from your visitors
 - **More pop up options** which contain your social media buttons, e.g. define a limit to how often the pop-up is shown to the same user, show pop-up only when people try to leave your website etc.
 - **Friendly support** in case you're stuck
-- **Many more settings and options** for your social media networks
+- **Many more settings and options** for your social media network icons
 
 Have a look at the Premium Plugin features on https://www.ultimatelysocial.com/usm-premium/
 
@@ -69,9 +68,6 @@ Then go to plugin settings page and follow the instructions. After you're done, 
 Note: This plugin requires CURL to be activated/installed on your server (which should be the standard case), and a PHP version of 5.4 or above. If you don't have it, please contact your hosting provider or server admin.
 
 == Frequently Asked Questions ==
-
-== Frequently Asked Questions ==
-
 = Please also check the more comprehensive FAQ on http://ultimatelysocial.com/faq =
 
 .
@@ -101,7 +97,7 @@ If you get the error message “Are you sure you want to do this? / Please try aga
 max_execution_time 90
 post_max_size 48M
 
-If you don’t know how to do it, please contact your server support / hosting company for that. Tell them you need it for a sharing plugin on WordPress which may take longer to upload.  
+If you don’t know how to do it, please contact your server support / hosting company for that. Tell them you need it for a social sharing plugin on WordPress which may take longer to upload.  
 
 If your issue is still not fixed after you’ve followed the steps above, we can provide support as part of our share to social Premium Plugin: https://www.ultimatelysocial.com/usm-premium/.
 
@@ -111,39 +107,39 @@ Those point to a CURL-issue on your site. Please contact your server admin or yo
 
 The plugin requires CURL for the social share counts and other features. 
 
-= Icons don't show = 
+= Social share icons don't show = 
 
-Please ensure you actually placed the social share buttons either as social widget (in your widget area) or as floating icons under question 5). The Premium Plugin makes placing icons especially easy and also allows you to place sticky icons on your site, define the placement of the icons by margins and many other options, see https://www.ultimatelysocial.com/usm-premium/.
+Please ensure you actually placed the social share buttons either as social widget (in your widget area) or as floating icons under question 5). The Premium Plugin makes placing the social icons especially easy and also allows you to place sticky social share icons on your site, define the placement of the social share icons by margins and many other options, see https://www.ultimatelysocial.com/usm-premium/.
 
-If only some icons show, but not all, then please clear your cache, and check if you may have conflicting browser extensions (e.g. 'Disconnect'-app in Chrome). Also Ad-Blockers are known culprits, please switch them off temporarily to see if that is the reason.
+If only some social share icons show, but not all, then please clear your cache, and check if you may have conflicting browser extensions (e.g. 'Disconnect'-app in Chrome). Also Ad-Blockers are known culprits, please switch them off temporarily to see if that is the reason.
 
 If the social share icons still don't show then there's an issue with your template. Please contact the creator of your template for that. 
 
-If you are referring to specific icons not showing in the plugin itself (e.g. you're looking for a Whatsapp icon, but it doesnt exist) please note that our Premium Plugin has many more social media share icons, see https://www.ultimatelysocial.com/usm-premium/
+If you are referring to specific social share icons not showing in the plugin itself (e.g. you're looking for a Whatsapp share icon, but it doesnt exist) please note that our Premium Plugin has many more social media share icons, see https://www.ultimatelysocial.com/usm-premium/
 
-= Twitter share counts are not displaying (anymore) =
+= Twitter social share counts are not displaying (anymore) =
 
 Unfortunately, Twitter stopped providing any social share count. God knows why. 
 
-= Changes don't get saved / Deleted plugin but icons still show = 
+= Changes don't get saved / Deleted plugin but the social share icons still show = 
 
-Most likely you have the WP Cache plugin installed. Please de-activate and then re-activate it.
+Most likely you have the WP Cache plugin installed. Please de-activate and then re-activate it, then the social share icons should display again.
 
-= Links don't work = 
+= Links when clicking on the social share icons don't work = 
 
-Please ensure you've entered the 'http://' at the beginning of the url (for *all* social networks). If the icons are not clickable at all there is most likely an issue with your template. This is especially the case if you've given your social share buttons several features, which should show a pop-up (tooltip) when you move over the icons. 
+Please ensure you've entered the 'http://' at the beginning of the url (for *all* social networks). If the social share icons are not clickable at all there is most likely an issue with your template. This is especially the case if you've given your social share buttons several features, which should show a pop-up (tooltip) when you move over the social share icons. 
 
-= I cannot upload custom icons = 
+= I cannot upload custom social share icons = 
 
-Most likely that's because you've set 'allow_url_fopen' to 'off'. Please turn it to 'on' (or ask your server admin to do so, he'll know what to do. Tell them you need it to upload custom icons for a social media buttons plugin).
+Most likely that's because you've set 'allow_url_fopen' to 'off'. Please turn it to 'on' (or ask your server admin to do so, he'll know what to do. Tell them you need it to upload custom share icons for a social media buttons plugin).
 
-= My Youtube icon (direct follow) doesn't work = 
+= My Youtube social share icon (direct follow) doesn't work = 
 
 Please ensure that you've selected the radio button 'Username' when you enter a youtube username, or 'Channel ID' when you entered a channel ID.
 
-= Aligning the icons (centered, left- or right-aligned) doesn't work = 
+= Aligning the social share icons (centered, left- or right-aligned) doesn't work = 
 
-The alignment options under question 5 align the icons with respect to each other, not where they appear on the page. Our new Premium Plugin is the best social sharing plugin on the market, allowing you to define also many other icon alignments (e.g. within a widget, within shortcode etc.).  
+The alignment options under question 5 align the social share icons with respect to each other, not where they appear on the page. Our new Premium Plugin is the best social sharing plugin on the market, allowing you to define also many other social share icon alignments (e.g. within a widget, within shortcode etc.).  
 
 = Clicking on the RSS icon returns funny codes = 
 
@@ -157,19 +153,21 @@ The new Premium Plugin also allows to show the number of your Facebook page like
 
 = Sharing doesn't take the right text or picture = 
 
-We use the codes from Facebook, Google+ etc. and therefore don't have any influence over which text & pic gets shared.
+We use the share codes from Facebook, Google+ etc. and therefore don't have any influence over which text & pic Facebook decides to share.
 
-Note that you can define an image as 'Featured Image' which tells Facebook / Google etc. to take that one. You'll find this 'Featured Image' section in your blog's admin area where you can edit your blog post.
+Note that you can define an image as 'Featured Image' which tells Facebook / Google etc. to share that one. You'll find this 'Featured Image' section in your blog's admin area where you can edit your blog post.
 
 You can crosscheck which image Facebook will take by entering your url on https://developers.facebook.com/tools/debug/og/object/.
 
-= The pop-up shows although I only gave my icon one function = 
+UPDATE: we made significant enhancements to the premium plugin, it now allows you to define the sharing pics and texts for your social share icons. 
 
-The pop-up only disappears if you've given your icons only a 'visit us'-function, otherwise (e.g. if you gave it 'Like' (on facebook) or 'Tweet' functions) a pop-up is still needed because the buttons for those are coming directly from the social media sites (e.g. Facebook, Twitter) and we don't have any influence over their design.
+= The pop-up shows although I only gave my social share icon one function = 
 
-= I selected to display icons after every post but they don't show = 
+The pop-up only disappears if you've given your social share icons only a 'visit us'-function, otherwise (e.g. if you gave it 'Like' (on facebook) or 'Tweet' functions) a pop-up is still needed because the social share buttons for those are coming directly from the social media sites (e.g. Facebook, Twitter) and we don't have any influence over their design.
 
-They usually do show, however not on your blog page, but on your single posts pages. The Premium plugin (https://www.ultimatelysocial.com/usm-premium/) also allows to display the icons on your homepage.
+= I selected to display the social share icons after every post but they don't show = 
+
+The social share icons usually do show, however not on your blog page, but on your single posts pages. The Premium plugin (https://www.ultimatelysocial.com/usm-premium/) also allows to display the social share icons on your homepage.
 
 = Plugin decreases my site's loading speed = 
 
@@ -177,13 +175,13 @@ The plugin is one of the most optimized social media plugin in terms of impact o
 
 If you still experience loading speed issues, please note that:
 
-- The more sharing- and invite- features you place on your site, the more external codes you load (i.e. from the social media sites; we just use their code), therefore impacting loading speed. So to prevent this, give your icons only 'Visit us'-functionality rather than sharing-functionalities.
+- The more sharing- and invite- features you place on your site, the more external codes you load (i.e. from the social media sites; we just use their share code), therefore impacting loading speed. So to prevent this, give your social share icons only 'Visit us'-functionality rather than sharing-functionalities.
 
 - We've programmed it so that the code for the social media icons is the one which loads lasts on your site, i.e. after all the other content has already been loaded. This means: even if there is a decrease in loading speed, it does not impact a user's experience because he sees your site as quickly as before, only the social media icons take a bit longer to load.
 
 There might be also other issues on your site which cause a high loading speed (e.g. conflicts with our plugins or template issues). Please ask your template creator about that.
 
-Also, if you've uploaded social media sharing icons not provided by the plugin itself (i.e. custom icons) please ensure they are compressed as well. 
+Also, if you've uploaded social media sharing icons not provided by the plugin itself (i.e. custom share icons) please ensure they are compressed as well. 
 
 = After moving from demo-server to live-server the follow/subscribe-link doesn't work anymore = 
 
@@ -191,15 +189,7 @@ Please delete and install the plugin again.
 
 If you already placed the code for a subscription form on your site, remove it again and take the new one from the new plugin installation.
 
-= When I try to like/share via Facebook, I get error message 'App Not Setup: This app is still...' = 
-
-If you get the error message...
-
-'App Not Setup: This app is still in development mode, and you don't have access to it. Switch to a registered test user or ask an app admin for permissions.'
-
-...then most likely you're currently logged in with a business account on Facebook. Please logout, or switch to your personal account.
-
-= There are other issues when I activate the plugin or place the icons = 
+= There are other issues when I activate the plugin or place the social share icons = 
 
 Please check the following:
 
@@ -209,33 +199,27 @@ Please ensure that you don't have any browser extension activated which may conf
 
 If issues persist most likely your theme has issues which makes it incompatible with our plugin. Please contact your template creator for that. As part of the Premium Plugin (https://www.ultimatelysocial.com/usm-premium/) we fix also theme issues, and provide support to ensure that your social media share buttons appear on your site (exactly where you want them). 
 
-= How can I see how many people shared or liked my post? = 
+= How can I see how many people decided to share or like my post? = 
 
-You can see this by activating the 'counts' on the front end (under question 4 in the USM plugin, question 5 in the USM+ plugin).
+You can see this by activating the social share 'counts' on the front end (under question 4 in the USM plugin, question 5 in the USM+ plugin).
 
 We cannot provide you this data in other ways as it's coming directly from the social media sites. One exception: if you like to know when people start to follow you by email, then you can get email alerts. For that, please claim your feed (see question above).
 
 = How can I change the 'Please follow & like us :)'? = 
 
-You can change it in the Widget-area where you dropped the widget on the sidebar. Please click on it (on the sidebar), it will open the menu where you can change the text.
+You can change it in the Widget-area where you dropped the widget (with the social share icons) on the sidebar. Please click on it (on the sidebar), it will open the menu where you can change the text.
 
 If you don't want to show any text, just enter a space (' ').
 
-= How can I remove the credit-link ('Powered by Ultimatelysocial')? = 
+= Can I use a shortcode to place the social share icons? = 
 
-Please note that we didn't place the credit link without your consent (you agreed to it when de-selecting the email-icon).
+Yes, use [DISPLAY_ULTIMATE_SOCIAL_ICONS] to show the social share icons. You can place it into any editor.
 
-Open the first question in the plugin ('1. Which icons do you want to show on your site?'), on the level of the email-icon you see a link on the right hand side. Please click it to remove the credit link.
+Alternatively, you can place the following into your codes to show the share icons: <?php echo do_shortcode('[DISPLAY_ULTIMATE_SOCIAL_ICONS]'); ?> 
 
-= Can I use a shortcode to place the icons? = 
+In some cases there might be issues to display social media sharing buttons which you uploaded as custom share icons. In this case, we provide support as part of our premium plugin: https://www.ultimatelysocial.com/usm-premium/
 
-Yes, it's [DISPLAY_ULTIMATE_SOCIAL_ICONS]. You can place it into any editor.
-
-Alternatively, you can place the following into your codes: <?php echo do_shortcode('[DISPLAY_ULTIMATE_SOCIAL_ICONS]'); ?> 
-
-In some cases there might be issues to display social media sharing buttons which you uploaded as custom icons. In this case, we provide support as part of our premium plugin: https://www.ultimatelysocial.com/usm-premium/
-
-= Can I get more options for the icons next to posts? = 
+= Can I get more options for the social share icons next to posts? = 
 
 Please use this plugin for that: https://www.ultimatelysocial.com/usm-premium/
 
@@ -243,9 +227,7 @@ Please use this plugin for that: https://www.ultimatelysocial.com/usm-premium/
 
 Yes, that is possible in our new social share plugin, the Premium Plugin: https://www.ultimatelysocial.com/usm-premium/
 
-To get the email-icon in the same design style you picked, activate it, then on the front-end, rightclick on the icon, and save it as picture. Upload that picture as custom icon.
-
-= Can I also display the icons vertically? = 
+= Can I also display the social share icons vertically? = 
 
 Yes, that is possible in our new social sharing plugin, the Premium Plugin: https://www.ultimatelysocial.com/usm-premium/.
 
@@ -253,37 +235,43 @@ Yes, that is possible in our new social sharing plugin, the Premium Plugin: http
 
 Use this plugin: https://www.ultimatelysocial.com/usm-premium/
 
-= Can I deactivate the icons on mobile? = 
+= Can I deactivate the social share icons on mobile? = 
 
-Yes, there's an option for that under question 5. In our new Premium Plugin you can define different settings for mobile, see https://www.ultimatelysocial.com/usm-premium/. The best way to share social media! :)
+Yes, you can disable the share icons under question 5. In our new Premium Plugin you can define different settings for mobile, see https://www.ultimatelysocial.com/usm-premium/. The best way to share social media! :)
 
 = How can I use two instances of the plugin on my site? = 
 
-You cannot use the same plugin twice, however you can install both the USM as well as the Premiuem plugin (https://www.ultimatelysocial.com/usm-premium/). We've developed the code so that there are no conflicts and they can be used in parallel.
+You cannot use the same plugin twice, however you can install both the USM as well as the Premiuem plugin (https://www.ultimatelysocial.com/usm-premium/). We've developed the code so that there are no conflicts and you can place the share icons in one way with one plugin, and select other share icons with the other plugin and place them differently.
 
 
 == Screenshots ==
 
 1. After installing the plugin, you'll see this overview. You'll be taken through the easy-to-understand steps to configure your plugin 
 
-2. As a first step you select which icons you want to display on your website
+2. As a first step you select which share icons you want to display on your website
 
-3. Then you'll define what the icons should do (they can perform several actions, e.g. lead users to your facebook page, or allow them to share your content on their facebook page)
+3. Then you'll define what the share icons should do (they can perform several actions, e.g. lead users to your facebook page, or allow them to share your content on their facebook page)
 
-4. You can pick from a wide range of icon designs
+4. You can pick from a wide range of share icon designs
 
-5. Here you can animate your icons (automatic shuffling, mouse-over effects etc.), to make visitors of your site aware that they can share, follow & like your site
+5. Here you can animate your social share icons (automatic shuffling, mouse-over effects etc.), to make visitors of your site aware that they can share, follow & like your site
 
-6. You can choose to display counts next to your icons (e.g. number of Twitter-followers)
+6. You can choose to display counts next to your social share icons (e.g. number of Twitter-followers)
 
 7. There are many more options to choose from 
 
-8. You can also add share-icons at the end of every post 
+8. You can also add social share icons at the end of every post 
 
 9. ...or even display a pop-up (designed to your liking) which asks users to like & share your site
 
 
 == Changelog ==
+
+= 1.7.6 =
+* Comment to selecting of specific text and picture per page/post added
+
+= 1.7.5 =
+* Link to more premium icons added
 
 = 1.7.4 =
 * Better error messages in case of Curl errors 
@@ -642,5 +630,5 @@ You cannot use the same plugin twice, however you can install both the USM as we
 
 == Upgrade Notice ==
 
-= 1.7.4 =
+= 1.7.6 =
 Please upgrade

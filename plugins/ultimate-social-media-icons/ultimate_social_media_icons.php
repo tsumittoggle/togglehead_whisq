@@ -5,7 +5,7 @@ Plugin URI: http://ultimatelysocial.com
 Description: Easy to use and 100% FREE social media plugin which adds social media icons to your website with tons of customization features!. 
 Author: UltimatelySocial
 Author URI: http://ultimatelysocial.com
-Version: 1.7.4
+Version: 1.7.6
 License: GPLv2 or later
 */
 global $wpdb;
@@ -26,17 +26,29 @@ include(SFSI_DOCROOT.'/libs/controllers/sfsi_frontpopUp.php');
 include(SFSI_DOCROOT.'/libs/controllers/sfsiocns_OnPosts.php');
 include(SFSI_DOCROOT.'/libs/sfsi_widget.php');
 include(SFSI_DOCROOT.'/libs/sfsi_subscribe_widget.php');
+include(SFSI_DOCROOT.'/libs/sfsi_custom_social_sharing_data.php');
+include(SFSI_DOCROOT.'/libs/sfsi_ajax_social_sharing_settings_updater.php');
 
 /* plugin install and uninstall hooks */
 register_activation_hook(__FILE__, 'sfsi_activate_plugin' );
 register_deactivation_hook(__FILE__, 'sfsi_deactivate_plugin');
 register_uninstall_hook(__FILE__, 'sfsi_Unistall_plugin');
 
-if(!get_option('sfsi_pluginVersion') || get_option('sfsi_pluginVersion') < 1.74)
+if(!get_option('sfsi_pluginVersion') || get_option('sfsi_pluginVersion') < 1.76)
 {
 	add_action("init", "sfsi_update_plugin");
 }
 
+/* redirect setting page hook */
+add_action('admin_init', 'sfsi_plugin_redirect');
+function sfsi_plugin_redirect()
+{
+    if (get_option('sfsi_plugin_do_activation_redirect', false))
+    {
+        delete_option('sfsi_plugin_do_activation_redirect');
+        wp_redirect(admin_url('admin.php?page=sfsi-options'));
+    }
+}
 //shortcode for the ultimate social icons {Monad}
 add_shortcode("DISPLAY_ULTIMATE_SOCIAL_ICONS", "DISPLAY_ULTIMATE_SOCIAL_ICONS");
 function DISPLAY_ULTIMATE_SOCIAL_ICONS($args = null, $content = null)

@@ -37,7 +37,7 @@ function sfsi_check_PopUp($content)
      /* check for pop times */
      if($sfsi_section7_options['sfsi_Shown_pop']=="once")
      {
-		$time_popUp=$sfsi_section7_options['sfsi_Shown_popupOnceTime'];
+		$time_popUp= (int) $sfsi_section7_options['sfsi_Shown_popupOnceTime'];
 		$time_popUp=$time_popUp*1000;
 		ob_start();
 	 ?>
