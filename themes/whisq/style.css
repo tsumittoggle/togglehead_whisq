@@ -7153,3 +7153,29 @@ text-align: center;
 }
 
 .page-template-account-page .col2-set .col-1 {display: none;}
+
+/*user header*/
+
+.user-header {
+   padding: 12px 30px;
+}
+
+.user-header p {
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.partition {
+  padding-bottom: 10px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid grey;
+}
+
+.partition:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.user-logged p {
+ margin-bottom: 10px;
+}
