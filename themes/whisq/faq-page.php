@@ -8,7 +8,7 @@ get_header();
 			<h2><?php the_title(); ?></h2>
 			<p class="wrapper breadcrumb-url"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Home</a> > <span><?php the_title(); ?></span></p>
 		</div>
-
+<div class="faq-cont">
 <div class="container">
 	<div class="row">
 		<div class="col-md-12 main">
@@ -47,6 +47,8 @@ $terms = get_terms($taxonomy); // Get all terms of a taxonomy
       <?php } ?>
 </div>
 </div>
+</div>
+<div class="bg-grey-faq"></div>
 </div>
 <?php
 get_footer();

@@ -474,7 +474,51 @@ $(document).ready(function(){
         $(this).parent().addClass("active");
       }
     });
+
+
+    $(".cross").on("click", function(){
+      $(".woocommerce-MyAccount-navigation").toggleClass('open-menu');
+    });
+
+    $(window).on("scroll", function(){
+      var windowscroll = $(window).scrollTop();
+      if(windowscroll > 10){
+        $(".woocommerce-MyAccount-navigation").addClass('position-adjust');
+      }
+      else{
+        $(".woocommerce-MyAccount-navigation").removeClass('position-adjust');
+      }
+    });
+
+$("#reg").validate({
+                ignore: ".ignore",
+
+                rules: {
+                    hiddenRecaptcha: {
+                         required: function() {
+                             if (grecaptcha.getResponse() == '') {
+                                 return true;
+                             } else {
+                                 return false;
+                             }
+                         }
+                     }
+
+                    
+                },
+                messages: {
+
+                    hiddenRecaptcha : {
+                        required: "Please select Captch",
+                    }       
+                },      
+                submitHandler: function(form) {     
+                    form.submit();      
+                }       
+            }); 
   });
+
+
 
 })(jQuery);
 

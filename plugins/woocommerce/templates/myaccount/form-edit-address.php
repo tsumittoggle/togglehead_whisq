@@ -21,16 +21,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $page_title = ( 'billing' === $load_address ) ? __( 'Billing address', 'woocommerce' ) : __( 'Shipping address', 'woocommerce' );
+?>
 
+    <?php
 do_action( 'woocommerce_before_edit_account_address_form' ); ?>
 
 <?php if ( ! $load_address ) : ?>
 	<?php wc_get_template( 'myaccount/my-address.php' ); ?>
+	<div class="page_title">
+    <a class="feature-btn" href="<?php echo esc_url( home_url( '/my-account/edit-address/billing') ); ?>" title="Edit">Edit</a>
+    </div>
 <?php else : ?>
 
 	<form method="post">
 
-		<h3><?php echo apply_filters( 'woocommerce_my_account_edit_address_title', $page_title, $load_address ); ?></h3>
+		<h2><?php echo apply_filters( 'woocommerce_my_account_edit_address_title', $page_title, $load_address ); ?></h2>
 
 		<div class="woocommerce-address-fields">
 			<?php do_action( "woocommerce_before_edit_address_form_{$load_address}" ); ?>

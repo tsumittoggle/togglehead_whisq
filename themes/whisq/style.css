@@ -641,14 +641,10 @@ nav li a:focus {
     margin: 20px 0 0 40px;
 }
 
-.sticky .shop-cart {
+.sticky .header-top {
     position: relative;
     top: 23px;
     right: 65px;
-}
-
-.sticky .user-btn {
-    display: none;
 }
 
 .sticky .search {
@@ -756,10 +752,10 @@ User profile styling strat from here
     box-shadow: 0px 2px 4px 1px rgba(128, 128, 128, 0.4);
     position: absolute;
     top: 45px;
-    right: 75px;
+    right: 0px;
     z-index: 1000;
     background: #fff;
-    text-align: center;
+    text-align: left;
 }
 
 .user-profile li {
@@ -778,6 +774,7 @@ User profile styling strat from here
 
 .profile-open {
     display: inline-block;
+    padding: 8px 25px;
 }
 
 .user-btn {
@@ -1006,7 +1003,8 @@ Feature product styling strat from here
     transition: all 0.8s;
 }
 
-body .btn {
+body .btn,
+.pure-button {
     padding: 10px 25px;
     margin-bottom: 5px;
     border-radius: 5px;
@@ -1020,6 +1018,27 @@ body .btn {
     font-family: 'Open Sans', sans-serif;
     font-size: 13px;
     box-shadow: 0px 5px 0px 0px #9a506e;
+}
+
+.woocommerce input.button {
+    padding: 10px 25px;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: none;
+    position: relative;
+    z-index: 100;
+    background-color: #b95b81;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    box-shadow: 0px 5px 0px 0px #9a506e;    
+}
+
+.woocommerce input.button:hover {
+    background-color: #b95b81;
 }
 
 .btn:after {
@@ -1317,7 +1336,7 @@ Event And Tips styling start from here
 }
 
 .event .event-time:after {
-    content: '\f017';
+    content:url('http://www.togglehead.net/whisq/wp-content/uploads/time.png');
     display: block;
     width: 5%;
     height: 10%;
@@ -1341,7 +1360,7 @@ Event And Tips styling start from here
 }
 
 .event .event-address:after {
-    content: '\f041';
+    content: url(http://www.togglehead.net/whisq/wp-content/uploads/location.png);
     display: block;
     width: 5%;
     height: 10%;
@@ -1660,7 +1679,7 @@ footer {
 }
 
 .close-serach {
-    display: none;
+    display: none !important;
 }
 
 .inerCnt:first-child {
@@ -1783,6 +1802,9 @@ Mobile view Home Page styling start from here
 
     .owl-dots {
         display: none;
+    }
+    .tips .owl-dots {
+        display: inline-block;
     }
 
     .beggning-menu:hover:after,
@@ -2001,7 +2023,7 @@ Mobile view Home Page styling start from here
         margin-top: 15px;
     }
     .wrapper .tip-content {
-        min-height: auto;
+        min-height: initial;
     }
     .store-list {
         width: 50%;
@@ -2842,7 +2864,7 @@ product-page styling strat from here
 }
 
 .footer-section a {
-    display: block;
+    /*display: block;*/
 }
 
 .footer-section .sub-menu {
@@ -6309,9 +6331,13 @@ top: 0;
   padding: 30px 0;
   border-top:1px solid #eee !important;
 }
+.shop_table tr th {height: 75px;}
 .order-total{
 
 }
+.woocommerce-Addresses {width: 100% !important;}
+.woocommerce-Addresses .woocommerce-Address {margin: 15px 0 0 0;}
+
 @media screen and (max-width: 767px) {
     .below-section {
         padding: 30px 0;
@@ -7113,4 +7139,343 @@ top: 0;
 }
 #tribe-events{
     margin-bottom: 45px;
+}
+
+.woocommerce-account .woocommerce-MyAccount-content {
+    display: block;
+}
+
+.woocommerce-page #customer_login {
+    width: 100%;
+}
+
+.page-id-669 #main {
+    background: grey;
+}
+
+.woocommerce .page-container form.login {
+    border: none;
+    text-align: center;
+}
+
+.page-template-account-page .col2-set .col-1, .page-template-account-page .col2-set .col-2 {
+    text-align: center;
+    padding: 30px;
+}
+
+.page-template-account-page p,
+.page-template-account-page h2 {
+    margin-bottom: 30px;
+}
+.ywsl-label {display: none;}
+
+.account-registration,
+.account-login {
+    display: block !important;
+}
+
+.re-log span a {color: #b95b81;}
+
+.is-active a {color: #b95b81;}
+
+.page-template-account-page .col2-set .col-1 {display: none;}
+
+/*login and sign up page css*/
+.u-column1, .u-column2{
+    width: 45% !important;
+    float: left !important;
+    margin: 70px 0 70px 5%;
+    background: #fff;
+}
+.page-template-account-page p, .page-template-account-page h2{
+    margin: 0 0 20px 0;
+}
+.socials-list{
+    text-align: center;
+    overflow: auto;
+}
+
+.page-template-account-page .part-text {
+    margin: 10px 0;
+    display: inline-block;
+  font-size: 18px;
+  color: rgba(128, 128, 128, 0.42);
+}
+
+.page-template-account-page .socials-list {
+    width: 90%;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+.woocommerce form.login, .woocommerce form.register{
+    border: 0;
+    margin: 0;
+    padding: 0 20px;
+}
+a.ywsl-social {
+    padding: 15px;
+    margin: 0 !important;
+}
+
+.socials-list .ywsl-facebook img,
+.socials-list .ywsl-google img {
+    width: 100%;
+}
+
+.socials-list .ywsl-facebook{
+    width: 50%;
+    float: left;
+}
+.socials-list .ywsl-google{
+    width: 50%;
+    float: left;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+.woocommerce form .form-row input.input-text{
+    padding: 30px 30px;
+    border: 1px solid #eee;
+}
+.woocommerce form .form-row{
+    padding: 0px;
+    margin: 0 0 0px;
+}
+.form-row .woocommerce-form__label{
+    float: left;
+    margin: 0 !important;
+}
+.form-row .woocommerce-form__label .woocommerce-form__input-checkbox{
+    margin: 0;
+    float: left;
+}
+.woocommerce-LostPassword{
+    float: right;
+}
+.woocomerce-form .form-row:nth-of-type(3){
+    margin-bottom: 20px;
+}
+.re-log{
+    text-align: center;
+    margin: 40px 0 0 0 !important;
+}
+.using-mail{
+    text-align: center;
+}
+.using-mail span{
+    vertical-align: middle;
+    padding: 0 10px;
+}
+.left-line, .right-line{
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    background: #eee;
+}
+.entry-header{
+    display: none;
+}
+.page-id-705 .container, .page-id-708 .container{
+    width: 100%;
+    padding: 0;
+}
+.page-id-705 .wrap-content, .page-id-708 .wrap-content{
+    padding: 0;
+}
+.page-id-705 .container, .page-id-708 .container{
+    background-image: url(../../uploads/login-background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.page-id-708 .container {
+    background-image: url(../../uploads/signup-background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.page-id-705 .whisqtitle, .page-id-708 .whisqtitle{
+    padding: 33px 0;
+}
+.woocommerce-password-strength {display: none !important;}
+.woocommerce form.register label{
+    display: none;
+}
+.woocommerce-password-hint,
+.woocommerce-password-strength.bad {display: none !important;}
+.page-template-account-page h2{
+    font-size: 25px;
+}
+.contact-field {
+    margin-top: -26px !important;
+}
+.page-template-account-page #customer_login h2{
+    font-size: 32px;
+}
+.woocommerce .form-row .woocommerce-Button{
+    padding: 8px 20px;
+    border-radius: 5px;
+    position: relative;
+    z-index: 95;
+    background-color: #b95b81;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0px 5px 0px 0px #9a506e;
+}
+
+.g-recaptcha div {
+    margin: 0 auto 25px;
+}
+
+.woocommerce .form-row .woocommerce-Button:hover {
+    background: #b95b81;
+    color: #fff;
+}
+.woocomerce-FormRow{
+    text-align: center;
+    margin-top: 40px !important;
+}
+@media (max-width: 991px){
+    .u-column1, .u-column2 {
+        width: 65% !important;
+    }
+    .woocommerce .woocommerce-MyAccount-navigation {
+        width: 30%;
+    }
+    .woocommerce .woocommerce-MyAccount-content{
+        width: 60%;
+    }
+}
+@media (max-width: 767px){
+    .u-column1, .u-column2 {
+        width: 90% !important;
+        float: none !important;
+        margin: 70px auto 70px auto;
+        background: #fff;
+    }
+}
+/*account page css*/
+.page-id-58 .woocommerce{
+    width: 90%;
+    margin: 50px auto;
+    padding: 50px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.12)
+}
+.page-id-714 .woocommerce {
+    width: 90%;
+    margin: 50px auto;
+    padding: 50px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+}
+.woocommerce-table th, .woocommerce-table td, .shop_table th, .shop_table td{
+    text-align: left !important;
+}
+.woocommerce-table td, .shop_table td{
+    padding: 6px 0 !important;
+}
+.woocommerce .woocommerce-MyAccount-navigation{
+    float: left;
+    width: 20%;
+    border-right:1px solid #ddd;
+}
+.woocommerce .woocommerce-MyAccount-navigation ul{
+    margin: 0;
+}
+.woocommerce .woocommerce-MyAccount-navigation ul li{
+    width: 100%;
+    margin: 10px 0px;
+}
+.woocommerce .woocommerce-MyAccount-content{
+    float: left;
+    width: 70%;
+    margin-left: 20px;
+}
+.woocommerce-Address-title, .track-button{
+    display: none !important;
+}
+@media (max-width: 991px){
+    .woocommerce .woocommerce-MyAccount-navigation {
+        width: 30%;
+    }
+    .woocommerce .woocommerce-MyAccount-content{
+        width: 60%;
+    }
+}
+@media (max-width: 767px){
+    .woocommerce .woocommerce-MyAccount-navigation {
+        border: 1px solid #ddd;
+        position: fixed;
+        top: 91px;
+        left: -320px;
+        width: 320px;
+        text-align: center;
+        background: #fff;
+        z-index: 10000;
+        transition: all 0.5s ease;
+    }
+    .woocommerce .woocommerce-MyAccount-navigation ul li{
+        padding: 20px 0;
+    }
+    nav.woocommerce-MyAccount-navigation span{
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        background: red;
+        position: absolute;
+        top: 0;
+        right: -20px;
+    }
+    .open-menu{
+        left:0 !important;
+    }
+    .woocommerce .woocommerce-MyAccount-content{
+        width: 100%;
+        margin: 0;
+    }
+    .position-adjust{
+        top: 70px !important;
+    }
+}
+.woocommerce-MyAccount-content legend{
+    padding: 30px 0 10px 0;
+}
+.woocommerce-MyAccount-content label{
+    color: #ba5c82;
+}
+​/*user header*/
+
+.user-header p {
+    text-align: left !important;
+    text-transform: capitalize;
+}
+
+.partition {
+  padding-bottom: 10px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid grey;
+}
+
+.partition:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.user-logged p {
+ margin-bottom: 10px;
+}
+/*user header end*/​
+.woocommerce input.button:hover{
+
+}
+.sfsi_footerLnk{
+    display: none;
+}
+.woocommerce .woocommerce-address-fields 
+form .form-row input.input-text{
+    padding: 10px;
+}
+.close-serach {
+    display: none !important;
 }
