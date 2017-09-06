@@ -58,8 +58,8 @@
 	<?php endif; ?>
 	</div>
   <div class="share-rec">
-				  <span><i class="fa fa-share-alt-square" aria-hidden="true"></i><i>share</i></span>
-				   <div class="share-icon"><?php echo do_shortcode('[addtoany]'); ?><a href="#" target="_blank"><img src="" alt="insta"></a></div>
+				  <span class="">share</span>
+				   <div class="share-perma-icon"><?php echo do_shortcode('[addtoany]'); ?></div>
 				  </div>
   <div class="tag">
   	<?php if(get_field('tags')) : ?>

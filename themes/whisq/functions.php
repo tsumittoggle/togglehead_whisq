@@ -1165,9 +1165,75 @@ function create_faq_taxonomies() {
 add_action( 'init', 'create_faq_taxonomies', 0 );
 
 
-//my account page content
-// do_action( 'woocommerce_before_customer_login_form', 'login_top_content', 10 );
+function wooc_extra_register_fields() {?>
+       <p class="form-row contact-field form-row-wide">
+       <input type="tel" class="input-text" placeholder="Mobile Number" min-lenght="10" maxlength="14" name="billing_phone" id="reg_billing_phone" value="<?php esc_attr_e( $_POST['billing_phone'] ); ?>" />
+       </p>
+       <?php
+ }
+ add_action( 'woocommerce_register_form_end', 'wooc_extra_register_fields' );
 
-// function login_top_content() {
-// 	echo "welcome";
-// }
+function wooc_validate_extra_register_fields( $validation_errors ) {
+ 
+      if ( isset( $_POST['billing_phone'] ) && empty( $_POST['billing_phone'] ) ) {
+ 
+             $validation_errors->add( 'billing_first_name_error', __( '<strong>Error</strong>: Contact is required!', 'woocommerce' ) );
+ 
+      }
+
+         return $validation_errors;
+}
+ 
+add_action( 'woocommerce_register_post', 'wooc_validate_extra_register_fields', 10, 3 );
+
+
+/* Below code save extra fields.
+*/
+function wooc_save_extra_register_fields( $customer_id ) {
+    if ( isset( $_POST['billing_phone'] ) ) {
+                 // Phone input filed which is used in WooCommerce
+                 update_user_meta( $customer_id, 'billing_phone', sanitize_text_field( $_POST['billing_phone'] ) );
+          }
+ 
+}
+add_action( 'woocommerce_created_customer', 'wooc_save_extra_register_fields' );
+
+
+//remove disable button from woocomeerce regist
+function wc_disable_password_strength_meter() {
+	if ( wp_script_is( 'wc-password-strength-meter', 'enqueued' ) ) {
+		wp_dequeue_script( 'wc-password-strength-meter' );
+	}
+}
+add_action( 'wp_print_scripts', 'wc_disable_password_strength_meter', 100 );
+
+
+function media_register() {
+    $labels = array(
+        'name' => _x('Media File', 'post type general name'),
+        'singular_name' => _x('media Item', 'post type singular name'),
+        'add_new' => _x('Add New', 'media item'),
+        'add_new_item' => __('Add New media Item'),
+        'edit_item' => __('Edit media Item'),
+        'new_item' => __('New media Item'),
+        'view_item' => __('View media Item'),
+        'search_items' => __('Search media Items'),
+        'not_found' =>  __('Nothing found'),
+        'not_found_in_trash' => __('Nothing found in Trash'),
+        'parent_item_colon' => ''
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'query_var' => true,
+        'rewrite' => true,
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'menu_position' => 8,
+        'supports' => array('title','editor','thumbnail', 'excerpt')
+    ); 
+    register_post_type( 'media' , $args );
+}
+add_action('init', 'media_register');

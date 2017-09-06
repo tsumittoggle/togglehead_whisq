@@ -31,11 +31,12 @@ do_action( 'woocommerce_before_account_navigation' );
 				<?php $nav = esc_html( $label ); ?>
 			</li>
 			<?php if($nav == 'Addresses') {?>
-			<li class="<?php echo wc_get_account_menu_item_classes( $endpoint ); ?>">
+			<li class="is-active-track <?php echo wc_get_account_menu_item_classes( $endpoint ); ?>">
 				<a href="<?php echo esc_url( home_url( '/order-track/' ) ); ?>">track order</a>
 			</li>
 		<?php } endforeach; ?>
 	</ul>
+	<span class="cross"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
 </nav>
 
 <?php do_action( 'woocommerce_after_account_navigation' ); ?>

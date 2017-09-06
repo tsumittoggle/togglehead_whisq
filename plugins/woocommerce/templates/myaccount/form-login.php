@@ -35,13 +35,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php endif; ?>
 
 		<h2><?php _e( 'Welcome', 'woocommerce' ); ?></h2>
-		<p>easily using</p>
+		<p class="part-text">EASILY USING</p>
 
 		<form class="woocomerce-form woocommerce-form-login login" method="post">
 
 			<?php do_action( 'woocommerce_login_form' ); ?>
 
-			<p>-or using email-</p>
+			<p class="using-mail">
+				<span class="left-line"></span>
+				<span class="part-text">OR USING EMAIL</span>
+				<span class="right-line"></span>
+			</p>
 
 			<?php do_action( 'woocommerce_login_form_start' ); ?>
 
@@ -56,19 +60,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             <div class="form-row">
 			<label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
-					<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php _e( 'Remember me', 'woocommerce' ); ?></span>
+					<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever"  checked/> <span><?php _e( 'Remember me', 'woocommerce' ); ?></span>
 			</label>
 			<p class="woocommerce-LostPassword lost_password">
-				<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php _e( 'Lost your password?', 'woocommerce' ); ?></a>
+				<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php _e( 'Forget password?', 'woocommerce' ); ?></a>
 			</p>
 			</div>
-
-			<p class="form-row">
+<!--  <div class="captcha-block">
+      <div class="g-recaptcha" data-sitekey="6LfQaCwUAAAAAIAyB_TWN9OVIgjEfyMrY4PQWesj"></div>
+      <input type="hidden" class="hiddenRecaptcha required" name="hiddenRecaptcha" id="hiddenRecaptcha">
+  </div> -->
+			<p class="form-row text-center">
 				<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
-				<input type="submit" class="woocommerce-Button button" name="login" value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>" />
+				<input type="submit" class="woocommerce-Button button feature-btn" name="login" value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>" />
 			</p>
 
-			<p class="re-log">not to wishq? <span>creat a account</span></p>
+			<p class="re-log">New to wishq? <span><a href="<?php echo esc_url( home_url( '/sign-up/' ) ); ?>">Create Account</a></span></p>
 
 			<?php do_action( 'woocommerce_login_form_end' ); ?>
 
@@ -80,13 +87,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div class="u-column2 col-2 <?php if(is_page('sign up')){ echo "account-registration"; } ?>" >
 
-		<h2><?php _e( 'you are not a member yet', 'woocommerce' ); ?></h2>
-		<p>easily using</p>
+		<h2><?php _e( 'YOU ARE NOT A MEMEBER YET', 'woocommerce' ); ?></h2>
+		<p class="part-text">EASILY USING</p>
 
-		<form method="post" class="register">
+		<form method="post" class="register" id="reg">
             <?php do_action( 'woocommerce_login_form' ); ?>
 			<?php do_action( 'woocommerce_register_form' ); ?>
-			<p>-or using email-</p>
+			<p class="using-mail">
+				<span class="left-line"></span>
+				<span class="part-text">OR USING EMAIL</span>
+				<span class="right-line"></span>
+			</p>
 			<?php do_action( 'woocommerce_register_form_start' ); ?>
 
 			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
@@ -100,30 +111,38 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 				<label for="reg_email"><?php _e( 'Email address', 'woocommerce' ); ?> <span class="required">*</span></label>
-				<input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( $_POST['email'] ) : ''; ?>" />
+				<input type="email" placeholder="Your Email Address" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( $_POST['email'] ) : ''; ?>" />
 			</p>
 
 			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
 
 				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 					<label for="reg_password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
-					<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" />
+					<input type="password" placeholder="Choose Password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" />
 				</p>
 
 			<?php endif; ?>
+			<?php do_action( 'woocommerce_register_form_end' ); ?>
+			 <p class="woocommerce-form-row contact-field woocommerce-form-row--wide form-row form-row-wide">
+       <input type="tel" style="display: none;" class="input-text" placeholder="Mobile Number" maxlength="14" name="billing_phone" id="reg_billings_phone" value="<?php esc_attr_e( $_POST['billing_phone'] ); ?>" />
+       </p>
+
+<!--  <div class="captcha-block">
+      <div class="g-recaptcha" data-sitekey="6LfQaCwUAAAAAIAyB_TWN9OVIgjEfyMrY4PQWesj"></div>
+      <input type="hidden" class="hiddenRecaptcha required" name="hiddenRecaptcha" id="hiddenRecaptcha">
+  </div> -->
 
 			<!-- Spam Trap -->
 			<div style="<?php echo ( ( is_rtl() ) ? 'right' : 'left' ); ?>: -999em; position: absolute;"><label for="trap"><?php _e( 'Anti-spam', 'woocommerce' ); ?></label><input type="text" name="email_2" id="trap" tabindex="-1" autocomplete="off" /></div>
 
 			<p class="woocomerce-FormRow form-row">
 				<?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
-				<input type="submit" class="woocommerce-Button button" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>" />
+				<input type="submit" class="woocommerce-Button button" name="register" value="<?php esc_attr_e( 'SIGN UP', 'woocommerce' ); ?>" />
 			</p>
 
-			<?php do_action( 'woocommerce_register_form_end' ); ?>
 
 		</form>
-		<p class="re-log">already have an account? <span>login</span></p>
+		<p class="re-log">Already have an account? <span><a href="<?php echo esc_url( home_url( '/login/' ) ); ?>">Login!</a></span></p>
 
 	</div>
 
